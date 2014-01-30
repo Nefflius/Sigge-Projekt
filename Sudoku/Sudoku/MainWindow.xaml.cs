@@ -39,5 +39,21 @@ namespace Sudoku
         {
 
         }
+
+        private void mnuExit_Click_1(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Shutdown();
+        }
+
+        private void mnuSave_Click_1(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void mnuOpen_Click_1(object sender, RoutedEventArgs e)
+        {
+
+        }
+
     }
 }
