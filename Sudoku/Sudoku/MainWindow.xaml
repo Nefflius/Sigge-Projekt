@@ -27,9 +27,6 @@
             </MenuItem>
             <MenuItem Header="_Hjälp" x:Name="mnuHelp"/>
         </Menu>
-        <local:Meny Visibility="Collapsed"/>
-        <local:Spelplan Grid.Column="3" Visibility="Visible"/>
-        <local:Hard1 Grid.ColumnSpan="3" Visibility="Visible" Margin="0,10,0,0"/>
         <local:Meny x:Name="menuComponent" Grid.ColumnSpan="4" Visibility="Visible"></local:Meny>
         <local:Spelplan x:Name="spelplanComponent" Grid.Column="3" Visibility="Collapsed"></local:Spelplan>
         <local:Easy1 x:Name="easyComponent1" Grid.ColumnSpan="3" Visibility="Collapsed"></local:Easy1>

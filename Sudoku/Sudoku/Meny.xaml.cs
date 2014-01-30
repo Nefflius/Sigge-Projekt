@@ -44,6 +44,7 @@ namespace Sudoku
 
             main.menuComponent.Visibility = Visibility.Collapsed;
             main.spelplanComponent.Visibility = Visibility.Visible;
+
         }
     }
 }

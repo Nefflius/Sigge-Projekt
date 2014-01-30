@@ -10,7 +10,7 @@
         <Label FontFamily="Helvetica" FontSize="25" Margin="20" HorizontalAlignment="Center">Nytt spel av Sudoku</Label>
         <Label FontFamily="Helvetica" FontSize="17" Margin="15" HorizontalAlignment="Center">Välj svårighetsnivå:</Label>
         <UniformGrid Columns="3" HorizontalAlignment="Center">
-            <RadioButton Name="rbL" Margin="10">Lätt</RadioButton>
+            <RadioButton Name="rbL" Margin="10" IsChecked="True">Lätt</RadioButton>
             <RadioButton Name="rbM" Margin="10">Medium</RadioButton>
             <RadioButton Name="rbS" Margin="10">Svår</RadioButton>
         </UniformGrid>

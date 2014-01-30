@@ -23,3 +23,28 @@ C:\Users\Stefan Hall\Documents\Visual Studio 2012\Projects\GUI\Projekt\Sudoku\Su
 C:\Users\Stefan Hall\Documents\Visual Studio 2012\Projects\GUI\Projekt\Sudoku\Sudoku\obj\Release\Sudoku.exe
 C:\Users\Stefan Hall\Documents\Visual Studio 2012\Projects\GUI\Projekt\Sudoku\Sudoku\obj\Release\Sudoku.pdb
 C:\Users\Stefan Hall\Documents\Visual Studio 2012\Projects\GUI\Projekt\Sudoku\Sudoku\obj\Release\Sudoku.csprojResolveAssemblyReference.cache
+D:\Visual Studio 2012\SiggeProjekt\Sudoku\Sudoku\bin\Release\Sudoku.exe.config
+D:\Visual Studio 2012\SiggeProjekt\Sudoku\Sudoku\obj\Release\Sudoku.exe
+D:\Visual Studio 2012\SiggeProjekt\Sudoku\Sudoku\obj\Release\Sudoku.pdb
+D:\Visual Studio 2012\SiggeProjekt\Sudoku\Sudoku\bin\Release\Sudoku.exe
+D:\Visual Studio 2012\SiggeProjekt\Sudoku\Sudoku\bin\Release\Sudoku.pdb
+D:\Visual Studio 2012\SiggeProjekt\Sudoku\Sudoku\obj\Release\Sudoku.csprojResolveAssemblyReference.cache
+D:\Visual Studio 2012\SiggeProjekt\Sudoku\Sudoku\obj\Release\Easy1.baml
+D:\Visual Studio 2012\SiggeProjekt\Sudoku\Sudoku\obj\Release\Hard1.baml
+D:\Visual Studio 2012\SiggeProjekt\Sudoku\Sudoku\obj\Release\Medium1.baml
+D:\Visual Studio 2012\SiggeProjekt\Sudoku\Sudoku\obj\Release\Meny.baml
+D:\Visual Studio 2012\SiggeProjekt\Sudoku\Sudoku\obj\Release\Easy1.g.cs
+D:\Visual Studio 2012\SiggeProjekt\Sudoku\Sudoku\obj\Release\Hard1.g.cs
+D:\Visual Studio 2012\SiggeProjekt\Sudoku\Sudoku\obj\Release\MainWindow.g.cs
+D:\Visual Studio 2012\SiggeProjekt\Sudoku\Sudoku\obj\Release\Medium1.g.cs
+D:\Visual Studio 2012\SiggeProjekt\Sudoku\Sudoku\obj\Release\Meny.g.cs
+D:\Visual Studio 2012\SiggeProjekt\Sudoku\Sudoku\obj\Release\Spelplan.g.cs
+D:\Visual Studio 2012\SiggeProjekt\Sudoku\Sudoku\obj\Release\App.g.cs
+D:\Visual Studio 2012\SiggeProjekt\Sudoku\Sudoku\obj\Release\GeneratedInternalTypeHelper.g.cs
+D:\Visual Studio 2012\SiggeProjekt\Sudoku\Sudoku\obj\Release\Sudoku_MarkupCompile.cache
+D:\Visual Studio 2012\SiggeProjekt\Sudoku\Sudoku\obj\Release\Sudoku_MarkupCompile.lref
+D:\Visual Studio 2012\SiggeProjekt\Sudoku\Sudoku\obj\Release\MainWindow.baml
+D:\Visual Studio 2012\SiggeProjekt\Sudoku\Sudoku\obj\Release\Spelplan.baml
+D:\Visual Studio 2012\SiggeProjekt\Sudoku\Sudoku\obj\Release\Sudoku.g.resources
+D:\Visual Studio 2012\SiggeProjekt\Sudoku\Sudoku\obj\Release\Sudoku.Properties.Resources.resources
+D:\Visual Studio 2012\SiggeProjekt\Sudoku\Sudoku\obj\Release\Sudoku.csproj.GenerateResource.Cache
