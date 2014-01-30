@@ -20,10 +20,14 @@
                 </MenuItem>
                 <MenuItem x:Name="mnuSave" Header="_Spara" Click="mnuSave_Click_1">
                     <MenuItem.Icon>
-                        <Image Source="Properties/Resources/Images/icons/Save.png"/>
+                        <Image Source="Properties/Resources/Images/icons/Save.png" />
                     </MenuItem.Icon>
                 </MenuItem>
-                <MenuItem x:Name="mnuExit" Header="A_vsluta" Click="mnuExit_Click_1"/>
+                <MenuItem x:Name="mnuExit" Header="A_vsluta" Click="mnuExit_Click_1">
+                    <MenuItem.Icon>
+                        <Image Source="Properties/Resources/Images/icons/Exit.png" />
+                    </MenuItem.Icon>
+                </MenuItem>
             </MenuItem>
             <MenuItem Header="_Hjälp" x:Name="mnuHelp"/>
         </Menu>
