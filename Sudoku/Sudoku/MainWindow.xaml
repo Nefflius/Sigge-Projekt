@@ -1,0 +1,17 @@
+﻿<Window x:Class="Sudoku.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:Sudoku"
+        Title="Sudoku" Height="400" Width="500">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <local:Meny Visibility="Collapsed"></local:Meny>
+        <local:Spelplan Grid.Column="3" Visibility="Visible"></local:Spelplan>
+        <local:Hard1 Grid.ColumnSpan="3" Visibility="Visible"></local:Hard1>
+    </Grid>
+</Window>
