@@ -11,7 +11,7 @@
             <ColumnDefinition />
             <ColumnDefinition />
         </Grid.ColumnDefinitions>
-        <Menu x:Name="mnuMain" IsMainMenu="True">
+        <Menu x:Name="mnuMain" IsMainMenu="True" Margin="0,0,0,10">
             <MenuItem Header="_Arkiv" x:Name="mnuFile">
                 <MenuItem x:Name="mnuOpen" Header="_Öppna" Click="mnuOpen_Click_1">
                     <MenuItem.Icon>
@@ -23,6 +23,7 @@
                         <Image Source="Properties/Resources/Images/icons/Save.png" />
                     </MenuItem.Icon>
                 </MenuItem>
+                <Separator></Separator>
                 <MenuItem x:Name="mnuExit" Header="A_vsluta" Click="mnuExit_Click_1">
                     <MenuItem.Icon>
                         <Image Source="Properties/Resources/Images/icons/Exit.png" />
@@ -31,10 +32,10 @@
             </MenuItem>
             <MenuItem Header="_Hjälp" x:Name="mnuHelp"/>
         </Menu>
-        <local:Meny x:Name="menuComponent" Grid.ColumnSpan="4" Visibility="Visible"></local:Meny>
-        <local:Spelplan x:Name="spelplanComponent" Grid.Column="3" Visibility="Collapsed"></local:Spelplan>
-        <local:Easy1 x:Name="easyComponent1" Grid.ColumnSpan="3" Visibility="Collapsed"></local:Easy1>
-        <local:Medium1 x:Name="mediumComponent1" Grid.ColumnSpan="3" Visibility="Collapsed"></local:Medium1>
-        <local:Hard1 x:Name="hardComponent1" Grid.ColumnSpan="3" Visibility="Collapsed"></local:Hard1>
+            <local:Meny x:Name="menuComponent" Grid.ColumnSpan="4" Visibility="Visible"></local:Meny>
+            <local:Spelplan x:Name="spelplanComponent" Grid.Column="3" Visibility="Collapsed"></local:Spelplan>
+            <local:Easy1 x:Name="easyComponent1" Grid.ColumnSpan="3" Visibility="Collapsed"></local:Easy1>
+            <local:Medium1 x:Name="mediumComponent1" Grid.ColumnSpan="3" Visibility="Collapsed"></local:Medium1>
+            <local:Hard1 x:Name="hardComponent1" Grid.ColumnSpan="3" Visibility="Collapsed"></local:Hard1>
     </Grid>
 </Window>
