@@ -128,9 +128,6 @@
     <Resource Include="Properties\Resources\Images\icons\Open.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Image1.bmp" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\Open.png" />
   </ItemGroup>
   <ItemGroup>
