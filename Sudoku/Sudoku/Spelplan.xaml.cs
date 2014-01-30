@@ -39,5 +39,10 @@ namespace Sudoku
         {
 
         }
+
+        private void clickHjälp(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("");
+        }
     }
 }
