@@ -4,12 +4,20 @@
 winexe
 C#
 .cs
+<<<<<<< HEAD
 C:\Users\Stefan Hall\Documents\Visual Studio 2012\Projects\GUI\Projekt\Sudoku\Sudoku\obj\Debug\
+=======
+D:\Visual Studio 2012\SiggeProjekt\Sudoku\Sudoku\obj\Debug\
+>>>>>>> 9d5ad99bb57aeae487c531c2e4d28b9369aa675a
 Sudoku
 none
 false
 DEBUG;TRACE
+<<<<<<< HEAD
 C:\Users\Stefan Hall\Documents\Visual Studio 2012\Projects\GUI\Projekt\Sudoku\Sudoku\App.xaml
+=======
+D:\Visual Studio 2012\SiggeProjekt\Sudoku\Sudoku\App.xaml
+>>>>>>> 9d5ad99bb57aeae487c531c2e4d28b9369aa675a
 61695604121
 
 10-567720971

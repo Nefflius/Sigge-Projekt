@@ -30,5 +30,10 @@
         <local:Meny Visibility="Collapsed"/>
         <local:Spelplan Grid.Column="3" Visibility="Visible"/>
         <local:Hard1 Grid.ColumnSpan="3" Visibility="Visible" Margin="0,10,0,0"/>
+        <local:Meny x:Name="menuComponent" Grid.ColumnSpan="4" Visibility="Visible"></local:Meny>
+        <local:Spelplan x:Name="spelplanComponent" Grid.Column="3" Visibility="Collapsed"></local:Spelplan>
+        <local:Easy1 x:Name="easyComponent1" Grid.ColumnSpan="3" Visibility="Collapsed"></local:Easy1>
+        <local:Medium1 x:Name="mediumComponent1" Grid.ColumnSpan="3" Visibility="Collapsed"></local:Medium1>
+        <local:Hard1 x:Name="hardComponent1" Grid.ColumnSpan="3" Visibility="Collapsed"></local:Hard1>
     </Grid>
 </Window>
