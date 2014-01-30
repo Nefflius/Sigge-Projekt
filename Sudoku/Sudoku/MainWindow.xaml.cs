@@ -24,20 +24,5 @@ namespace Sudoku
         {
             InitializeComponent();
         }
-
-        private void clickAvsluta(object sender, RoutedEventArgs e)
-        {
-            Application.Current.Shutdown();
-        }
-
-        private void clickRätta(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void clickNyttSpel(object sender, RoutedEventArgs e)
-        {
-
-        }
     }
 }
