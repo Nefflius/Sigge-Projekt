@@ -37,7 +37,12 @@ namespace Sudoku
 
         private void clickNyttSpel(object sender, RoutedEventArgs e)
         {
-
+            var main = Application.Current.MainWindow as MainWindow;
+            main.menuComponent.Visibility = Visibility.Visible;
+            main.spelplanComponent.Visibility = Visibility.Collapsed;
+            main.easyComponent1.Visibility = Visibility.Collapsed;
+            main.mediumComponent1.Visibility = Visibility.Collapsed;
+            main.hardComponent1.Visibility = Visibility.Collapsed;
         }
     }
 }
