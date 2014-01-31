@@ -20,7 +20,43 @@ namespace Sudoku
     /// </summary>
     public partial class Medium1 : UserControl
     {
-        public Medium1()
+        int[] _solutionMedium1 = new int[81] {5,2,7,
+                                              1,8,9,
+                                              6,3,4,
+
+                                              8,1,9,
+                                              4,6,3,
+                                              7,5,2,
+                                              
+                                              3,6,4,
+                                              2,5,7,
+                                              1,9,8,
+                                              
+                                              9,5,1,
+                                              2,7,3,
+                                              8,4,6,
+                                              
+                                              3,2,7,
+                                              6,4,8,
+                                              5,9,1,
+                                              
+                                              8,4,6,
+                                              9,1,5,
+                                              7,3,2,
+                                              
+                                              4,1,2,
+                                              3,9,5,
+                                              7,6,8,
+                                              
+                                              9,7,6,
+                                              2,8,4,
+                                              1,3,5,
+                                              
+                                              5,8,3,
+                                              6,7,1,
+                                              4,2,9};
+       
+    public Medium1()
         {
             InitializeComponent();
         }
