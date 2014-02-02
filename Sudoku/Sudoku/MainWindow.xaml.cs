@@ -53,7 +53,11 @@ namespace Sudoku
         public void openGame()
         {
             FileHandeling openSudokoFile = new FileHandeling("");
-            openSudokoFile.OpenFile();
+            SavedGame ContinueOldGame = new SavedGame();
+            ContinueOldGame.Height = 300;
+            ContinueOldGame.Width = 300;
+
+            this.Content = (ContinueOldGame.UpdateGame(openSudokoFile.OpenFile()));
         }
 
         private void mnuOpen_Click_1(object sender, RoutedEventArgs e)

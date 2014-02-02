@@ -64,6 +64,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="SavedGame.xaml.cs">
+      <DependentUpon>SavedGame.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Spelplan.xaml.cs">
       <DependentUpon>Spelplan.xaml</DependentUpon>
     </Compile>
@@ -92,6 +95,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Meny.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SavedGame.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

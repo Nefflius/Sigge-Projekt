@@ -11,15 +11,16 @@ namespace Sudoku
     class FileHandeling
     {
         string _filePath;
+        string _sudokuElements = string.Empty;
 
         public FileHandeling(string filepath)
         {
             _filePath = filepath;
         }
-        public int[] OpenFile()
+        public string OpenFile()
         {
             bool _openFileSuccess;
-            int[] _sudokuElements = new int[81];
+            
             OpenFileDialog _openSudoku = new OpenFileDialog();
             
             if(Directory.Exists(_filePath))
@@ -31,8 +32,16 @@ namespace Sudoku
             _openSudoku.FileName = "SparadSudoku.sdk";
              _openFileSuccess = (bool)_openSudoku.ShowDialog();
              if (_openFileSuccess)
+             {
                  _filePath = _openSudoku.FileName;
+                 createArrayFromFile();
+             }
             return _sudokuElements;
+        }
+
+        private void createArrayFromFile()
+        {
+            _sudokuElements = File.ReadAllText(_filePath);
         }
     }
 
