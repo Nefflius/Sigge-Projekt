@@ -50,9 +50,15 @@ namespace Sudoku
 
         }
 
+        public void openGame()
+        {
+            FileHandeling openSudokoFile = new FileHandeling("");
+            openSudokoFile.OpenFile();
+        }
+
         private void mnuOpen_Click_1(object sender, RoutedEventArgs e)
         {
-
+            openGame();
         }
 
     }

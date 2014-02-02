@@ -44,7 +44,12 @@ namespace Sudoku
 
             main.menuComponent.Visibility = Visibility.Collapsed;
             main.spelplanComponent.Visibility = Visibility.Visible;
+        }
 
+        private void öppna_Click(object sender, RoutedEventArgs e)
+        {
+            var main = Application.Current.MainWindow as MainWindow;
+            main.openGame();
         }
     }
 }

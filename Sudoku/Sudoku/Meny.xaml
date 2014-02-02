@@ -14,7 +14,8 @@
             <RadioButton Name="rbM" Margin="10">Medium</RadioButton>
             <RadioButton Name="rbS" Margin="10">Svår</RadioButton>
         </UniformGrid>
-        <Button Margin="50" FontFamily="Helvetica" FontSize="15" Click="spela_Click">Spela!</Button>
+            <Button FontFamily="Helvetica" FontSize="15" Click="öppna_Click">Öppna</Button>
+                <Button Margin="50" FontFamily="Helvetica" FontSize="15" Click="spela_Click">Spela!</Button>
     </StackPanel>
     </GroupBox>
 </UserControl>
