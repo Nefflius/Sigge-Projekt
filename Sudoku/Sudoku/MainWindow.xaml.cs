@@ -30,11 +30,6 @@ namespace Sudoku
             Application.Current.Shutdown();
         }
 
-        private void clickRätta(object sender, RoutedEventArgs e)
-        {
-
-        }
-
         private void clickNyttSpel(object sender, RoutedEventArgs e)
         {
 

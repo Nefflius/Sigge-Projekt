@@ -5,16 +5,17 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              mc:Ignorable="d" 
              d:DesignHeight="350" d:DesignWidth="430" Background="LightGray">
-    <GroupBox BorderBrush="Black" BorderThickness="2" Margin="30" Background="White">
-    <StackPanel HorizontalAlignment="Center">
-        <Label FontFamily="Helvetica" FontSize="25" Margin="20" HorizontalAlignment="Center">Nytt spel av Sudoku</Label>
-        <Label FontFamily="Helvetica" FontSize="17" Margin="15" HorizontalAlignment="Center">Välj svårighetsnivå:</Label>
-        <UniformGrid Columns="3" HorizontalAlignment="Center">
-            <RadioButton Name="rbL" Margin="10" IsChecked="True">Lätt</RadioButton>
-            <RadioButton Name="rbM" Margin="10">Medium</RadioButton>
-            <RadioButton Name="rbS" Margin="10">Svår</RadioButton>
-        </UniformGrid>
-        <Button Margin="50" FontFamily="Helvetica" FontSize="15" Click="spela_Click">Spela!</Button>
-    </StackPanel>
+    
+    <GroupBox BorderBrush="Black" BorderThickness="2" Margin="30" Background="White" Header="Nytt spel">
+        <StackPanel HorizontalAlignment="Center">
+            <Label FontFamily="Helvetica" FontSize="25" Margin="20" HorizontalAlignment="Center">Nytt spel av Sudoku</Label>
+            <Label FontFamily="Helvetica" FontSize="17" Margin="15" HorizontalAlignment="Center">Välj svårighetsnivå:</Label>
+            <UniformGrid Columns="3" HorizontalAlignment="Center">
+                <RadioButton Name="rbL" Margin="10" IsChecked="True">Lätt</RadioButton>
+                <RadioButton Name="rbM" Margin="10">Medium</RadioButton>
+                <RadioButton Name="rbS" Margin="10">Svår</RadioButton>
+            </UniformGrid>
+            <Button Margin="50" FontFamily="Helvetica" FontSize="15" Click="spela_Click">Spela!</Button>
+        </StackPanel>
     </GroupBox>
 </UserControl>

@@ -18,12 +18,15 @@
             <RowDefinition />
             <RowDefinition />
         </Grid.RowDefinitions>
-        <Button Grid.Row="1" Margin="5" Background="Gray" FontFamily="Helvetica" FontSize="17" Foreground="White" Click="clickNyttSpel">NYTT SPEL</Button>
-        <Button Grid.Row="2" Margin="5" Background="Gray" FontFamily="Helvetica" FontSize="20" Foreground="White" Click="clickRätta">RÄTTA</Button>
-        <Button Grid.Row="3" Margin="5" Background="Gray" FontFamily="Helvetica" FontSize="20" Foreground="White" Click="clickHjälp">HJÄLP</Button>
-        <Rectangle Grid.Row="4" Grid.RowSpan="2" Fill="White" Opacity="0.5"></Rectangle>
-        <Label Grid.Row="4" HorizontalAlignment="Center" FontFamily="Courier New" VerticalAlignment="Bottom">TIMER:</Label>
-        <Label Grid.Row="5" HorizontalAlignment="Center" FontFamily="Courier New" FontSize="18">00:00:00</Label>
+        <Button Grid.Row="0" Margin="5" Background="Gray" FontFamily="Helvetica" FontSize="17" Foreground="White" Click="clickNyttSpel">NYTT SPEL</Button>
+        <Button Grid.Row="1" Margin="5" Background="Gray" FontFamily="Helvetica" FontSize="20" Foreground="White" Click="clickRätta">RÄTTA</Button>
+        <Button Grid.Row="2" Margin="5" Background="Gray" FontFamily="Helvetica" FontSize="20" Foreground="White" Click="clickHjälp">HJÄLP</Button>
+        <GroupBox Grid.Row="3" Grid.RowSpan="2" Header="Timer">
+            <Label HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Courier New" FontSize="16">00:00:00</Label>
+        </GroupBox>
+        <GroupBox Grid.Row="5" Grid.RowSpan="2" Header="Antal drag">
+            <Label HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Courier New" FontSize="16">5</Label>
+        </GroupBox>
         <Button Grid.Row="8" Margin="5" Background="Gray" FontFamily="Helvetica" FontSize="17" Foreground="White" Click="clickAvsluta">AVSLUTA</Button>
     </Grid>
 </UserControl>

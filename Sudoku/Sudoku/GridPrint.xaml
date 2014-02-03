@@ -6,7 +6,19 @@
              xmlns:local="clr-namespace:Sudoku"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
-    <Border DockPanel.Dock="Left"  BorderBrush="Gray" BorderThickness="2" Margin="20">
+    <UserControl.Resources>
+        <Style TargetType="{x:Type TextBox}">
+            <Setter Property="Background" Value="White" />
+            <Setter Property="VerticalContentAlignment" Value="Center" />
+            <Setter Property="HorizontalContentAlignment" Value="Center" />
+            <Setter Property="VerticalAlignment" Value="Stretch" />
+            <Setter Property="HorizontalAlignment" Value="Stretch" />
+            <Setter Property="BorderThickness" Value="1" />
+            <Setter Property="FontSize" Value="20" />
+            <Setter Property="TextWrapping" Value="Wrap" />
+        </Style>
+    </UserControl.Resources>
+    <Border BorderBrush="Gray" BorderThickness="2" Background="White" Margin="20">
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition />
@@ -30,7 +42,9 @@
                 <ColumnDefinition />
                 <ColumnDefinition />
             </Grid.ColumnDefinitions>
-            <TextBox Grid.Row="0" Grid.Column="0"></TextBox>
+            <Viewbox>
+                <TextBox Grid.Row="0" Grid.Column="0"></TextBox>
+            </Viewbox>
             <TextBox Grid.Row="0" Grid.Column="1"></TextBox>
             <TextBox Grid.Row="0" Grid.Column="2"></TextBox>
             <TextBox Grid.Row="1" Grid.Column="0"></TextBox>

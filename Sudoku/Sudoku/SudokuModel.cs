@@ -45,6 +45,31 @@ namespace Sudoku
                                          " ", " ", " ",     "4", " ", "9",     " ", " ", " ",
                                          " ", "7", "9",     " ", "2", " ",     "8", "5", " ", 
                                          " ", "5", " ",     " ", "1", " ",     " ", "3", " ", };
+
+        private string nuvarandeGrid;
+
+
+
+        /*****************************************************
+         * ANROP:   Rätta( inmatade siffror i array );
+         * UPPGIFT: Kontrollerar inmatade siffror med de rätta
+                    och markerar siffror röda och gröna.
+         ******************************************************/
+        public void Rätta() 
+        { 
+        
+        }
+
+        /**************************************************************************
+         * ANROP:   PrintGrid( vilken radiobutton som är markerad );
+         * UPPGIFT: Läser in vilken svårighetsgrad som är markerad och skriver
+                    ut i GridPrint-usercontrol, sparar grid i globala nuvarandeGrid.
+         **************************************************************************/
+        public void PrintGrid() 
+        { 
+        
+        }
+
     }
 
     // string array, tom ruta = " "
