@@ -55,9 +55,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Easy1.xaml.cs" />
-    <Compile Include="Hard1.xaml.cs" />
-    <Compile Include="Medium1.xaml.cs" />
+    <Compile Include="GridPrint.xaml.cs">
+      <DependentUpon>GridPrint.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -66,13 +66,14 @@
     <Compile Include="Spelplan.xaml.cs">
       <DependentUpon>Spelplan.xaml</DependentUpon>
     </Compile>
+    <Compile Include="SudokuModel.cs" />
     <Page Include="Easy1.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Hard1.xaml">
-      <Generator>MSBuild:Compile</Generator>
+    <Page Include="GridPrint.xaml">
       <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -86,10 +87,6 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="Medium1.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
     <Page Include="Meny.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

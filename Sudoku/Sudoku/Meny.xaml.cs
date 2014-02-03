@@ -29,21 +29,22 @@ namespace Sudoku
         {
             var main = Application.Current.MainWindow as MainWindow;
 
-            if (Convert.ToBoolean(rbL.IsChecked))
-            {
-                main.easyComponent1.Visibility = Visibility.Visible;
-            }
-            if (Convert.ToBoolean(rbM.IsChecked))
-            {
-                main.mediumComponent1.Visibility = Visibility.Visible;
-            }
-            if (Convert.ToBoolean(rbS.IsChecked))
-            {
-                main.hardComponent1.Visibility = Visibility.Visible;
-            }
+            //if (Convert.ToBoolean(rbL.IsChecked))
+            //{
+            //    main.easyComponent1.Visibility = Visibility.Visible;
+            //}
+            //if (Convert.ToBoolean(rbM.IsChecked))
+            //{
+            //    main.mediumComponent1.Visibility = Visibility.Visible;
+            //}
+            //if (Convert.ToBoolean(rbS.IsChecked))
+            //{
+            //    main.hardComponent1.Visibility = Visibility.Visible;
+            //}
 
             main.menuComponent.Visibility = Visibility.Collapsed;
             main.spelplanComponent.Visibility = Visibility.Visible;
+            main.gridPrintComponent.Visibility = Visibility.Visible;
 
         }
     }

@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace Sudoku
 {
     /// <summary>
-    /// Interaction logic for Medium1.xaml
+    /// Interaction logic for GridPrint.xaml
     /// </summary>
-    public partial class Medium1 : UserControl
+    public partial class GridPrint : UserControl
     {
-        public Medium1()
+        public GridPrint()
         {
             InitializeComponent();
         }

@@ -45,19 +45,19 @@
                 <TextBox Grid.Row="0" Grid.Column="0"></TextBox>
                 <TextBox Grid.Row="0" Grid.Column="1"></TextBox>
                 <TextBox Grid.Row="0" Grid.Column="2"></TextBox>
-                <TextBox Grid.Row="1" Grid.Column="0" IsEnabled="False" Foreground="Gray" FontWeight="ExtraBold">5</TextBox>
+                <TextBox Grid.Row="1" Grid.Column="0"></TextBox>
                 <TextBox Grid.Row="1" Grid.Column="1"></TextBox>
-                <TextBox Grid.Row="1" Grid.Column="2" IsEnabled="False" Foreground="Gray" FontWeight="ExtraBold">4</TextBox>
+                <TextBox Grid.Row="1" Grid.Column="2"></TextBox>
                 <TextBox Grid.Row="2" Grid.Column="0"></TextBox>
                 <TextBox Grid.Row="2" Grid.Column="1"></TextBox>
                 <TextBox Grid.Row="2" Grid.Column="2"></TextBox>
                 <Rectangle Grid.Row="0" Grid.Column="0" Grid.RowSpan="3" Grid.ColumnSpan="3" Stroke="Gray" StrokeThickness="2"></Rectangle>
 
-                <TextBox Grid.Row="0" Grid.Column="3" IsEnabled="False" Foreground="Gray" FontWeight="ExtraBold">7</TextBox>
+                <TextBox Grid.Row="0" Grid.Column="3"></TextBox>
                 <TextBox Grid.Row="0" Grid.Column="4"></TextBox>
-                <TextBox Grid.Row="0" Grid.Column="5" IsEnabled="False" Foreground="Gray" FontWeight="ExtraBold">4</TextBox>
+                <TextBox Grid.Row="0" Grid.Column="5"></TextBox>
                 <TextBox Grid.Row="1" Grid.Column="3"></TextBox>
-                <TextBox Grid.Row="1" Grid.Column="4" IsEnabled="False" Foreground="Gray" FontWeight="ExtraBold">2</TextBox>
+                <TextBox Grid.Row="1" Grid.Column="4"></TextBox>
                 <TextBox Grid.Row="1" Grid.Column="5"></TextBox>
                 <TextBox Grid.Row="2" Grid.Column="3"></TextBox>
                 <TextBox Grid.Row="2" Grid.Column="4"></TextBox>
@@ -65,11 +65,11 @@
                 <Rectangle Grid.Row="0" Grid.Column="3" Grid.RowSpan="3" Grid.ColumnSpan="3" Stroke="Gray" StrokeThickness="2"></Rectangle>
 
                 <TextBox Grid.Row="0" Grid.Column="6"></TextBox>
-                <TextBox Grid.Row="0" Grid.Column="7" IsEnabled="False" Foreground="Gray" FontWeight="ExtraBold">8</TextBox>
+                <TextBox Grid.Row="0" Grid.Column="7"></TextBox>
                 <TextBox Grid.Row="0" Grid.Column="8"></TextBox>
-                <TextBox Grid.Row="1" Grid.Column="6" IsEnabled="False" Foreground="Gray" FontWeight="ExtraBold">9</TextBox>
-                <TextBox Grid.Row="1" Grid.Column="7" IsEnabled="False" Foreground="Gray" FontWeight="ExtraBold">7</TextBox>
-                <TextBox Grid.Row="1" Grid.Column="8" IsEnabled="False" Foreground="Gray" FontWeight="ExtraBold">6</TextBox>
+                <TextBox Grid.Row="1" Grid.Column="6"></TextBox>
+                <TextBox Grid.Row="1" Grid.Column="7"></TextBox>
+                <TextBox Grid.Row="1" Grid.Column="8"></TextBox>
                 <TextBox Grid.Row="2" Grid.Column="6"></TextBox>
                 <TextBox Grid.Row="2" Grid.Column="7"></TextBox>
                 <TextBox Grid.Row="2" Grid.Column="8"></TextBox>
@@ -77,33 +77,33 @@
 
                 <TextBox Grid.Row="3" Grid.Column="0"></TextBox>
                 <TextBox Grid.Row="3" Grid.Column="1"></TextBox>
-                <TextBox Grid.Row="3" Grid.Column="2" IsEnabled="False" Foreground="Gray" FontWeight="ExtraBold">2</TextBox>
-                <TextBox Grid.Row="4" Grid.Column="0" IsEnabled="False" Foreground="Gray" FontWeight="ExtraBold">9</TextBox>
-                <TextBox Grid.Row="4" Grid.Column="1" IsEnabled="False" Foreground="Gray" FontWeight="ExtraBold">6</TextBox>
+                <TextBox Grid.Row="3" Grid.Column="2"></TextBox>
+                <TextBox Grid.Row="4" Grid.Column="0"></TextBox>
+                <TextBox Grid.Row="4" Grid.Column="1"></TextBox>
                 <TextBox Grid.Row="4" Grid.Column="2"></TextBox>
                 <TextBox Grid.Row="5" Grid.Column="0"></TextBox>
                 <TextBox Grid.Row="5" Grid.Column="1"></TextBox>
                 <TextBox Grid.Row="5" Grid.Column="2"></TextBox>
                 <Rectangle Grid.Row="3" Grid.Column="0" Grid.RowSpan="3" Grid.ColumnSpan="3" Stroke="Gray" StrokeThickness="2"></Rectangle>
 
-                <TextBox Grid.Row="3" Grid.Column="3" IsEnabled="False" Foreground="Gray" FontWeight="ExtraBold">9</TextBox>
+                <TextBox Grid.Row="3" Grid.Column="3"></TextBox>
                 <TextBox Grid.Row="3" Grid.Column="4"></TextBox>
-                <TextBox Grid.Row="3" Grid.Column="5" IsEnabled="False" Foreground="Gray" FontWeight="ExtraBold">1</TextBox>
+                <TextBox Grid.Row="3" Grid.Column="5"></TextBox>
                 <TextBox Grid.Row="4" Grid.Column="3"></TextBox>
                 <TextBox Grid.Row="4" Grid.Column="4"></TextBox>
                 <TextBox Grid.Row="4" Grid.Column="5"></TextBox>
-                <TextBox Grid.Row="5" Grid.Column="3" IsEnabled="False" Foreground="Gray" FontWeight="ExtraBold">4</TextBox>
+                <TextBox Grid.Row="5" Grid.Column="3"></TextBox>
                 <TextBox Grid.Row="5" Grid.Column="4"></TextBox>
-                <TextBox Grid.Row="5" Grid.Column="5" IsEnabled="False" Foreground="Gray" FontWeight="ExtraBold">7</TextBox>
+                <TextBox Grid.Row="5" Grid.Column="5"></TextBox>
                 <Rectangle Grid.Row="3" Grid.Column="3" Grid.RowSpan="3" Grid.ColumnSpan="3" Stroke="Gray" StrokeThickness="2"></Rectangle>
 
-                <TextBox Grid.Row="3" Grid.Column="6" IsEnabled="False" Foreground="Gray" FontWeight="ExtraBold">6</TextBox>
+                <TextBox Grid.Row="3" Grid.Column="6"></TextBox>
                 <TextBox Grid.Row="3" Grid.Column="7"></TextBox>
                 <TextBox Grid.Row="3" Grid.Column="8"></TextBox>
                 <TextBox Grid.Row="4" Grid.Column="6"></TextBox>
-                <TextBox Grid.Row="4" Grid.Column="7" IsEnabled="False" Foreground="Gray" FontWeight="ExtraBold">1</TextBox>
-                <TextBox Grid.Row="4" Grid.Column="8" IsEnabled="False" Foreground="Gray" FontWeight="ExtraBold">7</TextBox>
-                <TextBox Grid.Row="5" Grid.Column="6" IsEnabled="False" Foreground="Gray" FontWeight="ExtraBold">2</TextBox>
+                <TextBox Grid.Row="4" Grid.Column="7"></TextBox>
+                <TextBox Grid.Row="4" Grid.Column="8"></TextBox>
+                <TextBox Grid.Row="5" Grid.Column="6"></TextBox>
                 <TextBox Grid.Row="5" Grid.Column="7"></TextBox>
                 <TextBox Grid.Row="5" Grid.Column="8"></TextBox>
                 <Rectangle Grid.Row="3" Grid.Column="6" Grid.RowSpan="3" Grid.ColumnSpan="3" Stroke="Gray" StrokeThickness="2"></Rectangle>
@@ -111,11 +111,11 @@
                 <TextBox Grid.Row="6" Grid.Column="0"></TextBox>
                 <TextBox Grid.Row="6" Grid.Column="1"></TextBox>
                 <TextBox Grid.Row="6" Grid.Column="2"></TextBox>
-                <TextBox Grid.Row="7" Grid.Column="0" IsEnabled="False" Foreground="Gray" FontWeight="ExtraBold">8</TextBox>
-                <TextBox Grid.Row="7" Grid.Column="1" IsEnabled="False" Foreground="Gray" FontWeight="ExtraBold">7</TextBox>
-                <TextBox Grid.Row="7" Grid.Column="2" IsEnabled="False" Foreground="Gray" FontWeight="ExtraBold">6</TextBox>
+                <TextBox Grid.Row="7" Grid.Column="0"></TextBox>
+                <TextBox Grid.Row="7" Grid.Column="1"></TextBox>
+                <TextBox Grid.Row="7" Grid.Column="2"></TextBox>
                 <TextBox Grid.Row="8" Grid.Column="0"></TextBox>
-                <TextBox Grid.Row="8" Grid.Column="1" IsEnabled="False" Foreground="Gray" FontWeight="ExtraBold">2</TextBox>
+                <TextBox Grid.Row="8" Grid.Column="1"></TextBox>
                 <TextBox Grid.Row="8" Grid.Column="2"></TextBox>
                 <Rectangle Grid.Row="6" Grid.Column="0" Grid.RowSpan="3" Grid.ColumnSpan="3" Stroke="Gray" StrokeThickness="2"></Rectangle>
 
@@ -123,19 +123,19 @@
                 <TextBox Grid.Row="6" Grid.Column="4"></TextBox>
                 <TextBox Grid.Row="6" Grid.Column="5"></TextBox>
                 <TextBox Grid.Row="7" Grid.Column="3"></TextBox>
-                <TextBox Grid.Row="7" Grid.Column="4" IsEnabled="False" Foreground="Gray" FontWeight="ExtraBold">4</TextBox>
+                <TextBox Grid.Row="7" Grid.Column="4"></TextBox>
                 <TextBox Grid.Row="7" Grid.Column="5"></TextBox>
-                <TextBox Grid.Row="8" Grid.Column="3" IsEnabled="False" Foreground="Gray" FontWeight="ExtraBold">5</TextBox>
+                <TextBox Grid.Row="8" Grid.Column="3"></TextBox>
                 <TextBox Grid.Row="8" Grid.Column="4"></TextBox>
-                <TextBox Grid.Row="8" Grid.Column="5" IsEnabled="False" Foreground="Gray" FontWeight="ExtraBold">8</TextBox>
+                <TextBox Grid.Row="8" Grid.Column="5"></TextBox>
                 <Rectangle Grid.Row="6" Grid.Column="3" Grid.RowSpan="3" Grid.ColumnSpan="3" Stroke="Gray" StrokeThickness="2"></Rectangle>
 
                 <TextBox Grid.Row="6" Grid.Column="6"></TextBox>
                 <TextBox Grid.Row="6" Grid.Column="7"></TextBox>
                 <TextBox Grid.Row="6" Grid.Column="8"></TextBox>
-                <TextBox Grid.Row="7" Grid.Column="6" IsEnabled="False" Foreground="Gray" FontWeight="ExtraBold">3</TextBox>
+                <TextBox Grid.Row="7" Grid.Column="6"></TextBox>
                 <TextBox Grid.Row="7" Grid.Column="7"></TextBox>
-                <TextBox Grid.Row="7" Grid.Column="8" IsEnabled="False" Foreground="Gray" FontWeight="ExtraBold">1</TextBox>
+                <TextBox Grid.Row="7" Grid.Column="8"></TextBox>
                 <TextBox Grid.Row="8" Grid.Column="6"></TextBox>
                 <TextBox Grid.Row="8" Grid.Column="7"></TextBox>
                 <TextBox Grid.Row="8" Grid.Column="8"></TextBox>

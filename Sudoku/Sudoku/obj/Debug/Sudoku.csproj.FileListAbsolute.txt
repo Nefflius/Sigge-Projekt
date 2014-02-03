@@ -101,3 +101,5 @@ D:\Visual Studio 2012\SiggeProjekt\Sudoku\Sudoku\obj\Debug\Sudoku.g.resources
 D:\Visual Studio 2012\SiggeProjekt\Sudoku\Sudoku\obj\Debug\Sudoku.Properties.Resources.resources
 D:\Visual Studio 2012\SiggeProjekt\Sudoku\Sudoku\obj\Debug\Sudoku.csproj.GenerateResource.Cache
 >>>>>>> 9d5ad99bb57aeae487c531c2e4d28b9369aa675a
+C:\Users\Ida\Documents\DMP12\GUI Programmering\Sigge Projekt\Sudoku\Sudoku\obj\Debug\GridPrint.baml
+C:\Users\Ida\Documents\DMP12\GUI Programmering\Sigge Projekt\Sudoku\Sudoku\obj\Debug\GridPrint.g.cs
