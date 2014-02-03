@@ -20,9 +20,10 @@ namespace Sudoku
     /// </summary>
     public partial class GridPrint : UserControl
     {
+        //SudokuModel sudokumodel = new SudokuModel();
         public GridPrint()
         {
-            InitializeComponent();
+            InitializeComponent();  
         }
     }
 }
