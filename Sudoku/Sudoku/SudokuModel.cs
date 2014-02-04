@@ -10,7 +10,7 @@ namespace Sudoku
     {
         string[] easy = new string[81] { " ", " ", " ",     "7", " ", "4",     " ", "8", " ", 
                                          "5", " ", "4",     " ", "2", " ",     "9", "7", "6",  
-                                         " ", " ", " ",     " ", " ", " ",     " ", " ", " ", 
+                                         " ", " ", " ",     " ", " ", " ",     " ", " ", " ",
         
                                          " ", " ", "2",     "9", " ", "1",     "6", " ", " ",
                                          "9", "6", " ",     " ", " ", " ",     " ", "1", "7", 
@@ -48,9 +48,6 @@ namespace Sudoku
 
         public enum Difficulty { Easy, Medium, Hard };
 
-        private string nuvarandeGrid;
-
-
 
         /*****************************************************
          * ANROP:   Rätta( array med inmatade siffror );
@@ -68,15 +65,26 @@ namespace Sudoku
                     ut i GridPrint-usercontrol, sparar grid i globala nuvarandeGrid.
          **************************************************************************/
         public void PrintGrid(string radioButtonChecked) 
-        { 
-        
+        {          
+            string[] useThisGrid = new string[81];
+            GridPrint gridprint = new GridPrint();
+
+            // när det finns flera spelplaner, randomiza fram vilken av dom som ska visas.
+
+            switch (radioButtonChecked)
+            {
+                case "easy":
+                    useThisGrid = easy;
+                    break;
+                case "medium":
+                    useThisGrid = medium;
+                    break;
+                case "hard":
+                    useThisGrid = hard;
+                    break;
+            }
+
+            gridprint.PrintGrid(useThisGrid);
         }
-
     }
-
-    // string array, tom ruta = " "
-    // när den skriver in -> sätt IsEnabled="False", Foreground="Gray", FontWeight="ExtraBold"
-
-    
-
 }

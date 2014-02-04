@@ -25,5 +25,23 @@ namespace Sudoku
         {
             InitializeComponent();  
         }
+
+        public void PrintGrid(string[] array)
+        {
+            Grid grid = this.nameGridPrint;
+
+            for (int i = 0; i < 81; i++)
+            {
+                TextBox textbox = (TextBox) nameGridPrint.Children[i];
+                string input = textbox.Text = array[i];
+                
+                if (input != " ") 
+                {
+                    textbox.IsEnabled = false;
+                    textbox.Foreground = Brushes.Gray;
+                    textbox.FontWeight = FontWeights.ExtraBold;
+                } 
+            }
+        }
     }
 }

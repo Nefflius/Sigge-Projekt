@@ -49,7 +49,7 @@ namespace Sudoku
             else if (Convert.ToBoolean(rbS.IsChecked))
                 radioButtonChecked = "hard";
 
-            model.PrintGrid(radioButtonChecked);    // skicka in vilken radiobutton som är markerad
+            model.PrintGrid(radioButtonChecked);    // skickar in vilken radiobutton som är markerad
 
             main.spelplanComponent.Timer.Start();
         }

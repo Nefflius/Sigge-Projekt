@@ -4,12 +4,12 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              mc:Ignorable="d" 
-             d:DesignHeight="350" d:DesignWidth="430" Background="LightGray">
+             d:DesignHeight="500" d:DesignWidth="650" Background="LightGray">
     
     <GroupBox BorderBrush="Black" BorderThickness="2" Margin="30" Background="White" Header="Nytt spel">
         <StackPanel HorizontalAlignment="Center">
-            <Label FontFamily="Impact" FontSize="45" Margin="15" HorizontalAlignment="Center">SUDOKU</Label>
-            <Label FontSize="17" Margin="0,0,0,10" HorizontalAlignment="Center">Välj svårighetsnivå:</Label>
+            <Label FontFamily="Impact" FontSize="65" Margin="15" HorizontalAlignment="Center">SUDOKU</Label>
+            <Label FontSize="20" Margin="0,0,0,10" HorizontalAlignment="Center">Välj svårighetsnivå:</Label>
             <UniformGrid Columns="3" HorizontalAlignment="Center">
                 <RadioButton Name="rbL" Margin="10" IsChecked="True">Lätt</RadioButton>
                 <RadioButton Name="rbM" Margin="10">Medium</RadioButton>
