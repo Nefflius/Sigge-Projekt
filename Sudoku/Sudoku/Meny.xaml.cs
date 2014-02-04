@@ -13,16 +13,22 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+
+
 namespace Sudoku
 {
     /// <summary>
     /// Interaction logic for Meny.xaml
     /// </summary>
     public partial class Meny : UserControl
+
     {
+      
+    
         public Meny()
         {
             InitializeComponent();
+          
         }
         private string radioButtonChecked;
 
@@ -36,7 +42,6 @@ namespace Sudoku
 
             SudokuModel model = new SudokuModel();
 
-            
             if (Convert.ToBoolean(rbL.IsChecked))
                 radioButtonChecked = "easy";
             else if (Convert.ToBoolean(rbM.IsChecked))
@@ -45,6 +50,8 @@ namespace Sudoku
                 radioButtonChecked = "hard";
 
             model.PrintGrid(radioButtonChecked);    // skicka in vilken radiobutton som är markerad
+
+            main.spelplanComponent.Timer.Start();
         }
     }
 }

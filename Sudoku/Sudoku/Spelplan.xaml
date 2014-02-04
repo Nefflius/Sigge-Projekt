@@ -21,10 +21,10 @@
         <Button Grid.Row="0" Margin="5" Background="Gray" FontSize="17" Foreground="White" Click="clickNyttSpel">NYTT SPEL</Button>
         <Button Grid.Row="1" Margin="5" Background="Gray" FontSize="20" Foreground="White" Click="clickRätta">RÄTTA</Button>
         <Button Grid.Row="2" Margin="5" Background="Gray" FontSize="20" Foreground="White" Click="clickHjälp">HJÄLP</Button>
-        <GroupBox Grid.Row="3" Grid.RowSpan="2" Header="Timer">
-            <Label HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Courier New" FontSize="16">00:00:00</Label>
+        <GroupBox Grid.Row="3" Grid.RowSpan="2" Header="Timer" Background="White">
+            <TextBox x:Name="timer" BorderThickness="0" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Courier New" FontSize="16" Text="00:00:00" IsReadOnly="True" />
         </GroupBox>
-        <GroupBox Grid.Row="5" Grid.RowSpan="2" Header="Antal drag">
+        <GroupBox Grid.Row="5" Grid.RowSpan="2" Header="Antal drag" Background="White">
             <Label HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Courier New" FontSize="16">5</Label>
         </GroupBox>
         <Button Grid.Row="8" Margin="5" Background="Gray" FontSize="17" Foreground="White" Click="clickAvsluta">AVSLUTA</Button>
