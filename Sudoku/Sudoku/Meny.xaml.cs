@@ -24,6 +24,7 @@ namespace Sudoku
         {
             InitializeComponent();
         }
+        private string radioButtonChecked;
 
         private void spela_Click(object sender, RoutedEventArgs e)
         {
@@ -33,6 +34,17 @@ namespace Sudoku
             main.spelplanComponent.Visibility = Visibility.Visible;
             main.gridPrintComponent.Visibility = Visibility.Visible;
 
+            SudokuModel model = new SudokuModel();
+
+            
+            if (Convert.ToBoolean(rbL.IsChecked))
+                radioButtonChecked = "easy";
+            else if (Convert.ToBoolean(rbM.IsChecked))
+                radioButtonChecked = "medium";
+            else if (Convert.ToBoolean(rbS.IsChecked))
+                radioButtonChecked = "hard";
+
+            model.PrintGrid(radioButtonChecked);    // skicka in vilken radiobutton som är markerad
         }
     }
 }

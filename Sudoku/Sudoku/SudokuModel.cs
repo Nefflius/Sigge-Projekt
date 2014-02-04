@@ -53,7 +53,7 @@ namespace Sudoku
 
 
         /*****************************************************
-         * ANROP:   Rätta( inmatade siffror i array );
+         * ANROP:   Rätta( array med inmatade siffror );
          * UPPGIFT: Kontrollerar inmatade siffror med de rätta
                     och markerar siffror röda och gröna.
          ******************************************************/
@@ -67,7 +67,7 @@ namespace Sudoku
          * UPPGIFT: Läser in vilken svårighetsgrad som är markerad och skriver
                     ut i GridPrint-usercontrol, sparar grid i globala nuvarandeGrid.
          **************************************************************************/
-        public void PrintGrid() 
+        public void PrintGrid(string radioButtonChecked) 
         { 
         
         }
