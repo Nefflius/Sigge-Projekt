@@ -13,6 +13,9 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+
+using System.Windows.Threading; // timer
+
 namespace Sudoku
 {
     /// <summary>
@@ -20,10 +23,38 @@ namespace Sudoku
     /// </summary>
     public partial class Spelplan : UserControl
     {
+
+        public DispatcherTimer Timer;
+       
+
         public Spelplan()
         {
             InitializeComponent();
+
+
+            Timer = new DispatcherTimer();
+            Timer.Interval = new TimeSpan(0, 0, 1);
+            Timer.Tick += Timer_Tick;
         }
+
+
+
+        int count = 0;
+        void Timer_Tick(object sender, EventArgs e)
+        {
+            count++;
+            if (count < 10)
+
+                timer.Text = string.Format("00:0{0}:0{1}", count / 60, count % 60);
+
+            else
+                timer.Text = string.Format("00:0{0}:{1}", count / 60, count % 60);
+
+        }
+
+
+        
+
 
         private void clickAvsluta(object sender, RoutedEventArgs e)
         {
@@ -48,6 +79,8 @@ namespace Sudoku
             MessageBox.Show("Ett sudoku består av nio gånger nio rutor som i sin tur är indelade i nio större rutor. För att lösa ett sudoku skall man placera ut siffrorna 1-9 på spelfältet på ett sådant vis att varje siffra bara finns en gång per rad, en gång per kolumn och dessutom bara en gång per större ruta.",
                              "Hjälp");  
         }
+
+       
         
     }
 }

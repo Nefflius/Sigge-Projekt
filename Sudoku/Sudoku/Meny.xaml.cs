@@ -13,17 +13,24 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+
+
 namespace Sudoku
 {
     /// <summary>
     /// Interaction logic for Meny.xaml
     /// </summary>
     public partial class Meny : UserControl
+
     {
+      
+    
         public Meny()
         {
             InitializeComponent();
+          
         }
+       
 
         private void spela_Click(object sender, RoutedEventArgs e)
         {
@@ -33,6 +40,8 @@ namespace Sudoku
             main.spelplanComponent.Visibility = Visibility.Visible;
             main.gridPrintComponent.Visibility = Visibility.Visible;
 
+
+            main.spelplanComponent.Timer.Start();  
         }
     }
 }
