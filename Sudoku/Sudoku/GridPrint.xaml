@@ -18,32 +18,33 @@
             <Setter Property="TextWrapping" Value="Wrap" />
         </Style>
     </UserControl.Resources>
-    <Border BorderBrush="Gray" BorderThickness="2" Background="White" Margin="20">
-        <Grid Name="nameGridPrint">
+    <Border BorderBrush="Gray" BorderThickness="0" Background="White" Margin="20">
+        <Viewbox   Stretch="Uniform">
+        <Grid Name="nameGridPrint" Width="260">
             <Grid.RowDefinitions>
-                <RowDefinition />
-                <RowDefinition />
-                <RowDefinition />
-                <RowDefinition />
-                <RowDefinition />
-                <RowDefinition />
-                <RowDefinition />
-                <RowDefinition />
-                <RowDefinition />
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition />
-                <ColumnDefinition />
-                <ColumnDefinition />
-                <ColumnDefinition />
-                <ColumnDefinition />
-                <ColumnDefinition />
-                <ColumnDefinition />
-                <ColumnDefinition />
-                <ColumnDefinition />
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
             
-            <TextBox Grid.Row="0" Grid.Column="0"></TextBox>
+            <TextBox Grid.Row="0" Grid.Column="0">1</TextBox>
             <TextBox Grid.Row="0" Grid.Column="1"></TextBox>
             <TextBox Grid.Row="0" Grid.Column="2"></TextBox>
             <TextBox Grid.Row="0" Grid.Column="3"></TextBox>
@@ -143,5 +144,6 @@
             <Rectangle Grid.Row="6" Grid.Column="3" Grid.RowSpan="3" Grid.ColumnSpan="3" Stroke="Gray" StrokeThickness="2"></Rectangle>
             <Rectangle Grid.Row="6" Grid.Column="6" Grid.RowSpan="3" Grid.ColumnSpan="3" Stroke="Gray" StrokeThickness="2"></Rectangle>
         </Grid>
+        </Viewbox>
     </Border>
 </UserControl>
