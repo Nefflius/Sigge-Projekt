@@ -48,17 +48,6 @@ namespace Sudoku
 
         public enum Difficulty { Easy, Medium, Hard };
 
-
-        /*****************************************************
-         * ANROP:   Rätta( array med inmatade siffror );
-         * UPPGIFT: Kontrollerar inmatade siffror med de rätta
-                    och markerar siffror röda och gröna.
-         ******************************************************/
-        public void Rätta() 
-        { 
-        
-        }
-
         /**************************************************************************
          * ANROP:   PrintGrid( vilken radiobutton som är markerad );
          * UPPGIFT: Läser in vilken svårighetsgrad som är markerad och skriver
@@ -85,6 +74,17 @@ namespace Sudoku
             }
 
             gridprint.PrintGrid(useThisGrid);
+        }
+
+        /*****************************************************
+         * ANROP:   Rätta( array med inmatade siffror );
+         * UPPGIFT: Jämför inmatade siffror med de rätta siffrorna.
+         ******************************************************/
+        public void Rätta(string[] inmatade)
+        {
+            // Jämför inmatade siffror i array med rätta siffror i array,
+            // Skapar en array med bool där rätta siffror är true och falska false
+            // Skickar denna array till MarkeraSiffror i GridPrint
         }
     }
 }
