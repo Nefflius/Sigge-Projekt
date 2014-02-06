@@ -55,6 +55,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="FileHandeling.cs" />
     <Compile Include="GridPrint.xaml.cs">
       <DependentUpon>GridPrint.xaml</DependentUpon>
     </Compile>

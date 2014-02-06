@@ -23,6 +23,11 @@ namespace Sudoku
         public MainWindow()
         {
             InitializeComponent();
+            CommandBinding bindOpen = new CommandBinding();
+            bindOpen.Command = ApplicationCommands.Open;
+            bindOpen.Executed += OpenFile_Executed;
+            bindOpen.CanExecute += OpenFile_CanExecute;
+            CommandBindings.Add(bindOpen);
         }
 
         private void clickAvsluta(object sender, RoutedEventArgs e)
@@ -57,5 +62,15 @@ namespace Sudoku
 
         }
 
+        public void OpenFile_CanExecute(object sender, CanExecuteRoutedEventArgs e)
+        {
+            e.CanExecute = true;
+        }
+
+        public void OpenFile_Executed(object sender, ExecutedRoutedEventArgs e)
+        {
+            FileHandeling openSavedGame = new FileHandeling("");
+            openSavedGame.OpenFile();
+        }
     }
 }
