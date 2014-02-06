@@ -14,20 +14,21 @@
         <Menu x:Name="mnuMain" IsMainMenu="True" Margin="0,0,0,10">
             <MenuItem Header="_Arkiv" x:Name="mnuFile">
 
-
+                <MenuItem x:Name="mnuNew" Header="_Nytt spel" Command="ApplicationCommands.New" ></MenuItem>
+                
                 <MenuItem x:Name="mnuOpen" Header="_Öppna" Command="ApplicationCommands.Open" >
                     <MenuItem.Icon>
                         <Image Source="Properties/Resources/Images/icons/Open.png" />
                     </MenuItem.Icon>
                 </MenuItem>
 
-                <MenuItem x:Name="mnuSave" Header="_Spara" Click="mnuSave_Click_1">
+                <MenuItem x:Name="mnuSave" Header="_Spara" Command="ApplicationCommands.Save" >
                     <MenuItem.Icon>
                         <Image Source="Properties/Resources/Images/icons/Save.png" />
                     </MenuItem.Icon>
                 </MenuItem>
                 <Separator></Separator>
-                <MenuItem x:Name="mnuExit" Header="A_vsluta" Click="mnuExit_Click_1">
+                <MenuItem x:Name="mnuExit" Header="A_vsluta" Command="ApplicationCommands.Close" >
                     <MenuItem.Icon>
                         <Image Source="Properties/Resources/Images/icons/Exit.png" />
                     </MenuItem.Icon>

@@ -4,9 +4,7 @@ D:\Visual Studio 2012\SiggeProjekt\Sudoku\Sudoku\obj\Release\Sudoku.pdb
 D:\Visual Studio 2012\SiggeProjekt\Sudoku\Sudoku\bin\Release\Sudoku.exe
 D:\Visual Studio 2012\SiggeProjekt\Sudoku\Sudoku\bin\Release\Sudoku.pdb
 D:\Visual Studio 2012\SiggeProjekt\Sudoku\Sudoku\obj\Release\Sudoku.csprojResolveAssemblyReference.cache
-D:\Visual Studio 2012\SiggeProjekt\Sudoku\Sudoku\obj\Release\Easy1.baml
 D:\Visual Studio 2012\SiggeProjekt\Sudoku\Sudoku\obj\Release\Meny.baml
-D:\Visual Studio 2012\SiggeProjekt\Sudoku\Sudoku\obj\Release\Easy1.g.cs
 D:\Visual Studio 2012\SiggeProjekt\Sudoku\Sudoku\obj\Release\MainWindow.g.cs
 D:\Visual Studio 2012\SiggeProjekt\Sudoku\Sudoku\obj\Release\Meny.g.cs
 D:\Visual Studio 2012\SiggeProjekt\Sudoku\Sudoku\obj\Release\Spelplan.g.cs
