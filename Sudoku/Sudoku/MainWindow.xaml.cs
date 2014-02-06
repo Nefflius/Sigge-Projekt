@@ -30,6 +30,13 @@ namespace Sudoku
             Application.Current.Shutdown();
         }
 
+        public void PrintGrind(GridPrint newGameBoard)
+        {
+            
+            gridPrintComponent = newGameBoard;
+            grdMain.Children.Add(newGameBoard);
+        }
+
         private void clickNyttSpel(object sender, RoutedEventArgs e)
         {
 

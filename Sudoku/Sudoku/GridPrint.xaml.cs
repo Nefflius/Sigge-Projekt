@@ -31,6 +31,7 @@ namespace Sudoku
         UPPGIFT:    Tar emot array med spelplan-siffror, 
                     skriver ut spelplan i GridPrint-usercontrol.
         ******************************************************/
+
         public GridPrint PrintGrid(string[] array)
         {
             Grid grid = this.nameGridPrint;
@@ -82,6 +83,8 @@ namespace Sudoku
         public void MarkeraSiffror(bool[] array)
         {
             // markerar de rutor markerade med false röda och true gröna
+
+            
         }
     }
 }

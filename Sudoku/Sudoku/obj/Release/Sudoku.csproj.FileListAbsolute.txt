@@ -23,13 +23,9 @@ C:\Users\Stefan Hall\Documents\Visual Studio 2012\Projects\GUI\Projekt\Sudoku\Su
 C:\Users\Stefan Hall\Documents\Visual Studio 2012\Projects\GUI\Projekt\Sudoku\Sudoku\bin\Release\Sudoku.exe
 C:\Users\Stefan Hall\Documents\Visual Studio 2012\Projects\GUI\Projekt\Sudoku\Sudoku\bin\Release\Sudoku.pdb
 C:\Users\Stefan Hall\Documents\Visual Studio 2012\Projects\GUI\Projekt\Sudoku\Sudoku\obj\Release\Easy1.baml
-C:\Users\Stefan Hall\Documents\Visual Studio 2012\Projects\GUI\Projekt\Sudoku\Sudoku\obj\Release\Hard1.baml
-C:\Users\Stefan Hall\Documents\Visual Studio 2012\Projects\GUI\Projekt\Sudoku\Sudoku\obj\Release\Medium1.baml
 C:\Users\Stefan Hall\Documents\Visual Studio 2012\Projects\GUI\Projekt\Sudoku\Sudoku\obj\Release\Meny.baml
 C:\Users\Stefan Hall\Documents\Visual Studio 2012\Projects\GUI\Projekt\Sudoku\Sudoku\obj\Release\Easy1.g.cs
-C:\Users\Stefan Hall\Documents\Visual Studio 2012\Projects\GUI\Projekt\Sudoku\Sudoku\obj\Release\Hard1.g.cs
 C:\Users\Stefan Hall\Documents\Visual Studio 2012\Projects\GUI\Projekt\Sudoku\Sudoku\obj\Release\MainWindow.g.cs
-C:\Users\Stefan Hall\Documents\Visual Studio 2012\Projects\GUI\Projekt\Sudoku\Sudoku\obj\Release\Medium1.g.cs
 C:\Users\Stefan Hall\Documents\Visual Studio 2012\Projects\GUI\Projekt\Sudoku\Sudoku\obj\Release\Meny.g.cs
 C:\Users\Stefan Hall\Documents\Visual Studio 2012\Projects\GUI\Projekt\Sudoku\Sudoku\obj\Release\Spelplan.g.cs
 C:\Users\Stefan Hall\Documents\Visual Studio 2012\Projects\GUI\Projekt\Sudoku\Sudoku\obj\Release\App.g.cs
@@ -68,3 +64,6 @@ C:\Users\Nidaa\Desktop\DMP1\GUI_prog\Sigge Projekt\Sudoku\Sudoku\obj\Release\Sud
 C:\Users\Nidaa\Desktop\DMP1\GUI_prog\Sigge Projekt\Sudoku\Sudoku\obj\Release\Sudoku.csproj.GenerateResource.Cache
 D:\Visual Studio 2012\SiggeProjekt\Sudoku\Sudoku\obj\Release\GridPrint.g.cs
 D:\Visual Studio 2012\SiggeProjekt\Sudoku\Sudoku\obj\Release\GridPrint.baml
+C:\Users\Stefan Hall\Documents\Visual Studio 2012\Projects\GUI\Projekt\Sudoku\Sudoku\obj\Release\Sudoku.csprojResolveAssemblyReference.cache
+C:\Users\Stefan Hall\Documents\Visual Studio 2012\Projects\GUI\Projekt\Sudoku\Sudoku\obj\Release\GridPrint.g.cs
+C:\Users\Stefan Hall\Documents\Visual Studio 2012\Projects\GUI\Projekt\Sudoku\Sudoku\obj\Release\GridPrint.baml

@@ -4,7 +4,7 @@
         xmlns:local="clr-namespace:Sudoku"
         xmlns:Properties="clr-namespace:Sudoku.Properties" x:Class="Sudoku.MainWindow"
         Title="Sudoku" Height="500" Width="650">
-    <Grid>
+    <Grid Name="grdMain">
         <Grid.ColumnDefinitions>
             <ColumnDefinition />
             <ColumnDefinition />
