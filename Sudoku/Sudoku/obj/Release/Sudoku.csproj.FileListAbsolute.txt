@@ -5,13 +5,9 @@ D:\Visual Studio 2012\SiggeProjekt\Sudoku\Sudoku\bin\Release\Sudoku.exe
 D:\Visual Studio 2012\SiggeProjekt\Sudoku\Sudoku\bin\Release\Sudoku.pdb
 D:\Visual Studio 2012\SiggeProjekt\Sudoku\Sudoku\obj\Release\Sudoku.csprojResolveAssemblyReference.cache
 D:\Visual Studio 2012\SiggeProjekt\Sudoku\Sudoku\obj\Release\Easy1.baml
-D:\Visual Studio 2012\SiggeProjekt\Sudoku\Sudoku\obj\Release\Hard1.baml
-D:\Visual Studio 2012\SiggeProjekt\Sudoku\Sudoku\obj\Release\Medium1.baml
 D:\Visual Studio 2012\SiggeProjekt\Sudoku\Sudoku\obj\Release\Meny.baml
 D:\Visual Studio 2012\SiggeProjekt\Sudoku\Sudoku\obj\Release\Easy1.g.cs
-D:\Visual Studio 2012\SiggeProjekt\Sudoku\Sudoku\obj\Release\Hard1.g.cs
 D:\Visual Studio 2012\SiggeProjekt\Sudoku\Sudoku\obj\Release\MainWindow.g.cs
-D:\Visual Studio 2012\SiggeProjekt\Sudoku\Sudoku\obj\Release\Medium1.g.cs
 D:\Visual Studio 2012\SiggeProjekt\Sudoku\Sudoku\obj\Release\Meny.g.cs
 D:\Visual Studio 2012\SiggeProjekt\Sudoku\Sudoku\obj\Release\Spelplan.g.cs
 D:\Visual Studio 2012\SiggeProjekt\Sudoku\Sudoku\obj\Release\App.g.cs
@@ -70,3 +66,5 @@ C:\Users\Nidaa\Desktop\DMP1\GUI_prog\Sigge Projekt\Sudoku\Sudoku\obj\Release\Spe
 C:\Users\Nidaa\Desktop\DMP1\GUI_prog\Sigge Projekt\Sudoku\Sudoku\obj\Release\Sudoku.g.resources
 C:\Users\Nidaa\Desktop\DMP1\GUI_prog\Sigge Projekt\Sudoku\Sudoku\obj\Release\Sudoku.Properties.Resources.resources
 C:\Users\Nidaa\Desktop\DMP1\GUI_prog\Sigge Projekt\Sudoku\Sudoku\obj\Release\Sudoku.csproj.GenerateResource.Cache
+D:\Visual Studio 2012\SiggeProjekt\Sudoku\Sudoku\obj\Release\GridPrint.g.cs
+D:\Visual Studio 2012\SiggeProjekt\Sudoku\Sudoku\obj\Release\GridPrint.baml
