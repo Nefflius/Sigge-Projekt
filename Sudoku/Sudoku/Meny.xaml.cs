@@ -57,9 +57,7 @@ namespace Sudoku
 
 
             model.PrintGrid(radioButtonChecked); 
-
-                // skickar in vilken radiobutton som är markerad
-            main.PrintGrind(model.PrintGrid(radioButtonChecked));
+            //main.PrintGrid(model.PrintGrid(radioButtonChecked));
 
             main.spelplanComponent.Timer.Start();
 

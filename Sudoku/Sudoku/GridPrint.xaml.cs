@@ -50,6 +50,10 @@ namespace Sudoku
                 } 
             }
 
+            GridPrint newGameBoard = this;
+            var main = Application.Current.MainWindow as MainWindow;
+            main.PrintGrid(newGameBoard);
+
             return this;
         }
 
