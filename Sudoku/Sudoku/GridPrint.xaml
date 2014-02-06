@@ -45,95 +45,95 @@
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
             
-                <TextBox Grid.Row="0" Grid.Column="0"></TextBox>
-                <TextBox Grid.Row="0" Grid.Column="1"></TextBox>
-                <TextBox Grid.Row="0" Grid.Column="2"></TextBox>
-                <TextBox Grid.Row="0" Grid.Column="3"></TextBox>
-                <TextBox Grid.Row="0" Grid.Column="4"></TextBox>
-                <TextBox Grid.Row="0" Grid.Column="5"></TextBox>
-                <TextBox Grid.Row="0" Grid.Column="6"></TextBox>
-                <TextBox Grid.Row="0" Grid.Column="7"></TextBox>
-                <TextBox Grid.Row="0" Grid.Column="8"></TextBox>
+                <TextBox Grid.Row="0" Grid.Column="0" PreviewTextInput="TextBox_PreviewTextInput"></TextBox>
+                <TextBox Grid.Row="0" Grid.Column="1" PreviewTextInput="TextBox_PreviewTextInput"></TextBox>
+                <TextBox Grid.Row="0" Grid.Column="2" PreviewTextInput="TextBox_PreviewTextInput"></TextBox>
+                <TextBox Grid.Row="0" Grid.Column="3" PreviewTextInput="TextBox_PreviewTextInput"></TextBox>
+                <TextBox Grid.Row="0" Grid.Column="4" PreviewTextInput="TextBox_PreviewTextInput"></TextBox>
+                <TextBox Grid.Row="0" Grid.Column="5" PreviewTextInput="TextBox_PreviewTextInput"></TextBox>
+                <TextBox Grid.Row="0" Grid.Column="6" PreviewTextInput="TextBox_PreviewTextInput"></TextBox>
+                <TextBox Grid.Row="0" Grid.Column="7" PreviewTextInput="TextBox_PreviewTextInput"></TextBox>
+                <TextBox Grid.Row="0" Grid.Column="8" PreviewTextInput="TextBox_PreviewTextInput"></TextBox>
 
-                <TextBox Grid.Row="1" Grid.Column="0"></TextBox>
-                <TextBox Grid.Row="1" Grid.Column="1"></TextBox>
-                <TextBox Grid.Row="1" Grid.Column="2"></TextBox>
-                <TextBox Grid.Row="1" Grid.Column="3"></TextBox>
-                <TextBox Grid.Row="1" Grid.Column="4"></TextBox>
-                <TextBox Grid.Row="1" Grid.Column="5"></TextBox>
-                <TextBox Grid.Row="1" Grid.Column="6"></TextBox>
-                <TextBox Grid.Row="1" Grid.Column="7"></TextBox>
-                <TextBox Grid.Row="1" Grid.Column="8"></TextBox>
+                <TextBox Grid.Row="1" Grid.Column="0" PreviewTextInput="TextBox_PreviewTextInput"></TextBox>
+                <TextBox Grid.Row="1" Grid.Column="1" PreviewTextInput="TextBox_PreviewTextInput"></TextBox>
+                <TextBox Grid.Row="1" Grid.Column="2" PreviewTextInput="TextBox_PreviewTextInput"></TextBox>
+                <TextBox Grid.Row="1" Grid.Column="3" PreviewTextInput="TextBox_PreviewTextInput"></TextBox>
+                <TextBox Grid.Row="1" Grid.Column="4" PreviewTextInput="TextBox_PreviewTextInput"></TextBox>
+                <TextBox Grid.Row="1" Grid.Column="5" PreviewTextInput="TextBox_PreviewTextInput"></TextBox>
+                <TextBox Grid.Row="1" Grid.Column="6" PreviewTextInput="TextBox_PreviewTextInput"></TextBox>
+                <TextBox Grid.Row="1" Grid.Column="7" PreviewTextInput="TextBox_PreviewTextInput"></TextBox>
+                <TextBox Grid.Row="1" Grid.Column="8" PreviewTextInput="TextBox_PreviewTextInput"></TextBox>
 
-                <TextBox Grid.Row="2" Grid.Column="0"></TextBox>
-                <TextBox Grid.Row="2" Grid.Column="1"></TextBox>
-                <TextBox Grid.Row="2" Grid.Column="2"></TextBox>
-                <TextBox Grid.Row="2" Grid.Column="3"></TextBox>
-                <TextBox Grid.Row="2" Grid.Column="4"></TextBox>
-                <TextBox Grid.Row="2" Grid.Column="5"></TextBox>
-                <TextBox Grid.Row="2" Grid.Column="6"></TextBox>
-                <TextBox Grid.Row="2" Grid.Column="7"></TextBox>
-                <TextBox Grid.Row="2" Grid.Column="8"></TextBox>
+                <TextBox Grid.Row="2" Grid.Column="0" PreviewTextInput="TextBox_PreviewTextInput"></TextBox>
+                <TextBox Grid.Row="2" Grid.Column="1" PreviewTextInput="TextBox_PreviewTextInput"></TextBox>
+                <TextBox Grid.Row="2" Grid.Column="2" PreviewTextInput="TextBox_PreviewTextInput"></TextBox>
+                <TextBox Grid.Row="2" Grid.Column="3" PreviewTextInput="TextBox_PreviewTextInput"></TextBox>
+                <TextBox Grid.Row="2" Grid.Column="4" PreviewTextInput="TextBox_PreviewTextInput"></TextBox>
+                <TextBox Grid.Row="2" Grid.Column="5" PreviewTextInput="TextBox_PreviewTextInput"></TextBox>
+                <TextBox Grid.Row="2" Grid.Column="6" PreviewTextInput="TextBox_PreviewTextInput"></TextBox>
+                <TextBox Grid.Row="2" Grid.Column="7" PreviewTextInput="TextBox_PreviewTextInput"></TextBox>
+                <TextBox Grid.Row="2" Grid.Column="8" PreviewTextInput="TextBox_PreviewTextInput"></TextBox>
 
-                <TextBox Grid.Row="3" Grid.Column="0"></TextBox>
-                <TextBox Grid.Row="3" Grid.Column="1"></TextBox>
-                <TextBox Grid.Row="3" Grid.Column="2"></TextBox>
-                <TextBox Grid.Row="3" Grid.Column="3"></TextBox>
-                <TextBox Grid.Row="3" Grid.Column="4"></TextBox>
-                <TextBox Grid.Row="3" Grid.Column="5"></TextBox>
-                <TextBox Grid.Row="3" Grid.Column="6"></TextBox>
-                <TextBox Grid.Row="3" Grid.Column="7"></TextBox>
-                <TextBox Grid.Row="3" Grid.Column="8"></TextBox>
+                <TextBox Grid.Row="3" Grid.Column="0" PreviewTextInput="TextBox_PreviewTextInput"></TextBox>
+                <TextBox Grid.Row="3" Grid.Column="1" PreviewTextInput="TextBox_PreviewTextInput"></TextBox>
+                <TextBox Grid.Row="3" Grid.Column="2" PreviewTextInput="TextBox_PreviewTextInput"></TextBox>
+                <TextBox Grid.Row="3" Grid.Column="3" PreviewTextInput="TextBox_PreviewTextInput"></TextBox>
+                <TextBox Grid.Row="3" Grid.Column="4" PreviewTextInput="TextBox_PreviewTextInput"></TextBox>
+                <TextBox Grid.Row="3" Grid.Column="5" PreviewTextInput="TextBox_PreviewTextInput"></TextBox>
+                <TextBox Grid.Row="3" Grid.Column="6" PreviewTextInput="TextBox_PreviewTextInput"></TextBox>
+                <TextBox Grid.Row="3" Grid.Column="7" PreviewTextInput="TextBox_PreviewTextInput"></TextBox>
+                <TextBox Grid.Row="3" Grid.Column="8" PreviewTextInput="TextBox_PreviewTextInput"></TextBox>
 
-                <TextBox Grid.Row="4" Grid.Column="0"></TextBox>
-                <TextBox Grid.Row="4" Grid.Column="1"></TextBox>
-                <TextBox Grid.Row="4" Grid.Column="2"></TextBox>
-                <TextBox Grid.Row="4" Grid.Column="3"></TextBox>
-                <TextBox Grid.Row="4" Grid.Column="4"></TextBox>
-                <TextBox Grid.Row="4" Grid.Column="5"></TextBox>
-                <TextBox Grid.Row="4" Grid.Column="6"></TextBox>
-                <TextBox Grid.Row="4" Grid.Column="7"></TextBox>
-                <TextBox Grid.Row="4" Grid.Column="8"></TextBox>
+                <TextBox Grid.Row="4" Grid.Column="0" PreviewTextInput="TextBox_PreviewTextInput"></TextBox>
+                <TextBox Grid.Row="4" Grid.Column="1" PreviewTextInput="TextBox_PreviewTextInput"></TextBox>
+                <TextBox Grid.Row="4" Grid.Column="2" PreviewTextInput="TextBox_PreviewTextInput"></TextBox>
+                <TextBox Grid.Row="4" Grid.Column="3" PreviewTextInput="TextBox_PreviewTextInput"></TextBox>
+                <TextBox Grid.Row="4" Grid.Column="4" PreviewTextInput="TextBox_PreviewTextInput"></TextBox>
+                <TextBox Grid.Row="4" Grid.Column="5" PreviewTextInput="TextBox_PreviewTextInput"></TextBox>
+                <TextBox Grid.Row="4" Grid.Column="6" PreviewTextInput="TextBox_PreviewTextInput"></TextBox>
+                <TextBox Grid.Row="4" Grid.Column="7" PreviewTextInput="TextBox_PreviewTextInput"></TextBox>
+                <TextBox Grid.Row="4" Grid.Column="8" PreviewTextInput="TextBox_PreviewTextInput"></TextBox>
 
-                <TextBox Grid.Row="5" Grid.Column="0"></TextBox>
-                <TextBox Grid.Row="5" Grid.Column="1"></TextBox>
-                <TextBox Grid.Row="5" Grid.Column="2"></TextBox>
-                <TextBox Grid.Row="5" Grid.Column="3"></TextBox>
-                <TextBox Grid.Row="5" Grid.Column="4"></TextBox>
-                <TextBox Grid.Row="5" Grid.Column="5"></TextBox>
-                <TextBox Grid.Row="5" Grid.Column="6"></TextBox>
-                <TextBox Grid.Row="5" Grid.Column="7"></TextBox>
-                <TextBox Grid.Row="5" Grid.Column="8"></TextBox>
+                <TextBox Grid.Row="5" Grid.Column="0" PreviewTextInput="TextBox_PreviewTextInput"></TextBox>
+                <TextBox Grid.Row="5" Grid.Column="1" PreviewTextInput="TextBox_PreviewTextInput"></TextBox>
+                <TextBox Grid.Row="5" Grid.Column="2" PreviewTextInput="TextBox_PreviewTextInput"></TextBox>
+                <TextBox Grid.Row="5" Grid.Column="3" PreviewTextInput="TextBox_PreviewTextInput"></TextBox>
+                <TextBox Grid.Row="5" Grid.Column="4" PreviewTextInput="TextBox_PreviewTextInput"></TextBox>
+                <TextBox Grid.Row="5" Grid.Column="5" PreviewTextInput="TextBox_PreviewTextInput"></TextBox>
+                <TextBox Grid.Row="5" Grid.Column="6" PreviewTextInput="TextBox_PreviewTextInput"></TextBox>
+                <TextBox Grid.Row="5" Grid.Column="7" PreviewTextInput="TextBox_PreviewTextInput"></TextBox>
+                <TextBox Grid.Row="5" Grid.Column="8" PreviewTextInput="TextBox_PreviewTextInput"></TextBox>
 
-                <TextBox Grid.Row="6" Grid.Column="0"></TextBox>
-                <TextBox Grid.Row="6" Grid.Column="1"></TextBox>
-                <TextBox Grid.Row="6" Grid.Column="2"></TextBox>
-                <TextBox Grid.Row="6" Grid.Column="3"></TextBox>
-                <TextBox Grid.Row="6" Grid.Column="4"></TextBox>
-                <TextBox Grid.Row="6" Grid.Column="5"></TextBox>
-                <TextBox Grid.Row="6" Grid.Column="6"></TextBox>
-                <TextBox Grid.Row="6" Grid.Column="7"></TextBox>
-                <TextBox Grid.Row="6" Grid.Column="8"></TextBox>
+                <TextBox Grid.Row="6" Grid.Column="0" PreviewTextInput="TextBox_PreviewTextInput"></TextBox>
+                <TextBox Grid.Row="6" Grid.Column="1" PreviewTextInput="TextBox_PreviewTextInput"></TextBox>
+                <TextBox Grid.Row="6" Grid.Column="2" PreviewTextInput="TextBox_PreviewTextInput"></TextBox>
+                <TextBox Grid.Row="6" Grid.Column="3" PreviewTextInput="TextBox_PreviewTextInput"></TextBox>
+                <TextBox Grid.Row="6" Grid.Column="4" PreviewTextInput="TextBox_PreviewTextInput"></TextBox>
+                <TextBox Grid.Row="6" Grid.Column="5" PreviewTextInput="TextBox_PreviewTextInput"></TextBox>
+                <TextBox Grid.Row="6" Grid.Column="6" PreviewTextInput="TextBox_PreviewTextInput"></TextBox>
+                <TextBox Grid.Row="6" Grid.Column="7" PreviewTextInput="TextBox_PreviewTextInput"></TextBox>
+                <TextBox Grid.Row="6" Grid.Column="8" PreviewTextInput="TextBox_PreviewTextInput"></TextBox>
 
-                <TextBox Grid.Row="7" Grid.Column="0"></TextBox>
-                <TextBox Grid.Row="7" Grid.Column="1"></TextBox>
-                <TextBox Grid.Row="7" Grid.Column="2"></TextBox>
-                <TextBox Grid.Row="7" Grid.Column="3"></TextBox>
-                <TextBox Grid.Row="7" Grid.Column="4"></TextBox>
-                <TextBox Grid.Row="7" Grid.Column="5"></TextBox>
-                <TextBox Grid.Row="7" Grid.Column="6"></TextBox>
-                <TextBox Grid.Row="7" Grid.Column="7"></TextBox>
-                <TextBox Grid.Row="7" Grid.Column="8"></TextBox>
+                <TextBox Grid.Row="7" Grid.Column="0" PreviewTextInput="TextBox_PreviewTextInput"></TextBox>
+                <TextBox Grid.Row="7" Grid.Column="1" PreviewTextInput="TextBox_PreviewTextInput"></TextBox>
+                <TextBox Grid.Row="7" Grid.Column="2" PreviewTextInput="TextBox_PreviewTextInput"></TextBox>
+                <TextBox Grid.Row="7" Grid.Column="3" PreviewTextInput="TextBox_PreviewTextInput"></TextBox>
+                <TextBox Grid.Row="7" Grid.Column="4" PreviewTextInput="TextBox_PreviewTextInput"></TextBox>
+                <TextBox Grid.Row="7" Grid.Column="5" PreviewTextInput="TextBox_PreviewTextInput"></TextBox>
+                <TextBox Grid.Row="7" Grid.Column="6" PreviewTextInput="TextBox_PreviewTextInput"></TextBox>
+                <TextBox Grid.Row="7" Grid.Column="7" PreviewTextInput="TextBox_PreviewTextInput"></TextBox>
+                <TextBox Grid.Row="7" Grid.Column="8" PreviewTextInput="TextBox_PreviewTextInput"></TextBox>
 
-                <TextBox Grid.Row="8" Grid.Column="0"></TextBox>
-                <TextBox Grid.Row="8" Grid.Column="1"></TextBox>
-                <TextBox Grid.Row="8" Grid.Column="2"></TextBox>
-                <TextBox Grid.Row="8" Grid.Column="3"></TextBox>
-                <TextBox Grid.Row="8" Grid.Column="4"></TextBox>
-                <TextBox Grid.Row="8" Grid.Column="5"></TextBox>
-                <TextBox Grid.Row="8" Grid.Column="6"></TextBox>
-                <TextBox Grid.Row="8" Grid.Column="7"></TextBox>
-                <TextBox Grid.Row="8" Grid.Column="8"></TextBox>
+                <TextBox Grid.Row="8" Grid.Column="0" PreviewTextInput="TextBox_PreviewTextInput"></TextBox>
+                <TextBox Grid.Row="8" Grid.Column="1" PreviewTextInput="TextBox_PreviewTextInput"></TextBox>
+                <TextBox Grid.Row="8" Grid.Column="2" PreviewTextInput="TextBox_PreviewTextInput"></TextBox>
+                <TextBox Grid.Row="8" Grid.Column="3" PreviewTextInput="TextBox_PreviewTextInput"></TextBox>
+                <TextBox Grid.Row="8" Grid.Column="4" PreviewTextInput="TextBox_PreviewTextInput"></TextBox>
+                <TextBox Grid.Row="8" Grid.Column="5" PreviewTextInput="TextBox_PreviewTextInput"></TextBox>
+                <TextBox Grid.Row="8" Grid.Column="6" PreviewTextInput="TextBox_PreviewTextInput"></TextBox>
+                <TextBox Grid.Row="8" Grid.Column="7" PreviewTextInput="TextBox_PreviewTextInput"></TextBox>
+                <TextBox Grid.Row="8" Grid.Column="8" PreviewTextInput="TextBox_PreviewTextInput"></TextBox>
 
                 <Rectangle Grid.Row="0" Grid.Column="0" Grid.RowSpan="3" Grid.ColumnSpan="3" Stroke="Gray" StrokeThickness="2"></Rectangle>
                 <Rectangle Grid.Row="0" Grid.Column="3" Grid.RowSpan="3" Grid.ColumnSpan="3" Stroke="Gray" StrokeThickness="2"></Rectangle>
