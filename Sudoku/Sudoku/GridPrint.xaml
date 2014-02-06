@@ -16,6 +16,7 @@
             <Setter Property="BorderThickness" Value="1" />
             <Setter Property="FontSize" Value="20" />
             <Setter Property="TextWrapping" Value="Wrap" />
+            <Setter Property="MaxLength" Value="1" />
         </Style>
     </UserControl.Resources>
     <Border BorderBrush="Gray" BorderThickness="0" Background="White" Margin="20">
