@@ -64,7 +64,7 @@ namespace Sudoku
          * UPPGIFT: Läser in vilken svårighetsgrad som är markerad och skriver
                     ut i GridPrint-usercontrol, sparar grid i globala nuvarandeGrid.
          **************************************************************************/
-        public void PrintGrid(string radioButtonChecked) 
+        public GridPrint PrintGrid(string radioButtonChecked) 
         {          
             string[] useThisGrid = new string[81];
             GridPrint gridprint = new GridPrint();
@@ -84,7 +84,8 @@ namespace Sudoku
                     break;
             }
 
-            gridprint.PrintGrid(useThisGrid);
+            GridPrint newGameboard = gridprint.PrintGrid(useThisGrid);
+            return newGameboard;
         }
     }
 }

@@ -26,7 +26,7 @@ namespace Sudoku
             InitializeComponent();  
         }
 
-        public void PrintGrid(string[] array)
+        public GridPrint PrintGrid(string[] array)
         {
             Grid grid = this.nameGridPrint;
 
@@ -42,6 +42,7 @@ namespace Sudoku
                     textbox.FontWeight = FontWeights.ExtraBold;
                 } 
             }
+            return this;
         }
     }
 }
