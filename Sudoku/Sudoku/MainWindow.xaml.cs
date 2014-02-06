@@ -55,15 +55,8 @@ namespace Sudoku
             CommandBindings.Add(bindExit);
         }
 
-        private void clickAvsluta(object sender, RoutedEventArgs e)
-        {
-            
-        }
-
         public void PrintGrid(GridPrint newGameBoard)
         {
-            //gridPrintComponent = newGameBoard;
-            
             newGameBoard.SetValue(Grid.ColumnSpanProperty, 3);
 
             grdMain.Children.Add(newGameBoard);
