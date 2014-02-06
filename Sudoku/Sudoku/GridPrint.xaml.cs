@@ -25,6 +25,8 @@ namespace Sudoku
         {
             InitializeComponent();  
         }
+        GridPrint gameBoard;
+        
 
         /*****************************************************
         ANROP:      PrintGrid(string[]);
@@ -34,26 +36,30 @@ namespace Sudoku
 
         public GridPrint PrintGrid(string[] array)
         {
-            Grid grid = this.nameGridPrint;
+            //Grid grid = this.nameGridPrint;
 
             for (int i = 0; i < 81; i++)
             {
-                TextBox textbox = (TextBox) grid.Children[i];
+                TextBox textbox = (TextBox) nameGridPrint.Children[i];
+                
                 string input = array[i];
 
                 if (input != " ") 
                 {
                     textbox.Text = array[i];
+
                     textbox.IsEnabled = false;
                     textbox.Foreground = Brushes.Gray;
+                    textbox.BorderBrush = Brushes.Gray;
                     textbox.FontWeight = FontWeights.ExtraBold;
                 } 
             }
 
-            GridPrint newGameBoard = this;
             var main = Application.Current.MainWindow as MainWindow;
-            main.PrintGrid(newGameBoard);
+            main.PrintGrid(this);
 
+            gameBoard = this;
+            
             return this;
         }
 
@@ -68,10 +74,12 @@ namespace Sudoku
             for (int i = 0; i < 81; i++)  // Läs av alla rutor, om alla är ifyllda, rätta!
             {
                 TextBox tb = (TextBox)nameGridPrint.Children[i];
-                arr[i] = tb.Text;           
+
+                arr[i] = tb.Text;
                 if (arr[i] == "")
                 {
-                    // Om ej, ge en textbox som säger att användare ska fylla i alla rutor.
+                    MainWindow main = Application.Current.MainWindow as MainWindow;
+                    main.ShowTextBox();
                     return;
                 }
             }
@@ -86,9 +94,16 @@ namespace Sudoku
         ******************************************************************/
         public void MarkeraSiffror(bool[] array)
         {
-            // markerar de rutor markerade med false röda och true gröna
+            int length = array.Length;
+            for (int i = 0; i < length; i++)
+            {
+                TextBox tb = (TextBox)nameGridPrint.Children[i];
 
-            
+                if (array[i])
+                    tb.BorderBrush = Brushes.Green;
+                else
+                    tb.BorderBrush = Brushes.Red;
+            }
         }
 
         private void TextBox_PreviewTextInput(object sender, TextCompositionEventArgs e)
