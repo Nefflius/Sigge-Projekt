@@ -67,10 +67,6 @@
       <DependentUpon>Spelplan.xaml</DependentUpon>
     </Compile>
     <Compile Include="SudokuModel.cs" />
-    <Page Include="Easy1.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
     <Page Include="GridPrint.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

@@ -31,9 +31,7 @@ C:\Users\Ida\Documents\DMP12\GUI Programmering\Sigge Projekt\Sudoku\Sudoku\obj\D
 C:\Users\Ida\Documents\DMP12\GUI Programmering\Sigge Projekt\Sudoku\Sudoku\obj\Debug\Sudoku.pdb
 C:\Users\Ida\Documents\DMP12\GUI Programmering\Sigge Projekt\Sudoku\Sudoku\bin\Debug\Sudoku.exe
 C:\Users\Ida\Documents\DMP12\GUI Programmering\Sigge Projekt\Sudoku\Sudoku\bin\Debug\Sudoku.pdb
-C:\Users\Ida\Documents\DMP12\GUI Programmering\Sigge Projekt\Sudoku\Sudoku\obj\Debug\Easy1.baml
 C:\Users\Ida\Documents\DMP12\GUI Programmering\Sigge Projekt\Sudoku\Sudoku\obj\Debug\Meny.baml
-C:\Users\Ida\Documents\DMP12\GUI Programmering\Sigge Projekt\Sudoku\Sudoku\obj\Debug\Easy1.g.cs
 C:\Users\Ida\Documents\DMP12\GUI Programmering\Sigge Projekt\Sudoku\Sudoku\obj\Debug\MainWindow.g.cs
 C:\Users\Ida\Documents\DMP12\GUI Programmering\Sigge Projekt\Sudoku\Sudoku\obj\Debug\Meny.g.cs
 C:\Users\Ida\Documents\DMP12\GUI Programmering\Sigge Projekt\Sudoku\Sudoku\obj\Debug\Spelplan.g.cs

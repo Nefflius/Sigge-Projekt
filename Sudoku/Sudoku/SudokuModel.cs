@@ -48,23 +48,12 @@ namespace Sudoku
 
         public enum Difficulty { Easy, Medium, Hard };
 
-
-        /*****************************************************
-         * ANROP:   Rätta( array med inmatade siffror );
-         * UPPGIFT: Kontrollerar inmatade siffror med de rätta
-                    och markerar siffror röda och gröna.
-         ******************************************************/
-        public void Rätta() 
-        { 
-        
-        }
-
         /**************************************************************************
          * ANROP:   PrintGrid( vilken radiobutton som är markerad );
          * UPPGIFT: Läser in vilken svårighetsgrad som är markerad och skriver
                     ut i GridPrint-usercontrol, sparar grid i globala nuvarandeGrid.
          **************************************************************************/
-        public GridPrint PrintGrid(string radioButtonChecked) 
+        public void PrintGrid(string radioButtonChecked) 
         {          
             string[] useThisGrid = new string[81];
             GridPrint gridprint = new GridPrint();
@@ -83,9 +72,22 @@ namespace Sudoku
                     useThisGrid = hard;
                     break;
             }
+            //GridPrint newGameboard = 
+            gridprint.PrintGrid(useThisGrid);
+            //return newGameboard;
+        }
 
-            GridPrint newGameboard = gridprint.PrintGrid(useThisGrid);
-            return newGameboard;
+        /*****************************************************
+         * ANROP:   Rätta( array med inmatade siffror );
+         * UPPGIFT: Jämför inmatade siffror med de rätta siffrorna.
+         ******************************************************/
+        public void Rätta(string[] inmatade)
+        {
+
+
+            // Jämför inmatade siffror i array med rätta siffror i array,
+            // Skapar en array med bool där rätta siffror är true och falska false
+            // Skickar denna array till MarkeraSiffror i GridPrint
         }
     }
 }

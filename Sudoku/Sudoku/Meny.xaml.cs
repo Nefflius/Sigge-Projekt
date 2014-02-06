@@ -32,6 +32,12 @@ namespace Sudoku
         }
         private string radioButtonChecked;
 
+        /**********************************************************
+        ANROP:      Anropas då Spela-knappen clickas.
+        UPPGIFT:    Läser av radiobutton och skickar vidare vilken
+                    nivå som användaren har valt.
+                    Visar och döljer även spelplan och meny.
+        ***********************************************************/
         private void spela_Click(object sender, RoutedEventArgs e)
         {
             var main = Application.Current.MainWindow as MainWindow;
@@ -49,8 +55,10 @@ namespace Sudoku
             else if (Convert.ToBoolean(rbS.IsChecked))
                 radioButtonChecked = "hard";
 
-                // skickar in vilken radiobutton som är markerad
-            main.PrintGrind(model.PrintGrid(radioButtonChecked));
+
+            model.PrintGrid(radioButtonChecked); 
+            //main.PrintGrid(model.PrintGrid(radioButtonChecked));
+
             main.spelplanComponent.Timer.Start();
 
         }
