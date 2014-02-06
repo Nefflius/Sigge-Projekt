@@ -58,11 +58,21 @@ namespace Sudoku
                     isåfall till Rättafunktion i Sudokumodel.
         *****************************************************************/
         public void Rätta() 
-        { 
-            // Läs av alla rutor, om alla är ifyllda, rätta!
-            // Om ej, ge en textbox som säger att användare ska fylla i alla rutor.
-            
-            // Läs av alla textbox, lägg i en array och skicka till Rätta-funktion i Sudokumodel
+        {
+            string[] arr = new string[81];
+            for (int i = 0; i < 81; i++)  // Läs av alla rutor, om alla är ifyllda, rätta!
+            {
+                TextBox tb = (TextBox)nameGridPrint.Children[i];
+                arr[i] = tb.Text;           
+                if (arr[i] == "")
+                {
+                    // Om ej, ge en textbox som säger att användare ska fylla i alla rutor.
+                    return;
+                }
+            }
+
+            SudokuModel model = new SudokuModel();
+            model.Rätta(arr);               // skicka till Rätta-funktion i Sudokumodel                      
         }
         
         /*****************************************************************

@@ -82,6 +82,8 @@ namespace Sudoku
          ******************************************************/
         public void Rätta(string[] inmatade)
         {
+
+
             // Jämför inmatade siffror i array med rätta siffror i array,
             // Skapar en array med bool där rätta siffror är true och falska false
             // Skickar denna array till MarkeraSiffror i GridPrint
