@@ -40,6 +40,8 @@ namespace Sudoku
         {
             var main = Application.Current.MainWindow as MainWindow;
 
+            main.spelplanComponent.count = 0;  
+
             main.menuComponent.Visibility = Visibility.Collapsed;
             main.spelplanComponent.Visibility = Visibility.Visible;
             //main.gridPrintComponent.Visibility = Visibility.Visible;

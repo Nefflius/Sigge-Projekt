@@ -34,7 +34,7 @@ namespace Sudoku
             Timer.Interval = new TimeSpan(0, 0, 1);
             Timer.Tick += Timer_Tick;
         }
-        int count = 0;
+        public int count = 0;
 
         void Timer_Tick(object sender, EventArgs e)
         {
