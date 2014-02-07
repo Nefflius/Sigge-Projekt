@@ -82,7 +82,7 @@ namespace Sudoku
             bindExit.CanExecute += ExitGame_CanExecute;
             CommandBindings.Add(bindExit);
         }
-
+ 
         public void PrintGrid(GridPrint newGameBoard)
         {
             newGameBoard.SetValue(Grid.ColumnSpanProperty, 3);
@@ -93,6 +93,11 @@ namespace Sudoku
         public void NewGame_CanExecute(object sender, CanExecuteRoutedEventArgs e)
         {
             e.CanExecute = true;
+        }
+
+        private void clickNyttSpel(object sender, RoutedEventArgs e)
+        {
+            
         }
 
         public void NewGame_Executed(object sender, ExecutedRoutedEventArgs e)
@@ -110,7 +115,11 @@ namespace Sudoku
             SudokuModel model = new SudokuModel();
             FileHandeling openSavedGame = new FileHandeling("");
             string savedGame = openSavedGame.OpenFile();
-            model.PrintGrid(savedGame);
+            menuComponent.Visibility = Visibility.Collapsed;
+            spelplanComponent.Visibility = Visibility.Visible;
+            gridPrintComponent = model.PrintGrid(savedGame, gridPrintComponent);
+
+            gridPrintComponent.Visibility = Visibility.Visible;
         }
 
         public void SaveFile_CanExecute(object sender, CanExecuteRoutedEventArgs e)

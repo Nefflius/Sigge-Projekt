@@ -22,7 +22,7 @@
     </UserControl.Resources>
     <Border BorderBrush="Gray" BorderThickness="0" Background="White" Margin="20">
         <Viewbox Stretch="Uniform">
-            <Grid Name="nameGridPrint" Width="260">
+            <Grid Name="nameGridPrint" Width="260" Height="260">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*"/>
                     <RowDefinition Height="*"/>

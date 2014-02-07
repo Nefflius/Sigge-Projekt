@@ -53,17 +53,17 @@ namespace Sudoku
 
         private void clickRätta(object sender, RoutedEventArgs e)
         {
-            GridPrint gridprint = new GridPrint();
-            gridprint.Rätta();
+            MainWindow main = Application.Current.MainWindow as MainWindow;
+            main.gridPrintComponent.Rätta(main.gridPrintComponent);
         }
 
         private void clickNyttSpel(object sender, RoutedEventArgs e)
         {
             var main = Application.Current.MainWindow as MainWindow;
+
             main.menuComponent.Visibility = Visibility.Visible;
             main.spelplanComponent.Visibility = Visibility.Collapsed;
             main.gridPrintComponent.Visibility = Visibility.Collapsed;
-
         }
 
         private void clickHjälp(object sender, RoutedEventArgs e)
