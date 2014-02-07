@@ -53,8 +53,18 @@ namespace Sudoku
 
         private void clickRätta(object sender, RoutedEventArgs e)
         {
-            MainWindow main = Application.Current.MainWindow as MainWindow;
-            main.gridPrintComponent.Rätta(main.gridPrintComponent);
+            var main = Application.Current.MainWindow as MainWindow;            
+            Button btn = (Button) sender;
+
+            if (btn.Content.ToString() == "RÄTTA")
+            {
+                btn.Content = "FORTSÄTT";
+                main.gridPrintComponent.Rätta(main.gridPrintComponent);
+            }
+            else if (btn.Content.ToString() == "FORTSÄTT")
+            {
+                btn.Content = "RÄTTA";
+            }
         }
 
         private void clickNyttSpel(object sender, RoutedEventArgs e)
@@ -69,7 +79,7 @@ namespace Sudoku
         private void clickHjälp(object sender, RoutedEventArgs e)
         {
             MessageBox.Show("Ett sudoku består av nio gånger nio rutor som i sin tur är indelade i nio större rutor. För att lösa ett sudoku skall man placera ut siffrorna 1-9 på spelfältet på ett sådant vis att varje siffra bara finns en gång per rad, en gång per kolumn och dessutom bara en gång per större ruta.",
-                             "Hjälp");  
+                             "Hjälp");
         }
     }
 }

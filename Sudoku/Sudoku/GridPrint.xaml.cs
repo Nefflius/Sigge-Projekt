@@ -25,7 +25,7 @@ namespace Sudoku
         {
             InitializeComponent();  
         }
-        
+        public int antalDrag = 0;
 
         /*****************************************************
         ANROP:      PrintGrid(string[]);
@@ -104,8 +104,14 @@ namespace Sudoku
             {
                 e.Handled = true;
             }
-            
+            antalDrag++;
+            ändraAntalDrag();
         }
 
+        void ändraAntalDrag()
+        {
+            var main = Application.Current.MainWindow as MainWindow;
+            main.spelplanComponent.lblAntalDrag.Content = antalDrag;
+        }
     }
 }
