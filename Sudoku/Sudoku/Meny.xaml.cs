@@ -22,9 +22,7 @@ namespace Sudoku
     /// </summary>
     public partial class Meny : UserControl
 
-    {
-      
-    
+    {   
         public Meny()
         {
             InitializeComponent();
@@ -44,7 +42,7 @@ namespace Sudoku
 
             main.menuComponent.Visibility = Visibility.Collapsed;
             main.spelplanComponent.Visibility = Visibility.Visible;
-            main.gridPrintComponent.Visibility = Visibility.Visible;
+            //main.gridPrintComponent.Visibility = Visibility.Visible;
 
             SudokuModel model = new SudokuModel();
 
@@ -55,8 +53,11 @@ namespace Sudoku
             else if (Convert.ToBoolean(rbS.IsChecked))
                 radioButtonChecked = "hard";
 
+            main.gridPrintComponent = model.PrintGrid(radioButtonChecked, main.gridPrintComponent);
+            //main.gridPrintComponent.PrintGrid(model.easy);
 
-            model.PrintGrid(radioButtonChecked); 
+            main.gridPrintComponent.Visibility = Visibility.Visible;
+
             //main.PrintGrid(model.PrintGrid(radioButtonChecked));
 
             main.spelplanComponent.Timer.Start();

@@ -8,7 +8,7 @@ namespace Sudoku
 {
     class SudokuModel
     {
-        string[] easy = new string[81] { " ", " ", " ",     "7", " ", "4",     " ", "8", " ", 
+        public string[] easy = new string[81] { " ", " ", " ",     "7", " ", "4",     " ", "8", " ", 
                                          "5", " ", "4",     " ", "2", " ",     "9", "7", "6",  
                                          " ", " ", " ",     " ", " ", " ",     " ", " ", " ",
         
@@ -43,6 +43,15 @@ namespace Sudoku
                                            "3", " ", " ",       " ", "8", "4",      "6", " ", " ", 
                                            "7", " ", " ",       "1", " ", " ",      " ", " ", " ", };
 
+        int[] mediumsolution = new int[81] {5,2,7, 8,1,9, 3,6,4,
+                                            1,8,9, 4,6,3, 2,5,7,
+                                            6,3,4, 7,5,2, 1,9,8,
+                                            9,5,1, 3,2,7, 8,4,6,
+                                            2,7,3, 6,4,8, 9,1,5,
+                                            8,4,6, 9,5,1, 7,3,2,
+                                            4,1,2, 9,7,6, 5,8,3,
+                                            3,9,5, 2,8,4, 6,7,1, 
+                                            7,6,8, 1,3,5, 4,2,9};
 
         string[] hard = new string[81] { " ", "9", " ",     " ", "4", " ",     " ", "8", " ", 
                                          " ", "4", "2",     " ", "3", " ",     "6", "7", " ", 
@@ -56,18 +65,27 @@ namespace Sudoku
                                          " ", "7", "9",     " ", "2", " ",     "8", "5", " ", 
                                          " ", "5", " ",     " ", "1", " ",     " ", "3", " ", };
 
+        int[] hardsolution = new int[81] {7,9,6, 1,4,5, 3,8,2,
+                                          5,4,2, 9,3,8, 6,7,1,
+                                          8,3,1, 6,7,2, 9,4,5,
+                                          4,6,7, 2,9,3, 5,1,8,
+                                          3,2,5, 7,8,1, 4,9,6,
+                                          9,1,8, 5,6,4, 7,2,3,
+                                          2,8,3, 4,5,9, 1,6,7,
+                                          1,7,9, 3,2,6, 8,5,4, 
+                                          6,5,4, 8,1,7, 2,3,9};
+
         public enum Difficulty { Easy, Medium, Hard };
-        string difficulty;
+        string difficulty = "easy";
 
         /**************************************************************************
          * ANROP:   PrintGrid( vilken radiobutton som är markerad );
          * UPPGIFT: Läser in vilken svårighetsgrad som är markerad och skriver
                     ut i GridPrint-usercontrol, sparar grid i globala nuvarandeGrid.
          **************************************************************************/
-        public void PrintGrid(string radioButtonChecked) 
+        public GridPrint PrintGrid(string radioButtonChecked, GridPrint gridprint) 
         {          
             string[] useThisGrid = new string[81];
-            GridPrint gridprint = new GridPrint();
 
             // när det finns flera spelplaner, randomiza fram vilken av dom som ska visas.
 
@@ -87,15 +105,15 @@ namespace Sudoku
                     break;
             }
             
-            gridprint.PrintGrid(useThisGrid);
-            
+            return gridprint.PrintGrid(useThisGrid);
         }
 
+        
         /*****************************************************
          * ANROP:   Rätta( array med inmatade siffror );
          * UPPGIFT: Jämför inmatade siffror med de rätta siffrorna.
          ******************************************************/
-        public void Rätta(string[] inmatade)
+        public void Rätta(string[] inmatade, GridPrint gridprint)
         {
             int[] solution = new int[81];
 
@@ -104,6 +122,12 @@ namespace Sudoku
                 case "easy":
                     solution = easySolution;
                     break;  
+                case "medium":
+                    solution = mediumsolution;
+                    break;
+                case "hard":
+                    solution = hardsolution;
+                    break;
             }
 
             // Konverterar inmatade sträng-array till en int-array (alltså jämförbar med solution)
@@ -122,8 +146,7 @@ namespace Sudoku
             }
 
             // Skickar denna array till MarkeraSiffror i GridPrint
-            GridPrint gp = new GridPrint();
-            gp.MarkeraSiffror(rättad);
+            gridprint.MarkeraSiffror(rättad);
         }
     }
 }

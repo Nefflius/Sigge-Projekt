@@ -30,15 +30,6 @@ namespace Sudoku
             Application.Current.Shutdown();
         }
 
-        public void PrintGrid(GridPrint newGameBoard)
-        {
-            //gridPrintComponent = newGameBoard;
-            
-            newGameBoard.SetValue(Grid.ColumnSpanProperty, 3);
-
-            grdMain.Children.Add(newGameBoard);
-        }
-
         private void clickNyttSpel(object sender, RoutedEventArgs e)
         {
 
