@@ -56,7 +56,7 @@ namespace Sudoku
                                          " ", "7", "9",     " ", "2", " ",     "8", "5", " ", 
                                          " ", "5", " ",     " ", "1", " ",     " ", "3", " ", };
 
-        public enum Difficulty { Easy, Medium, Hard };
+        
         string difficulty;
 
         /**************************************************************************
@@ -84,6 +84,9 @@ namespace Sudoku
                 case "hard":
                     useThisGrid = hard;
                     difficulty = "hard";
+                    break;
+                default:
+                    useThisGrid = radioButtonChecked.Select(c => c.ToString()).ToArray();
                     break;
             }
             

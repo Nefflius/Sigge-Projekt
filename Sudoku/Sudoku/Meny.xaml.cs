@@ -57,7 +57,6 @@ namespace Sudoku
 
 
             model.PrintGrid(radioButtonChecked); 
-            //main.PrintGrid(model.PrintGrid(radioButtonChecked));
 
             main.spelplanComponent.Timer.Start();
 

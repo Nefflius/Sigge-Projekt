@@ -18,6 +18,24 @@ namespace Sudoku
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
+    /// 
+
+    public static class CustomCommands
+    {
+        public static readonly RoutedUICommand Exit = new RoutedUICommand
+                (
+                        "Exit",
+                        "Exit",
+                        typeof(CustomCommands),
+                        new InputGestureCollection()
+                                {
+                                        new KeyGesture(Key.F4, ModifierKeys.Alt)
+                                }
+                );
+
+        //Define more commands here, just like the one above
+    }
+
     public partial class MainWindow : Window
     {
         bool gameChanged = true;
@@ -26,6 +44,16 @@ namespace Sudoku
             InitializeComponent();
             createCommandBindings();
         }
+
+        //private void ExitCommand_CanExecute(object sender, CanExecuteRoutedEventArgs e)
+        //{
+        //    e.CanExecute = true;
+        //}
+
+        //private void ExitCommand_Executed(object sender, ExecutedRoutedEventArgs e)
+        //{
+        //    Application.Current.Shutdown();
+        //}
 
         private void createCommandBindings()
         {
@@ -49,7 +77,7 @@ namespace Sudoku
             bindSave.CanExecute += SaveFile_CanExecute;
             CommandBindings.Add(bindSave);
 
-            bindExit.Command = ApplicationCommands.Close;
+            bindExit.Command = CustomCommands.Exit;
             bindExit.Executed += ExitGame_Executed;
             bindExit.CanExecute += ExitGame_CanExecute;
             CommandBindings.Add(bindExit);
@@ -79,8 +107,10 @@ namespace Sudoku
 
         public void OpenFile_Executed(object sender, ExecutedRoutedEventArgs e)
         {
+            SudokuModel model = new SudokuModel();
             FileHandeling openSavedGame = new FileHandeling("");
-            openSavedGame.OpenFile();
+            string savedGame = openSavedGame.OpenFile();
+            model.PrintGrid(savedGame);
         }
 
         public void SaveFile_CanExecute(object sender, CanExecuteRoutedEventArgs e)
