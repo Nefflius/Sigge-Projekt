@@ -114,10 +114,11 @@ namespace Sudoku
         {
             SudokuModel model = new SudokuModel();
             FileHandeling openSavedGame = new FileHandeling("");
-            string savedGame = openSavedGame.OpenFile();
+            string[] savedGame = openSavedGame.OpenFile();
             menuComponent.Visibility = Visibility.Collapsed;
             spelplanComponent.Visibility = Visibility.Visible;
-            gridPrintComponent = model.PrintGrid(savedGame, gridPrintComponent);
+            string[] arrayelementAsArray = new string[1]{savedGame[0]};
+            gridPrintComponent = model.PrintGrid(savedGame[1], gridPrintComponent, arrayelementAsArray );
 
             gridPrintComponent.Visibility = Visibility.Visible;
         }

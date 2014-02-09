@@ -11,14 +11,14 @@ namespace Sudoku
     class FileHandeling
     {
         string _filePath;
-        string _sudokuElements = string.Empty;
 
         public FileHandeling(string filepath)
         {
             _filePath = filepath;
         }
-        public string OpenFile()
+        public string[] OpenFile()
         {
+            string[] _sudokuElements = new string[3];
             bool _openFileSuccess;
             
             OpenFileDialog _openSudoku = new OpenFileDialog();
@@ -34,15 +34,16 @@ namespace Sudoku
              if (_openFileSuccess)
              {
                  _filePath = _openSudoku.FileName;
-                 createArrayFromFile();
+                 StreamReader _readSavedGame = new StreamReader(_filePath);
+                 
+                 for (int i = 0; i < 3; i++)
+                 {
+                     _sudokuElements[i] = _readSavedGame.ReadLine();
+                 }
              }
             return _sudokuElements;
         }
 
-        private void createArrayFromFile()
-        {
-            _sudokuElements = File.ReadAllText(_filePath);
-        }
     }
 
 }

@@ -26,7 +26,7 @@
             <TextBox x:Name="timer" BorderThickness="0" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Courier New" FontSize="16" Text="00:00:00" IsReadOnly="True" />
         </GroupBox>
         <GroupBox Grid.Row="5" Grid.RowSpan="2" Header="Antal drag" Background="White">
-            <Label HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Courier New" FontSize="16">5</Label>
+            <Label Name ="lblAntalDrag" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Courier New" FontSize="16">0</Label>
         </GroupBox>
         <Button Grid.Row="8" Margin="5" Background="Gray" FontSize="17" Foreground="White" Click="clickAvsluta">AVSLUTA</Button>
     </Grid>

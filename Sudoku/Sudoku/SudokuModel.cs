@@ -8,7 +8,9 @@ namespace Sudoku
 {
     class SudokuModel
     {
-        public string[] easy = new string[81] { " ", " ", " ",     "7", " ", "4",     " ", "8", " ", 
+
+        public string[] easy = new string[81] 
+                                       { " ", " ", " ",     "7", " ", "4",     " ", "8", " ", 
                                          "5", " ", "4",     " ", "2", " ",     "9", "7", "6",  
                                          " ", " ", " ",     " ", " ", " ",     " ", " ", " ",
         
@@ -84,7 +86,7 @@ namespace Sudoku
          * UPPGIFT: Läser in vilken svårighetsgrad som är markerad och skriver
                     ut i GridPrint-usercontrol, sparar grid i globala nuvarandeGrid.
          **************************************************************************/
-        public GridPrint PrintGrid(string radioButtonChecked, GridPrint gridprint) 
+        public GridPrint PrintGrid(string radioButtonChecked, GridPrint gridprint, string[] savedGame = null ) 
         {          
             string[] useThisGrid = new string[81];
 
@@ -98,17 +100,20 @@ namespace Sudoku
                     break;
                 case "medium":
                     useThisGrid = medium;
-
                     break;
                 case "hard":
                     useThisGrid = hard;
+                   
                     break;
                 default:
                     useThisGrid = radioButtonChecked.Select(c => c.ToString()).ToArray();
                     break;
             }
-            
-            return gridprint.PrintGrid(useThisGrid);
+
+            if (savedGame == null)
+                savedGame = useThisGrid;
+
+            return gridprint.PrintGrid(useThisGrid, savedGame);
         }
 
         

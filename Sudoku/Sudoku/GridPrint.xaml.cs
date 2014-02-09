@@ -25,30 +25,35 @@ namespace Sudoku
         {
             InitializeComponent();  
         }
-        
+        public int antalDrag = 0;
 
         /*****************************************************
         ANROP:      PrintGrid(string[]);
         UPPGIFT:    Tar emot array med spelplan-siffror, 
                     skriver ut spelplan i GridPrint-usercontrol.
         ******************************************************/
-        public GridPrint PrintGrid(string[] array)
+        public GridPrint PrintGrid(string[] startUpBoard, string[] savedGame)
         {
+            string savedGameAs1String = savedGame[0].ToString();
+            MessageBox.Show("Helvete vad det strular nu");
             for (int i = 0; i < 81; i++)
             {
                 TextBox textbox = (TextBox) nameGridPrint.Children[i];
                 
-                string input = array[i];
+                string startUpBoardCell = startUpBoard[i];
+                string savedGameCell = savedGameAs1String.Substring(i,1);
+                
+                if (savedGameCell != "0")
+                    textbox.Text = savedGameCell;
 
-                if (input != " ") 
+                if (startUpBoardCell != " ")
                 {
-                    textbox.Text = array[i];
-
+                    textbox.Text = startUpBoardCell;
                     textbox.IsEnabled = false;
                     textbox.Foreground = Brushes.Gray;
                     textbox.BorderBrush = Brushes.Gray;
                     textbox.FontWeight = FontWeights.ExtraBold;
-                } 
+                }
             }
             
             return this;
@@ -104,8 +109,14 @@ namespace Sudoku
             {
                 e.Handled = true;
             }
-            
+            antalDrag++;
+            ändraAntalDrag();
         }
 
+        void ändraAntalDrag()
+        {
+            var main = Application.Current.MainWindow as MainWindow;
+            main.spelplanComponent.lblAntalDrag.Content = antalDrag;
+        }
     }
 }
