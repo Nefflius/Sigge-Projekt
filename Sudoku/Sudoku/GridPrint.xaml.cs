@@ -35,13 +35,14 @@ namespace Sudoku
         public GridPrint PrintGrid(string[] startUpBoard, string[] savedGame)
         {
             string savedGameAs1String = savedGame[0].ToString();
-            MessageBox.Show("Helvete vad det strular nu");
+
             for (int i = 0; i < 81; i++)
             {
                 TextBox textbox = (TextBox) nameGridPrint.Children[i];
-                
+                string savedGameCell = string.Empty;
                 string startUpBoardCell = startUpBoard[i];
-                string savedGameCell = savedGameAs1String.Substring(i,1);
+                if (savedGame != startUpBoard)
+                    savedGameCell = savedGameAs1String.Substring(i,1);
                 
                 if (savedGameCell != "0")
                     textbox.Text = savedGameCell;
