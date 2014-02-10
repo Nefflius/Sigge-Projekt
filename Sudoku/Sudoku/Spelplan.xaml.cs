@@ -51,6 +51,24 @@ namespace Sudoku
             Application.Current.Shutdown();                 //Stänger av programet
         }
 
+        public void btnRätta_IsEnabled()
+        {
+            var main = Application.Current.MainWindow as MainWindow;
+
+            for (int i = 0; i < 81; i++)  // Läs av alla rutor, om alla är ifyllda, rätta!
+            {
+                TextBox tb = (TextBox)main.gridPrintComponent.nameGridPrint.Children[i];
+
+                if (tb.Text == "") // om en textbox är tom
+                {
+                    return;
+                }
+            }
+
+            btnRätta.IsEnabled = true;
+            
+        }
+
         private void clickRätta(object sender, RoutedEventArgs e)
         {
             var main = Application.Current.MainWindow as MainWindow;            
@@ -64,6 +82,7 @@ namespace Sudoku
             else if (btn.Content.ToString() == "FORTSÄTT")
             {
                 btn.Content = "RÄTTA";
+                main.gridPrintComponent.continueGame();
             }
         }
 

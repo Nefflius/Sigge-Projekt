@@ -4,6 +4,9 @@
         xmlns:local="clr-namespace:Sudoku"
         xmlns:Properties="clr-namespace:Sudoku.Properties" x:Class="Sudoku.MainWindow"
         Title="Sudoku" Height="500" Width="650">
+    <Window.Resources>
+        <ImageBrush x:Key="windowBackground" ImageSource="Sudoku_paint.jpg" />
+    </Window.Resources>
     <Grid Name="grdMain">
         <Grid.ColumnDefinitions>
             <ColumnDefinition />
@@ -11,8 +14,8 @@
             <ColumnDefinition />
             <ColumnDefinition />
         </Grid.ColumnDefinitions>
-        <Menu x:Name="mnuMain" IsMainMenu="True" Margin="0,0,0,10">
-            <MenuItem Header="_Arkiv" x:Name="mnuFile">
+        <Menu x:Name="mnuMain" IsMainMenu="True" Margin="0,0,0,10" Background="{DynamicResource windowBackground}" Grid.ColumnSpan="4">
+            <MenuItem Header="_Arkiv" x:Name="mnuFile" Background="White">
                 <MenuItem x:Name="mnuOpen" Header="_Öppna" Click="mnuOpen_Click_1">
                     <MenuItem.Icon>
                         <Image Source="Properties/Resources/Images/icons/Open.png" />
@@ -30,7 +33,7 @@
                     </MenuItem.Icon>
                 </MenuItem>
             </MenuItem>
-            <MenuItem Header="_Hjälp" x:Name="mnuHelp"/>
+            <MenuItem Header="_Hjälp" x:Name="mnuHelp" Background="White"/>
         </Menu>
         <local:Meny x:Name="menuComponent" Grid.ColumnSpan="4" Visibility="Visible"></local:Meny>
         <local:Spelplan x:Name="spelplanComponent" Grid.Column="3" Visibility="Collapsed"></local:Spelplan>

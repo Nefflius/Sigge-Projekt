@@ -49,12 +49,5 @@ namespace Sudoku
         {
 
         }
-
-        public void ShowTextBox()
-        {
-            // Textruta dyker upp mitt i som säger att användare måste
-            // fylla i alla rutor innan den rättar
-            // sedan: Click Enter to continue...
-        }
     }
 }
