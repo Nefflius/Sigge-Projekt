@@ -128,7 +128,7 @@
     <Resource Include="Properties\Resources\Images\icons\Exit.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Sudoku_paint.jpg" />
+    <Resource Include="Sudoku_background2.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

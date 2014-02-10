@@ -23,7 +23,7 @@
     <Viewbox Stretch="Uniform">
         <Border BorderBrush="Black" BorderThickness="1" Background="White" Margin="20">
             <Border.Effect>
-                <DropShadowEffect Opacity="0.5" />
+                <DropShadowEffect Opacity="0.5" ShadowDepth="10.0" Direction="230" />
             </Border.Effect>
             <Grid Name="nameGridPrint" Width="260" Height="260">
                 <Grid.RowDefinitions>

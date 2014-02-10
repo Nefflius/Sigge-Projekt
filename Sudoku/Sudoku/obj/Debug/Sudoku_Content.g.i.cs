@@ -8,6 +8,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("sudoku_paint.jpg")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("sudoku_background3.png")]
 
 

@@ -34,6 +34,15 @@ namespace Sudoku
 		******************************************************/
 		public GridPrint PrintGrid(string[] array)
 		{
+            for (int i = 0; i < 81; i++)            // Tömmer spelplanen 
+            {
+                TextBox tb = (TextBox)nameGridPrint.Children[i];
+                tb.Text = "";
+            }
+            antalDrag = 0;                          // Återställer antal drag innan nytt spel
+            var main = Application.Current.MainWindow as MainWindow;
+            main.spelplanComponent.lblAntalDrag.Content = antalDrag;
+
 			for (int i = 0; i < 81; i++)
 			{
 				TextBox textbox = (TextBox) nameGridPrint.Children[i];
@@ -41,7 +50,7 @@ namespace Sudoku
 				string input = array[i];
 
 				if (input != " ") 
-				{
+				{ 
 					textbox.Text = array[i];
 
 					textbox.IsEnabled = false;
@@ -135,6 +144,7 @@ namespace Sudoku
 				{
 					textbox.IsEnabled = true;
 					textbox.Foreground = Brushes.Black;
+                    textbox.BorderBrush = Brushes.LightGray;
 				}
 			}
 			
@@ -150,11 +160,16 @@ namespace Sudoku
 
                 if (tb.Text == "") // om en textbox är tom
                 {
+                    main.spelplanComponent.btnRätta.IsEnabled = false;
+                    main.spelplanComponent.btnRätta.Effect = new System.Windows.Media.Effects.DropShadowEffect() { Opacity = 0.5 };
                     return;
                 }
+                else
+                {
+                    main.spelplanComponent.btnRätta.IsEnabled = true;
+                    main.spelplanComponent.btnRätta.Effect = new System.Windows.Media.Effects.DropShadowEffect() { Opacity = 0.8 };
+                }
             }
-
-            main.spelplanComponent.btnRätta.IsEnabled = true;
         }
 	}
 }
