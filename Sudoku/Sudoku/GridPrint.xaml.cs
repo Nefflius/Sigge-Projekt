@@ -34,10 +34,11 @@ namespace Sudoku
 		******************************************************/
 		public GridPrint PrintGrid(string[] array)
 		{
-            for (int i = 0; i < 81; i++)            // Tömmer spelplanen 
+            for (int i = 0; i < 81; i++)            // Tömmer spelplanen
             {
                 TextBox tb = (TextBox)nameGridPrint.Children[i];
                 tb.Text = "";
+                tb.IsEnabled = true;
             }
             antalDrag = 0;                          // Återställer antal drag innan nytt spel
             var main = Application.Current.MainWindow as MainWindow;
