@@ -50,16 +50,20 @@ namespace Sudoku
 				
 				string input = array[i];
 
-				if (input != " ") 
-				{ 
-					textbox.Text = array[i];
+                if (input != " ")
+                {
+                    textbox.Text = array[i];
 
-					textbox.IsEnabled = false;
+                    textbox.IsEnabled = false;
                     textbox.Background = Brushes.White;
-					
-					textbox.BorderBrush = Brushes.Gray;
-					textbox.FontWeight = FontWeights.ExtraBold;
-				} 
+
+                    textbox.BorderBrush = Brushes.Gray;
+                    textbox.FontWeight = FontWeights.ExtraBold;
+                }
+                else
+                {
+                    textbox.FontWeight = FontWeights.Normal;
+                }
 			}
 			
 			return this;

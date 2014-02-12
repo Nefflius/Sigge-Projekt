@@ -100,9 +100,7 @@ namespace Sudoku
         {          
             string[] useThisGrid = new string[81];
 
-            // när det finns flera spelplaner, randomiza fram vilken av dom som ska visas.
-            
-            
+            // när det finns flera spelplaner, randomiza fram vilken av dom som ska visas.           
             switch (radioButtonChecked)
             {
                 case "easy":
@@ -118,12 +116,9 @@ namespace Sudoku
                     difficulty = "hard";
                     break;
             }
-            
-            return gridprint.PrintGrid(useThisGrid);
-            
+            return gridprint.PrintGrid(useThisGrid);            
         }
-
-        
+       
         /*****************************************************
          * ANROP:   Rätta( array med inmatade siffror );
          * UPPGIFT: Jämför inmatade siffror med de rätta siffrorna.
