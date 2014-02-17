@@ -7,18 +7,6 @@ using System.Threading.Tasks;
 namespace Sudoku
 {
 
-    public struct diff
-    {
-        string _difficulty;
-
-        public string Cal
-        {
-            get { return _difficulty; }
-            set { _difficulty = value; }
-        }
-
-    }
-    
     class SudokuModel
     {
 
