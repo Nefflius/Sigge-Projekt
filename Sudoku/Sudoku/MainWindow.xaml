@@ -3,7 +3,10 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:local="clr-namespace:Sudoku"
         xmlns:Properties="clr-namespace:Sudoku.Properties" x:Class="Sudoku.MainWindow"
-        Title="Sudoku" Height="500" Width="650">
+        Title="Sudoku" Height="520" Width="700">
+    <Window.Resources>
+        <ImageBrush x:Key="windowBackground" AlignmentY="Top" Stretch="UniformToFill" ImageSource="Sudoku_background2.png" />
+    </Window.Resources>
     <Grid Name="grdMain">
         <Grid.ColumnDefinitions>
             <ColumnDefinition />
@@ -11,12 +14,11 @@
             <ColumnDefinition />
             <ColumnDefinition />
         </Grid.ColumnDefinitions>
-        <Menu x:Name="mnuMain" IsMainMenu="True" Margin="0,0,0,10">
-            <MenuItem Header="_Arkiv" x:Name="mnuFile">
 
-                <MenuItem x:Name="mnuNew" Header="_Nytt spel" Command="ApplicationCommands.New" ></MenuItem>
-                
-                <MenuItem x:Name="mnuOpen" Header="_Öppna" Command="ApplicationCommands.Open" >
+        <Menu x:Name="mnuMain" IsMainMenu="True" Background="{DynamicResource windowBackground}" Grid.ColumnSpan="4">
+            <MenuItem Header="_Arkiv" x:Name="mnuFile" Background="White" BorderBrush="Black">
+                <MenuItem x:Name="mnuOpen" Header="_Öppna" >
+
                     <MenuItem.Icon>
                         <Image Source="Properties/Resources/Images/icons/Open.png" />
                     </MenuItem.Icon>
@@ -34,7 +36,7 @@
                     </MenuItem.Icon>
                 </MenuItem>
             </MenuItem>
-            <MenuItem Header="_Hjälp" x:Name="mnuHelp"/>
+            <MenuItem Header="_Hjälp" x:Name="mnuHelp" Background="White" BorderBrush="Black"/>
         </Menu>
         
         

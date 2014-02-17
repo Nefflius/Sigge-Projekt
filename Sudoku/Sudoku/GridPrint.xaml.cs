@@ -15,109 +15,172 @@ using System.Windows.Shapes;
 
 namespace Sudoku
 {
-    /// <summary>
-    /// Interaction logic for GridPrint.xaml
-    /// </summary>
-    public partial class GridPrint : UserControl
-    {
-        //SudokuModel sudokumodel = new SudokuModel();
-        public GridPrint()
-        {
-            InitializeComponent();  
-        }
-        public int antalDrag = 0;
+	/// <summary>
+	/// Interaction logic for GridPrint.xaml
+	/// </summary>
+	public partial class GridPrint : UserControl
+	{
+		//SudokuModel sudokumodel = new SudokuModel();
+		public GridPrint()
+		{
+			InitializeComponent();  
+		}
+		public int antalDrag = 0;
 
-        /*****************************************************
-        ANROP:      PrintGrid(string[]);
-        UPPGIFT:    Tar emot array med spelplan-siffror, 
-                    skriver ut spelplan i GridPrint-usercontrol.
-        ******************************************************/
-        public GridPrint PrintGrid(string[] startUpBoard, string[] savedGame)
-        {
-            string savedGameAs1String = savedGame[0].ToString();
-
-            for (int i = 0; i < 81; i++)
+		/*****************************************************
+		ANROP:      PrintGrid(string[]);
+		UPPGIFT:    Tar emot array med spelplan-siffror, 
+					skriver ut spelplan i GridPrint-usercontrol.
+		******************************************************/
+		public GridPrint PrintGrid(string[] startUpBoard, string[] savedGame)
+		{
+            bool openingSavedGame = false;
+            for (int i = 0; i < 81; i++)            // Tömmer spelplanen
             {
-                TextBox textbox = (TextBox) nameGridPrint.Children[i];
-                string savedGameCell = string.Empty;
+                TextBox tb = (TextBox)nameGridPrint.Children[i];
+                tb.Text = "";
+                tb.IsEnabled = true;
+            }
+            antalDrag = 0;                          // Återställer antal drag innan nytt spel
+            var main = Application.Current.MainWindow as MainWindow;
+            main.spelplanComponent.lblAntalDrag.Content = antalDrag;
+
+			for (int i = 0; i < 81; i++)
+			{
+				TextBox textbox = (TextBox) nameGridPrint.Children[i];
+
+
+                string savedGameCell = savedGame[i];
                 string startUpBoardCell = startUpBoard[i];
                 if (savedGame != startUpBoard)
-                    savedGameCell = savedGameAs1String.Substring(i,1);
+                    openingSavedGame = true;
                 
-                if (savedGameCell != "0")
-                    textbox.Text = savedGameCell;
-
                 if (startUpBoardCell != " ")
                 {
-                    textbox.Text = startUpBoardCell;
                     textbox.IsEnabled = false;
-                    textbox.Foreground = Brushes.Gray;
+                    textbox.Background = Brushes.White;
+
                     textbox.BorderBrush = Brushes.Gray;
                     textbox.FontWeight = FontWeights.ExtraBold;
                 }
-            }
-            
-            return this;
-        }
-
-
-
-        /****************************************************************
-        ANROP:      Rätta();
-        UPPGIFT:    Kontrollerar om alla textbox är ifyllda, skickar dem
-                    isåfall till Rättafunktion i Sudokumodel.
-        *****************************************************************/
-        public void Rätta(GridPrint gridprint) 
-        {
-            string[] arr = new string[81];
-            for (int i = 0; i < 81; i++)  // Läs av alla rutor, om alla är ifyllda, rätta!
-            {
-                TextBox tb = (TextBox)nameGridPrint.Children[i];
-                
-                arr[i] = tb.Text;
-                if (arr[i] == "")
+                else
                 {
-                    MainWindow main = Application.Current.MainWindow as MainWindow;
-                    main.ShowTextBox();
-                    
+                    textbox.FontWeight = FontWeights.Normal;
                 }
-            }
 
-            SudokuModel model = new SudokuModel();
-            model.Rätta(arr, gridprint);               // skicka till Rätta-funktion i Sudokumodel                      
-        }
-        
-        /*****************************************************************
-        ANROP:      MarkeraSiffror(bool[]);
-        UPPGIFT:    Markerar rätta siffror med grönt och felaktiga med rött.
-        ******************************************************************/
-        public void MarkeraSiffror(bool[] array)
-        {
-            for (int i = 0; i < 81; i++)
-            {
-                TextBox tb = (TextBox)nameGridPrint.Children[i];
+                if (!openingSavedGame)
+                    textbox.Text = startUpBoardCell.Trim();
+                else
+                    textbox.Text = savedGameCell.Trim();
+			}
+			
+			return this;
+		}
+
+		/****************************************************************
+		ANROP:      Rätta();
+		UPPGIFT:    Kontrollerar om alla textbox är ifyllda, skickar dem
+					isåfall till Rättafunktion i Sudokumodel.
+		*****************************************************************/
+		public void Rätta(GridPrint gridprint) 
+		{
+			string[] arr = new string[81];
+			for (int i = 0; i < 81; i++)  // Läser in alla textbox och lägger i en array
+			{
+				TextBox tb = (TextBox)nameGridPrint.Children[i];
+				arr[i] = tb.Text;
+			}
+
+			SudokuModel model = new SudokuModel();
+			model.Rätta(arr, gridprint);               // skicka till Rätta-funktion i Sudokumodel                      
+		}
+		
+		/*****************************************************************
+		ANROP:      MarkeraSiffror(bool[]);
+		UPPGIFT:    Markerar rätta siffror med grönt och felaktiga med rött.
+		******************************************************************/
+		public void MarkeraSiffror(bool[] array)
+		{
+            int numGreen = 0;
+
+			for (int i = 0; i < 81; i++)
+			{
+				TextBox tb = (TextBox)nameGridPrint.Children[i];
+
+				tb.IsEnabled = false;               // Låser textboxarna när rätta är klickad
+				tb.BorderBrush = Brushes.Gray;      // Färgar textboxarna mörkgråa eftersom de får ljusgrå som default när de är låsta...
 
                 if (array[i])
+                {
                     tb.Foreground = Brushes.Green;
+                    numGreen++;
+                }
                 else
                     tb.Foreground = Brushes.Red;
-            }
-        }
+			}
 
-        private void TextBox_PreviewTextInput(object sender, TextCompositionEventArgs e)
-        {
-            if (!char.IsDigit(e.Text, e.Text.Length - 1))
+            if (numGreen == 81)
             {
-                e.Handled = true;
+                // Något roligt händer eftersom användare vunnit!!
             }
-            antalDrag++;
-            ändraAntalDrag();
-        }
+		}
 
-        void ändraAntalDrag()
-        {
+		private void TextBox_PreviewTextInput(object sender, TextCompositionEventArgs e)
+		{
+			if (!char.IsDigit(e.Text, e.Text.Length - 1))
+			{
+				e.Handled = true;
+			}
+
+			antalDrag++;
             var main = Application.Current.MainWindow as MainWindow;
             main.spelplanComponent.lblAntalDrag.Content = antalDrag;
+		}
+
+		public void continueGame()
+		{
+			var main = Application.Current.MainWindow as MainWindow;
+
+			for (int i = 0; i < 81; i++)
+			{
+				TextBox textbox = (TextBox)nameGridPrint.Children[i];
+
+				if (textbox.FontWeight == FontWeights.ExtraBold)
+				{
+					textbox.IsEnabled = false;
+					textbox.Foreground = Brushes.Gray;
+                    textbox.BorderBrush = Brushes.Gray;
+				}
+				else
+				{
+					textbox.IsEnabled = true;
+					textbox.Foreground = Brushes.Black;
+                    textbox.BorderBrush = Brushes.LightGray;
+				}
+			}
+			
+		}
+
+        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            var main = Application.Current.MainWindow as MainWindow;
+
+            for (int i = 0; i < 81; i++)  // Läs av alla rutor, om alla är ifyllda, rätta!
+            {
+                TextBox tb = (TextBox)main.gridPrintComponent.nameGridPrint.Children[i];
+
+                if (tb.Text == "") // om en textbox är tom
+                {
+                    main.spelplanComponent.btnRätta.IsEnabled = false;
+                    main.spelplanComponent.btnRätta.Effect = new System.Windows.Media.Effects.DropShadowEffect() { Opacity = 0.5 };
+                    return;
+                }
+                else
+                {
+                    main.spelplanComponent.btnRätta.IsEnabled = true;
+                    main.spelplanComponent.btnRätta.Effect = new System.Windows.Media.Effects.DropShadowEffect() { Opacity = 0.8 };
+                }
+            }
         }
-    }
+	}
 }

@@ -6,6 +6,19 @@ using System.Threading.Tasks;
 
 namespace Sudoku
 {
+
+    public struct diff
+    {
+        string _difficulty;
+
+        public string Cal
+        {
+            get { return _difficulty; }
+            set { _difficulty = value; }
+        }
+
+    }
+    
     class SudokuModel
     {
 
@@ -79,7 +92,7 @@ namespace Sudoku
                                           6,5,4, 8,1,7, 2,3,9};
 
         public enum Difficulty { Easy, Medium, Hard };
-        string difficulty = "easy";
+        static string difficulty;
 
         /**************************************************************************
          * ANROP:   PrintGrid( vilken radiobutton som är markerad );
@@ -90,8 +103,7 @@ namespace Sudoku
         {          
             string[] useThisGrid = new string[81];
 
-            // när det finns flera spelplaner, randomiza fram vilken av dom som ska visas.
-
+            // när det finns flera spelplaner, randomiza fram vilken av dom som ska visas.           
             switch (radioButtonChecked)
             {
                 case "easy":
@@ -115,16 +127,16 @@ namespace Sudoku
 
             return gridprint.PrintGrid(useThisGrid, savedGame);
         }
-
-        
+       
         /*****************************************************
          * ANROP:   Rätta( array med inmatade siffror );
          * UPPGIFT: Jämför inmatade siffror med de rätta siffrorna.
          ******************************************************/
         public void Rätta(string[] inmatade, GridPrint gridprint)
         {
-            int[] solution = new int[81];
-
+           // diff _diff = new diff();
+            int[] solution = new int[81];           
+            
             switch (difficulty)
             {
                 case "easy":
@@ -156,5 +168,6 @@ namespace Sudoku
             // Skickar denna array till MarkeraSiffror i GridPrint
             gridprint.MarkeraSiffror(rättad);
         }
+
     }
 }

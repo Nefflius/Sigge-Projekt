@@ -114,11 +114,21 @@ namespace Sudoku
         {
             SudokuModel model = new SudokuModel();
             FileHandeling openSavedGame = new FileHandeling("");
-            string[] savedGame = openSavedGame.OpenFile();
+            string[] savedFile = openSavedGame.OpenFile();
             menuComponent.Visibility = Visibility.Collapsed;
             spelplanComponent.Visibility = Visibility.Visible;
-            string[] arrayelementAsArray = new string[1]{savedGame[0]};
-            gridPrintComponent = model.PrintGrid(savedGame[1], gridPrintComponent, arrayelementAsArray );
+            //string[] testarray = new string[81]{savedFile[0].ToString().ToArray();
+            
+            string[] savedGame = new string[81];
+            for (int i = 0; i < 81; i++)
+            {
+                savedGame[i] = savedFile[0].Substring(i, 1);
+            }
+
+            
+            //string[] startUpBoard = savedFile.Select(startupCell => startupCell.ToString()).ToArray();
+            
+            gridPrintComponent = model.PrintGrid(savedFile[1], gridPrintComponent, savedGame);
 
             gridPrintComponent.Visibility = Visibility.Visible;
         }
@@ -142,13 +152,6 @@ namespace Sudoku
         public void ExitGame_Executed(object sender, ExecutedRoutedEventArgs e)
         {
             Application.Current.Shutdown();
-        }
-
-        public void ShowTextBox()
-        {
-            // Textruta dyker upp mitt i som säger att användare måste
-            // fylla i alla rutor innan den rättar
-            // sedan: Click Enter to continue...
         }
     }
 }

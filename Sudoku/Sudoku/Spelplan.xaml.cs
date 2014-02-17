@@ -64,6 +64,7 @@ namespace Sudoku
             else if (btn.Content.ToString() == "FORTSÄTT")
             {
                 btn.Content = "RÄTTA";
+                main.gridPrintComponent.continueGame();
             }
         }
 
