@@ -32,8 +32,9 @@ namespace Sudoku
 		UPPGIFT:    Tar emot array med spelplan-siffror, 
 					skriver ut spelplan i GridPrint-usercontrol.
 		******************************************************/
-		public GridPrint PrintGrid(string[] array)
+		public GridPrint PrintGrid(string[] startUpBoard, string[] savedGame)
 		{
+            bool openingSavedGame = false;
             for (int i = 0; i < 81; i++)            // Tömmer spelplanen
             {
                 TextBox tb = (TextBox)nameGridPrint.Children[i];
@@ -47,13 +48,15 @@ namespace Sudoku
 			for (int i = 0; i < 81; i++)
 			{
 				TextBox textbox = (TextBox) nameGridPrint.Children[i];
-				
-				string input = array[i];
 
-                if (input != " ")
+
+                string savedGameCell = savedGame[i];
+                string startUpBoardCell = startUpBoard[i];
+                if (savedGame != startUpBoard)
+                    openingSavedGame = true;
+                
+                if (startUpBoardCell != " ")
                 {
-                    textbox.Text = array[i];
-
                     textbox.IsEnabled = false;
                     textbox.Background = Brushes.White;
 
@@ -64,12 +67,15 @@ namespace Sudoku
                 {
                     textbox.FontWeight = FontWeights.Normal;
                 }
+
+                if (!openingSavedGame)
+                    textbox.Text = startUpBoardCell.Trim();
+                else
+                    textbox.Text = savedGameCell.Trim();
 			}
 			
 			return this;
 		}
-
-
 
 		/****************************************************************
 		ANROP:      Rätta();

@@ -1,4 +1,4 @@
-﻿<Window
+﻿ <Window
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:local="clr-namespace:Sudoku"
@@ -14,20 +14,23 @@
             <ColumnDefinition />
             <ColumnDefinition />
         </Grid.ColumnDefinitions>
+
         <Menu x:Name="mnuMain" IsMainMenu="True" Background="{DynamicResource windowBackground}" Grid.ColumnSpan="4">
             <MenuItem Header="_Arkiv" x:Name="mnuFile" Background="White" BorderBrush="Black">
-                <MenuItem x:Name="mnuOpen" Header="_Öppna" Click="mnuOpen_Click_1">
+                <MenuItem x:Name="mnuOpen" Header="_Öppna" >
+
                     <MenuItem.Icon>
                         <Image Source="Properties/Resources/Images/icons/Open.png" />
                     </MenuItem.Icon>
                 </MenuItem>
-                <MenuItem x:Name="mnuSave" Header="_Spara" Click="mnuSave_Click_1">
+
+                <MenuItem x:Name="mnuSave" Header="_Spara" Command="ApplicationCommands.Save" >
                     <MenuItem.Icon>
                         <Image Source="Properties/Resources/Images/icons/Save.png" />
                     </MenuItem.Icon>
                 </MenuItem>
                 <Separator></Separator>
-                <MenuItem x:Name="mnuExit" Header="A_vsluta" Click="mnuExit_Click_1">
+                <MenuItem x:Name="mnuExit" Header="A_vsluta" Command="ApplicationCommands.Close" >
                     <MenuItem.Icon>
                         <Image Source="Properties/Resources/Images/icons/Exit.png" />
                     </MenuItem.Icon>
@@ -35,6 +38,9 @@
             </MenuItem>
             <MenuItem Header="_Hjälp" x:Name="mnuHelp" Background="White" BorderBrush="Black"/>
         </Menu>
+        
+        
+        
         <local:Meny x:Name="menuComponent" Grid.ColumnSpan="4" Visibility="Visible"></local:Meny>
         <local:Spelplan x:Name="spelplanComponent" Grid.Column="3" Visibility="Collapsed"></local:Spelplan>
         <local:GridPrint x:Name="gridPrintComponent" Grid.ColumnSpan="3" Visibility="Collapsed"></local:GridPrint>

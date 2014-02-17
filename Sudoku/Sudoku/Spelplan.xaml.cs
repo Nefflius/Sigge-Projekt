@@ -22,20 +22,14 @@ namespace Sudoku
     /// Interaction logic for Spelplan.xaml
     /// </summary>
     public partial class Spelplan : UserControl
-    {
-
-      
+    {   
         public DateTime begins;
         DispatcherTimer timerChanged;
         public bool start = false; 
 
-       
         public Spelplan()
         {
             InitializeComponent();
-
-           
-
             timerChanged = new DispatcherTimer(new TimeSpan(0, 0, 1), DispatcherPriority.Normal, delegate
             {
                 if (start)

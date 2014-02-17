@@ -57,13 +57,9 @@ namespace Sudoku
                 radioButtonChecked = "hard";
 
             main.gridPrintComponent = model.PrintGrid(radioButtonChecked, main.gridPrintComponent);
-            //main.gridPrintComponent.PrintGrid(model.easy);
 
             main.gridPrintComponent.Visibility = Visibility.Visible;
-
-            //main.PrintGrid(model.PrintGrid(radioButtonChecked));
-
-         
+                    
             main.spelplanComponent.start = true;   // Timer
             main.spelplanComponent.begins = DateTime.Now;  // Timer
 
