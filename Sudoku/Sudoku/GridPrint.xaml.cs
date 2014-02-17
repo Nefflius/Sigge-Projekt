@@ -31,8 +31,9 @@ namespace Sudoku
 		UPPGIFT:    Tar emot array med spelplan-siffror, 
 					skriver ut spelplan i GridPrint-usercontrol.
 		******************************************************/
-		public GridPrint PrintGrid(string[] array)
+		public GridPrint PrintGrid(string[] startUpBoard, string[] savedGame)
 		{
+            bool openingSavedGame = false;
             for (int i = 0; i < 81; i++)            // Tömmer spelplanen
             {
                 TextBox tb = (TextBox)nameGridPrint.Children[i];
@@ -47,18 +48,21 @@ namespace Sudoku
 			for (int i = 0; i < 81; i++)
 			{
 				TextBox textbox = (TextBox) nameGridPrint.Children[i];
-				
-				string input = array[i];
 
-                if (input != " ")
-                {                  
+                string savedGameCell = savedGame[i];
+                string startUpBoardCell = startUpBoard[i];
+                if (savedGame != startUpBoard)
+                    openingSavedGame = true;
+                
+                if (startUpBoardCell != " ")
+                {
                     textbox.IsEnabled = false;
                     textbox.Background = Brushes.White;
 
                     textbox.BorderBrush = Brushes.Gray;
                     textbox.FontWeight = FontWeights.ExtraBold;
 
-                    textbox.Text = array[i];
+                    textbox.Text = startUpBoard[i];
                 }
                 else
                 {
@@ -66,12 +70,15 @@ namespace Sudoku
                     textbox.Foreground = Brushes.Black;
                     textbox.BorderBrush = Brushes.Silver;
                 }
+
+                if (!openingSavedGame)
+                    textbox.Text = startUpBoardCell.Trim();
+                else
+                    textbox.Text = savedGameCell.Trim();
 			}
 			
 			return this;
 		}
-
-
 
 		/****************************************************************
 		ANROP:      Rätta();
@@ -180,6 +187,49 @@ namespace Sudoku
                     main.spelplanComponent.btnRätta.Effect = new System.Windows.Media.Effects.DropShadowEffect() { Opacity = 0.8 };
                 }
             }
+        }
+
+
+
+        //Navigaion using arrows
+        /*****************************************************************************************
+         This will help to navigate between the cells of the grid by pressing the keyboard arrows
+          
+        **************************************************************************************/
+
+        private void Viewbox_PreviewKeyDown_1(object sender, KeyEventArgs e)
+        {
+
+            Action<FocusNavigationDirection> moveFocus = focusDirection =>
+            {
+                e.Handled = true;
+                var request = new TraversalRequest(focusDirection);
+                var focusedElement = Keyboard.FocusedElement as UIElement;
+                if (focusedElement != null)
+                    focusedElement.MoveFocus(request);
+            };
+
+
+            switch (e.Key)
+            {
+                case Key.Left:
+                    moveFocus(FocusNavigationDirection.Previous);
+                    break;
+                case Key.Right:
+                    moveFocus(FocusNavigationDirection.Next);
+                    break;
+                case Key.Up:
+                    moveFocus(FocusNavigationDirection.Up);
+                    break;
+                case Key.Down:
+                    moveFocus(FocusNavigationDirection.Down);
+                    break;
+                default:
+                    break;
+            }
+
+
+
         }
 	}
 }

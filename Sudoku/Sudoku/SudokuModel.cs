@@ -7,21 +7,11 @@ using System.Threading.Tasks;
 namespace Sudoku
 {
 
-    public struct diff
-    {
-        string _difficulty;
-
-        public string Cal
-        {
-            get { return _difficulty; }
-            set { _difficulty = value; }
-        }
-
-    }
-    
     class SudokuModel
     {
-        public string[] easy = new string[81] { " ", " ", " ",     "7", " ", "4",     " ", "8", " ", 
+
+        public string[] easy = new string[81] 
+                                       { " ", " ", " ",     "7", " ", "4",     " ", "8", " ", 
                                          "5", " ", "4",     " ", "2", " ",     "9", "7", "6",  
                                          " ", " ", " ",     " ", " ", " ",     " ", " ", " ",
         
@@ -78,6 +68,7 @@ namespace Sudoku
                                          " ", "7", "9",     " ", "2", " ",     "8", "5", " ", 
                                          " ", "5", " ",     " ", "1", " ",     " ", "3", " ", };
 
+        
         int[] hardsolution = new int[81] {7,9,6, 1,4,5, 3,8,2,
                                           5,4,2, 9,3,8, 6,7,1,
                                           8,3,1, 6,7,2, 9,4,5,
@@ -96,7 +87,7 @@ namespace Sudoku
          * UPPGIFT: Läser in vilken svårighetsgrad som är markerad och skriver
                     ut i GridPrint-usercontrol, sparar grid i globala nuvarandeGrid.
          **************************************************************************/
-        public GridPrint PrintGrid(string radioButtonChecked, GridPrint gridprint) 
+        public GridPrint PrintGrid(string radioButtonChecked, GridPrint gridprint, string[] savedGame = null ) 
         {          
             string[] useThisGrid = new string[81];
 
@@ -109,14 +100,20 @@ namespace Sudoku
                     break;
                 case "medium":
                     useThisGrid = medium;
-                    difficulty = "medium";
                     break;
                 case "hard":
                     useThisGrid = hard;
-                    difficulty = "hard";
+                   
+                    break;
+                default:
+                    useThisGrid = radioButtonChecked.Select(c => c.ToString()).ToArray();
                     break;
             }
-            return gridprint.PrintGrid(useThisGrid);            
+
+            if (savedGame == null)
+                savedGame = useThisGrid;
+
+            return gridprint.PrintGrid(useThisGrid, savedGame);
         }
        
         /*****************************************************

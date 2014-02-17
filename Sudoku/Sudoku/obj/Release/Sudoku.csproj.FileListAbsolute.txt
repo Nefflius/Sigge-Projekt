@@ -20,9 +20,7 @@ D:\Visual Studio 2012\SiggeProjekt\Sudoku\Sudoku\obj\Release\Sudoku.csproj.Gener
 C:\Users\Stefan Hall\Documents\Visual Studio 2012\Projects\GUI\Projekt\Sudoku\Sudoku\bin\Release\Sudoku.exe.config
 C:\Users\Stefan Hall\Documents\Visual Studio 2012\Projects\GUI\Projekt\Sudoku\Sudoku\bin\Release\Sudoku.exe
 C:\Users\Stefan Hall\Documents\Visual Studio 2012\Projects\GUI\Projekt\Sudoku\Sudoku\bin\Release\Sudoku.pdb
-C:\Users\Stefan Hall\Documents\Visual Studio 2012\Projects\GUI\Projekt\Sudoku\Sudoku\obj\Release\Easy1.baml
 C:\Users\Stefan Hall\Documents\Visual Studio 2012\Projects\GUI\Projekt\Sudoku\Sudoku\obj\Release\Meny.baml
-C:\Users\Stefan Hall\Documents\Visual Studio 2012\Projects\GUI\Projekt\Sudoku\Sudoku\obj\Release\Easy1.g.cs
 C:\Users\Stefan Hall\Documents\Visual Studio 2012\Projects\GUI\Projekt\Sudoku\Sudoku\obj\Release\MainWindow.g.cs
 C:\Users\Stefan Hall\Documents\Visual Studio 2012\Projects\GUI\Projekt\Sudoku\Sudoku\obj\Release\Meny.g.cs
 C:\Users\Stefan Hall\Documents\Visual Studio 2012\Projects\GUI\Projekt\Sudoku\Sudoku\obj\Release\Spelplan.g.cs
