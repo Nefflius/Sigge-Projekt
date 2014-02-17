@@ -20,7 +20,6 @@ namespace Sudoku
 	/// </summary>
 	public partial class GridPrint : UserControl
 	{
-		//SudokuModel sudokumodel = new SudokuModel();
 		public GridPrint()
 		{
 			InitializeComponent();  
@@ -40,6 +39,7 @@ namespace Sudoku
                 tb.Text = "";
                 tb.IsEnabled = true;
             }
+
             antalDrag = 0;                          // Återställer antal drag innan nytt spel
             var main = Application.Current.MainWindow as MainWindow;
             main.spelplanComponent.lblAntalDrag.Content = antalDrag;
@@ -51,18 +51,20 @@ namespace Sudoku
 				string input = array[i];
 
                 if (input != " ")
-                {
-                    textbox.Text = array[i];
-
+                {                  
                     textbox.IsEnabled = false;
                     textbox.Background = Brushes.White;
 
                     textbox.BorderBrush = Brushes.Gray;
                     textbox.FontWeight = FontWeights.ExtraBold;
+
+                    textbox.Text = array[i];
                 }
                 else
                 {
                     textbox.FontWeight = FontWeights.Normal;
+                    textbox.Foreground = Brushes.Black;
+                    textbox.BorderBrush = Brushes.Silver;
                 }
 			}
 			
@@ -116,6 +118,7 @@ namespace Sudoku
             if (numGreen == 81)
             {
                 // Något roligt händer eftersom användare vunnit!!
+                    // Flyttas från en koordinat till en annan, windows fixar animation...?
             }
 		}
 
@@ -125,10 +128,6 @@ namespace Sudoku
 			{
 				e.Handled = true;
 			}
-
-			antalDrag++;
-            var main = Application.Current.MainWindow as MainWindow;
-            main.spelplanComponent.lblAntalDrag.Content = antalDrag;
 		}
 
 		public void continueGame()
@@ -142,14 +141,13 @@ namespace Sudoku
 				if (textbox.FontWeight == FontWeights.ExtraBold)
 				{
 					textbox.IsEnabled = false;
-					textbox.Foreground = Brushes.Gray;
-                    textbox.BorderBrush = Brushes.Gray;
+					textbox.Foreground = Brushes.Black;
 				}
 				else
 				{
 					textbox.IsEnabled = true;
 					textbox.Foreground = Brushes.Black;
-                    textbox.BorderBrush = Brushes.LightGray;
+                    textbox.BorderBrush = Brushes.Silver;
 				}
 			}
 			
@@ -159,17 +157,24 @@ namespace Sudoku
         {
             var main = Application.Current.MainWindow as MainWindow;
 
+            TextBox teb = (TextBox)sender;
+            if (teb.BorderBrush != Brushes.Gray)
+            {
+                antalDrag++;
+                main.spelplanComponent.lblAntalDrag.Content = antalDrag;
+            }
+
             for (int i = 0; i < 81; i++)  // Läs av alla rutor, om alla är ifyllda, rätta!
             {
                 TextBox tb = (TextBox)main.gridPrintComponent.nameGridPrint.Children[i];
 
-                if (tb.Text == "") // om en textbox är tom
+                if (tb.Text == "") // om en textbox är tom är rätta-knapp likadan
                 {
                     main.spelplanComponent.btnRätta.IsEnabled = false;
                     main.spelplanComponent.btnRätta.Effect = new System.Windows.Media.Effects.DropShadowEffect() { Opacity = 0.5 };
                     return;
                 }
-                else
+                else // om alla är ifyllda, rätta-knapp isEnabled och skugga tydligare..
                 {
                     main.spelplanComponent.btnRätta.IsEnabled = true;
                     main.spelplanComponent.btnRätta.Effect = new System.Windows.Media.Effects.DropShadowEffect() { Opacity = 0.8 };
