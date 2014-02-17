@@ -40,8 +40,9 @@ namespace Sudoku
         {
             var main = Application.Current.MainWindow as MainWindow;
 
-            main.spelplanComponent.count = 0;  
-
+          //  main.spelplanComponent.count = 0;
+            main.spelplanComponent.lblAntalDrag.Content = "0";   
+           
             main.menuComponent.Visibility = Visibility.Collapsed;
             main.spelplanComponent.Visibility = Visibility.Visible;
             //main.gridPrintComponent.Visibility = Visibility.Visible;
@@ -62,7 +63,9 @@ namespace Sudoku
 
             //main.PrintGrid(model.PrintGrid(radioButtonChecked));
 
-            main.spelplanComponent.Timer.Start();
+         
+            main.spelplanComponent.start = true;   // Timer
+            main.spelplanComponent.begins = DateTime.Now;  // Timer
 
         }
     }

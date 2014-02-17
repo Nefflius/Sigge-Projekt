@@ -176,5 +176,48 @@ namespace Sudoku
                 }
             }
         }
+
+
+
+        //Navigaion using arrows
+        /*****************************************************************************************
+         This will help to navigate between the cells of the grid by pressing the keyboard arrows
+          
+        **************************************************************************************/
+
+        private void Viewbox_PreviewKeyDown_1(object sender, KeyEventArgs e)
+        {
+
+            Action<FocusNavigationDirection> moveFocus = focusDirection =>
+            {
+                e.Handled = true;
+                var request = new TraversalRequest(focusDirection);
+                var focusedElement = Keyboard.FocusedElement as UIElement;
+                if (focusedElement != null)
+                    focusedElement.MoveFocus(request);
+            };
+
+
+            switch (e.Key)
+            {
+                case Key.Left:
+                    moveFocus(FocusNavigationDirection.Previous);
+                    break;
+                case Key.Right:
+                    moveFocus(FocusNavigationDirection.Next);
+                    break;
+                case Key.Up:
+                    moveFocus(FocusNavigationDirection.Up);
+                    break;
+                case Key.Down:
+                    moveFocus(FocusNavigationDirection.Down);
+                    break;
+                default:
+                    break;
+            }
+
+
+
+        }
 	}
 }
