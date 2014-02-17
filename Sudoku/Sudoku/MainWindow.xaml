@@ -17,7 +17,7 @@
 
         <Menu x:Name="mnuMain" IsMainMenu="True" Background="{DynamicResource windowBackground}" Grid.ColumnSpan="4">
             <MenuItem Header="_Arkiv" x:Name="mnuFile" Background="White" BorderBrush="Black">
-                <MenuItem x:Name="mnuOpen" Header="_Öppna" >
+                <MenuItem x:Name="mnuOpen" Header="_Öppna" Command="ApplicationCommands.Open" >
 
                     <MenuItem.Icon>
                         <Image Source="Properties/Resources/Images/icons/Open.png" />
