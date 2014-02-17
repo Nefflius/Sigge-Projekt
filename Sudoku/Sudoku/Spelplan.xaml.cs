@@ -22,29 +22,25 @@ namespace Sudoku
     /// Interaction logic for Spelplan.xaml
     /// </summary>
     public partial class Spelplan : UserControl
-    {
+    {   
+        public DateTime begins;
+        DispatcherTimer timerChanged;
+        public bool start = false; 
 
-        public DispatcherTimer Timer;
-       
         public Spelplan()
         {
             InitializeComponent();
+            timerChanged = new DispatcherTimer(new TimeSpan(0, 0, 1), DispatcherPriority.Normal, delegate
+            {
+                if (start)
+                {
+                    timer.Text = new DateTime((DateTime.Now - begins).Ticks).ToString("HH:mm:ss");
+                }
+            }, this.Dispatcher);
 
-            Timer = new DispatcherTimer();          // Bugg - tid startas inte om då nytt spel startas
-            Timer.Interval = new TimeSpan(0, 0, 1);
-            Timer.Tick += Timer_Tick;
+
         }
-        public int count = 0;
-
-        void Timer_Tick(object sender, EventArgs e)
-        {
-            count++;
-            if (count < 10)
-                timer.Text = string.Format("00:0{0}:0{1}", count / 60, count % 60);
-
-            else
-                timer.Text = string.Format("00:0{0}:{1}", count / 60, count % 60);
-        }
+        
 
         private void clickAvsluta(object sender, RoutedEventArgs e)
         {
@@ -71,7 +67,7 @@ namespace Sudoku
         private void clickNyttSpel(object sender, RoutedEventArgs e)
         {
             var main = Application.Current.MainWindow as MainWindow;
-
+           
             main.menuComponent.Visibility = Visibility.Visible;
             main.spelplanComponent.Visibility = Visibility.Collapsed;
             main.gridPrintComponent.Visibility = Visibility.Collapsed;
