@@ -58,7 +58,7 @@ namespace Sudoku
                 {
                     textbox.IsEnabled = false;
                     textbox.Background = Brushes.White;
-
+                    textbox.Foreground = Brushes.Black;
                     textbox.BorderBrush = Brushes.Gray;
                     textbox.FontWeight = FontWeights.ExtraBold;
 

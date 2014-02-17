@@ -39,8 +39,6 @@
             <MenuItem Header="_Hjälp" x:Name="mnuHelp" Background="White" BorderBrush="Black"/>
         </Menu>
         
-        
-        
         <local:Meny x:Name="menuComponent" Grid.ColumnSpan="4" Visibility="Visible"></local:Meny>
         <local:Spelplan x:Name="spelplanComponent" Grid.Column="3" Visibility="Collapsed"></local:Spelplan>
         <local:GridPrint x:Name="gridPrintComponent" Grid.ColumnSpan="3" Visibility="Collapsed"></local:GridPrint>

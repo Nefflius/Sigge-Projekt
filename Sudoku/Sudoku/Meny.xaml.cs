@@ -17,52 +17,74 @@ using System.Windows.Shapes;
 
 namespace Sudoku
 {
-    /// <summary>
-    /// Interaction logic for Meny.xaml
-    /// </summary>
-    public partial class Meny : UserControl
+	/// <summary>
+	/// Interaction logic for Meny.xaml
+	/// </summary>
+	public partial class Meny : UserControl
 
-    {   
-        public Meny()
-        {
-            InitializeComponent();
-          
-        }
-        private string radioButtonChecked;
+	{   
+		public Meny()
+		{
+			InitializeComponent();
+		  
+		}
+		private string radioButtonChecked;
 
-        /**********************************************************
-        ANROP:      Anropas då Spela-knappen clickas.
-        UPPGIFT:    Läser av radiobutton och skickar vidare vilken
-                    nivå som användaren har valt.
-                    Visar och döljer även spelplan och meny.
-        ***********************************************************/
-        private void spela_Click(object sender, RoutedEventArgs e)
-        {
-            var main = Application.Current.MainWindow as MainWindow;
+		/**********************************************************
+		ANROP:      Anropas då Spela-knappen clickas.
+		UPPGIFT:    Läser av radiobutton och skickar vidare vilken
+					nivå som användaren har valt.
+					Visar och döljer även spelplan och meny.
+		***********************************************************/
+		private void spela_Click(object sender, RoutedEventArgs e)
+		{
+			var main = Application.Current.MainWindow as MainWindow;
 
-          //  main.spelplanComponent.count = 0;
-            main.spelplanComponent.lblAntalDrag.Content = "0";   
-           
-            main.menuComponent.Visibility = Visibility.Collapsed;
-            main.spelplanComponent.Visibility = Visibility.Visible;
-            //main.gridPrintComponent.Visibility = Visibility.Visible;
+		  //  main.spelplanComponent.count = 0;
+			main.spelplanComponent.lblAntalDrag.Content = "0";   
+		   
+			main.menuComponent.Visibility = Visibility.Collapsed;
+			main.spelplanComponent.Visibility = Visibility.Visible;
+			//main.gridPrintComponent.Visibility = Visibility.Visible;
 
-            SudokuModel model = new SudokuModel();
+			SudokuModel model = new SudokuModel();
 
+			if (Convert.ToBoolean(rbL.IsChecked))
+				radioButtonChecked = "easy";
+			else if (Convert.ToBoolean(rbM.IsChecked))
+				radioButtonChecked = "medium";
+			else if (Convert.ToBoolean(rbS.IsChecked))
+				radioButtonChecked = "hard";
+
+			main.gridPrintComponent = model.PrintGrid(radioButtonChecked, main.gridPrintComponent);
+
+			main.gridPrintComponent.Visibility = Visibility.Visible;
+					
+			main.spelplanComponent.start = true;   // Timer
+			main.spelplanComponent.begins = DateTime.Now;  // Timer
+
+		}
+
+		private void rb_Click(object sender, RoutedEventArgs e)
+		{
             if (Convert.ToBoolean(rbL.IsChecked))
-                radioButtonChecked = "easy";
+            {
+                gbL.Visibility = Visibility.Visible;
+                gbM.Visibility = Visibility.Collapsed;
+                gbS.Visibility = Visibility.Collapsed;
+            }
             else if (Convert.ToBoolean(rbM.IsChecked))
-                radioButtonChecked = "medium";
+            {
+                gbM.Visibility = Visibility.Visible;
+                gbL.Visibility = Visibility.Collapsed;
+                gbS.Visibility = Visibility.Collapsed;
+            }
             else if (Convert.ToBoolean(rbS.IsChecked))
-                radioButtonChecked = "hard";
-
-            main.gridPrintComponent = model.PrintGrid(radioButtonChecked, main.gridPrintComponent);
-
-            main.gridPrintComponent.Visibility = Visibility.Visible;
-                    
-            main.spelplanComponent.start = true;   // Timer
-            main.spelplanComponent.begins = DateTime.Now;  // Timer
-
-        }
-    }
+            {
+                gbS.Visibility = Visibility.Visible;
+                gbL.Visibility = Visibility.Collapsed;
+                gbM.Visibility = Visibility.Collapsed;
+            }
+		}
+	}
 }
