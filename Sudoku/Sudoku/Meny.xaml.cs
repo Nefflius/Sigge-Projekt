@@ -28,7 +28,7 @@ namespace Sudoku
 			InitializeComponent();
 		  
 		}
-		private string radioButtonChecked;
+		private static string radioButtonChecked;
 
 		/**********************************************************
 		ANROP:      Anropas då Spela-knappen clickas.
@@ -39,22 +39,19 @@ namespace Sudoku
 		private void spela_Click(object sender, RoutedEventArgs e)
 		{
 			var main = Application.Current.MainWindow as MainWindow;
+            SudokuModel model = new SudokuModel();
 
-		  //  main.spelplanComponent.count = 0;
 			main.spelplanComponent.lblAntalDrag.Content = "0";   
 		   
 			main.menuComponent.Visibility = Visibility.Collapsed;
 			main.spelplanComponent.Visibility = Visibility.Visible;
-			//main.gridPrintComponent.Visibility = Visibility.Visible;
 
-			SudokuModel model = new SudokuModel();
-
-			if (Convert.ToBoolean(rbL.IsChecked))
-				radioButtonChecked = "easy";
-			else if (Convert.ToBoolean(rbM.IsChecked))
-				radioButtonChecked = "medium";
-			else if (Convert.ToBoolean(rbS.IsChecked))
-				radioButtonChecked = "hard";
+            //if (Convert.ToBoolean(rbL.IsChecked))
+            //    radioButtonChecked = "easy";
+            //else if (Convert.ToBoolean(rbM.IsChecked))
+            //    radioButtonChecked = "medium";
+            //else if (Convert.ToBoolean(rbS.IsChecked))
+            //    radioButtonChecked = "hard";
 
 			main.gridPrintComponent = model.PrintGrid(radioButtonChecked, main.gridPrintComponent);
 
@@ -62,7 +59,6 @@ namespace Sudoku
 					
 			main.spelplanComponent.start = true;   // Timer
 			main.spelplanComponent.begins = DateTime.Now;  // Timer
-
 		}
 
 		private void rb_Click(object sender, RoutedEventArgs e)
@@ -72,18 +68,66 @@ namespace Sudoku
                 gbL.Visibility = Visibility.Visible;
                 gbM.Visibility = Visibility.Collapsed;
                 gbS.Visibility = Visibility.Collapsed;
+
+                if (Convert.ToBoolean(rbL_1.IsChecked))
+                {
+                    radioButtonChecked = "easy1";
+                    btnSpela.IsEnabled = true;
+                }
+                else if (Convert.ToBoolean(rbL_2.IsChecked))
+                {
+                    radioButtonChecked = "easy2";
+                    btnSpela.IsEnabled = true;
+                }
+                else if (Convert.ToBoolean(rbL_3.IsChecked))
+                {
+                    radioButtonChecked = "easy3";
+                    btnSpela.IsEnabled = true;
+                }
             }
             else if (Convert.ToBoolean(rbM.IsChecked))
             {
                 gbM.Visibility = Visibility.Visible;
                 gbL.Visibility = Visibility.Collapsed;
                 gbS.Visibility = Visibility.Collapsed;
+
+                if (Convert.ToBoolean(rbM_1.IsChecked))
+                {
+                    radioButtonChecked = "medium1";
+                    btnSpela.IsEnabled = true;
+                }
+                else if (Convert.ToBoolean(rbM_2.IsChecked))
+                {
+                    radioButtonChecked = "medium2";
+                    btnSpela.IsEnabled = true;
+                }
+                else if (Convert.ToBoolean(rbM_3.IsChecked))
+                {
+                    radioButtonChecked = "medium3";
+                    btnSpela.IsEnabled = true;
+                }
             }
             else if (Convert.ToBoolean(rbS.IsChecked))
             {
                 gbS.Visibility = Visibility.Visible;
                 gbL.Visibility = Visibility.Collapsed;
                 gbM.Visibility = Visibility.Collapsed;
+
+                if (Convert.ToBoolean(rbS_1.IsChecked))
+                {
+                    radioButtonChecked = "hard1";
+                    btnSpela.IsEnabled = true;
+                }
+                else if (Convert.ToBoolean(rbS_2.IsChecked))
+                {
+                    radioButtonChecked = "hard2";
+                    btnSpela.IsEnabled = true;
+                }
+                else if (Convert.ToBoolean(rbS_3.IsChecked))
+                {
+                    radioButtonChecked = "hard3";
+                    btnSpela.IsEnabled = true;
+                }
             }
 		}
 	}

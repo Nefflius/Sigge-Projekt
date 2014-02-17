@@ -33,9 +33,9 @@
                         <Image Margin="3" Height="100" Source="easy2.png" Grid.Row="0" Grid.Column="1" />
                         <Image Margin="3" Height="100" Source="easy3.png" Grid.Row="0" Grid.Column="2" />
 
-                        <RadioButton HorizontalAlignment="Center" Grid.Row="1" Grid.Column="0" Margin="0,10,0,0" />
-                        <RadioButton HorizontalAlignment="Center" Grid.Row="1" Grid.Column="1" Margin="0,10,0,0" />
-                        <RadioButton HorizontalAlignment="Center" Grid.Row="1" Grid.Column="2" Margin="0,10,0,0" />
+                        <RadioButton Name="rbL_1" Click="rb_Click" HorizontalAlignment="Center" Grid.Row="1" Grid.Column="0" Margin="0,10,0,0" />
+                        <RadioButton Name="rbL_2" Click="rb_Click" HorizontalAlignment="Center" Grid.Row="1" Grid.Column="1" Margin="0,10,0,0" />
+                        <RadioButton Name="rbL_3" Click="rb_Click" HorizontalAlignment="Center" Grid.Row="1" Grid.Column="2" Margin="0,10,0,0" />
                     </Grid>
                 </GroupBox>
                 <GroupBox Name="gbM" Margin="10,0" Header="Alternativ på spelplan : Medium" FontWeight="Thin" Visibility="Collapsed">
@@ -49,13 +49,13 @@
                             <ColumnDefinition />
                             <ColumnDefinition />
                         </Grid.ColumnDefinitions>
-                        <Image Margin="3" Height="100" Source="easy1.png" />
+                        <Image Margin="3" Height="100" Source="medium1.png" />
                         <Image Margin="3" Height="100" Source="easy2.png" Grid.Row="0" Grid.Column="1" />
                         <Image Margin="3" Height="100" Source="easy3.png" Grid.Row="0" Grid.Column="2" />
 
-                        <RadioButton HorizontalAlignment="Center" Grid.Row="1" Grid.Column="0" Margin="0,10,0,0" />
-                        <RadioButton HorizontalAlignment="Center" Grid.Row="1" Grid.Column="1" Margin="0,10,0,0" />
-                        <RadioButton HorizontalAlignment="Center" Grid.Row="1" Grid.Column="2" Margin="0,10,0,0" />
+                        <RadioButton Name="rbM_1" Click="rb_Click" HorizontalAlignment="Center" Grid.Row="1" Grid.Column="0" Margin="0,10,0,0" />
+                        <RadioButton Name="rbM_2" Click="rb_Click" HorizontalAlignment="Center" Grid.Row="1" Grid.Column="1" Margin="0,10,0,0" />
+                        <RadioButton Name="rbM_3" Click="rb_Click" HorizontalAlignment="Center" Grid.Row="1" Grid.Column="2" Margin="0,10,0,0" />
                     </Grid>
                 </GroupBox>
                 <GroupBox Name="gbS" Margin="10,0" Header="Alternativ på spelplan : Svår" FontWeight="Thin" Visibility="Collapsed">
@@ -69,13 +69,13 @@
                             <ColumnDefinition />
                             <ColumnDefinition />
                         </Grid.ColumnDefinitions>
-                        <Image Margin="3" Height="100" Source="easy1.png" />
-                        <Image Margin="3" Height="100" Source="easy2.png" Grid.Row="0" Grid.Column="1" />
-                        <Image Margin="3" Height="100" Source="easy3.png" Grid.Row="0" Grid.Column="2" />
+                        <Image Margin="3" Height="100" Source="hard1.png" />
+                        <Image Margin="3" Height="100" Source="hard2.png" Grid.Row="0" Grid.Column="1" />
+                        <Image Margin="3" Height="100" Source="hard3.png" Grid.Row="0" Grid.Column="2" />
 
-                        <RadioButton HorizontalAlignment="Center" Grid.Row="1" Grid.Column="0" Margin="0,10,0,0" />
-                        <RadioButton HorizontalAlignment="Center" Grid.Row="1" Grid.Column="1" Margin="0,10,0,0" />
-                        <RadioButton HorizontalAlignment="Center" Grid.Row="1" Grid.Column="2" Margin="0,10,0,0" />
+                        <RadioButton Name="rbS_1" Click="rb_Click" HorizontalAlignment="Center" Grid.Row="1" Grid.Column="0" Margin="0,10,0,0" />
+                        <RadioButton Name="rbS_2" Click="rb_Click" HorizontalAlignment="Center" Grid.Row="1" Grid.Column="1" Margin="0,10,0,0" />
+                        <RadioButton Name="rbS_3" Click="rb_Click" HorizontalAlignment="Center" Grid.Row="1" Grid.Column="2" Margin="0,10,0,0" />
                     </Grid>
                 </GroupBox>
 

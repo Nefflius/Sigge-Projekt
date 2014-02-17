@@ -8,8 +8,9 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("easy1.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("easy2.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("easy3.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("hard1.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("hard2.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("hard3.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("medium1.png")]
 
 

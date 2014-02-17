@@ -37,10 +37,7 @@ namespace Sudoku
                     timer.Text = new DateTime((DateTime.Now - begins).Ticks).ToString("HH:mm:ss");
                 }
             }, this.Dispatcher);
-
-
         }
-        
 
         private void clickAvsluta(object sender, RoutedEventArgs e)
         {
