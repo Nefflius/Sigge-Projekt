@@ -131,10 +131,12 @@ namespace Sudoku
 
 		private void TextBox_PreviewTextInput(object sender, TextCompositionEventArgs e)
 		{
-			if (!char.IsDigit(e.Text, e.Text.Length - 1))
-			{
-				e.Handled = true;
-			}
+            if (!char.IsDigit(e.Text, e.Text.Length - 1))
+            {
+                e.Handled = true;
+            }
+            else if (e.Text == "0")
+                e.Handled = true;
 		}
 
 		public void continueGame()
