@@ -5,7 +5,7 @@
         xmlns:Properties="clr-namespace:Sudoku.Properties" x:Class="Sudoku.MainWindow"
         Title="Sudoku" Height="720" Width="900">
     <Window.Resources>
-        <ImageBrush x:Key="windowBackground" AlignmentY="Top" Stretch="UniformToFill" ImageSource="Sudoku_background2.png" />
+        <ImageBrush x:Key="windowBackground" AlignmentY="Top" Stretch="UniformToFill" ImageSource="Images\Sudoku_background.png" />
     </Window.Resources>
     <Grid Name="grdMain">
         <Grid.ColumnDefinitions>

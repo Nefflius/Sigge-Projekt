@@ -26,9 +26,14 @@ namespace Sudoku
 		public Meny()
 		{
 			InitializeComponent();
-		  
 		}
 		private static string radioButtonChecked;
+
+        // Lägger till margin mellan radiobuttons och spelaknapp då Nytt Spel väljs.
+        public void IsNowVisible()
+        {
+            rbGrid.Margin = new Thickness(70, 0, 70, 160);
+        }
 
 		/**********************************************************
 		ANROP:      Anropas då Spela-knappen clickas.
@@ -41,20 +46,19 @@ namespace Sudoku
 			var main = Application.Current.MainWindow as MainWindow;
             SudokuModel model = new SudokuModel();
 
-			main.spelplanComponent.lblAntalDrag.Content = "0";   
-		   
-			main.menuComponent.Visibility = Visibility.Collapsed;
-			main.spelplanComponent.Visibility = Visibility.Visible;
+			main.spelplanComponent.lblAntalDrag.Content = "0";
 
-            //if (Convert.ToBoolean(rbL.IsChecked))
-            //    radioButtonChecked = "easy";
-            //else if (Convert.ToBoolean(rbM.IsChecked))
-            //    radioButtonChecked = "medium";
-            //else if (Convert.ToBoolean(rbS.IsChecked))
-            //    radioButtonChecked = "hard";
+            main.spelplanComponent.Visibility = Visibility.Visible;
+			main.menuComponent.Visibility = Visibility.Collapsed;
+                gbL.Visibility = Visibility.Collapsed;
+                gbM.Visibility = Visibility.Collapsed;
+                gbS.Visibility = Visibility.Collapsed;
+                rbL.IsChecked = false;
+                rbM.IsChecked = false;
+                rbS.IsChecked = false;
+                btnSpela.IsEnabled = false;
 
 			main.gridPrintComponent = model.PrintGrid(radioButtonChecked, main.gridPrintComponent);
-
 			main.gridPrintComponent.Visibility = Visibility.Visible;
 					
 			main.spelplanComponent.start = true;   // Timer
@@ -68,6 +72,7 @@ namespace Sudoku
                 gbL.Visibility = Visibility.Visible;
                 gbM.Visibility = Visibility.Collapsed;
                 gbS.Visibility = Visibility.Collapsed;
+                rbGrid.Margin = new Thickness(70, 0, 70, 0);
 
                 if (Convert.ToBoolean(rbL_1.IsChecked))
                 {
@@ -90,6 +95,7 @@ namespace Sudoku
                 gbM.Visibility = Visibility.Visible;
                 gbL.Visibility = Visibility.Collapsed;
                 gbS.Visibility = Visibility.Collapsed;
+                rbGrid.Margin = new Thickness(70, 0, 70, 0);
 
                 if (Convert.ToBoolean(rbM_1.IsChecked))
                 {
@@ -112,6 +118,7 @@ namespace Sudoku
                 gbS.Visibility = Visibility.Visible;
                 gbL.Visibility = Visibility.Collapsed;
                 gbM.Visibility = Visibility.Collapsed;
+                rbGrid.Margin = new Thickness(70, 0, 70, 0);
 
                 if (Convert.ToBoolean(rbS_1.IsChecked))
                 {

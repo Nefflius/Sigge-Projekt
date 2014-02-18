@@ -79,7 +79,7 @@ namespace Sudoku
 			
 			return this;
 		}
-
+        
 		/****************************************************************
 		ANROP:      Rätta();
 		UPPGIFT:    Kontrollerar om alla textbox är ifyllda, skickar dem
@@ -131,10 +131,14 @@ namespace Sudoku
 
 		private void TextBox_PreviewTextInput(object sender, TextCompositionEventArgs e)
 		{
-			if (!char.IsDigit(e.Text, e.Text.Length - 1))
-			{
-				e.Handled = true;
-			}
+            if (!char.IsDigit(e.Text, e.Text.Length - 1))           //Tar bort alla bokstäver som försöks skrivas in.
+                e.Handled = true;
+            else if (e.Text == "0")                                 //Tar bort siffran "0"
+                e.Handled = true;
+
+            TextBox tb = (TextBox)sender;       // Skriver över föregående inskrivna siffra
+            if (tb.Text != "")
+                tb.Text = e.Text;
 		}
 
 		public void continueGame()
@@ -165,10 +169,17 @@ namespace Sudoku
             var main = Application.Current.MainWindow as MainWindow;
 
             TextBox teb = (TextBox)sender;
+
+            if (teb.Text != null)
+                teb.SelectAll();
+
             if (teb.BorderBrush != Brushes.Gray)
             {
-                antalDrag++;
-                main.spelplanComponent.lblAntalDrag.Content = antalDrag;
+                if (teb.Text != "")
+                {
+                    antalDrag++;
+                    main.spelplanComponent.lblAntalDrag.Content = antalDrag;
+                }
             }
 
             for (int i = 0; i < 81; i++)  // Läs av alla rutor, om alla är ifyllda, rätta!
@@ -190,16 +201,13 @@ namespace Sudoku
         }
 
 
-
         //Navigaion using arrows
         /*****************************************************************************************
          This will help to navigate between the cells of the grid by pressing the keyboard arrows
           
         **************************************************************************************/
-
         private void Viewbox_PreviewKeyDown_1(object sender, KeyEventArgs e)
         {
-
             Action<FocusNavigationDirection> moveFocus = focusDirection =>
             {
                 e.Handled = true;
@@ -208,7 +216,6 @@ namespace Sudoku
                 if (focusedElement != null)
                     focusedElement.MoveFocus(request);
             };
-
 
             switch (e.Key)
             {
@@ -227,9 +234,22 @@ namespace Sudoku
                 default:
                     break;
             }
+        }
 
+        private void TextBox_GotFocus(object sender, RoutedEventArgs e)
+        {
+            TextBox tb = (TextBox)sender;
+            tb.Background = Brushes.Black;
+            tb.Foreground = Brushes.White;
+            tb.FontWeight = FontWeights.Heavy;
+        }
 
-
+        private void TextBox_LostFocus(object sender, RoutedEventArgs e)
+        {
+            TextBox tb = (TextBox)sender;
+            tb.Background = Brushes.White;
+            tb.Foreground = Brushes.Black;
+            tb.FontWeight = FontWeights.Normal;
         }
 	}
 }

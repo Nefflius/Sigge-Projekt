@@ -59,6 +59,10 @@ namespace Sudoku
                 btn.Content = "RÄTTA";
                 main.gridPrintComponent.continueGame();
             }
+
+            bool var = SudokuModel.send;
+            if (var == true)
+                MessageBox.Show("Du har vunnit, Grattis!");
         }
 
         private void clickNyttSpel(object sender, RoutedEventArgs e)
@@ -68,6 +72,9 @@ namespace Sudoku
             main.menuComponent.Visibility = Visibility.Visible;
             main.spelplanComponent.Visibility = Visibility.Collapsed;
             main.gridPrintComponent.Visibility = Visibility.Collapsed;
+            main.menuComponent.IsNowVisible();
+
+            btnRätta.Content = "RÄTTA";
         }
 
         private void clickHjälp(object sender, RoutedEventArgs e)

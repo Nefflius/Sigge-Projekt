@@ -32,12 +32,14 @@ namespace Sudoku
 
     public partial class MainWindow : Window
     {
-        bool gameChanged = true;
         public MainWindow()
         {
             InitializeComponent();
             createCommandBindings();
         }
+
+        bool gameChanged = true;
+
 
         private void createCommandBindings()
         {
@@ -67,21 +69,16 @@ namespace Sudoku
             CommandBindings.Add(bindExit);
         }
  
-        public void PrintGrid(GridPrint newGameBoard)
-        {
-            newGameBoard.SetValue(Grid.ColumnSpanProperty, 3);
+        //public void PrintGrid(GridPrint newGameBoard)
+        //{
+        //    newGameBoard.SetValue(Grid.ColumnSpanProperty, 3);
 
-            grdMain.Children.Add(newGameBoard);
-        }
+        //    grdMain.Children.Add(newGameBoard);
+        //}
 
         public void NewGame_CanExecute(object sender, CanExecuteRoutedEventArgs e)
         {
             e.CanExecute = true;
-        }
-
-        private void clickNyttSpel(object sender, RoutedEventArgs e)
-        {
-            
         }
 
         public void NewGame_Executed(object sender, ExecutedRoutedEventArgs e)
