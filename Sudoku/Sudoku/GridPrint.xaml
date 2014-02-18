@@ -18,6 +18,8 @@
             <Setter Property="FontSize" Value="20" />
             <Setter Property="TextWrapping" Value="Wrap" />
             <Setter Property="MaxLength" Value="1" />
+            <Setter Property="CaretBrush" Value="Transparent" />
+            
         </Style>
     </UserControl.Resources>
     <Viewbox Stretch="Uniform" PreviewKeyDown="Viewbox_PreviewKeyDown_1">

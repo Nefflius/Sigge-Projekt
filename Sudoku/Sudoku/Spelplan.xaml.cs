@@ -72,6 +72,7 @@ namespace Sudoku
             main.menuComponent.Visibility = Visibility.Visible;
             main.spelplanComponent.Visibility = Visibility.Collapsed;
             main.gridPrintComponent.Visibility = Visibility.Collapsed;
+            main.menuComponent.IsNowVisible();
 
             btnRätta.Content = "RÄTTA";
         }

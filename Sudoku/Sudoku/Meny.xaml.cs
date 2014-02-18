@@ -26,9 +26,14 @@ namespace Sudoku
 		public Meny()
 		{
 			InitializeComponent();
-		  
 		}
 		private static string radioButtonChecked;
+
+        // Lägger till margin mellan radiobuttons och spelaknapp då Nytt Spel väljs.
+        public void IsNowVisible()
+        {
+            rbGrid.Margin = new Thickness(70, 0, 70, 160);
+        }
 
 		/**********************************************************
 		ANROP:      Anropas då Spela-knappen clickas.
