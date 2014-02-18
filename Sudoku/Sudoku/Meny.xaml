@@ -14,9 +14,9 @@
                 <Label FontFamily="Impact" FontSize="75" Margin="15,10,15,0" HorizontalAlignment="Center">SUDOKU</Label>
                 <Label FontSize="20" FontWeight="Thin" HorizontalAlignment="Center">Välj svårighetsnivå:</Label>
                 <UniformGrid Columns="3" HorizontalAlignment="Center" Margin="10">
-                    <RadioButton Name="rbL" FontSize="14" FontWeight="Thin" Margin="5" Click="rb_Click">Lätt</RadioButton>
+                    <RadioButton Name="rbL" HorizontalAlignment="Left" FontSize="14" FontWeight="Thin" Margin="5" Click="rb_Click">Lätt</RadioButton>
                     <RadioButton Name="rbM" FontSize="14" FontWeight="Thin" Margin="5" Click="rb_Click">Medium</RadioButton>
-                    <RadioButton Name="rbS" FontSize="14" FontWeight="Thin" Margin="5" Click="rb_Click">Svår</RadioButton>
+                    <RadioButton Name="rbS" HorizontalAlignment="Right" FontSize="14" FontWeight="Thin" Margin="5" Click="rb_Click">Svår</RadioButton>
                 </UniformGrid>
                 <GroupBox Name="gbL" Margin="10,0" Header="Alternativ på spelplan : Lätt" FontWeight="Thin" Visibility="Collapsed">
                     <Grid>
@@ -29,10 +29,10 @@
                             <ColumnDefinition />
                             <ColumnDefinition />
                         </Grid.ColumnDefinitions>
-                        <Image Margin="3" Height="100" Source="easy1.png" />
-                        <Image Margin="3" Height="100" Source="easy2.png" Grid.Row="0" Grid.Column="1" />
-                        <Image Margin="3" Height="100" Source="easy3.png" Grid.Row="0" Grid.Column="2" />
-
+                        <Image Margin="3" Height="100" Source="Images\easy1.png" />
+                        <Image Margin="3" Height="100" Source="Images\easy2.png" Grid.Row="0" Grid.Column="1" />
+                        <Image Margin="3" Height="100" Source="Images\easy3.png" Grid.Row="0" Grid.Column="2" />
+                                                    
                         <RadioButton Name="rbL_1" Click="rb_Click" HorizontalAlignment="Center" Grid.Row="1" Grid.Column="0" Margin="0,10,0,0" />
                         <RadioButton Name="rbL_2" Click="rb_Click" HorizontalAlignment="Center" Grid.Row="1" Grid.Column="1" Margin="0,10,0,0" />
                         <RadioButton Name="rbL_3" Click="rb_Click" HorizontalAlignment="Center" Grid.Row="1" Grid.Column="2" Margin="0,10,0,0" />
@@ -49,9 +49,9 @@
                             <ColumnDefinition />
                             <ColumnDefinition />
                         </Grid.ColumnDefinitions>
-                        <Image Margin="3" Height="100" Source="medium1.png" />
-                        <Image Margin="3" Height="100" Source="easy2.png" Grid.Row="0" Grid.Column="1" />
-                        <Image Margin="3" Height="100" Source="easy3.png" Grid.Row="0" Grid.Column="2" />
+                        <Image Margin="3" Height="100" Source="Images\medium1.png" />
+                        <Image Margin="3" Height="100" Source="Images\easy2.png" Grid.Row="0" Grid.Column="1" />
+                        <Image Margin="3" Height="100" Source="Images\easy3.png" Grid.Row="0" Grid.Column="2" />
 
                         <RadioButton Name="rbM_1" Click="rb_Click" HorizontalAlignment="Center" Grid.Row="1" Grid.Column="0" Margin="0,10,0,0" />
                         <RadioButton Name="rbM_2" Click="rb_Click" HorizontalAlignment="Center" Grid.Row="1" Grid.Column="1" Margin="0,10,0,0" />
@@ -69,9 +69,9 @@
                             <ColumnDefinition />
                             <ColumnDefinition />
                         </Grid.ColumnDefinitions>
-                        <Image Margin="3" Height="100" Source="hard1.png" />
-                        <Image Margin="3" Height="100" Source="hard2.png" Grid.Row="0" Grid.Column="1" />
-                        <Image Margin="3" Height="100" Source="hard3.png" Grid.Row="0" Grid.Column="2" />
+                        <Image Margin="3" Height="100" Source="Images\hard1.png" />
+                        <Image Margin="3" Height="100" Source="Images\hard2.png" Grid.Row="0" Grid.Column="1" />
+                        <Image Margin="3" Height="100" Source="Images\hard3.png" Grid.Row="0" Grid.Column="2" />
 
                         <RadioButton Name="rbS_1" Click="rb_Click" HorizontalAlignment="Center" Grid.Row="1" Grid.Column="0" Margin="0,10,0,0" />
                         <RadioButton Name="rbS_2" Click="rb_Click" HorizontalAlignment="Center" Grid.Row="1" Grid.Column="1" Margin="0,10,0,0" />

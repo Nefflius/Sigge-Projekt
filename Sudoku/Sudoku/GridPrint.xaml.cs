@@ -227,9 +227,6 @@ namespace Sudoku
                 default:
                     break;
             }
-
-
-
         }
 	}
 }

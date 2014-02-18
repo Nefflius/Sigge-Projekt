@@ -44,6 +44,13 @@ namespace Sudoku
 			main.spelplanComponent.lblAntalDrag.Content = "0";   
 		   
 			main.menuComponent.Visibility = Visibility.Collapsed;
+                gbL.Visibility = Visibility.Collapsed;
+                gbM.Visibility = Visibility.Collapsed;
+                gbS.Visibility = Visibility.Collapsed;
+                rbL.IsChecked = false;
+                rbM.IsChecked = false;
+                rbS.IsChecked = false;
+                btnSpela.IsEnabled = false;
 			main.spelplanComponent.Visibility = Visibility.Visible;
 
             //if (Convert.ToBoolean(rbL.IsChecked))
