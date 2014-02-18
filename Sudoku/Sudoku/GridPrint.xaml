@@ -19,6 +19,8 @@
             <Setter Property="TextWrapping" Value="Wrap" />
             <Setter Property="MaxLength" Value="1" />
             <Setter Property="CaretBrush" Value="Transparent" />
+            <Setter Property="SelectionBrush" Value="Transparent" />
+            
         </Style>
     </UserControl.Resources>
     <Viewbox Stretch="Uniform" PreviewKeyDown="Viewbox_PreviewKeyDown_1">

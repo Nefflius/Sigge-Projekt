@@ -169,6 +169,10 @@ namespace Sudoku
             var main = Application.Current.MainWindow as MainWindow;
 
             TextBox teb = (TextBox)sender;
+
+            if (teb.Text != null)
+                teb.SelectAll();
+
             if (teb.BorderBrush != Brushes.Gray)
             {
                 if (teb.Text != "")
