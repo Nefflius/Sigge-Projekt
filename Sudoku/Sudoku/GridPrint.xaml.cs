@@ -135,6 +135,10 @@ namespace Sudoku
 			{
 				e.Handled = true;
 			}
+
+            TextBox tb = (TextBox)sender;
+            if (tb.Text != "")
+                tb.Text = e.Text;
 		}
 
 		public void continueGame()
@@ -167,8 +171,11 @@ namespace Sudoku
             TextBox teb = (TextBox)sender;
             if (teb.BorderBrush != Brushes.Gray)
             {
-                antalDrag++;
-                main.spelplanComponent.lblAntalDrag.Content = antalDrag;
+                if (teb.Text != "")
+                {
+                    antalDrag++;
+                    main.spelplanComponent.lblAntalDrag.Content = antalDrag;
+                }
             }
 
             for (int i = 0; i < 81; i++)  // Läs av alla rutor, om alla är ifyllda, rätta!
@@ -190,7 +197,6 @@ namespace Sudoku
         }
 
 
-
         //Navigaion using arrows
         /*****************************************************************************************
          This will help to navigate between the cells of the grid by pressing the keyboard arrows
@@ -208,7 +214,6 @@ namespace Sudoku
                 if (focusedElement != null)
                     focusedElement.MoveFocus(request);
             };
-
 
             switch (e.Key)
             {

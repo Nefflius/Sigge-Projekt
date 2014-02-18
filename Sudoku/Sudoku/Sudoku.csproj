@@ -33,6 +33,11 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Properties\Resources\SudokuIcon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup />
+  <PropertyGroup />
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -141,6 +146,13 @@
     <Resource Include="Images\hard2.PNG" />
     <Resource Include="Images\hard3.PNG" />
     <Resource Include="Images\medium1.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\medium2.PNG" />
+    <Resource Include="Images\medium3.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Properties\Resources\SudokuIcon.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

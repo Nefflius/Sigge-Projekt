@@ -8,9 +8,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("hard1.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("hard2.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("hard3.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("medium1.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("medium2.ico")]
 
 

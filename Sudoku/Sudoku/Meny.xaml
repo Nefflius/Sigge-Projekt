@@ -13,7 +13,7 @@
             <StackPanel HorizontalAlignment="Center">
                 <Label FontFamily="Impact" FontSize="75" Margin="15,10,15,0" HorizontalAlignment="Center">SUDOKU</Label>
                 <Label FontSize="20" FontWeight="Thin" HorizontalAlignment="Center">Välj svårighetsnivå:</Label>
-                <UniformGrid Columns="3" HorizontalAlignment="Center" Margin="10">
+                <UniformGrid Name="rbGrid" Columns="3" HorizontalAlignment="Center" Margin="70,0,70,160">
                     <RadioButton Name="rbL" HorizontalAlignment="Left" FontSize="14" FontWeight="Thin" Margin="5" Click="rb_Click">Lätt</RadioButton>
                     <RadioButton Name="rbM" FontSize="14" FontWeight="Thin" Margin="5" Click="rb_Click">Medium</RadioButton>
                     <RadioButton Name="rbS" HorizontalAlignment="Right" FontSize="14" FontWeight="Thin" Margin="5" Click="rb_Click">Svår</RadioButton>
@@ -50,8 +50,8 @@
                             <ColumnDefinition />
                         </Grid.ColumnDefinitions>
                         <Image Margin="3" Height="100" Source="Images\medium1.png" />
-                        <Image Margin="3" Height="100" Source="Images\easy2.png" Grid.Row="0" Grid.Column="1" />
-                        <Image Margin="3" Height="100" Source="Images\easy3.png" Grid.Row="0" Grid.Column="2" />
+                        <Image Margin="3" Height="100" Source="Images\medium2.png" Grid.Row="0" Grid.Column="1" />
+                        <Image Margin="3" Height="100" Source="Images\medium3.png" Grid.Row="0" Grid.Column="2" />
 
                         <RadioButton Name="rbM_1" Click="rb_Click" HorizontalAlignment="Center" Grid.Row="1" Grid.Column="0" Margin="0,10,0,0" />
                         <RadioButton Name="rbM_2" Click="rb_Click" HorizontalAlignment="Center" Grid.Row="1" Grid.Column="1" Margin="0,10,0,0" />

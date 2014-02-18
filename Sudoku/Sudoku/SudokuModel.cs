@@ -98,6 +98,52 @@ namespace Sudoku
                                               3,9,5, 2,8,4, 6,7,1, 
                                               7,6,8, 1,3,5, 4,2,9 };
 
+        string[] medium2 = new string[81] { " ", " ", "2",    " ", " ", " ",    "5", "3", "8",    
+                                            " ", "9", " ",    " ", " ", "5",    "1", "7", " ",    
+                                            " ", " ", " ",    "3", " ", " ",    " ", " ", " ",
+    
+                                            "8", " ", " ",    " ", "7", "6",    " ", " ", " ",    
+                                            " ", " ", " ",    "8", "9", "1",    " ", " ", " ",    
+                                            " ", " ", " ",    "2", "4", " ",    " ", " ", "9",
+
+                                            " ", " ", " ",    " ", " ", "7",    " ", " ", " ",    
+                                            " ", "3", "7",    "6", " ", " ",    " ", "1", " ",    
+                                            "4", "5", "6",    " ", " ", " ",    "9", " ", " "};
+
+        int[] medium2Solution = new int[81] { 1,4,2,7,6,9,5,3,8,
+                                              6,9,3,4,8,5,1,7,2,
+                                              7,8,5,3,1,2,6,9,4,
+                                              8,2,9,5,7,6,3,4,1,
+                                              3,7,4,8,9,1,2,5,6,
+                                              5,6,1,2,4,3,7,8,9,
+                                              2,1,8,9,5,7,4,6,3,
+                                              9,3,7,6,2,4,8,1,5,
+                                              4,5,6,1,3,8,9,2,7 };
+
+        string[] medium3 = new string[81] { " ", "3", " ",    " ", "1", "9",    " ", "7", "8",    
+                                            " ", " ", " ",    " ", "6", " ",    " ", " ", "4",    
+                                            " ", " ", " ",    " ", " ", " ",    " ", "5", "2",
+
+                                            "1", " ", " ",    " ", " ", " ",    " ", " ", " ",    
+                                            " ", " ", "9",    "4", " ", "6",    "7", " ", " ",    
+                                            " ", " ", " ",    " ", " ", " ",    " ", " ", "3",
+
+                                            "7", "9", " ",    " ", " ", " ",    "3", " ", " ",    
+                                            "5", " ", " ",    " ", "8", " ",    " ", " ", " ",    
+                                            "8", "6", " ",    "2", "3", " ",    " ", "9", " ",};
+
+        int[] medium3Solution = new int[81]{ 2,3,4,5,1,9,6,7,8,
+                                              9,7,5,8,6,2,1,3,4,
+                                              6,1,8,3,7,4,9,5,2,
+                                              1,5,6,7,2,3,8,4,9,
+                                              3,8,9,4,5,6,7,2,1,
+                                              4,2,7,1,9,8,5,6,3,
+                                              7,9,2,6,4,1,3,8,5,
+                                              5,4,3,9,8,7,2,1,6,
+                                              8,6,1,2,3,5,4,9,7 };
+  
+
+
         string[] hard1 = new string[81] { " ", "9", " ",     " ", "4", " ",     " ", "8", " ", 
                                           " ", "4", "2",     " ", "3", " ",     "6", "7", " ", 
                                           " ", " ", " ",     "6", " ", "2",     " ", " ", " ", 
@@ -193,15 +239,27 @@ namespace Sudoku
                     break;
                 case "medium1":
                     useThisGrid = medium1;
+                    difficulty = "medium1";
+                    break;
+                case "medium2":
+                    useThisGrid = medium2;
+                    difficulty = "medium2";
+                    break;
+                case "medium3":
+                    useThisGrid = medium3;
+                    difficulty = "medium3";
                     break;
                 case "hard1":
                     useThisGrid = hard1;
+                    difficulty = "hard1";
                     break;
                 case "hard2":
                     useThisGrid = hard2;
+                    difficulty = "hard2";
                     break;
                 case "hard3":
                     useThisGrid = hard3;
+                    difficulty = "hard3";
                     break;
                 default:
                     useThisGrid = radioButtonChecked.Select(c => c.ToString()).ToArray();
@@ -235,6 +293,12 @@ namespace Sudoku
                     break;
                 case "medium1":
                     solution = medium1Solution;
+                    break;
+                case "medium2":
+                    solution = medium2Solution;
+                    break;
+                case "medium3":
+                    solution = medium3Solution;
                     break;
                 case "hard1":
                     solution = hard1Solution;
