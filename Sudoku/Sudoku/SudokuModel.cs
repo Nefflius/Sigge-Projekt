@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace Sudoku
 {
 
-    class SudokuModel
+    public class SudokuModel
     {
 
         string[] easy1 = new string[81]  { " ", " ", " ",     "7", " ", "4",     " ", "8", " ", 
@@ -212,6 +212,14 @@ namespace Sudoku
 
         public enum Difficulty { Easy, Medium, Hard };
         static string difficulty;
+        static int check;
+        private static bool checktest;
+
+        public static bool send
+        {
+            get { return checktest;}
+            set { checktest = value; }
+        }
 
         /**************************************************************************
          * ANROP:   PrintGrid( vilken radiobutton som är markerad );
@@ -312,17 +320,25 @@ namespace Sudoku
             bool[] rättad = new bool[81];
 
             // Jämför inmatade siffror i array med rätta siffror i array,
+            
             for (int i = 0; i < 81; i++)
             {
                 if (inmatad[i] == solution[i])
+                {
                     rättad[i] = true;
+                    check++;
+                }
                 else
-                    rättad[i] = false;
+                    rättad[i] = false;              
             }
 
+            if (check == 81)
+                checktest = true;
+            else
+                checktest = false;
             // Skickar denna array till MarkeraSiffror i GridPrint
             gridprint.MarkeraSiffror(rättad);
         }
-
+        
     }
 }
