@@ -79,7 +79,7 @@ namespace Sudoku
 			
 			return this;
 		}
-
+        
 		/****************************************************************
 		ANROP:      Rätta();
 		UPPGIFT:    Kontrollerar om alla textbox är ifyllda, skickar dem
@@ -131,14 +131,15 @@ namespace Sudoku
 
 		private void TextBox_PreviewTextInput(object sender, TextCompositionEventArgs e)
 		{
-			if (!char.IsDigit(e.Text, e.Text.Length - 1))
-			{
-				e.Handled = true;
-			}
-
-            TextBox tb = (TextBox)sender;
+            TextBox tb = (TextBox)sender;       // Skriver över föregående inskrivna siffra
             if (tb.Text != "")
                 tb.Text = e.Text;
+
+
+            if (!char.IsDigit(e.Text, e.Text.Length - 1))           //Tar bort alla bokstäver som försöks skrivas in.
+                e.Handled = true;
+            else if (e.Text == "0")                                 //Tar bort siffran "0"
+                e.Handled = true;
 		}
 
 		public void continueGame()
