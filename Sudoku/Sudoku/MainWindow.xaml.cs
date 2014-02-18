@@ -23,17 +23,11 @@ namespace Sudoku
     public static class CustomCommands
     {
         public static readonly RoutedUICommand Exit = new RoutedUICommand
-                (
-                        "Exit",
-                        "Exit",
-                        typeof(CustomCommands),
-                        new InputGestureCollection()
-                                {
-                                        new KeyGesture(Key.F4, ModifierKeys.Alt)
-                                }
-                );
-
-        //Define more commands here, just like the one above
+        ("Exit", "Exit", typeof(CustomCommands), new InputGestureCollection()
+        {
+            new KeyGesture(Key.F4, ModifierKeys.Alt)
+        }
+        );
     }
 
     public partial class MainWindow : Window
@@ -44,16 +38,6 @@ namespace Sudoku
             InitializeComponent();
             createCommandBindings();
         }
-
-        //private void ExitCommand_CanExecute(object sender, CanExecuteRoutedEventArgs e)
-        //{
-        //    e.CanExecute = true;
-        //}
-
-        //private void ExitCommand_Executed(object sender, ExecutedRoutedEventArgs e)
-        //{
-        //    Application.Current.Shutdown();
-        //}
 
         private void createCommandBindings()
         {
@@ -113,11 +97,10 @@ namespace Sudoku
         public void OpenFile_Executed(object sender, ExecutedRoutedEventArgs e)
         {
             SudokuModel model = new SudokuModel();
-            FileHandeling openSavedGame = new FileHandeling("");
+            FileHandeling openSavedGame = new FileHandeling();
             string[] savedFile = openSavedGame.OpenFile();
             menuComponent.Visibility = Visibility.Collapsed;
             spelplanComponent.Visibility = Visibility.Visible;
-            //string[] testarray = new string[81]{savedFile[0].ToString().ToArray();
             
             string[] savedGame = new string[81];
             for (int i = 0; i < 81; i++)
@@ -125,11 +108,7 @@ namespace Sudoku
                 savedGame[i] = savedFile[0].Substring(i, 1);
             }
 
-            
-            //string[] startUpBoard = savedFile.Select(startupCell => startupCell.ToString()).ToArray();
-            
             gridPrintComponent = model.PrintGrid(savedFile[1], gridPrintComponent, savedGame);
-
             gridPrintComponent.Visibility = Visibility.Visible;
         }
 
