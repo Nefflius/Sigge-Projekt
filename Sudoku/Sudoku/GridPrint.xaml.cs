@@ -131,14 +131,20 @@ namespace Sudoku
 
 		private void TextBox_PreviewTextInput(object sender, TextCompositionEventArgs e)
 		{
-            TextBox tb = (TextBox)sender;       // Skriver över föregående inskrivna siffra
-            if (tb.Text != "")
-                tb.Text = e.Text;
+
+            //TextBox tb = (TextBox)sender;       // Skriver över föregående inskrivna siffra
+            //if (tb.Text != "")
+            //    tb.Text = e.Text;
+
 
             if (!char.IsDigit(e.Text, e.Text.Length - 1))           //Tar bort alla bokstäver som försöks skrivas in.
                 e.Handled = true;
             else if (e.Text == "0")                                 //Tar bort siffran "0"
                 e.Handled = true;
+
+            TextBox tb = (TextBox)sender;       // Skriver över föregående inskrivna siffra
+            if (tb.Text != "")
+                tb.Text = e.Text;
 		}
         
 		public void continueGame()
@@ -171,6 +177,10 @@ namespace Sudoku
             var main = Application.Current.MainWindow as MainWindow;
 
             TextBox teb = (TextBox)sender;
+
+            if (teb.Text != null)
+                teb.SelectAll();
+
             if (teb.BorderBrush != Brushes.Gray)
             {
                 if (teb.Text != "")
@@ -204,7 +214,6 @@ namespace Sudoku
          This will help to navigate between the cells of the grid by pressing the keyboard arrows
           
         **************************************************************************************/
-
         private void Viewbox_PreviewKeyDown_1(object sender, KeyEventArgs e)
         {
             Action<FocusNavigationDirection> moveFocus = focusDirection =>
@@ -233,6 +242,22 @@ namespace Sudoku
                 default:
                     break;
             }
+        }
+
+        private void TextBox_GotFocus(object sender, RoutedEventArgs e)
+        {
+            TextBox tb = (TextBox)sender;
+            tb.Background = Brushes.Black;
+            tb.Foreground = Brushes.White;
+            tb.FontWeight = FontWeights.Heavy;
+        }
+
+        private void TextBox_LostFocus(object sender, RoutedEventArgs e)
+        {
+            TextBox tb = (TextBox)sender;
+            tb.Background = Brushes.White;
+            tb.Foreground = Brushes.Black;
+            tb.FontWeight = FontWeights.Normal;
         }
 	}
 }
