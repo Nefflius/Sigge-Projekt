@@ -9,7 +9,7 @@ namespace Sudoku
 
     public class SudokuModel
     {
-        int cellNumber = 0;
+        GridPrint objGridprint;
         string[] useThisGrid = new string[81];
         string[] editedNumbers = new string[81];
 
