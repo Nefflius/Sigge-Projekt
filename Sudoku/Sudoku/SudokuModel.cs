@@ -215,26 +215,22 @@ namespace Sudoku
 
         public enum Difficulty { Easy, Medium, Hard };
         static string difficulty;
-        static int check;
-        private static bool checktest;
+        static int checkanswers;
+        private static bool sendanswers;
 
         public static bool send
         {
-            get { return checktest;}
-            set { checktest = value; }
+            get { return sendanswers;}
+            set { sendanswers = value; }
         }
 
-        public int CellNumber { get { return cellNumber; } set { cellNumber = value;} }
+        //public int CellNumber { get { return cellNumber; } set { cellNumber = value;} }
 
         public string GetSetGame2Save 
         { 
             get 
-            { 
-                return editedNumbers[cellNumber]; 
-            } 
-            set
             {
-                editedNumbers[cellNumber] = value;
+                return objGridprint.SaveGame().ToString();
             } 
         }
 
@@ -246,8 +242,8 @@ namespace Sudoku
                     ut i GridPrint-usercontrol, sparar grid i globala nuvarandeGrid.
          **************************************************************************/
         public GridPrint PrintGrid(string radioButtonChecked, GridPrint gridprint, string[] savedGame = null ) 
-        {          
-            
+        {
+            objGridprint = gridprint;
             // när det finns flera spelplaner, randomiza fram vilken av dom som ska visas.           
             switch (radioButtonChecked)
             {
@@ -295,7 +291,7 @@ namespace Sudoku
             if (savedGame == null)
                 savedGame = useThisGrid;
 
-            return gridprint.PrintGrid(useThisGrid, savedGame);
+            return objGridprint.PrintGrid(useThisGrid, savedGame);
         }
        
         /*****************************************************
@@ -350,16 +346,22 @@ namespace Sudoku
                 if (inmatad[i] == solution[i])
                 {
                     rättad[i] = true;
-                    check++;
+                    checkanswers++;
                 }
                 else
                     rättad[i] = false;              
             }
 
-            if (check == 81)
-                checktest = true;
+            if (checkanswers == 81)
+            {
+                sendanswers = true;
+                checkanswers = 0;
+            }
             else
-                checktest = false;
+            {
+                sendanswers = false;
+                checkanswers = 0;
+            }
             // Skickar denna array till MarkeraSiffror i GridPrint
             gridprint.MarkeraSiffror(rättad);
         }

@@ -27,6 +27,7 @@ namespace Sudoku
 		public Meny()
 		{
 			InitializeComponent();
+            model = new SudokuModel();
 		}
 
 

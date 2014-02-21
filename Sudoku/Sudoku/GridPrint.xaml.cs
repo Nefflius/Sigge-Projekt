@@ -133,23 +133,24 @@ namespace Sudoku
                 e.Handled = true;
 
             TextBox tb = (TextBox)sender;       // Skriver över föregående inskrivna siffra
-            TextBox tb1;
             //if (tb.Text != "")
             if (e.Text != "")
-            {
                 tb.Text = e.Text;
-                for (int i = 0; i < 81; i++)
-                {
-                    tb1 = (TextBox)nameGridPrint.Children[i];
-                    if (tb == tb1)
-                    {
-                        objSudokuModel.CellNumber = i;
-                        objSudokuModel.GetSetGame2Save = tb1.Text;
-                    }
-                }
-
-            }
 		}
+
+        public StringBuilder SaveGame()
+        {
+            StringBuilder strbSaveGame = new StringBuilder();
+            for (int i = 0; i < 81; i++)
+            {
+                TextBox tb = (TextBox)nameGridPrint.Children[i];
+                if (tb.Text == "")
+                    strbSaveGame.Append(" ");
+                else
+                     strbSaveGame.Append(tb.Text);
+            }
+            return strbSaveGame;
+        }
 
 		public void continueGame()
 		{
@@ -176,6 +177,8 @@ namespace Sudoku
 
         private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
+            
+
             var main = Application.Current.MainWindow as MainWindow;
 
             TextBox teb = (TextBox)sender;
@@ -191,7 +194,7 @@ namespace Sudoku
                     main.spelplanComponent.lblAntalDrag.Content = antalDrag;
                 }
             }
-
+            
             for (int i = 0; i < 81; i++)  // Läs av alla rutor, om alla är ifyllda, rätta!
             {
                 TextBox tb = (TextBox)main.gridPrintComponent.nameGridPrint.Children[i];

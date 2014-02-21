@@ -33,6 +33,7 @@ namespace Sudoku
     public partial class MainWindow : Window
     {
         bool gameChanged = true;
+        SudokuModel model;
         public MainWindow()
         {
             InitializeComponent();
@@ -84,8 +85,8 @@ namespace Sudoku
 
         public void OpenFile_Executed(object sender, ExecutedRoutedEventArgs e)
         {
-            SudokuModel model = new SudokuModel();
             FileHandeling openSavedGame = new FileHandeling();
+            model = this.menuComponent.GetSudokuModel;
             string[] savedFile = openSavedGame.OpenFile();
             menuComponent.Visibility = Visibility.Collapsed;
             spelplanComponent.Visibility = Visibility.Visible;
@@ -109,28 +110,17 @@ namespace Sudoku
         public void SaveFile_Executed(object sender, ExecutedRoutedEventArgs e)
         {
             string[] game2Save = new string[3];
-
+            model = this.menuComponent.GetSudokuModel;
             //Spara hårdkodad spelplan
-            string[] strGameBoard = this.menuComponent.GetSudokuModel.GetUseThisGrid;
+            string[] strGameBoard = model.GetUseThisGrid;
             
             StringBuilder strbGameBoard = new StringBuilder();
             for (int i = 0; i < 81; i++)
                 strbGameBoard.Append(strGameBoard[i]);
             game2Save[0] = strbGameBoard.ToString();
 
-            //Spara användarens inmatade siffror
-            StringBuilder strbGameBoard2Save = new StringBuilder();
-            for (int i = 0; i < 81; i++)
-            {
-                this.menuComponent.GetSudokuModel.CellNumber = i;
-                if (this.menuComponent.GetSudokuModel.GetSetGame2Save == null)
-                    strbGameBoard2Save.Append(" ");
-                else
-                    strbGameBoard2Save.Append(this.menuComponent.GetSudokuModel.GetSetGame2Save);
-            }
-            game2Save[1] = strbGameBoard2Save.ToString();
-
-
+            //Spara användarens inmatade siffror            
+            game2Save[1] = model.GetSetGame2Save;
             FileHandeling saveGame = new FileHandeling();
             saveGame.SaveFile(game2Save);
         }
