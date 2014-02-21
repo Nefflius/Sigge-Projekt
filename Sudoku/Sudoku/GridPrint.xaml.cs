@@ -131,12 +131,6 @@ namespace Sudoku
 
 		private void TextBox_PreviewTextInput(object sender, TextCompositionEventArgs e)
 		{
-
-            //TextBox tb = (TextBox)sender;       // Skriver över föregående inskrivna siffra
-            //if (tb.Text != "")
-            //    tb.Text = e.Text;
-
-
             if (!char.IsDigit(e.Text, e.Text.Length - 1))           //Tar bort alla bokstäver som försöks skrivas in.
                 e.Handled = true;
             else if (e.Text == "0")                                 //Tar bort siffran "0"
