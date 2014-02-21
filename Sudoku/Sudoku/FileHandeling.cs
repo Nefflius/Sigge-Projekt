@@ -74,13 +74,20 @@ namespace Sudoku
             bool _saveFilesuccess;
             SaveFileDialog _saveSudoku = new SaveFileDialog();
             _saveSudoku.Filter = "Sudokufiler (.sdk)|*.sdk";
+            _saveSudoku.Filter = "Sudokufiler (.sdk)|*.sdk";
             _saveSudoku.FileName = "SparadSudoku.sdk";
             _saveSudoku.DefaultExt = ".sdk";
             _saveFilesuccess = (bool)_saveSudoku.ShowDialog();
             if (_saveFilesuccess)
-                File.WriteAllLines(_filePath + _saveSudoku.FileName, _arrayElements2Save);
+            {
+                //string 
+                using (StreamWriter save2File = new StreamWriter(_saveSudoku.FileName))
+                {
+                    save2File.WriteLine(_arrayElements2Save[0]);
+                    save2File.WriteLine(_arrayElements2Save[1]);
+                }
+                System.Windows.MessageBox.Show("Spelet har sparats!", "Spelet har sparats", System.Windows.MessageBoxButton.OK, System.Windows.MessageBoxImage.Information);
+            }
         }
-
     }
-
 }

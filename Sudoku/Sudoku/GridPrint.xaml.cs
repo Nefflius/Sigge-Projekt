@@ -26,14 +26,13 @@ namespace Sudoku
 		}
 		public int antalDrag = 0;
 
-		/*****************************************************
-		ANROP:      PrintGrid(string[]);
-		UPPGIFT:    Tar emot array med spelplan-siffror, 
-					skriver ut spelplan i GridPrint-usercontrol.
-		******************************************************/
-		public GridPrint PrintGrid(string[] startUpBoard, string[] savedGame)
+        /*****************************************************
+        ANROP:      PrintGrid(string[]);
+        UPPGIFT:    Tar emot array med spelplan-siffror, 
+                    skriver ut spelplan i GridPrint-usercontrol.
+        ******************************************************/
+        public GridPrint PrintGrid(string[] startUpBoard, string[] savedGame)
 		{
-            bool openingSavedGame = false;
             for (int i = 0; i < 81; i++)            // Tömmer spelplanen
             {
                 TextBox tb = (TextBox)nameGridPrint.Children[i];
@@ -43,6 +42,7 @@ namespace Sudoku
 
             antalDrag = 0;                          // Återställer antal drag innan nytt spel
             var main = Application.Current.MainWindow as MainWindow;
+            
             main.spelplanComponent.lblAntalDrag.Content = antalDrag;
 
 			for (int i = 0; i < 81; i++)
@@ -51,8 +51,6 @@ namespace Sudoku
 
                 string savedGameCell = savedGame[i];
                 string startUpBoardCell = startUpBoard[i];
-                if (savedGame != startUpBoard)
-                    openingSavedGame = true;
                 
                 if (startUpBoardCell != " ")
                 {
@@ -69,14 +67,9 @@ namespace Sudoku
                     textbox.FontWeight = FontWeights.Normal;
                     textbox.Foreground = Brushes.Black;
                     textbox.BorderBrush = Brushes.Silver;
-                }
-
-                if (!openingSavedGame)
-                    textbox.Text = startUpBoardCell.Trim();
-                else
                     textbox.Text = savedGameCell.Trim();
+                }
 			}
-			
 			return this;
 		}
         
@@ -131,14 +124,31 @@ namespace Sudoku
 
 		private void TextBox_PreviewTextInput(object sender, TextCompositionEventArgs e)
 		{
+            var main = Application.Current.MainWindow as MainWindow;
+            var objSudokuModel = main.menuComponent.GetSudokuModel as SudokuModel;
+
             if (!char.IsDigit(e.Text, e.Text.Length - 1))           //Tar bort alla bokstäver som försöks skrivas in.
                 e.Handled = true;
             else if (e.Text == "0")                                 //Tar bort siffran "0"
                 e.Handled = true;
 
             TextBox tb = (TextBox)sender;       // Skriver över föregående inskrivna siffra
-            if (tb.Text != "")
+            TextBox tb1;
+            //if (tb.Text != "")
+            if (e.Text != "")
+            {
                 tb.Text = e.Text;
+                for (int i = 0; i < 81; i++)
+                {
+                    tb1 = (TextBox)nameGridPrint.Children[i];
+                    if (tb == tb1)
+                    {
+                        objSudokuModel.CellNumber = i;
+                        objSudokuModel.GetSetGame2Save = tb1.Text;
+                    }
+                }
+
+            }
 		}
 
 		public void continueGame()

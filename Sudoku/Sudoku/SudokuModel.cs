@@ -9,6 +9,9 @@ namespace Sudoku
 
     public class SudokuModel
     {
+        int cellNumber = 0;
+        string[] useThisGrid = new string[81];
+        string[] editedNumbers = new string[81];
 
         string[] easy1 = new string[81]  { " ", " ", " ",     "7", " ", "4",     " ", "8", " ", 
                                           "5", " ", "4",     " ", "2", " ",     "9", "7", "6",  
@@ -221,6 +224,22 @@ namespace Sudoku
             set { checktest = value; }
         }
 
+        public int CellNumber { get { return cellNumber; } set { cellNumber = value;} }
+
+        public string GetSetGame2Save 
+        { 
+            get 
+            { 
+                return editedNumbers[cellNumber]; 
+            } 
+            set
+            {
+                editedNumbers[cellNumber] = value;
+            } 
+        }
+
+        public string[] GetUseThisGrid { get { return useThisGrid;} }
+
         /**************************************************************************
          * ANROP:   PrintGrid( vilken radiobutton som är markerad );
          * UPPGIFT: Läser in vilken svårighetsgrad som är markerad och skriver
@@ -228,8 +247,7 @@ namespace Sudoku
          **************************************************************************/
         public GridPrint PrintGrid(string radioButtonChecked, GridPrint gridprint, string[] savedGame = null ) 
         {          
-            string[] useThisGrid = new string[81];
-
+            
             // när det finns flera spelplaner, randomiza fram vilken av dom som ska visas.           
             switch (radioButtonChecked)
             {

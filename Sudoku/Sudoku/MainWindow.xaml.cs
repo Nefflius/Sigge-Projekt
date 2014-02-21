@@ -32,14 +32,12 @@ namespace Sudoku
 
     public partial class MainWindow : Window
     {
+        bool gameChanged = true;
         public MainWindow()
         {
             InitializeComponent();
             createCommandBindings();
         }
-
-        bool gameChanged = true;
-
 
         private void createCommandBindings()
         {
@@ -68,13 +66,6 @@ namespace Sudoku
             bindExit.CanExecute += ExitGame_CanExecute;
             CommandBindings.Add(bindExit);
         }
- 
-        //public void PrintGrid(GridPrint newGameBoard)
-        //{
-        //    newGameBoard.SetValue(Grid.ColumnSpanProperty, 3);
-
-        //    grdMain.Children.Add(newGameBoard);
-        //}
 
         public void NewGame_CanExecute(object sender, CanExecuteRoutedEventArgs e)
         {
@@ -98,14 +89,14 @@ namespace Sudoku
             string[] savedFile = openSavedGame.OpenFile();
             menuComponent.Visibility = Visibility.Collapsed;
             spelplanComponent.Visibility = Visibility.Visible;
-            
+
             string[] savedGame = new string[81];
             for (int i = 0; i < 81; i++)
             {
-                savedGame[i] = savedFile[0].Substring(i, 1);
+                savedGame[i] = savedFile[1].Substring(i, 1);
             }
 
-            gridPrintComponent = model.PrintGrid(savedFile[1], gridPrintComponent, savedGame);
+            gridPrintComponent = model.PrintGrid(savedFile[0], gridPrintComponent, savedGame);
             gridPrintComponent.Visibility = Visibility.Visible;
         }
 
@@ -117,17 +108,42 @@ namespace Sudoku
 
         public void SaveFile_Executed(object sender, ExecutedRoutedEventArgs e)
         {
-            MessageBox.Show("inte implementerat ännu. Jobbar på det :) ");
+            string[] game2Save = new string[3];
+
+            //Spara hårdkodad spelplan
+            string[] strGameBoard = this.menuComponent.GetSudokuModel.GetUseThisGrid;
+            
+            StringBuilder strbGameBoard = new StringBuilder();
+            for (int i = 0; i < 81; i++)
+                strbGameBoard.Append(strGameBoard[i]);
+            game2Save[0] = strbGameBoard.ToString();
+
+            //Spara användarens inmatade siffror
+            StringBuilder strbGameBoard2Save = new StringBuilder();
+            for (int i = 0; i < 81; i++)
+            {
+                this.menuComponent.GetSudokuModel.CellNumber = i;
+                if (this.menuComponent.GetSudokuModel.GetSetGame2Save == null)
+                    strbGameBoard2Save.Append(" ");
+                else
+                    strbGameBoard2Save.Append(this.menuComponent.GetSudokuModel.GetSetGame2Save);
+            }
+            game2Save[1] = strbGameBoard2Save.ToString();
+
+
+            FileHandeling saveGame = new FileHandeling();
+            saveGame.SaveFile(game2Save);
         }
 
         public void ExitGame_CanExecute(object sender, CanExecuteRoutedEventArgs e)
         {
-            e.CanExecute = true;    
+            e.CanExecute = true;
         }
 
         public void ExitGame_Executed(object sender, ExecutedRoutedEventArgs e)
         {
             Application.Current.Shutdown();
         }
+
     }
 }

@@ -21,12 +21,17 @@ namespace Sudoku
 	/// Interaction logic for Meny.xaml
 	/// </summary>
 	public partial class Meny : UserControl
-
-	{   
+	{
+        MainWindow main;
+        SudokuModel model;
 		public Meny()
 		{
 			InitializeComponent();
 		}
+
+
+
+
 		private static string radioButtonChecked;
 
         // Lägger till margin mellan radiobuttons och spelaknapp då Nytt Spel väljs.
@@ -34,6 +39,8 @@ namespace Sudoku
         {
             rbGrid.Margin = new Thickness(70, 0, 70, 160);
         }
+
+        public SudokuModel GetSudokuModel { get { return model; } }
 
 		/**********************************************************
 		ANROP:      Anropas då Spela-knappen clickas.
@@ -43,8 +50,8 @@ namespace Sudoku
 		***********************************************************/
 		private void spela_Click(object sender, RoutedEventArgs e)
 		{
-			var main = Application.Current.MainWindow as MainWindow;
-            SudokuModel model = new SudokuModel();
+			main = Application.Current.MainWindow as MainWindow;
+            model = new SudokuModel();
 
 			main.spelplanComponent.lblAntalDrag.Content = "0";
 
