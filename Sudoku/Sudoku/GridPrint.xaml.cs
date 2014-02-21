@@ -135,13 +135,12 @@ namespace Sudoku
             if (tb.Text != "")
                 tb.Text = e.Text;
 
-
             if (!char.IsDigit(e.Text, e.Text.Length - 1))           //Tar bort alla bokstäver som försöks skrivas in.
                 e.Handled = true;
             else if (e.Text == "0")                                 //Tar bort siffran "0"
                 e.Handled = true;
 		}
-
+        
 		public void continueGame()
 		{
 			var main = Application.Current.MainWindow as MainWindow;
@@ -167,6 +166,8 @@ namespace Sudoku
 
         private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
+            
+
             var main = Application.Current.MainWindow as MainWindow;
 
             TextBox teb = (TextBox)sender;
@@ -178,7 +179,7 @@ namespace Sudoku
                     main.spelplanComponent.lblAntalDrag.Content = antalDrag;
                 }
             }
-
+            
             for (int i = 0; i < 81; i++)  // Läs av alla rutor, om alla är ifyllda, rätta!
             {
                 TextBox tb = (TextBox)main.gridPrintComponent.nameGridPrint.Children[i];
@@ -206,7 +207,6 @@ namespace Sudoku
 
         private void Viewbox_PreviewKeyDown_1(object sender, KeyEventArgs e)
         {
-
             Action<FocusNavigationDirection> moveFocus = focusDirection =>
             {
                 e.Handled = true;

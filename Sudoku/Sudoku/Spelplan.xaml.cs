@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
+using System.Threading.Tasks; //
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -25,8 +25,8 @@ namespace Sudoku
     {   
         public DateTime begins;
         DispatcherTimer timerChanged;
-        public bool start = false; 
-
+        public bool start = false;
+        
         public Spelplan()
         {
             InitializeComponent();
@@ -60,9 +60,25 @@ namespace Sudoku
                 main.gridPrintComponent.continueGame();
             }
 
-            bool var = SudokuModel.send;
-            if (var == true)
-                MessageBox.Show("Du har vunnit, Grattis!");
+            bool vari = SudokuModel.send;
+            if (vari == true)
+            {
+                MessageBoxResult result = MessageBox.Show("Du vann!", "Grattis!", MessageBoxButton.YesNo);
+
+                if (result == MessageBoxResult.Yes)
+                {
+                    var main2 = Application.Current.MainWindow as MainWindow;
+
+                    main.menuComponent.Visibility = Visibility.Visible;
+                    main.spelplanComponent.Visibility = Visibility.Collapsed;
+                    main.gridPrintComponent.Visibility = Visibility.Collapsed;
+                }
+                else if (result == MessageBoxResult.No)
+                {
+                    Application.Current.Shutdown();
+                }
+
+            }    
         }
 
         private void clickNyttSpel(object sender, RoutedEventArgs e)

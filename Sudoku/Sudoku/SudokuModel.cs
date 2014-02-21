@@ -9,6 +9,7 @@ namespace Sudoku
 
     public class SudokuModel
     {
+        
 
         string[] easy1 = new string[81]  { " ", " ", " ",     "7", " ", "4",     " ", "8", " ", 
                                           "5", " ", "4",     " ", "2", " ",     "9", "7", "6",  
@@ -141,8 +142,6 @@ namespace Sudoku
                                               7,9,2,6,4,1,3,8,5,
                                               5,4,3,9,8,7,2,1,6,
                                               8,6,1,2,3,5,4,9,7 };
-  
-
 
         string[] hard1 = new string[81] { " ", "9", " ",     " ", "4", " ",     " ", "8", " ", 
                                           " ", "4", "2",     " ", "3", " ",     "6", "7", " ", 
@@ -212,13 +211,13 @@ namespace Sudoku
 
         public enum Difficulty { Easy, Medium, Hard };
         static string difficulty;
-        static int check;
-        private static bool checktest;
+        static int checkanswers;
+        private static bool sendanswers;
 
         public static bool send
         {
-            get { return checktest;}
-            set { checktest = value; }
+            get { return sendanswers;}
+            set { sendanswers = value; }
         }
 
         /**************************************************************************
@@ -332,16 +331,22 @@ namespace Sudoku
                 if (inmatad[i] == solution[i])
                 {
                     rättad[i] = true;
-                    check++;
+                    checkanswers++;
                 }
                 else
                     rättad[i] = false;              
             }
 
-            if (check == 81)
-                checktest = true;
+            if (checkanswers == 81)
+            {
+                sendanswers = true;
+                checkanswers = 0;
+            }
             else
-                checktest = false;
+            {
+                sendanswers = false;
+                checkanswers = 0;
+            }
             // Skickar denna array till MarkeraSiffror i GridPrint
             gridprint.MarkeraSiffror(rättad);
         }
