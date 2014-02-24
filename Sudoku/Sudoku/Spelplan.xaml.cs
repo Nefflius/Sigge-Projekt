@@ -30,11 +30,18 @@ namespace Sudoku
         public Spelplan()
         {
             InitializeComponent();
+            string _elapsedTime = new DateTime((DateTime.Now - begins).Ticks).ToString("HH:mm:ss");
+            InitiateTimer(_elapsedTime);
+        }
+
+        public void InitiateTimer(string timeElapsed)
+        {
             timerChanged = new DispatcherTimer(new TimeSpan(0, 0, 1), DispatcherPriority.Normal, delegate
             {
                 if (start)
                 {
-                    timer.Text = new DateTime((DateTime.Now - begins).Ticks).ToString("HH:mm:ss");
+                    //timer.Text = new DateTime((DateTime.Now - begins).Ticks).ToString("HH:mm:ss");
+                    timer.Text = timeElapsed;
                 }
             }, this.Dispatcher);
         }

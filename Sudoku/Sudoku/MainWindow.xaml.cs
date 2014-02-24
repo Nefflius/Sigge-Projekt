@@ -141,6 +141,9 @@ namespace Sudoku
             //Spara vilken spelplan/svårighetsgrad användaren valt
             game2Save[2] = model.GetDifficulty;
 
+            //Spara tiden
+            game2Save[3] = spelplanComponent.timer.Text;
+
             FileHandeling saveGame = new FileHandeling();
             saveGame.SaveFile(game2Save);
         }
