@@ -173,6 +173,11 @@ namespace Sudoku
         {
             MessageBox.Show("Detta Sudoku är utvecklat av:" + Environment.NewLine + "Ida Sabel" + Environment.NewLine + "Stefan Hall" + Environment.NewLine + "Hampus Wallin" + Environment.NewLine + "Nidaa Al-Botani",
                             "Om Sudoku");
+        }
+
+        private void mnuExit_Click(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Shutdown();
         } 
     }
 }
