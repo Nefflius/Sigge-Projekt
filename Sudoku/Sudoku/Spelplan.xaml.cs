@@ -63,20 +63,19 @@ namespace Sudoku
             bool vari = SudokuModel.send;
             if (vari == true)
             {
-                MessageBoxResult result = MessageBox.Show("Du vann!" + Environment.NewLine + "Vill du spela igen?", "Grattis!", MessageBoxButton.YesNo);
+                MessageBoxResult result = MessageBox.Show("Du vann!" + Environment.NewLine + "Vill du spela igen?", "Grattis!", MessageBoxButton.OKCancel);
 
-                if (result == MessageBoxResult.Yes)
+                if (result == MessageBoxResult.OK)
                 {
-                    var main2 = Application.Current.MainWindow as MainWindow;
-
                     main.menuComponent.Visibility = Visibility.Visible;
                     main.spelplanComponent.Visibility = Visibility.Collapsed;
                     main.gridPrintComponent.Visibility = Visibility.Collapsed;
                     main.menuComponent.IsNowVisible();
                 }
-                else if (result == MessageBoxResult.No)
+                else if (result == MessageBoxResult.Cancel)
                 {
-                    Application.Current.Shutdown();
+                    //Application.Current.Shutdown();
+                    
                 }
                 vari = false;
                 SudokuModel.send = false;

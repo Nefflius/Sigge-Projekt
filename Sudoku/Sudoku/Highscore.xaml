@@ -28,7 +28,7 @@
                                 <TableColumn />
                                 <TableColumn />
                             </Table.Columns>
-                            <TableRowGroup Name="tableRowGroup" FontFamily="Segoe" FontWeight="Thin">
+                            <TableRowGroup FontFamily="Segoe" FontWeight="Thin">
                                 <TableRow Background="WhiteSmoke" FontWeight="Normal">
                                     <TableCell ColumnSpan="2">
                                         <Paragraph FontSize="15">Namn :</Paragraph>
@@ -37,14 +37,78 @@
                                         <Paragraph FontSize="15">Bana :</Paragraph>
                                     </TableCell>
                                     <TableCell>
-                                        <Paragraph FontSize="15">Antal drag :</Paragraph>
+                                        <Paragraph FontSize="15">Drag :</Paragraph>
                                     </TableCell>
                                     <TableCell>
                                         <Paragraph FontSize="15">Tid :</Paragraph>
                                     </TableCell>
                                 </TableRow>
                             </TableRowGroup>
-                            <TableRowGroup Name="winnersList">
+                            <TableRowGroup Name="winnersListEasy" FontFamily="Segoe" FontWeight="Thin">
+                                <!--Här lägger vi in highscores från code-behind-->
+                            </TableRowGroup>
+                        </Table>
+                    </FlowDocument>
+                </FlowDocumentReader>
+                <FlowDocumentReader Name="highscoreListMedium" Width="380" Height="360" Visibility="Collapsed">
+                    <FlowDocument>
+                        <Table CellSpacing="10">
+                            <Table.Columns>
+                                <TableColumn />
+                                <TableColumn />
+                                <TableColumn />
+                                <TableColumn />
+                                <TableColumn />
+                            </Table.Columns>
+                            <TableRowGroup FontFamily="Segoe" FontWeight="Thin">
+                                <TableRow Background="WhiteSmoke" FontWeight="Normal">
+                                    <TableCell ColumnSpan="2">
+                                        <Paragraph FontSize="15">Namn :</Paragraph>
+                                    </TableCell>
+                                    <TableCell>
+                                        <Paragraph FontSize="15">Bana :</Paragraph>
+                                    </TableCell>
+                                    <TableCell>
+                                        <Paragraph FontSize="15">Drag :</Paragraph>
+                                    </TableCell>
+                                    <TableCell>
+                                        <Paragraph FontSize="15">Tid :</Paragraph>
+                                    </TableCell>
+                                </TableRow>
+                            </TableRowGroup>
+                            <TableRowGroup Name="winnersListMedium" FontFamily="Segoe" FontWeight="Thin">
+                                <!--Här lägger vi in highscores från code-behind-->
+                            </TableRowGroup>
+                        </Table>
+                    </FlowDocument>
+                </FlowDocumentReader>
+                <FlowDocumentReader Name="highscoreListHard" Width="380" Height="360" Visibility="Collapsed">
+                    <FlowDocument>
+                        <Table CellSpacing="10">
+                            <Table.Columns>
+                                <TableColumn />
+                                <TableColumn />
+                                <TableColumn />
+                                <TableColumn />
+                                <TableColumn />
+                            </Table.Columns>
+                            <TableRowGroup FontFamily="Segoe" FontWeight="Thin">
+                                <TableRow Background="WhiteSmoke" FontWeight="Normal">
+                                    <TableCell ColumnSpan="2">
+                                        <Paragraph FontSize="15">Namn :</Paragraph>
+                                    </TableCell>
+                                    <TableCell>
+                                        <Paragraph FontSize="15">Bana :</Paragraph>
+                                    </TableCell>
+                                    <TableCell>
+                                        <Paragraph FontSize="15">Drag :</Paragraph>
+                                    </TableCell>
+                                    <TableCell>
+                                        <Paragraph FontSize="15">Tid :</Paragraph>
+                                    </TableCell>
+                                </TableRow>
+                            </TableRowGroup>
+                            <TableRowGroup Name="winnersListHard" FontFamily="Segoe" FontWeight="Thin">
                                 <!--Här lägger vi in highscores från code-behind-->
                             </TableRowGroup>
                         </Table>

@@ -34,25 +34,50 @@ namespace Sudoku
             {
                 difficulty = difficulty.Remove(0, 4);
                 rbL.IsChecked = true;
+
+                row.Cells.Add(new TableCell(new Paragraph(new Run(nameinput))));
+                row.Cells.Add(new TableCell(new Paragraph(new Run(difficulty))));
+                row.Cells.Add(new TableCell(new Paragraph(new Run(moves))));
+                row.Cells.Add(new TableCell(new Paragraph(new Run(time))));
+                row.Cells[0].ColumnSpan = 2;
+
+                winnersListEasy.Rows.Add(row);
+
+                highscoreListEasy.Visibility = Visibility.Visible;
+                rbGrid.Margin = new Thickness(0, 0, 0, 0);
             }
             else if (difficulty[0] == 'm')
             {
                 difficulty = difficulty.Remove(0, 6);
                 rbM.IsChecked = true;
+
+                row.Cells.Add(new TableCell(new Paragraph(new Run(nameinput))));
+                row.Cells.Add(new TableCell(new Paragraph(new Run(difficulty))));
+                row.Cells.Add(new TableCell(new Paragraph(new Run(moves))));
+                row.Cells.Add(new TableCell(new Paragraph(new Run(time))));
+                row.Cells[0].ColumnSpan = 2;
+
+                winnersListMedium.Rows.Add(row);
+
+                highscoreListMedium.Visibility = Visibility.Visible;
+                rbGrid.Margin = new Thickness(0, 0, 0, 0);
             }
             else
             {
                 difficulty = difficulty.Remove(0, 4);
                 rbS.IsChecked = true;
+
+                row.Cells.Add(new TableCell(new Paragraph(new Run(nameinput))));
+                row.Cells.Add(new TableCell(new Paragraph(new Run(difficulty))));
+                row.Cells.Add(new TableCell(new Paragraph(new Run(moves))));
+                row.Cells.Add(new TableCell(new Paragraph(new Run(time))));
+                row.Cells[0].ColumnSpan = 2;
+
+                winnersListHard.Rows.Add(row);
+
+                highscoreListHard.Visibility = Visibility.Visible;
+                rbGrid.Margin = new Thickness(0, 0, 0, 0);
             }
-
-            row.Cells.Add(new TableCell(new Paragraph(new Run(nameinput))));
-            row.Cells.Add(new TableCell(new Paragraph(new Run(difficulty))));
-            row.Cells.Add(new TableCell(new Paragraph(new Run(moves))));
-            row.Cells.Add(new TableCell(new Paragraph(new Run(time))));
-            row.Cells[0].ColumnSpan = 2;
-
-            tableRowGroup.Rows.Add(row);
 
             var main = Application.Current.MainWindow as MainWindow;
             main.spelplanComponent.Visibility = Visibility.Collapsed;
@@ -64,11 +89,23 @@ namespace Sudoku
         {
             rbGrid.Margin = new Thickness(0, 0, 0, 0);
             if (Convert.ToBoolean(rbL.IsChecked))
+            {
                 highscoreListEasy.Visibility = Visibility.Visible;
+                highscoreListMedium.Visibility = Visibility.Collapsed;
+                highscoreListHard.Visibility = Visibility.Collapsed;
+            }
             else if (Convert.ToBoolean(rbM.IsChecked))
-                highscoreListEasy.Visibility = Visibility.Visible;
+            {
+                highscoreListEasy.Visibility = Visibility.Collapsed;
+                highscoreListMedium.Visibility = Visibility.Visible;
+                highscoreListHard.Visibility = Visibility.Collapsed;
+            }
             else if (Convert.ToBoolean(rbS.IsChecked))
-                highscoreListEasy.Visibility = Visibility.Visible;
+            {
+                highscoreListEasy.Visibility = Visibility.Collapsed;
+                highscoreListMedium.Visibility = Visibility.Collapsed;
+                highscoreListHard.Visibility = Visibility.Visible;
+            }
         }
 
         private void clickOK(object sender, RoutedEventArgs e)
