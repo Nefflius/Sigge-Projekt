@@ -83,7 +83,7 @@ namespace Sudoku
             }    
         }
 
-        private void clickNyttSpel(object sender, RoutedEventArgs e)
+        private void clickNyttSpel(object sender, RoutedEventArgs e)        //Nytt spel
         {
             var main = Application.Current.MainWindow as MainWindow;
            
