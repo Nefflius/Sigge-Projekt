@@ -109,7 +109,7 @@ namespace Sudoku
         {
             var main = Application.Current.MainWindow as MainWindow;
             SudokuModel model = new SudokuModel();
-
+            
             string moves = lblAntalDrag.Content.ToString();
 
             // if winnersList.rows =< 10
@@ -127,7 +127,7 @@ namespace Sudoku
             SudokuModel model = new SudokuModel();
             model.fuska(main.gridPrintComponent);
         }
-
+        
         // *****  Pause button click (Timer) ********
         private void btnPause_Click(object sender, RoutedEventArgs e)
         {
