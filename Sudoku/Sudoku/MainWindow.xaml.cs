@@ -97,7 +97,7 @@ namespace Sudoku
                 savedGame[i] = savedFile[1].Substring(i, 1);
             }
 
-            gridPrintComponent = model.PrintGrid(savedFile[0], gridPrintComponent, savedGame);
+            gridPrintComponent = model.PrintGrid(savedFile[2], gridPrintComponent, savedGame);
             gridPrintComponent.Visibility = Visibility.Visible;
         }
 
@@ -109,7 +109,7 @@ namespace Sudoku
 
         public void SaveFile_Executed(object sender, ExecutedRoutedEventArgs e)
         {
-            string[] game2Save = new string[3];
+            string[] game2Save = new string[4];
             model = this.menuComponent.GetSudokuModel;
             //Spara hårdkodad spelplan
             string[] strGameBoard = model.GetUseThisGrid;
@@ -121,6 +121,10 @@ namespace Sudoku
 
             //Spara användarens inmatade siffror            
             game2Save[1] = model.GetSetGame2Save;
+
+            //Spara vilken spelplan/svårighetsgrad användaren valt
+            game2Save[2] = model.GetDifficulty;
+
             FileHandeling saveGame = new FileHandeling();
             saveGame.SaveFile(game2Save);
         }

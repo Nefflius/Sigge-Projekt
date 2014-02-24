@@ -235,7 +235,7 @@ namespace Sudoku
         }
 
         public string[] GetUseThisGrid { get { return useThisGrid;} }
-
+        public string GetDifficulty { get { return difficulty;} }
         /**************************************************************************
          * ANROP:   PrintGrid( vilken radiobutton som är markerad );
          * UPPGIFT: Läser in vilken svårighetsgrad som är markerad och skriver
