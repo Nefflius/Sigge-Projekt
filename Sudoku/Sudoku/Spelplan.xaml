@@ -18,7 +18,9 @@
             <RowDefinition />
             <RowDefinition />
             <RowDefinition />
-        </Grid.RowDefinitions>
+
+                <RowDefinition />
+            </Grid.RowDefinitions>
         <Button Grid.Row="0" Margin="5" Background="Gray" BorderBrush="Black" FontSize="17" FontWeight="Thin" Foreground="White" Click="clickNyttSpel">Nytt Spel
             <Button.Effect>
                 <DropShadowEffect Opacity="0.7" />
@@ -34,13 +36,13 @@
                 <DropShadowEffect Opacity="0.7" />
             </Button.Effect>
         </Button>
-        <GroupBox Grid.Row="3" Grid.RowSpan="2" Header="Timer" FontWeight="Thin" Background="White" BorderBrush="Gray">
+        <GroupBox Grid.Row="4" Grid.RowSpan="2" Header="Timer" FontWeight="Thin" Background="White" BorderBrush="Gray">
             <GroupBox.Effect>
                 <DropShadowEffect Opacity="0.7" />
             </GroupBox.Effect>
             <TextBox x:Name="timer" BorderThickness="0" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Courier New" FontSize="16" Text="00:00:00" IsReadOnly="True" />
         </GroupBox>
-        <GroupBox Grid.Row="5" Header="Antal drag" FontWeight="Thin" Background="White" BorderBrush="Gray">
+        <GroupBox Grid.Row="6" Header="Antal drag" FontWeight="Thin" Background="White" BorderBrush="Gray">
             <GroupBox.Effect>
                 <DropShadowEffect Opacity="0.7" />
             </GroupBox.Effect>
@@ -52,6 +54,8 @@
                 <DropShadowEffect Opacity="0.7" />
             </Button.Effect>
         </Button>
-    </Grid>
+            <Button x:Name="btnPause" Content="Pause"  Grid.Row="3"  Click="btnPause_Click" Visibility="Visible" />
+            <Button x:Name="btnStart"   Content="Start"  Grid.Row="3" Click="btnStart_Click" Visibility="Collapsed"   />
+        </Grid>
     </Viewbox>
 </UserControl>
