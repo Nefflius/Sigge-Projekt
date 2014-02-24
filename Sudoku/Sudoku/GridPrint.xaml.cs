@@ -286,9 +286,7 @@ namespace Sudoku
             var main = Application.Current.MainWindow as MainWindow;
             
             main.spelplanComponent.GameWon(nameInput.Text.ToString(), highscoreTimer.Content.ToString());
-            main.highscoreComponent.highscoreListEasy.Visibility = Visibility.Visible;
-            main.highscoreComponent.rbGrid.Margin = new Thickness(0, 0, 0, 0);
-
+            
             youMadeIt.Visibility = Visibility.Hidden;
         }
 	}
