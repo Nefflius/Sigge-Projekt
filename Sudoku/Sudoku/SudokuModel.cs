@@ -8,6 +8,7 @@ namespace Sudoku
 {
     public class SudokuModel
     {
+        bool newgame = false;  //används för att visa rätt usergrids om man avbryter öppnafunktionen. 
         GridPrint objGridprint;
         string[] useThisGrid = new string[81];
         string[] editedNumbers = new string[81];
@@ -212,8 +213,6 @@ namespace Sudoku
                                             4,3,2, 9,1,5, 7,8,6,
                                             7,5,1, 6,8,4, 2,3,9 };
 
-        public enum Difficulty { Easy, Medium, Hard };
-
         static string difficulty;
         static int[] solution = new int[81];
 
@@ -244,7 +243,7 @@ namespace Sudoku
 
         public string[] GetUseThisGrid { get { return useThisGrid;} }
         public string GetDifficulty { get { return difficulty;} }
-
+        public bool GetSetNewGame { get { return newgame; } set { newgame = value;} }
         /**************************************************************************
          * ANROP:   PrintGrid( vilken radiobutton som är markerad );
          * UPPGIFT: Läser in vilken svårighetsgrad som är markerad och skriver

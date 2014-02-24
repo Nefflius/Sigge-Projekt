@@ -53,7 +53,7 @@ namespace Sudoku
 		{
 			main = Application.Current.MainWindow as MainWindow;
             model = new SudokuModel();
-
+            model.GetSetNewGame = true;
 			main.spelplanComponent.lblAntalDrag.Content = "0";
 
             main.spelplanComponent.Visibility = Visibility.Visible;
