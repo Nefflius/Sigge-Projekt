@@ -46,6 +46,7 @@
             </GroupBox.Effect>
             <Label Name ="lblAntalDrag" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="17" FontWeight="Thin">0</Label>
         </GroupBox>
+        <Button Grid.Row="7" Click="clickFusk">Fusk</Button>
         <Button Grid.Row="8" Margin="5" Background="Gray" BorderBrush="Black" FontSize="17" FontWeight="Thin" Foreground="White" Click="clickAvsluta">Avsluta
             <Button.Effect>
                 <DropShadowEffect Opacity="0.7" />

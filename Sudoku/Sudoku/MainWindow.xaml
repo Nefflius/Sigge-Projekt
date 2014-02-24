@@ -29,6 +29,9 @@
                         <Image Source="Properties/Resources/Images/icons/Save.png" />
                     </MenuItem.Icon>
                 </MenuItem>
+                
+                <MenuItem x:Name="mnuHighscore" Header="_Highscore" Click="mnuHighscore_Click" />
+                
                 <Separator></Separator>
                 <MenuItem x:Name="mnuExit" Header="A_vsluta" Command="ApplicationCommands.Close" >
                     <MenuItem.Icon>
@@ -40,6 +43,7 @@
         </Menu>
         
         <local:Meny x:Name="menuComponent" Grid.ColumnSpan="4" Visibility="Visible"></local:Meny>
+        <local:Highscore x:Name="highscoreComponent" Grid.ColumnSpan="4" Visibility="Collapsed"></local:Highscore>
         <local:Spelplan x:Name="spelplanComponent" Grid.Column="3" Visibility="Collapsed"></local:Spelplan>
         <local:GridPrint x:Name="gridPrintComponent" Grid.ColumnSpan="3" Visibility="Collapsed"></local:GridPrint>
     </Grid>

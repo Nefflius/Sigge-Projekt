@@ -9,12 +9,19 @@ Sudoku
 none
 false
 DEBUG;TRACE
+<<<<<<< HEAD
+C:\Users\Ida\Documents\DMP12\GUI Programmering\Sigge Projekt\Sudoku\Sudoku\App.xaml
+51768710212
+
+151616513284
+=======
 D:\Visual Studio 2012\SiggeProjekt\Sudoku\Sudoku\App.xaml
 42084655024
 
 14809786523
+>>>>>>> f63d1c4b033a349c479b8a567c690a4899837279
 141012385901
-GridPrint.xaml;MainWindow.xaml;Meny.xaml;Spelplan.xaml;
+GridPrint.xaml;Highscore.xaml;MainWindow.xaml;Meny.xaml;Spelplan.xaml;
 
 False
 
