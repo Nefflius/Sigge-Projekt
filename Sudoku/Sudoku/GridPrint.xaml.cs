@@ -131,11 +131,13 @@ namespace Sudoku
                 e.Handled = true;
             else if (e.Text == "0")                                 //Tar bort siffran "0"
                 e.Handled = true;
-
-            TextBox tb = (TextBox)sender;       // Skriver över föregående inskrivna siffra
-            //if (tb.Text != "")
-            if (e.Text != "")
-                tb.Text = e.Text;
+            else
+            {
+                TextBox tb = (TextBox)sender;       // Skriver över föregående inskrivna siffra
+                //if (tb.Text != "")
+                if (e.Text != "")
+                    tb.Text = e.Text;
+            }
 		}
 
         public StringBuilder SaveGame()
