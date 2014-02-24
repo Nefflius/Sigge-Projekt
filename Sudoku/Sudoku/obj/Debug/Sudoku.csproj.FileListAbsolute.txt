@@ -1,28 +1,3 @@
-C:\Users\Ida\Documents\Visual Studio 2012\Projects\GUI_Programmering\Sudoku\Sudoku\bin\Debug\Sudoku.exe.config
-C:\Users\Ida\Documents\Visual Studio 2012\Projects\GUI_Programmering\Sudoku\Sudoku\bin\Debug\Sudoku.exe
-C:\Users\Ida\Documents\Visual Studio 2012\Projects\GUI_Programmering\Sudoku\Sudoku\bin\Debug\Sudoku.pdb
-C:\Users\Ida\Documents\Visual Studio 2012\Projects\GUI_Programmering\Sudoku\Sudoku\obj\Debug\Sudoku.csprojResolveAssemblyReference.cache
-C:\Users\Ida\Documents\Visual Studio 2012\Projects\GUI_Programmering\Sudoku\Sudoku\obj\Debug\MainWindow.baml
-C:\Users\Ida\Documents\Visual Studio 2012\Projects\GUI_Programmering\Sudoku\Sudoku\obj\Debug\Meny.baml
-C:\Users\Ida\Documents\Visual Studio 2012\Projects\GUI_Programmering\Sudoku\Sudoku\obj\Debug\Spelplan.baml
-C:\Users\Ida\Documents\Visual Studio 2012\Projects\GUI_Programmering\Sudoku\Sudoku\obj\Debug\MainWindow.g.cs
-C:\Users\Ida\Documents\Visual Studio 2012\Projects\GUI_Programmering\Sudoku\Sudoku\obj\Debug\Meny.g.cs
-C:\Users\Ida\Documents\Visual Studio 2012\Projects\GUI_Programmering\Sudoku\Sudoku\obj\Debug\Spelplan.g.cs
-C:\Users\Ida\Documents\Visual Studio 2012\Projects\GUI_Programmering\Sudoku\Sudoku\obj\Debug\App.g.cs
-C:\Users\Ida\Documents\Visual Studio 2012\Projects\GUI_Programmering\Sudoku\Sudoku\obj\Debug\Sudoku_MarkupCompile.cache
-C:\Users\Ida\Documents\Visual Studio 2012\Projects\GUI_Programmering\Sudoku\Sudoku\obj\Debug\Sudoku.g.resources
-C:\Users\Ida\Documents\Visual Studio 2012\Projects\GUI_Programmering\Sudoku\Sudoku\obj\Debug\Sudoku.Properties.Resources.resources
-C:\Users\Ida\Documents\Visual Studio 2012\Projects\GUI_Programmering\Sudoku\Sudoku\obj\Debug\Sudoku.csproj.GenerateResource.Cache
-C:\Users\Ida\Documents\Visual Studio 2012\Projects\GUI_Programmering\Sudoku\Sudoku\obj\Debug\Sudoku.exe
-C:\Users\Ida\Documents\Visual Studio 2012\Projects\GUI_Programmering\Sudoku\Sudoku\obj\Debug\Sudoku.pdb
-C:\Users\Ida\Documents\Visual Studio 2012\Projects\GUI_Programmering\Sudoku\Sudoku\obj\Debug\Sudoku_MarkupCompile.lref
-C:\Users\Ida\Documents\Visual Studio 2012\Projects\GUI_Programmering\Sudoku\Sudoku\obj\Debug\GeneratedInternalTypeHelper.g.cs
-C:\Users\Ida\Documents\Visual Studio 2012\Projects\GUI_Programmering\Sudoku\Sudoku\obj\Debug\Easy1.baml
-C:\Users\Ida\Documents\Visual Studio 2012\Projects\GUI_Programmering\Sudoku\Sudoku\obj\Debug\Hard1.baml
-C:\Users\Ida\Documents\Visual Studio 2012\Projects\GUI_Programmering\Sudoku\Sudoku\obj\Debug\Medium1.baml
-C:\Users\Ida\Documents\Visual Studio 2012\Projects\GUI_Programmering\Sudoku\Sudoku\obj\Debug\Easy1.g.cs
-C:\Users\Ida\Documents\Visual Studio 2012\Projects\GUI_Programmering\Sudoku\Sudoku\obj\Debug\Hard1.g.cs
-C:\Users\Ida\Documents\Visual Studio 2012\Projects\GUI_Programmering\Sudoku\Sudoku\obj\Debug\Medium1.g.cs
 D:\Visual Studio 2012\SiggeProjekt\Sudoku\Sudoku\bin\Debug\Sudoku.exe.config
 D:\Visual Studio 2012\SiggeProjekt\Sudoku\Sudoku\obj\Debug\Sudoku.exe
 D:\Visual Studio 2012\SiggeProjekt\Sudoku\Sudoku\obj\Debug\Sudoku.pdb
@@ -45,7 +20,10 @@ C:\Users\Ida\Documents\DMP12\GUI Programmering\Sigge Projekt\Sudoku\Sudoku\obj\D
 C:\Users\Ida\Documents\DMP12\GUI Programmering\Sigge Projekt\Sudoku\Sudoku\obj\Debug\Sudoku.Properties.Resources.resources
 C:\Users\Ida\Documents\DMP12\GUI Programmering\Sigge Projekt\Sudoku\Sudoku\obj\Debug\Sudoku.csproj.GenerateResource.Cache
 D:\Visual Studio 2012\SiggeProjekt\Sudoku\Sudoku\obj\Debug\Sudoku.csprojResolveAssemblyReference.cache
+D:\Visual Studio 2012\SiggeProjekt\Sudoku\Sudoku\bin\Debug\Sudoku.exe
+D:\Visual Studio 2012\SiggeProjekt\Sudoku\Sudoku\bin\Debug\Sudoku.pdb
 D:\Visual Studio 2012\SiggeProjekt\Sudoku\Sudoku\obj\Debug\Meny.baml
+D:\Visual Studio 2012\SiggeProjekt\Sudoku\Sudoku\obj\Debug\GridPrint.g.cs
 D:\Visual Studio 2012\SiggeProjekt\Sudoku\Sudoku\obj\Debug\MainWindow.g.cs
 D:\Visual Studio 2012\SiggeProjekt\Sudoku\Sudoku\obj\Debug\Meny.g.cs
 D:\Visual Studio 2012\SiggeProjekt\Sudoku\Sudoku\obj\Debug\Spelplan.g.cs
@@ -53,8 +31,7 @@ D:\Visual Studio 2012\SiggeProjekt\Sudoku\Sudoku\obj\Debug\App.g.cs
 D:\Visual Studio 2012\SiggeProjekt\Sudoku\Sudoku\obj\Debug\GeneratedInternalTypeHelper.g.cs
 D:\Visual Studio 2012\SiggeProjekt\Sudoku\Sudoku\obj\Debug\Sudoku_MarkupCompile.cache
 D:\Visual Studio 2012\SiggeProjekt\Sudoku\Sudoku\obj\Debug\Sudoku_MarkupCompile.lref
-D:\Visual Studio 2012\SiggeProjekt\Sudoku\Sudoku\bin\Debug\Sudoku.exe
-D:\Visual Studio 2012\SiggeProjekt\Sudoku\Sudoku\bin\Debug\Sudoku.pdb
+D:\Visual Studio 2012\SiggeProjekt\Sudoku\Sudoku\obj\Debug\GridPrint.baml
 D:\Visual Studio 2012\SiggeProjekt\Sudoku\Sudoku\obj\Debug\MainWindow.baml
 D:\Visual Studio 2012\SiggeProjekt\Sudoku\Sudoku\obj\Debug\Spelplan.baml
 D:\Visual Studio 2012\SiggeProjekt\Sudoku\Sudoku\obj\Debug\Sudoku.g.resources
@@ -129,8 +106,6 @@ C:\Users\Nidaa\Desktop\DMP1\GUI_prog\Sigge Projekt\Sudoku\Sudoku\obj\Debug\Spelp
 C:\Users\Nidaa\Desktop\DMP1\GUI_prog\Sigge Projekt\Sudoku\Sudoku\obj\Debug\Sudoku.g.resources
 C:\Users\Nidaa\Desktop\DMP1\GUI_prog\Sigge Projekt\Sudoku\Sudoku\obj\Debug\Sudoku.Properties.Resources.resources
 C:\Users\Nidaa\Desktop\DMP1\GUI_prog\Sigge Projekt\Sudoku\Sudoku\obj\Debug\Sudoku.csproj.GenerateResource.Cache
-D:\Visual Studio 2012\SiggeProjekt\Sudoku\Sudoku\obj\Debug\GridPrint.g.cs
-D:\Visual Studio 2012\SiggeProjekt\Sudoku\Sudoku\obj\Debug\GridPrint.baml
 C:\Users\Ida\Documents\DMP12\GUI Programmering\Sigge Projekt\Sudoku\Sudoku\obj\Debug\Highscore.baml
 C:\Users\Ida\Documents\DMP12\GUI Programmering\Sigge Projekt\Sudoku\Sudoku\obj\Debug\Highscore.g.cs
 C:\Users\Ida\Documents\DMP12\GUI Programmering\Sigge Projekt\Sudoku\Sudoku\obj\Debug\Sudoku.csprojResolveAssemblyReference.cache

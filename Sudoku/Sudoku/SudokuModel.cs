@@ -6,9 +6,11 @@ using System.Threading.Tasks;
 
 namespace Sudoku
 {
-
     public class SudokuModel
     {
+        GridPrint objGridprint;
+        string[] useThisGrid = new string[81];
+        string[] editedNumbers = new string[81];
 
         string[] easy1 = new string[81]  { " ", " ", " ",     "7", " ", "4",     " ", "8", " ", 
                                           "5", " ", "4",     " ", "2", " ",     "9", "7", "6",  
@@ -211,16 +213,19 @@ namespace Sudoku
                                             7,5,1, 6,8,4, 2,3,9 };
 
         public enum Difficulty { Easy, Medium, Hard };
-       static string difficulty; 
+
+        static string difficulty;
         static int[] solution = new int[81];
-        static int check;
-        private static bool checktest;
+
+        static int checkanswers;
+        private static bool sendanswers;
 
         public static bool send
         {
-            get { return checktest;}
-            set { checktest = value; }
+            get { return sendanswers;}
+            set { sendanswers = value; }
         }
+
 
         // Skickar rätt array med lösning till Gridprint 
         public void fuska(GridPrint gridprint)
@@ -228,15 +233,28 @@ namespace Sudoku
             gridprint.PrintSolution(solution);
         }
 
+
+        //public int CellNumber { get { return cellNumber; } set { cellNumber = value;} }
+
+        public string GetSetGame2Save 
+        { 
+            get 
+            {
+                return objGridprint.SaveGame().ToString();
+            } 
+        }
+
+        public string[] GetUseThisGrid { get { return useThisGrid;} }
+
+
         /**************************************************************************
          * ANROP:   PrintGrid( vilken radiobutton som är markerad );
          * UPPGIFT: Läser in vilken svårighetsgrad som är markerad och skriver
                     ut i GridPrint-usercontrol, sparar grid i globala nuvarandeGrid.
          **************************************************************************/
-        public GridPrint PrintGrid(string radioButtonChecked, GridPrint gridprint, string[] savedGame = null ) 
-        {          
-            string[] useThisGrid = new string[81];
-
+        public GridPrint PrintGrid(string radioButtonChecked, GridPrint gridprint, string[] savedGame = null )        
+        {
+            objGridprint = gridprint;
             difficulty = radioButtonChecked;
 
             switch (radioButtonChecked)
@@ -285,7 +303,7 @@ namespace Sudoku
             if (savedGame == null)
                 savedGame = useThisGrid;
 
-            return gridprint.PrintGrid(useThisGrid, savedGame);
+            return objGridprint.PrintGrid(useThisGrid, savedGame);
         }
        
         /*****************************************************
@@ -307,16 +325,22 @@ namespace Sudoku
                 if (inmatad[i] == solution[i])
                 {
                     rättad[i] = true;
-                    check++;
+                    checkanswers++;
                 }
                 else
                     rättad[i] = false;              
             }
 
-            if (check == 81)
-                checktest = true;
+            if (checkanswers == 81)
+            {
+                sendanswers = true;
+                checkanswers = 0;
+            }
             else
-                checktest = false;
+            {
+                sendanswers = false;
+                checkanswers = 0;
+            }
             // Skickar denna array till MarkeraSiffror i GridPrint
             gridprint.MarkeraSiffror(rättad);
         }

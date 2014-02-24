@@ -16,6 +16,30 @@ namespace Sudoku
         {
             _filePath = filepath;
         }
+
+        public FileHandeling()
+        {
+            _filePath = Environment.SpecialFolder.MyDocuments.ToString();
+            _filePath += "\\Sparade sudokospel";
+            if (!Directory.Exists(_filePath))
+                CreateFolder();
+
+
+        }
+
+        public void CreateFolder()
+        {
+            try
+            {
+                DirectoryInfo _folder4SavedGames = Directory.CreateDirectory(_filePath);
+            }
+            
+            catch (Exception e)
+            {
+                System.Windows.MessageBox.Show(e.Message);
+            }
+        }
+
         public string[] OpenFile()
         {
             string[] _sudokuElements = new string[3];
@@ -34,16 +58,36 @@ namespace Sudoku
              if (_openFileSuccess)
              {
                  _filePath = _openSudoku.FileName;
-                 StreamReader _readSavedGame = new StreamReader(_filePath);
-                 
-                 for (int i = 0; i < 3; i++)
+                 using (StreamReader _readSavedGame = File.OpenText(_filePath))
                  {
-                     _sudokuElements[i] = _readSavedGame.ReadLine();
+                     for (int i = 0; i < 3; i++)
+                     {
+                         _sudokuElements[i] = _readSavedGame.ReadLine();
+                     }
                  }
              }
             return _sudokuElements;
         }
 
+        public void SaveFile(string[] _arrayElements2Save)
+        {
+            bool _saveFilesuccess;
+            SaveFileDialog _saveSudoku = new SaveFileDialog();
+            _saveSudoku.Filter = "Sudokufiler (.sdk)|*.sdk";
+            _saveSudoku.Filter = "Sudokufiler (.sdk)|*.sdk";
+            _saveSudoku.FileName = "SparadSudoku.sdk";
+            _saveSudoku.DefaultExt = ".sdk";
+            _saveFilesuccess = (bool)_saveSudoku.ShowDialog();
+            if (_saveFilesuccess)
+            {
+                //string 
+                using (StreamWriter save2File = new StreamWriter(_saveSudoku.FileName))
+                {
+                    save2File.WriteLine(_arrayElements2Save[0]);
+                    save2File.WriteLine(_arrayElements2Save[1]);
+                }
+                System.Windows.MessageBox.Show("Spelet har sparats!", "Spelet har sparats", System.Windows.MessageBoxButton.OK, System.Windows.MessageBoxImage.Information);
+            }
+        }
     }
-
 }

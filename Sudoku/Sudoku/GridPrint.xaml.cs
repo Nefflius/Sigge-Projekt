@@ -26,6 +26,7 @@ namespace Sudoku
 		}
 		public int antalDrag = 0;
 
+
         //Skriver ut lösning
         public void PrintSolution(int[] solution)
         {
@@ -37,6 +38,7 @@ namespace Sudoku
             }
         }
 
+
         /*****************************************************
         ANROP:      PrintGrid(string[]);
         UPPGIFT:    Tar emot array med spelplan-siffror, 
@@ -44,7 +46,6 @@ namespace Sudoku
         ******************************************************/
         public GridPrint PrintGrid(string[] startUpBoard, string[] savedGame)
 		{
-            bool openingSavedGame = false;
             for (int i = 0; i < 81; i++)            // Tömmer spelplanen
             {
                 TextBox tb = (TextBox)nameGridPrint.Children[i];
@@ -54,6 +55,7 @@ namespace Sudoku
 
             antalDrag = 0;                          // Återställer antal drag innan nytt spel
             var main = Application.Current.MainWindow as MainWindow;
+            
             main.spelplanComponent.lblAntalDrag.Content = antalDrag;
 
 			for (int i = 0; i < 81; i++)
@@ -62,8 +64,6 @@ namespace Sudoku
 
                 string savedGameCell = savedGame[i];
                 string startUpBoardCell = startUpBoard[i];
-                if (savedGame != startUpBoard)
-                    openingSavedGame = true;
                 
                 if (startUpBoardCell != " ")
                 {
@@ -80,14 +80,9 @@ namespace Sudoku
                     textbox.FontWeight = FontWeights.Normal;
                     textbox.Foreground = Brushes.Black;
                     textbox.BorderBrush = Brushes.Silver;
-                }
-
-                if (!openingSavedGame)
-                    textbox.Text = startUpBoardCell.Trim();
-                else
                     textbox.Text = savedGameCell.Trim();
+                }
 			}
-			
 			return this;
 		}
         
@@ -144,6 +139,21 @@ namespace Sudoku
             }
 		}
 
+
+        public StringBuilder SaveGame()
+        {
+            StringBuilder strbSaveGame = new StringBuilder();
+            for (int i = 0; i < 81; i++)
+            {
+                TextBox tb = (TextBox)nameGridPrint.Children[i];
+                if (tb.Text == "")
+                    strbSaveGame.Append(" ");
+                else
+                     strbSaveGame.Append(tb.Text);
+            }
+            return strbSaveGame;
+        }
+
 		public void continueGame()
 		{
 			var main = Application.Current.MainWindow as MainWindow;
@@ -181,6 +191,8 @@ namespace Sudoku
 
         private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
+            
+
             var main = Application.Current.MainWindow as MainWindow;
 
             TextBox teb = (TextBox)sender;
