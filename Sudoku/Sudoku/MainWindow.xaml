@@ -29,7 +29,7 @@
                         <Image Source="Properties/Resources/Images/icons/Save.png" />
                     </MenuItem.Icon>
                 </MenuItem>
-                
+                <Separator></Separator>
                 <MenuItem x:Name="mnuHighscore" Header="_Highscore" Click="mnuHighscore_Click" />
                 
                 <Separator></Separator>
@@ -39,7 +39,10 @@
                     </MenuItem.Icon>
                 </MenuItem>
             </MenuItem>
-            <MenuItem Header="_Hjälp" x:Name="mnuHelp" Background="White" BorderBrush="Black"/>
+            <MenuItem Header="_Hjälp" x:Name="mnuHelp" Background="White" BorderBrush="Black">
+                <MenuItem x:Name="mnuRegler" Header="_Regler" Click="mnuRegler_Click"/>
+                <MenuItem x:Name="mnuOmSudoku" Header="Om Sudoku" Click="mnuOmSudoku_Click"/>
+            </MenuItem>
         </Menu>
         
         <local:Meny x:Name="menuComponent" Grid.ColumnSpan="4" Visibility="Visible"></local:Meny>
