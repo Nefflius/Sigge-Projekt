@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-
+using System.Windows.Threading; // timer
 
 namespace Sudoku
 {
@@ -22,6 +22,13 @@ namespace Sudoku
 	/// </summary>
 	public partial class Meny : UserControl
 	{
+
+        // Timer Var
+        public DateTime begins;
+        DispatcherTimer timerChanged;
+        public bool start = false;
+        // End timer Var
+
         MainWindow main;
         SudokuModel model;
 		public Meny()
@@ -51,6 +58,9 @@ namespace Sudoku
 		***********************************************************/
 		private void spela_Click(object sender, RoutedEventArgs e)
 		{
+
+            Timer();
+
 			main = Application.Current.MainWindow as MainWindow;
             model = new SudokuModel();
             model.GetSetNewGame = true;
@@ -71,8 +81,8 @@ namespace Sudoku
 			main.gridPrintComponent = model.PrintGrid(radioButtonChecked, main.gridPrintComponent);
 			main.gridPrintComponent.Visibility = Visibility.Visible;
 					
-			main.spelplanComponent.start = true;   // Timer
-			main.spelplanComponent.begins = DateTime.Now;  // Timer
+		//	main.spelplanComponent.start = true;   // Timer
+		//	main.spelplanComponent.begins = DateTime.Now;  // Timer
 		}
 
 		private void rb_Click(object sender, RoutedEventArgs e)
@@ -147,5 +157,24 @@ namespace Sudoku
                 }
             }
 		}
+
+
+        public void Timer()
+        {
+
+            //Timer
+            start = true;
+            begins = DateTime.Now;
+            timerChanged = new DispatcherTimer(new TimeSpan(0, 0, 1), DispatcherPriority.Normal, delegate
+            {
+                if (start)
+                {
+                    var main = Application.Current.MainWindow as MainWindow;
+                    main.spelplanComponent.timer.Text = new DateTime((DateTime.Now - begins).Ticks).ToString("HH:mm:ss");
+                }
+            }, this.Dispatcher);
+        }  //TimerEnd
+
+
 	}
 }

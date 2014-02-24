@@ -162,5 +162,17 @@ namespace Sudoku
             gridPrintComponent.Visibility = Visibility.Collapsed;
             spelplanComponent.Visibility = Visibility.Collapsed;
         }
+
+        private void mnuRegler_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Ett sudoku består av nio gånger nio rutor som i sin tur är indelade i nio större rutor. För att lösa ett sudoku skall man placera ut siffrorna 1-9 på spelfältet på ett sådant vis att varje siffra bara finns en gång per rad, en gång per kolumn och dessutom bara en gång per större ruta.",
+                            "Hjälp");
+        }
+
+        private void mnuOmSudoku_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Detta Sudoku är utvecklat av:" + Environment.NewLine + "Ida Sabel" + Environment.NewLine + "Stefan Hall" + Environment.NewLine + "Hampus Wallin" + Environment.NewLine + "Nidaa Al-Botani",
+                            "Om Sudoku");
+        } 
     }
 }

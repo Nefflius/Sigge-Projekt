@@ -40,8 +40,8 @@
                 </MenuItem>
             </MenuItem>
             <MenuItem Header="_Hjälp" x:Name="mnuHelp" Background="White" BorderBrush="Black">
-                <MenuItem x:Name="mnuRegler" Header="_Regler"/>
-                <MenuItem x:Name="mnuOmSudoku" Header="Om Sudoku"/>
+                <MenuItem x:Name="mnuRegler" Header="_Regler" Click="mnuRegler_Click"/>
+                <MenuItem x:Name="mnuOmSudoku" Header="Om Sudoku" Click="mnuOmSudoku_Click"/>
             </MenuItem>
         </Menu>
         
