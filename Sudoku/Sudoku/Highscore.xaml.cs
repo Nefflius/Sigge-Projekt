@@ -41,7 +41,7 @@ namespace Sudoku
                 row.Cells.Add(new TableCell(new Paragraph(new Run(time))));
                 row.Cells[0].ColumnSpan = 2;
 
-                winnersListEasy.Rows.Add(row);
+                winnersListMedium.Rows.Add(row);
 
                 highscoreListEasy.Visibility = Visibility.Visible;
                 rbGrid.Margin = new Thickness(0, 0, 0, 0);
@@ -112,6 +112,11 @@ namespace Sudoku
         {
             var main = Application.Current.MainWindow as MainWindow;
             main.highscoreComponent.Visibility = Visibility.Collapsed;
+            main.highscoreComponent.highscoreListEasy.Visibility = Visibility.Collapsed;
+            main.highscoreComponent.highscoreListMedium.Visibility = Visibility.Collapsed;
+            main.highscoreComponent.highscoreListHard.Visibility = Visibility.Collapsed;
+            main.highscoreComponent.rbGrid.Margin = new Thickness(0, 0, 0, 360);
+
             main.menuComponent.Visibility = Visibility.Visible;
         }
     }
