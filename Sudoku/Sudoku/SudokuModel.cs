@@ -217,13 +217,13 @@ namespace Sudoku
         static string difficulty;
         static int checkanswers;
         private static bool sendanswers;
-
+        
         public static bool send
         {
-            get { return sendanswers;}
+            get { return sendanswers; }
             set { sendanswers = value; }
         }
-
+        
         //public int CellNumber { get { return cellNumber; } set { cellNumber = value;} }
 
         public string GetSetGame2Save 
@@ -362,6 +362,8 @@ namespace Sudoku
                 sendanswers = false;
                 checkanswers = 0;
             }
+
+
             // Skickar denna array till MarkeraSiffror i GridPrint
             gridprint.MarkeraSiffror(rättad);
         }

@@ -79,6 +79,8 @@ namespace Sudoku
                     Application.Current.Shutdown();
                 }
                 vari = false;
+                SudokuModel.send = false;
+                btnRätta.Content = "RÄTTA";
             }    
         }
 
