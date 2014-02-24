@@ -64,6 +64,9 @@
     <Compile Include="GridPrint.xaml.cs">
       <DependentUpon>GridPrint.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Highscore.xaml.cs">
+      <DependentUpon>Highscore.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -74,6 +77,10 @@
     </Compile>
     <Compile Include="SudokuModel.cs" />
     <Page Include="GridPrint.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Highscore.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\Ida\Documents\DMP12\GUI Programmering\Sigge Projekt\Sudoku\Sudoku\App.xaml
-42084655024
+51768710212
 
-14177812627
+151616513284
 141012385901
-GridPrint.xaml;MainWindow.xaml;Meny.xaml;Spelplan.xaml;
+GridPrint.xaml;Highscore.xaml;MainWindow.xaml;Meny.xaml;Spelplan.xaml;
 
-True
+False
 

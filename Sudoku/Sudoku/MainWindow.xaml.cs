@@ -149,5 +149,13 @@ namespace Sudoku
         {
             Application.Current.Shutdown();
         }
+
+        private void mnuHighscore_Click(object sender, RoutedEventArgs e)
+        {
+            highscoreComponent.Visibility = Visibility.Visible;
+            menuComponent.Visibility = Visibility.Collapsed;
+            gridPrintComponent.Visibility = Visibility.Collapsed;
+            spelplanComponent.Visibility = Visibility.Collapsed;
+        }
     }
 }
