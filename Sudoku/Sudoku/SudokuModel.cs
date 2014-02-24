@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 
 namespace Sudoku
 {
-
     public class SudokuModel
     {
         GridPrint objGridprint;
@@ -214,7 +213,10 @@ namespace Sudoku
                                             7,5,1, 6,8,4, 2,3,9 };
 
         public enum Difficulty { Easy, Medium, Hard };
+
         static string difficulty;
+        static int[] solution = new int[81];
+
         static int checkanswers;
         private static bool sendanswers;
         
@@ -223,7 +225,13 @@ namespace Sudoku
             get { return sendanswers; }
             set { sendanswers = value; }
         }
-        
+
+        // Skickar rätt array med lösning till Gridprint 
+        public void fuska(GridPrint gridprint)
+        {
+            gridprint.PrintSolution(solution);
+        }
+
         //public int CellNumber { get { return cellNumber; } set { cellNumber = value;} }
 
         public string GetSetGame2Save 
@@ -236,52 +244,54 @@ namespace Sudoku
 
         public string[] GetUseThisGrid { get { return useThisGrid;} }
 
+
         /**************************************************************************
          * ANROP:   PrintGrid( vilken radiobutton som är markerad );
          * UPPGIFT: Läser in vilken svårighetsgrad som är markerad och skriver
                     ut i GridPrint-usercontrol, sparar grid i globala nuvarandeGrid.
          **************************************************************************/
-        public GridPrint PrintGrid(string radioButtonChecked, GridPrint gridprint, string[] savedGame = null ) 
+        public GridPrint PrintGrid(string radioButtonChecked, GridPrint gridprint, string[] savedGame = null )        
         {
             objGridprint = gridprint;
-            // när det finns flera spelplaner, randomiza fram vilken av dom som ska visas.           
+            difficulty = radioButtonChecked;
+
             switch (radioButtonChecked)
             {
                 case "easy1":
                     useThisGrid = easy1;
-                    difficulty = "easy1";
+                    solution = easy1Solution;
                     break;
                 case "easy2":
                     useThisGrid = easy2;
-                    difficulty = "easy2";
+                    solution = easy2Solution;
                     break;
                 case "easy3":
                     useThisGrid = easy3;
-                    difficulty = "easy3";
+                    solution = easy3Solution;
                     break;
                 case "medium1":
                     useThisGrid = medium1;
-                    difficulty = "medium1";
+                    solution = medium1Solution;
                     break;
                 case "medium2":
                     useThisGrid = medium2;
-                    difficulty = "medium2";
+                    solution = medium2Solution;
                     break;
                 case "medium3":
                     useThisGrid = medium3;
-                    difficulty = "medium3";
+                    solution = medium3Solution;
                     break;
                 case "hard1":
                     useThisGrid = hard1;
-                    difficulty = "hard1";
+                    solution = hard1Solution;
                     break;
                 case "hard2":
                     useThisGrid = hard2;
-                    difficulty = "hard2";
+                    solution = hard2Solution;
                     break;
                 case "hard3":
                     useThisGrid = hard3;
-                    difficulty = "hard3";
+                    solution = hard3Solution;
                     break;
                 default:
                     useThisGrid = radioButtonChecked.Select(c => c.ToString()).ToArray();
@@ -300,39 +310,6 @@ namespace Sudoku
          ******************************************************/
         public void Rätta(string[] inmatade, GridPrint gridprint)
         {
-            int[] solution = new int[81];           
-            
-            switch (difficulty)
-            {
-                case "easy1":
-                    solution = easy1Solution;
-                    break;
-                case "easy2":
-                    solution = easy2Solution;
-                    break;
-                case "easy3":
-                    solution = easy3Solution;
-                    break;
-                case "medium1":
-                    solution = medium1Solution;
-                    break;
-                case "medium2":
-                    solution = medium2Solution;
-                    break;
-                case "medium3":
-                    solution = medium3Solution;
-                    break;
-                case "hard1":
-                    solution = hard1Solution;
-                    break;
-                case "hard2":
-                    solution = hard2Solution;
-                    break;
-                case "hard3":
-                    solution = hard3Solution;
-                    break;
-            }
-
             // Konverterar inmatade sträng-array till en int-array (alltså jämförbar med solution)
             int[] inmatad = Array.ConvertAll(inmatade, int.Parse);
             
@@ -367,6 +344,10 @@ namespace Sudoku
             // Skickar denna array till MarkeraSiffror i GridPrint
             gridprint.MarkeraSiffror(rättad);
         }
-        
+
+        public string getThisSolution()
+        {
+            return difficulty;
+        }
     }
 }

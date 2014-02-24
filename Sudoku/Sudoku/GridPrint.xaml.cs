@@ -26,6 +26,19 @@ namespace Sudoku
 		}
 		public int antalDrag = 0;
 
+
+        //Skriver ut lösning
+        public void PrintSolution(int[] solution)
+        {
+            for (int i = 0; i < 81; i++)
+            {
+                TextBox tb = (TextBox)nameGridPrint.Children[i];
+                tb.Text = solution[i].ToString();
+                tb.IsEnabled = false;
+            }
+        }
+
+
         /*****************************************************
         ANROP:      PrintGrid(string[]);
         UPPGIFT:    Tar emot array med spelplan-siffror, 
@@ -98,6 +111,7 @@ namespace Sudoku
 		public void MarkeraSiffror(bool[] array)
 		{
             int numGreen = 0;
+            var main = Application.Current.MainWindow as MainWindow;
 
 			for (int i = 0; i < 81; i++)
 			{
@@ -117,26 +131,11 @@ namespace Sudoku
 
             if (numGreen == 81)
             {
+                main.gridPrintComponent.youMadeIt.Visibility = Visibility.Visible;
+                highscoreTimer.Content = main.spelplanComponent.timer.Text;
+
                 // Något roligt händer eftersom användare vunnit!!
                     // Flyttas från en koordinat till en annan, windows fixar animation...?
-            }
-		}
-
-		private void TextBox_PreviewTextInput(object sender, TextCompositionEventArgs e)
-		{
-            var main = Application.Current.MainWindow as MainWindow;
-            var objSudokuModel = main.menuComponent.GetSudokuModel as SudokuModel;
-
-            if (!char.IsDigit(e.Text, e.Text.Length - 1))           //Tar bort alla bokstäver som försöks skrivas in.
-                e.Handled = true;
-            else if (e.Text == "0")                                 //Tar bort siffran "0"
-                e.Handled = true;
-            else
-            {
-                TextBox tb = (TextBox)sender;       // Skriver över föregående inskrivna siffra
-                //if (tb.Text != "")
-                if (e.Text != "")
-                    tb.Text = e.Text;
             }
 		}
 
@@ -177,6 +176,18 @@ namespace Sudoku
 			
 		}
 
+        private void TextBox_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            TextBox tb = (TextBox)sender;
+
+            if (!char.IsDigit(e.Text, e.Text.Length - 1))           //Tar bort alla bokstäver som försöks skrivas in.
+                e.Handled = true;
+            else if (e.Text == "0")                                 //Tar bort siffran "0"
+                e.Handled = true;
+            else if (e.Text == tb.Text)
+                e.Handled = true;
+        }
+
         private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
             
@@ -185,7 +196,7 @@ namespace Sudoku
 
             TextBox teb = (TextBox)sender;
 
-            if (teb.Text != null)
+            if (teb.Text != null)       // Automarkerar ifylld text
                 teb.SelectAll();
 
             if (teb.BorderBrush != Brushes.Gray)
@@ -196,8 +207,10 @@ namespace Sudoku
                     main.spelplanComponent.lblAntalDrag.Content = antalDrag;
                 }
             }
-            
-            for (int i = 0; i < 81; i++)  // Läs av alla rutor, om alla är ifyllda, rätta!
+
+
+            // Läser av alla rutor, om alla är ifyllda, rätta!
+            for (int i = 0; i < 81; i++) 
             {
                 TextBox tb = (TextBox)main.gridPrintComponent.nameGridPrint.Children[i];
 
@@ -265,6 +278,17 @@ namespace Sudoku
             tb.Background = Brushes.White;
             tb.Foreground = Brushes.Black;
             tb.FontWeight = FontWeights.Normal;
+        }
+
+        private void clickOK(object sender, RoutedEventArgs e)  // OK i highscore-input
+        {
+            var main = Application.Current.MainWindow as MainWindow;
+            
+            main.spelplanComponent.GameWon(nameInput.Text.ToString(), highscoreTimer.Content.ToString());
+            main.highscoreComponent.highscoreListEasy.Visibility = Visibility.Visible;
+            main.highscoreComponent.rbGrid.Margin = new Thickness(0, 0, 0, 0);
+
+            youMadeIt.Visibility = Visibility.Hidden;
         }
 	}
 }
