@@ -23,20 +23,20 @@ namespace Sudoku
     /// </summary>
     public partial class Spelplan : UserControl
     {   
-        public DateTime begins;
-        DispatcherTimer timerChanged;
-        public bool start = false;
+        //public DateTime begins;
+        //DispatcherTimer timerChanged;
+        //public bool start = false;
         
         public Spelplan()
         {
             InitializeComponent();
-            timerChanged = new DispatcherTimer(new TimeSpan(0, 0, 1), DispatcherPriority.Normal, delegate
-            {
-                if (start)
-                {
-                    timer.Text = new DateTime((DateTime.Now - begins).Ticks).ToString("HH:mm:ss");
-                }
-            }, this.Dispatcher);
+            //timerChanged = new DispatcherTimer(new TimeSpan(0, 0, 1), DispatcherPriority.Normal, delegate
+            //{
+            //    if (start)
+            //    {
+            //        timer.Text = new DateTime((DateTime.Now - begins).Ticks).ToString("HH:mm:ss");
+            //    }
+            //}, this.Dispatcher);
         }
 
         private void clickAvsluta(object sender, RoutedEventArgs e)
@@ -90,6 +90,10 @@ namespace Sudoku
             main.menuComponent.Visibility = Visibility.Visible;
             main.spelplanComponent.Visibility = Visibility.Collapsed;
             main.gridPrintComponent.Visibility = Visibility.Collapsed;
+
+            btnStart.Visibility = Visibility.Hidden;    //
+            btnPause.Visibility = Visibility.Visible;    //
+
             main.menuComponent.IsNowVisible();
 
             btnRätta.Content = "RÄTTA";
@@ -123,5 +127,32 @@ namespace Sudoku
             SudokuModel model = new SudokuModel();
             model.fuska(main.gridPrintComponent);
         }
+
+        // *****  Pause button click (Timer) ********
+        private void btnPause_Click(object sender, RoutedEventArgs e)
+        {
+            var main = Application.Current.MainWindow as MainWindow;
+
+            main.menuComponent.start = false;
+            btnPause.Visibility = Visibility.Hidden;
+            btnStart.Visibility = Visibility.Visible;
+        }
+
+
+        // *******  start button click (Timer)   *********
+        private void btnStart_Click(object sender, RoutedEventArgs e)
+        {
+            var main = Application.Current.MainWindow as MainWindow;
+            TimeSpan timerBox;
+            if (TimeSpan.TryParse(timer.Text.Replace("m", "").Replace("h", ""), out timerBox))
+
+                main.menuComponent.begins = (DateTime.Now - timerBox);
+            main.menuComponent.start = true;
+            btnPause.Visibility = Visibility.Visible;
+            btnStart.Visibility = Visibility.Hidden;
+
+        }
+
+
     }
 }
