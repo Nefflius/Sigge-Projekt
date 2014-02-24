@@ -219,20 +219,18 @@ namespace Sudoku
 
         static int checkanswers;
         private static bool sendanswers;
-
+        
         public static bool send
         {
-            get { return sendanswers;}
+            get { return sendanswers; }
             set { sendanswers = value; }
         }
-
 
         // Skickar rätt array med lösning till Gridprint 
         public void fuska(GridPrint gridprint)
         {
             gridprint.PrintSolution(solution);
         }
-
 
         //public int CellNumber { get { return cellNumber; } set { cellNumber = value;} }
 
@@ -245,12 +243,8 @@ namespace Sudoku
         }
 
         public string[] GetUseThisGrid { get { return useThisGrid;} }
-<<<<<<< HEAD
         public string GetDifficulty { get { return difficulty;} }
-=======
 
-
->>>>>>> 5c1fb5987e2147b1065ba708161357c0144e2c8b
         /**************************************************************************
          * ANROP:   PrintGrid( vilken radiobutton som är markerad );
          * UPPGIFT: Läser in vilken svårighetsgrad som är markerad och skriver
@@ -345,6 +339,8 @@ namespace Sudoku
                 sendanswers = false;
                 checkanswers = 0;
             }
+
+
             // Skickar denna array till MarkeraSiffror i GridPrint
             gridprint.MarkeraSiffror(rättad);
         }

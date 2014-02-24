@@ -139,7 +139,6 @@ namespace Sudoku
             }
 		}
 
-
         public StringBuilder SaveGame()
         {
             StringBuilder strbSaveGame = new StringBuilder();

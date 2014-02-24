@@ -63,7 +63,7 @@ namespace Sudoku
             bool vari = SudokuModel.send;
             if (vari == true)
             {
-                MessageBoxResult result = MessageBox.Show("Du vann!", "Grattis!", MessageBoxButton.YesNo);
+                MessageBoxResult result = MessageBox.Show("Du vann!" + Environment.NewLine + "Vill du spela igen?", "Grattis!", MessageBoxButton.YesNo);
 
                 if (result == MessageBoxResult.Yes)
                 {
@@ -78,7 +78,9 @@ namespace Sudoku
                 {
                     Application.Current.Shutdown();
                 }
-
+                vari = false;
+                SudokuModel.send = false;
+                btnRätta.Content = "RÄTTA";
             }    
         }
 

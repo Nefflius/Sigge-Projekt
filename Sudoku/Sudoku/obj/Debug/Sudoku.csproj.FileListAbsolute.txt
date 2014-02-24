@@ -109,3 +109,5 @@ C:\Users\Nidaa\Desktop\DMP1\GUI_prog\Sigge Projekt\Sudoku\Sudoku\obj\Debug\Sudok
 C:\Users\Ida\Documents\DMP12\GUI Programmering\Sigge Projekt\Sudoku\Sudoku\obj\Debug\Highscore.baml
 C:\Users\Ida\Documents\DMP12\GUI Programmering\Sigge Projekt\Sudoku\Sudoku\obj\Debug\Highscore.g.cs
 C:\Users\Ida\Documents\DMP12\GUI Programmering\Sigge Projekt\Sudoku\Sudoku\obj\Debug\Sudoku.csprojResolveAssemblyReference.cache
+D:\Visual Studio 2012\SiggeProjekt\Sudoku\Sudoku\obj\Debug\Highscore.baml
+D:\Visual Studio 2012\SiggeProjekt\Sudoku\Sudoku\obj\Debug\Highscore.g.cs
