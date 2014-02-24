@@ -84,3 +84,5 @@ G:\Dokument\Visual Studio 2012\Projects\GUI\Projekt\Sudoku\Sudoku\obj\Release\Sp
 G:\Dokument\Visual Studio 2012\Projects\GUI\Projekt\Sudoku\Sudoku\obj\Release\Sudoku.g.resources
 G:\Dokument\Visual Studio 2012\Projects\GUI\Projekt\Sudoku\Sudoku\obj\Release\Sudoku.Properties.Resources.resources
 G:\Dokument\Visual Studio 2012\Projects\GUI\Projekt\Sudoku\Sudoku\obj\Release\Sudoku.csproj.GenerateResource.Cache
+C:\Users\Stefan Hall\Documents\Visual Studio 2012\Projects\GUI\Projekt\Sudoku\Sudoku\obj\Release\Highscore.baml
+C:\Users\Stefan Hall\Documents\Visual Studio 2012\Projects\GUI\Projekt\Sudoku\Sudoku\obj\Release\Highscore.g.cs

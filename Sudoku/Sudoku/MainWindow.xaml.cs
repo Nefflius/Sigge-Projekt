@@ -88,17 +88,27 @@ namespace Sudoku
             FileHandeling openSavedGame = new FileHandeling();
             model = this.menuComponent.GetSudokuModel;
             string[] savedFile = openSavedGame.OpenFile();
-            menuComponent.Visibility = Visibility.Collapsed;
+            //menuComponent.Visibility = Visibility.Collapsed;
             spelplanComponent.Visibility = Visibility.Visible;
 
-            string[] savedGame = new string[81];
-            for (int i = 0; i < 81; i++)
+            try
             {
-                savedGame[i] = savedFile[1].Substring(i, 1);
+                string[] savedGame = new string[81];
+                for (int i = 0; i < 81; i++)
+                {
+                    savedGame[i] = savedFile[1].Substring(i, 1);
+                }
+                menuComponent.Visibility = Visibility.Collapsed;
+                gridPrintComponent = model.PrintGrid(savedFile[2], gridPrintComponent, savedGame);
+                gridPrintComponent.Visibility = Visibility.Visible;
             }
 
-            gridPrintComponent = model.PrintGrid(savedFile[0], gridPrintComponent, savedGame);
-            gridPrintComponent.Visibility = Visibility.Visible;
+            catch (Exception ex)
+            {
+                string error = ex.Data.ToString();
+                menuComponent.Visibility = Visibility.Visible;
+                spelplanComponent.Visibility = Visibility.Collapsed;
+            }
         }
 
         public void SaveFile_CanExecute(object sender, CanExecuteRoutedEventArgs e)
@@ -109,7 +119,7 @@ namespace Sudoku
 
         public void SaveFile_Executed(object sender, ExecutedRoutedEventArgs e)
         {
-            string[] game2Save = new string[3];
+            string[] game2Save = new string[4];
             model = this.menuComponent.GetSudokuModel;
             //Spara hårdkodad spelplan
             string[] strGameBoard = model.GetUseThisGrid;
@@ -121,6 +131,10 @@ namespace Sudoku
 
             //Spara användarens inmatade siffror            
             game2Save[1] = model.GetSetGame2Save;
+
+            //Spara vilken spelplan/svårighetsgrad användaren valt
+            game2Save[2] = model.GetDifficulty;
+
             FileHandeling saveGame = new FileHandeling();
             saveGame.SaveFile(game2Save);
         }

@@ -85,6 +85,7 @@ namespace Sudoku
                 {
                     save2File.WriteLine(_arrayElements2Save[0]);
                     save2File.WriteLine(_arrayElements2Save[1]);
+                    save2File.WriteLine(_arrayElements2Save[2]);
                 }
                 System.Windows.MessageBox.Show("Spelet har sparats!", "Spelet har sparats", System.Windows.MessageBoxButton.OK, System.Windows.MessageBoxImage.Information);
             }
