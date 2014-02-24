@@ -101,7 +101,8 @@ namespace Sudoku
                 menuComponent.Visibility = Visibility.Collapsed;
                 gridPrintComponent = model.PrintGrid(savedFile[2], gridPrintComponent, savedGame);
                 gridPrintComponent.Visibility = Visibility.Visible;
-                model.GetSetNewGame = true;
+                spelplanComponent.timer.Text = savedFile[3];
+                
             }
 
             catch (Exception ex)

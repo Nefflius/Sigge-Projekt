@@ -37,9 +37,6 @@ namespace Sudoku
             model = new SudokuModel();
 		}
 
-
-
-
 		private static string radioButtonChecked;
 
         // Lägger till margin mellan radiobuttons och spelaknapp då Nytt Spel väljs.
@@ -58,7 +55,8 @@ namespace Sudoku
 		***********************************************************/
 		private void spela_Click(object sender, RoutedEventArgs e)
 		{
-
+            start = true;
+            begins = DateTime.Now;
             Timer();
 
 			main = Application.Current.MainWindow as MainWindow;
@@ -163,8 +161,7 @@ namespace Sudoku
         {
 
             //Timer
-            start = true;
-            begins = DateTime.Now;
+
             timerChanged = new DispatcherTimer(new TimeSpan(0, 0, 1), DispatcherPriority.Normal, delegate
             {
                 if (start)
