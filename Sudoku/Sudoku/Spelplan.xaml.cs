@@ -109,6 +109,7 @@ namespace Sudoku
             main.menuComponent.start = false;
             btnPause.Visibility = Visibility.Hidden;
             btnStart.Visibility = Visibility.Visible;
+            main.gridPrintComponent.Visibility = Visibility.Collapsed;
         }
 
 
@@ -123,7 +124,7 @@ namespace Sudoku
             main.menuComponent.start = true;
             btnPause.Visibility = Visibility.Visible;
             btnStart.Visibility = Visibility.Hidden;
-
+            main.gridPrintComponent.Visibility = Visibility.Visible;
         }
 
 
