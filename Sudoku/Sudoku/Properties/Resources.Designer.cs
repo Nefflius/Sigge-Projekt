@@ -61,39 +61,12 @@ namespace Sudoku.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
-        /// </summary>
-        internal static string EasyHighscore_sdk {
-            get {
-                return ResourceManager.GetString("EasyHighscore_sdk", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap Exit {
             get {
                 object obj = ResourceManager.GetObject("Exit", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to .
-        /// </summary>
-        internal static string HardHighscore_sdk {
-            get {
-                return ResourceManager.GetString("HardHighscore_sdk", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to .
-        /// </summary>
-        internal static string MediumHighscore_sdk {
-            get {
-                return ResourceManager.GetString("MediumHighscore_sdk", resourceCulture);
             }
         }
         

@@ -43,13 +43,13 @@ namespace Sudoku
                 cells = winnersListEasy.Rows[i].Cells.Count();
                 for (int j = 0; j < cells; j++)
                 {
-                    highscoreEasy[i] = winnersListEasy.Rows[i].Cells[j].ToString();
+                    highscoreEasy[i] = winnersListEasy.Rows[i].Cells[j].ToString();     // fungerar ej
 
-                    if (j != cells-1)           // skriver inte ":" i slutet
-                        highscoreEasy[i] += ":";
+                    if (j != cells-1)           // så att den inte skriver ":" i slutet 
+                        highscoreEasy[i] += ":";            // highscoreEasy[i] blir: namn:bana:drag:tid
                 }
             }
-            System.IO.File.WriteAllLines(Properties.Resources.EasyHighscore_sdk, highscoreEasy);
+          //System.IO.File.WriteAllLines(Properties.Resources.EasyHighscore_sdk, highscoreEasy);
 
             rows = winnersListMedium.Rows.Count();
             string[] highscoreMedium = new string[rows];

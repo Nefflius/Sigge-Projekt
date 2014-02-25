@@ -59,28 +59,7 @@ namespace Sudoku
                 btn.Content = "RÄTTA";
                 main.gridPrintComponent.continueGame();
             }
-
-            bool vari = SudokuModel.send;
-            if (vari == true)
-            {
-                MessageBoxResult result = MessageBox.Show("Du vann!" + Environment.NewLine + "Vill du spela igen?", "Grattis!", MessageBoxButton.OKCancel);
-
-                if (result == MessageBoxResult.OK)
-                {
-                    main.menuComponent.Visibility = Visibility.Visible;
-                    main.spelplanComponent.Visibility = Visibility.Collapsed;
-                    main.gridPrintComponent.Visibility = Visibility.Collapsed;
-                    main.menuComponent.IsNowVisible();
-                }
-                else if (result == MessageBoxResult.Cancel)
-                {
-                    //Application.Current.Shutdown();
-                    
-                }
-                vari = false;
-                SudokuModel.send = false;
-                btnRätta.Content = "RÄTTA";
-            }    
+    
         }
 
         private void clickNyttSpel(object sender, RoutedEventArgs e)        //Nytt spel
@@ -109,7 +88,7 @@ namespace Sudoku
         {
             var main = Application.Current.MainWindow as MainWindow;
             SudokuModel model = new SudokuModel();
-
+            
             string moves = lblAntalDrag.Content.ToString();
 
             // if winnersList.rows =< 10
@@ -127,7 +106,7 @@ namespace Sudoku
             SudokuModel model = new SudokuModel();
             model.fuska(main.gridPrintComponent);
         }
-
+        
         // *****  Pause button click (Timer) ********
         private void btnPause_Click(object sender, RoutedEventArgs e)
         {
