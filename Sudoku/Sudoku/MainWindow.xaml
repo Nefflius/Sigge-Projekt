@@ -33,7 +33,7 @@
                 <MenuItem x:Name="mnuHighscore" Header="_Highscore" Click="mnuHighscore_Click" />
                 
                 <Separator></Separator>
-                <MenuItem x:Name="mnuExit" Header="A_vsluta" Command="ApplicationCommands.Close" >
+                <MenuItem x:Name="mnuExit" Header="A_vsluta" Click="mnuExit_Click" >
                     <MenuItem.Icon>
                         <Image Source="Properties/Resources/Images/icons/Exit.png" />
                     </MenuItem.Icon>

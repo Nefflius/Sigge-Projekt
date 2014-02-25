@@ -78,12 +78,6 @@ namespace Sudoku
             btnRätta.Content = "RÄTTA";
         }
 
-        private void clickHjälp(object sender, RoutedEventArgs e)
-        {
-            MessageBox.Show("Ett sudoku består av nio gånger nio rutor som i sin tur är indelade i nio större rutor. För att lösa ett sudoku skall man placera ut siffrorna 1-9 på spelfältet på ett sådant vis att varje siffra bara finns en gång per rad, en gång per kolumn och dessutom bara en gång per större ruta.",
-                             "Hjälp");
-        }
-
         public void GameWon(string nameinput, string time)
         {
             var main = Application.Current.MainWindow as MainWindow;
@@ -115,11 +109,10 @@ namespace Sudoku
             main.menuComponent.start = false;
             btnPause.Visibility = Visibility.Hidden;
             btnStart.Visibility = Visibility.Visible;
+            main.gridPrintComponent.Visibility = Visibility.Collapsed;
         }
 
-
-        // *******  start button click (Timer)   *********
-        private void btnStart_Click(object sender, RoutedEventArgs e)
+        public void StartTimer()
         {
             var main = Application.Current.MainWindow as MainWindow;
             TimeSpan timerBox;
@@ -129,7 +122,14 @@ namespace Sudoku
             main.menuComponent.start = true;
             btnPause.Visibility = Visibility.Visible;
             btnStart.Visibility = Visibility.Hidden;
+            main.gridPrintComponent.Visibility = Visibility.Visible;
+        }
 
+
+        // *******  start button click (Timer)   *********
+        private void btnStart_Click(object sender, RoutedEventArgs e)
+        {
+            StartTimer();
         }
 
 
