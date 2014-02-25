@@ -177,10 +177,7 @@ namespace Sudoku
 
         private void mnuExit_Click(object sender, RoutedEventArgs e)
         {
-            //Application.Current.Shutdown();
-            PrintDialog printDlg = new PrintDialog();
-            printDlg.PrintVisual(this, "User Control Printing");
-            
+            Application.Current.Shutdown();
         } 
     }
 }

@@ -78,12 +78,6 @@ namespace Sudoku
             btnRätta.Content = "RÄTTA";
         }
 
-        private void clickHjälp(object sender, RoutedEventArgs e)
-        {
-            MessageBox.Show("Ett sudoku består av nio gånger nio rutor som i sin tur är indelade i nio större rutor. För att lösa ett sudoku skall man placera ut siffrorna 1-9 på spelfältet på ett sådant vis att varje siffra bara finns en gång per rad, en gång per kolumn och dessutom bara en gång per större ruta.",
-                             "Hjälp");
-        }
-
         public void GameWon(string nameinput, string time)
         {
             var main = Application.Current.MainWindow as MainWindow;

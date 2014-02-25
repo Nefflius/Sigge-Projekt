@@ -112,3 +112,4 @@ D:\Visual Studio 2012\SiggeProjekt\Sudoku\Sudoku\obj\Debug\Sudoku.Properties.Res
 D:\Visual Studio 2012\SiggeProjekt\Sudoku\Sudoku\obj\Debug\Sudoku.csproj.GenerateResource.Cache
 D:\Visual Studio 2012\SiggeProjekt\Sudoku\Sudoku\obj\Debug\Sudoku.exe
 D:\Visual Studio 2012\SiggeProjekt\Sudoku\Sudoku\obj\Debug\Sudoku.pdb
+D:\Visual Studio 2012\SiggeProjekt\Sudoku\Sudoku\obj\Debug\Sudoku.csprojResolveAssemblyReference.cache
