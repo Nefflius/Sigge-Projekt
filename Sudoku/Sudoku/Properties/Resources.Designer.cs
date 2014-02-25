@@ -61,6 +61,15 @@ namespace Sudoku.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        internal static string EasyHighscore_sdk {
+            get {
+                return ResourceManager.GetString("EasyHighscore_sdk", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap Exit {
@@ -71,12 +80,20 @@ namespace Sudoku.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+        ///   Looks up a localized string similar to .
         /// </summary>
-        internal static System.Drawing.Icon Icon1 {
+        internal static string HardHighscore_sdk {
             get {
-                object obj = ResourceManager.GetObject("Icon1", resourceCulture);
-                return ((System.Drawing.Icon)(obj));
+                return ResourceManager.GetString("HardHighscore_sdk", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        internal static string MediumHighscore_sdk {
+            get {
+                return ResourceManager.GetString("MediumHighscore_sdk", resourceCulture);
             }
         }
         

@@ -73,7 +73,7 @@ namespace Sudoku
         {
             bool _saveFilesuccess;
             SaveFileDialog _saveSudoku = new SaveFileDialog();
-            _saveSudoku.Filter = "Sudokufiler (.sdk)|*.sdk";
+
             _saveSudoku.Filter = "Sudokufiler (.sdk)|*.sdk";
             _saveSudoku.FileName = "SparadSudoku.sdk";
             _saveSudoku.DefaultExt = ".sdk";

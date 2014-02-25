@@ -25,6 +25,64 @@ namespace Sudoku
             InitializeComponent();
         }
 
+        void readinHighscore()      // Ska göra så att highscore läses in varje gång Sudoku startar
+        {
+            
+        }
+
+        void saveHighscore()        // Ska göra så att highscore sparas i en textfil varje gång 
+                                    // en ny highscore läggs till
+        {
+            int rows, cells;
+
+            rows = winnersListEasy.Rows.Count();
+            string[] highscoreEasy = new string[rows];
+
+            for (int i = 0; i < rows; i++)
+            {
+                cells = winnersListEasy.Rows[i].Cells.Count();
+                for (int j = 0; j < cells; j++)
+                {
+                    highscoreEasy[i] = winnersListEasy.Rows[i].Cells[j].ToString();
+
+                    if (j != cells-1)           // skriver inte ":" i slutet
+                        highscoreEasy[i] += ":";
+                }
+            }
+            System.IO.File.WriteAllLines(Properties.Resources.EasyHighscore_sdk, highscoreEasy);
+
+            rows = winnersListMedium.Rows.Count();
+            string[] highscoreMedium = new string[rows];
+
+            for (int i = 0; i < rows; i++)
+            {
+                cells = winnersListMedium.Rows[i].Cells.Count();
+                for (int j = 0; j < cells; i++)
+                {
+                    highscoreMedium[i] = winnersListMedium.Rows[i].Cells[j].ToString();
+
+                    if (j != cells-1)
+                        highscoreMedium[i] += ":";
+                }
+            }
+
+
+            rows = winnersListHard.Rows.Count();
+            string[] highscoreHard = new string[rows];
+
+            for (int i = 0; i < rows; i++)
+            {
+                cells = winnersListHard.Rows[i].Cells.Count();
+                for (int j = 0; j < cells; i++)
+                {
+                    highscoreHard[i] = winnersListHard.Rows[i].Cells[j].ToString();
+
+                    if (j != cells-1)
+                        highscoreHard[i] += ":";
+                }
+            }
+        }
+
         public void addHighscore(string nameinput, string difficulty, string time, string moves)
         {
             TableRow row = new TableRow();
@@ -41,7 +99,7 @@ namespace Sudoku
                 row.Cells.Add(new TableCell(new Paragraph(new Run(time))));
                 row.Cells[0].ColumnSpan = 2;
 
-                winnersListMedium.Rows.Add(row);
+                winnersListEasy.Rows.Add(row);
 
                 highscoreListEasy.Visibility = Visibility.Visible;
                 rbGrid.Margin = new Thickness(0, 0, 0, 0);
@@ -78,6 +136,8 @@ namespace Sudoku
                 highscoreListHard.Visibility = Visibility.Visible;
                 rbGrid.Margin = new Thickness(0, 0, 0, 0);
             }
+
+            saveHighscore();
 
             var main = Application.Current.MainWindow as MainWindow;
             main.spelplanComponent.Visibility = Visibility.Collapsed;
