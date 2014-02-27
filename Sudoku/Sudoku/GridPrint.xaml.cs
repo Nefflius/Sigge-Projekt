@@ -39,6 +39,7 @@ namespace Sudoku
         }
 
 
+
         /*****************************************************
         ANROP:      PrintGrid(string[]);
         UPPGIFT:    Tar emot array med spelplan-siffror, 
@@ -139,6 +140,7 @@ namespace Sudoku
             }
 		}
 
+        
         public StringBuilder SaveGame()
         {
             StringBuilder strbSaveGame = new StringBuilder();

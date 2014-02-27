@@ -5,12 +5,12 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              mc:Ignorable="d" 
              d:DesignHeight="500" d:DesignWidth="650" Name="MenyControl" >
-    <Viewbox Stretch="Uniform">
-        <Border BorderBrush="Black" BorderThickness="2" Margin="30" Background="White">
+    <Viewbox KeyboardNavigation.IsTabStop="False" Stretch="Uniform">
+        <Border KeyboardNavigation.IsTabStop="False" BorderBrush="Black" BorderThickness="2" Margin="30" Background="White">
             <Border.Effect>
                 <DropShadowEffect Opacity="0.5" ShadowDepth="10.0" />
             </Border.Effect>
-            <StackPanel HorizontalAlignment="Center">
+            <StackPanel KeyboardNavigation.IsTabStop="False" HorizontalAlignment="Center">
                 <Label FontFamily="Impact" FontSize="75" Margin="15,10,15,0" HorizontalAlignment="Center">SUDOKU</Label>
                 <Label FontSize="20" FontWeight="Thin" HorizontalAlignment="Center">Välj svårighetsnivå:</Label>
                 <UniformGrid Name="rbGrid" Columns="3" HorizontalAlignment="Center" Margin="70,0,70,160">

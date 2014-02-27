@@ -5,8 +5,8 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              mc:Ignorable="d" 
              d:DesignHeight="500" d:DesignWidth="650">
-    <Viewbox Stretch="Uniform">
-        <Border BorderBrush="Black" BorderThickness="2" Margin="30" Background="White">
+    <Viewbox KeyboardNavigation.IsTabStop="False" Stretch="Uniform">
+        <Border KeyboardNavigation.IsTabStop="False" BorderBrush="Black" BorderThickness="2" Margin="30" Background="White">
             <Border.Effect>
                 <DropShadowEffect Opacity="0.5" ShadowDepth="10.0" />
             </Border.Effect>

@@ -48,6 +48,16 @@ namespace Sudoku
 
         public SudokuModel GetSudokuModel { get { return model; } }
 
+        public void setCellFocus()
+        {
+            int j = 0;
+            while (!((TextBox)main.gridPrintComponent.nameGridPrint.Children[j]).IsEnabled)
+            {
+                j++;
+            }
+            TextBox temp = ((TextBox)main.gridPrintComponent.nameGridPrint.Children[j]);
+            temp.Focus();
+        }
 		/**********************************************************
 		ANROP:      Anropas då Spela-knappen clickas.
 		UPPGIFT:    Läser av radiobutton och skickar vidare vilken
@@ -79,7 +89,16 @@ namespace Sudoku
 
 			main.gridPrintComponent = model.PrintGrid(radioButtonChecked, main.gridPrintComponent);
 			main.gridPrintComponent.Visibility = Visibility.Visible;
-					
+            main.gridPrintComponent.Focus();
+
+            int j = 0;
+            while (!((TextBox)main.gridPrintComponent.nameGridPrint.Children[j]).IsEnabled)
+            {
+                j++;
+            }
+            TextBox temp = ((TextBox)main.gridPrintComponent.nameGridPrint.Children[j]);
+            temp.Focus();
+
 		//	main.spelplanComponent.start = true;   // Timer
 		//	main.spelplanComponent.begins = DateTime.Now;  // Timer
 		}

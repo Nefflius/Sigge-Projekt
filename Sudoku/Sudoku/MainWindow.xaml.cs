@@ -102,6 +102,15 @@ namespace Sudoku
                 gridPrintComponent = model.PrintGrid(savedFile[2], gridPrintComponent, savedGame);
                 gridPrintComponent.Visibility = Visibility.Visible;
 
+                //försöker sätta fokus på första tomma cellen men funkar inte. 
+                //Syftet är att slippa använda musen.
+                int j = 0;
+                while(!((TextBox)gridPrintComponent.nameGridPrint.Children[j]).IsEnabled){
+                    j++;
+                }
+                TextBox temp = ((TextBox)gridPrintComponent.nameGridPrint.Children[j]);
+                temp.Focus();
+
                 spelplanComponent.timer.Text = savedFile[3];
                 menuComponent.Timer();
                 spelplanComponent.StartTimer();
