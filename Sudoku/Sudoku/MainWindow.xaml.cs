@@ -45,6 +45,7 @@ namespace Sudoku
             CommandBinding bindNew = new CommandBinding();
             CommandBinding bindOpen = new CommandBinding();
             CommandBinding bindSave = new CommandBinding();
+            CommandBinding bindPrint = new CommandBinding();
             CommandBinding bindExit = new CommandBinding();
 
             bindNew.Command = ApplicationCommands.New;
@@ -61,6 +62,11 @@ namespace Sudoku
             bindSave.Executed += SaveFile_Executed;
             bindSave.CanExecute += SaveFile_CanExecute;
             CommandBindings.Add(bindSave);
+
+            bindPrint.Command = ApplicationCommands.Print;
+            bindPrint.Executed += Print_Executed;
+            bindPrint.CanExecute += Print_CanExecute;
+            CommandBindings.Add(bindPrint);
 
             bindExit.Command = CustomCommands.Exit;
             bindExit.Executed += ExitGame_Executed;
@@ -114,8 +120,6 @@ namespace Sudoku
                 spelplanComponent.timer.Text = savedFile[3];
                 menuComponent.Timer();
                 spelplanComponent.StartTimer();
-
-                
             }
 
             catch (Exception ex)
@@ -159,6 +163,27 @@ namespace Sudoku
             game2Save[3] = spelplanComponent.timer.Text;
             FileHandeling saveGame = new FileHandeling();
             saveGame.SaveFile(game2Save);
+        }
+
+        public void Print_CanExecute(object sender, CanExecuteRoutedEventArgs e)
+        {
+            e.CanExecute = true;
+        }
+
+        public void Print_Executed(object sender, ExecutedRoutedEventArgs e)
+        {
+            GridPrint printSudoko = gridPrintComponent;
+            printSudoko.Width = 100;
+            printSudoko.Height = 100;
+            PrintDialog dialogPrint = new PrintDialog();
+            if (dialogPrint.ShowDialog() != true)
+                return;
+            printSudoko.Measure(new Size(dialogPrint.PrintableAreaWidth, dialogPrint.PrintableAreaHeight));
+            printSudoko.Arrange(new Rect(new Point(50, 50), gridPrintComponent.DesiredSize));
+            dialogPrint.PrintVisual(printSudoko, "Sudokoutskrift");
+            //gridPrintComponent.Measure(new Size(dialogPrint.PrintableAreaWidth, dialogPrint.PrintableAreaHeight));
+            //gridPrintComponent.Arrange(new Rect(new Point(50, 50), gridPrintComponent.DesiredSize));
+            //dialogPrint.PrintVisual(gridPrintComponent, "Sudokoutskrift");
         }
 
         public void ExitGame_CanExecute(object sender, CanExecuteRoutedEventArgs e)

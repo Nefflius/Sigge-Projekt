@@ -29,6 +29,7 @@
                             <Image Source="Properties/Resources/Images/icons/Save.png" />
                         </MenuItem.Icon>
                     </MenuItem>
+                <MenuItem x:Name="mnuPrint" Header="S_kriv ut" Command="ApplicationCommands.Print" ></MenuItem>
                     <Separator></Separator>
                     <MenuItem x:Name="mnuHighscore" Header="_Highscore" Click="mnuHighscore_Click" />
                 
