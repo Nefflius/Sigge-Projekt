@@ -114,8 +114,6 @@ namespace Sudoku
                 spelplanComponent.timer.Text = savedFile[3];
                 menuComponent.Timer();
                 spelplanComponent.StartTimer();
-
-                
             }
 
             catch (Exception ex)
@@ -194,6 +192,22 @@ namespace Sudoku
         private void mnuExit_Click(object sender, RoutedEventArgs e)
         {
             Application.Current.Shutdown();
+        }
+
+        private void mnuTimer_Click(object sender, RoutedEventArgs e)
+        {
+            if(spelplanComponent.timerBox.Visibility == Visibility.Visible)
+            spelplanComponent.timerBox.Visibility = Visibility.Collapsed;
+            else if(spelplanComponent.timerBox.Visibility == Visibility.Collapsed)
+                spelplanComponent.timerBox.Visibility = Visibility.Visible;
+        }
+
+        private void mnuAntaldrag_Click(object sender, RoutedEventArgs e)
+        {
+            if(spelplanComponent.antaldragbox.Visibility == Visibility.Visible)
+                spelplanComponent.antaldragbox.Visibility = Visibility.Collapsed;
+            else if(spelplanComponent.antaldragbox.Visibility == Visibility.Collapsed)
+                spelplanComponent.antaldragbox.Visibility = Visibility.Visible;
         } 
     }
 }

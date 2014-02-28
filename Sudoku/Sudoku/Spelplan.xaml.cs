@@ -128,7 +128,6 @@ namespace Sudoku
             TranslateTransform tt = new TranslateTransform();
             main.pauseComponent.RenderTransform = tt;
             tt.BeginAnimation(TranslateTransform.YProperty, du);
-
         }
 
         public void StartTimer()
@@ -136,7 +135,7 @@ namespace Sudoku
             var main = Application.Current.MainWindow as MainWindow;
             TimeSpan timerBox;
             if (TimeSpan.TryParse(timer.Text.Replace("m", "").Replace("h", ""), out timerBox))
-
+                
                 main.menuComponent.begins = (DateTime.Now - timerBox);
             main.menuComponent.start = true;
             btnPause.Visibility = Visibility.Visible;
