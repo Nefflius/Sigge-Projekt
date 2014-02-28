@@ -44,10 +44,10 @@
                 <MenuItem x:Name="mnuOmSudoku" Header="Om Sudoku" Click="mnuOmSudoku_Click"/>
             </MenuItem>
         </Menu>
-        
         <local:Meny x:Name="menuComponent" Grid.ColumnSpan="4" Visibility="Visible"></local:Meny>
         <local:Highscore x:Name="highscoreComponent" Grid.ColumnSpan="4" Visibility="Collapsed"></local:Highscore>
         <local:Spelplan x:Name="spelplanComponent" Grid.Column="3" Visibility="Collapsed"></local:Spelplan>
         <local:GridPrint x:Name="gridPrintComponent" Grid.ColumnSpan="3" Visibility="Collapsed"></local:GridPrint>
+        <local:Pause x:Name="pauseComponent" Grid.ColumnSpan="3" Visibility="Collapsed"></local:Pause>
     </Grid>
 </Window>

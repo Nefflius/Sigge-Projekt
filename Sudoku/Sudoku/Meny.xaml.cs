@@ -77,7 +77,7 @@ namespace Sudoku
                 rbGrid.Margin = new Thickness(70, 0, 70, 160);
                 btnSpela.IsEnabled = false;
            
-
+            
 			main.gridPrintComponent = model.PrintGrid(radioButtonChecked, main.gridPrintComponent);
 			main.gridPrintComponent.Visibility = Visibility.Visible;
 					
