@@ -7,6 +7,22 @@
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="400">
     <UserControl.Resources>
+        <Style TargetType="{x:Type Button}">
+            <Setter Property="Background">
+                <Setter.Value>
+                    <LinearGradientBrush>
+                        <GradientStop Color="Silver" Offset="0" />
+                        <GradientStop Color="Gray" Offset="1" />
+                    </LinearGradientBrush>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="Foreground" Value="White" />
+            <Setter Property="Margin" Value="5" />
+            <Setter Property="BorderBrush" Value="Black" />
+            <Setter Property="BorderThickness" Value="0" />
+            <Setter Property="FontSize" Value="17" />
+            <Setter Property="FontWeight" Value="Thin" />
+        </Style>
         <Style TargetType="{x:Type TextBox}">
             <Setter Property="Background" Value="White" />
             <Setter Property="VerticalContentAlignment" Value="Center" />
@@ -24,7 +40,7 @@
         </Style>
     </UserControl.Resources>
     <Viewbox KeyboardNavigation.IsTabStop="False" Stretch="Uniform" PreviewKeyDown="Viewbox_PreviewKeyDown_1">
-        <Border KeyboardNavigation.IsTabStop="False" BorderBrush="Black" BorderThickness="1" Background="White" Margin="20">
+        <Border KeyboardNavigation.IsTabStop="False" BorderBrush="Gray" BorderThickness="1" Background="White" Margin="20">
             <Border.Effect>
                 <DropShadowEffect Opacity="0.5" ShadowDepth="10.0" Direction="230" />
             </Border.Effect>

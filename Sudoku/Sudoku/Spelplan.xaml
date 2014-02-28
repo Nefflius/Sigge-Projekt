@@ -11,15 +11,16 @@
             <Setter Property="Background">
                 <Setter.Value>
                     <LinearGradientBrush>
-                        <GradientStop Color="Gray" Offset="0" />
-                        <GradientStop Color="DarkGray" Offset="0.9" />
-                        <GradientStop Color="Silver" Offset="1" />
+                        <GradientStop Color="Silver" Offset="0" />
+                       <!-- <GradientStop Color="DarkGray" Offset="0.9" /> -->
+                        <GradientStop Color="Gray" Offset="1" />
                     </LinearGradientBrush>
                 </Setter.Value>
             </Setter>
             <Setter Property="Foreground" Value="White" />
             <Setter Property="Margin" Value="5" />
             <Setter Property="BorderBrush" Value="Black" />
+            <Setter Property="BorderThickness" Value="0" />
             <Setter Property="FontSize" Value="17" />
             <Setter Property="FontWeight" Value="Thin" />
         </Style>
@@ -60,7 +61,7 @@
             </GroupBox.Effect>
             <Label Name ="lblAntalDrag" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="17" FontWeight="Thin">0</Label>
         </GroupBox>
-        <Button Grid.Row="7" Click="clickFusk">Fusk</Button>
+        <Button Grid.Row="7" Click="clickFusk" Visibility="Hidden">Fusk</Button>
         <Button Grid.Row="8" Click="clickAvsluta">Avsluta
             <Button.Effect>
                 <DropShadowEffect Opacity="0.7" />
