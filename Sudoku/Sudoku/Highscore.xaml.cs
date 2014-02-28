@@ -41,12 +41,14 @@ namespace Sudoku
             {
                 string[] easy = new string[rowsLength];
 
-                for (int i = 0; i < rowsLength; i++)
+                var textLines = File.ReadAllLines(path);
+                int ix = 0;
+                foreach(var line in textLines)
                 {
-                    using (StreamReader sr = File.OpenText(path))
-                        easy[i] = sr.ReadLine();
+                    easy[ix] = line;
+                    ix++;
                 }
-
+                
                 rowColumnsLength = easy[0].Split(';').ToArray<string>().Length;
 
                 for (int i = 0; i < rowsLength; i++)
@@ -72,10 +74,12 @@ namespace Sudoku
             {
                 string[] medium = new string[rowsLength];
 
-                for (int i = 0; i < rowsLength; i++)
+                var textLines = File.ReadAllLines(path);
+                int ix = 0;
+                foreach (var line in textLines)
                 {
-                    using (StreamReader sr = File.OpenText(path))
-                        medium[i] = sr.ReadLine();
+                    medium[ix] = line;
+                    ix++;
                 }
 
                 rowColumnsLength = medium[0].Split(';').ToArray<string>().Length;
@@ -102,10 +106,12 @@ namespace Sudoku
             if (rowsLength > 0)
             {
                 string[] hard = new string[rowsLength];
-                for (int i = 0; i < rowsLength; i++)
+                var textLines = File.ReadAllLines(path);
+                int ix = 0;
+                foreach (var line in textLines)
                 {
-                    using (StreamReader sr = File.OpenText(path))
-                        hard[i] = sr.ReadLine();
+                    hard[ix] = line;
+                    ix++;
                 }
 
                 rowColumnsLength = hard[0].Split(';').ToArray<string>().Length;
@@ -139,14 +145,14 @@ namespace Sudoku
                 path = @"C:\\Users\Ida\Documents\Heasy.txt";
                 rows = winnersListEasy.Rows.Count();
 
-                using (StreamWriter sw = File.CreateText(path))
+                using (StreamWriter sw = File.CreateText(path)) // Tömmer dokumentet
                     sw.Write("");
 
                 string[] highscoreEasy = new string[rows];
 
 				for (int i = 0; i < rows; i++)
 				{
-					for (int j = 0; j < cells; j++)
+					for (int j = 0; j < cells; j++)         // Läser in cell efter cell på varje rad och skriver in på en rad med ";" emellan orden
 					{
 						highscoreEasy[i] += ((Run)((Paragraph)winnersListEasy.Rows[i].Cells[j].Blocks.FirstBlock).Inlines.FirstInline).Text;
 

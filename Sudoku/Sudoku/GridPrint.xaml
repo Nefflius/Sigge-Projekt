@@ -174,8 +174,8 @@
                             <DropShadowEffect Opacity="0.5" ShadowDepth="10.0" Direction="230" />
                         </Border.Effect>
                         <StackPanel KeyboardNavigation.IsTabStop="False" VerticalAlignment="Center">
-                            <Label HorizontalAlignment="Center" FontSize="10" FontWeight="Thin">Du kom med i</Label>
-                            <Label HorizontalAlignment="Center" FontSize="25" FontFamily="Impact" Margin="0,-10">TOP 10!</Label>
+                            <Label HorizontalAlignment="Center" FontSize="10" FontWeight="Thin">Grattis,</Label>
+                            <Label HorizontalAlignment="Center" FontSize="25" FontFamily="Impact" Margin="0,-10">DU VANN!</Label>
                             <Label FontSize="8" FontWeight="Thin">Skriv ditt namn:</Label>
                             <TextBox Name="nameInput" CaretBrush="HotPink" MaxLength="20" FontSize="10"></TextBox>
                             <Label Name="highscoreTimer" HorizontalAlignment="Center" FontWeight="Thin" FontFamily="Courier New" Margin="0,0,0,10">00:00:00</Label>

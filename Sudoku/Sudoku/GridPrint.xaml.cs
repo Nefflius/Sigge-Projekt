@@ -134,9 +134,8 @@ namespace Sudoku
             {
                 main.gridPrintComponent.youMadeIt.Visibility = Visibility.Visible;
                 highscoreTimer.Content = main.spelplanComponent.timer.Text;
-
-                // Något roligt händer eftersom användare vunnit!!
-                    // Flyttas från en koordinat till en annan, windows fixar animation...?
+                main.menuComponent.start = false;
+                main.spelplanComponent.IsEnabled = false;
             }
 		}
 
@@ -287,7 +286,6 @@ namespace Sudoku
             var main = Application.Current.MainWindow as MainWindow;
             
             main.spelplanComponent.GameWon(nameInput.Text.ToString(), highscoreTimer.Content.ToString());
-            main.spelplanComponent.btnRätta.Content = "RÄTTA";
             
             youMadeIt.Visibility = Visibility.Hidden;
         }
