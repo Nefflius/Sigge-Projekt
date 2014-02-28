@@ -28,7 +28,7 @@
                                 <TableColumn />
                                 <TableColumn />
                             </Table.Columns>
-                            <TableRowGroup FontFamily="Segoe" FontWeight="Thin">
+                            <TableRowGroup Name="highscoreHeader" FontFamily="Segoe" FontWeight="Thin">
                                 <TableRow Background="WhiteSmoke" FontWeight="Normal">
                                     <TableCell ColumnSpan="2">
                                         <Paragraph FontSize="15">Namn :</Paragraph>

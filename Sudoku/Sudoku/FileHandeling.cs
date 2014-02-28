@@ -90,5 +90,10 @@ namespace Sudoku
                 System.Windows.MessageBox.Show("Spelet har sparats!", "Spelet har sparats", System.Windows.MessageBoxButton.OK, System.Windows.MessageBoxImage.Information);
             }
         }
+
+        public void SaveHighscore(string[] _highscore2Save)
+        {
+            
+        }
     }
 }
