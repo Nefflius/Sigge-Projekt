@@ -39,6 +39,9 @@
   <PropertyGroup />
   <PropertyGroup />
   <ItemGroup>
+    <Reference Include="NAudio">
+      <HintPath>..\..\MusikTest\NAudio-Release\NAudio.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -67,6 +70,7 @@
     <Compile Include="Highscore.xaml.cs">
       <DependentUpon>Highscore.xaml</DependentUpon>
     </Compile>
+    <Compile Include="LoopStream.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -160,6 +164,12 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Properties\Resources\SudokuIcon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bgmusic22 %28As long as a word remains unspoken%29 %282%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Sound-on-icon43.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

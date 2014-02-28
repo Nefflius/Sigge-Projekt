@@ -81,8 +81,7 @@ namespace Sudoku
 			main.gridPrintComponent = model.PrintGrid(radioButtonChecked, main.gridPrintComponent);
 			main.gridPrintComponent.Visibility = Visibility.Visible;
 					
-		//	main.spelplanComponent.start = true;   // Timer
-		//	main.spelplanComponent.begins = DateTime.Now;  // Timer
+		
 		}
 
 		private void rb_Click(object sender, RoutedEventArgs e)

@@ -113,3 +113,29 @@ D:\Visual Studio 2012\SiggeProjekt\Sudoku\Sudoku\obj\Debug\Highscore.baml
 D:\Visual Studio 2012\SiggeProjekt\Sudoku\Sudoku\obj\Debug\Highscore.g.cs
 C:\Users\Nidaa\Desktop\DMP1\GUI_prog\Sigge Projekt\Sudoku\Sudoku\obj\Debug\Highscore.baml
 C:\Users\Nidaa\Desktop\DMP1\GUI_prog\Sigge Projekt\Sudoku\Sudoku\obj\Debug\Highscore.g.cs
+C:\Users\Nidaa\Desktop\Sudoku11test\Sudoku\bin\Debug\Sudoku.exe.config
+C:\Users\Nidaa\Desktop\Sudoku11test\Sudoku\bin\Debug\Sudoku.exe
+C:\Users\Nidaa\Desktop\Sudoku11test\Sudoku\bin\Debug\Sudoku.pdb
+C:\Users\Nidaa\Desktop\Sudoku11test\Sudoku\bin\Debug\NAudio.dll
+C:\Users\Nidaa\Desktop\Sudoku11test\Sudoku\bin\Debug\NAudio.xml
+C:\Users\Nidaa\Desktop\Sudoku11test\Sudoku\obj\Debug\Sudoku.csprojResolveAssemblyReference.cache
+C:\Users\Nidaa\Desktop\Sudoku11test\Sudoku\obj\Debug\Highscore.baml
+C:\Users\Nidaa\Desktop\Sudoku11test\Sudoku\obj\Debug\Meny.baml
+C:\Users\Nidaa\Desktop\Sudoku11test\Sudoku\obj\Debug\GridPrint.g.cs
+C:\Users\Nidaa\Desktop\Sudoku11test\Sudoku\obj\Debug\Highscore.g.cs
+C:\Users\Nidaa\Desktop\Sudoku11test\Sudoku\obj\Debug\MainWindow.g.cs
+C:\Users\Nidaa\Desktop\Sudoku11test\Sudoku\obj\Debug\Meny.g.cs
+C:\Users\Nidaa\Desktop\Sudoku11test\Sudoku\obj\Debug\Spelplan.g.cs
+C:\Users\Nidaa\Desktop\Sudoku11test\Sudoku\obj\Debug\App.g.cs
+C:\Users\Nidaa\Desktop\Sudoku11test\Sudoku\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\Nidaa\Desktop\Sudoku11test\Sudoku\obj\Debug\Sudoku_MarkupCompile.cache
+C:\Users\Nidaa\Desktop\Sudoku11test\Sudoku\obj\Debug\Sudoku_MarkupCompile.lref
+C:\Users\Nidaa\Desktop\Sudoku11test\Sudoku\obj\Debug\GridPrint.baml
+C:\Users\Nidaa\Desktop\Sudoku11test\Sudoku\obj\Debug\MainWindow.baml
+C:\Users\Nidaa\Desktop\Sudoku11test\Sudoku\obj\Debug\Spelplan.baml
+C:\Users\Nidaa\Desktop\Sudoku11test\Sudoku\obj\Debug\Sudoku.g.resources
+C:\Users\Nidaa\Desktop\Sudoku11test\Sudoku\obj\Debug\Sudoku.Properties.Resources.resources
+C:\Users\Nidaa\Desktop\Sudoku11test\Sudoku\obj\Debug\Sudoku.csproj.GenerateResource.Cache
+C:\Users\Nidaa\Desktop\Sudoku11test\Sudoku\obj\Debug\Sudoku.exe
+C:\Users\Nidaa\Desktop\Sudoku11test\Sudoku\obj\Debug\Sudoku.pdb
+C:\Users\Nidaa\Desktop\DMP1\GUI_prog\Sigge Projekt\Sudoku\Sudoku\bin\Debug\NAudio.xml

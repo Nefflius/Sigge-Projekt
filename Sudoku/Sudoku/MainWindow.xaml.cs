@@ -13,6 +13,9 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+using NAudio.Wave;
+
+
 namespace Sudoku
 {
     /// <summary>
@@ -34,10 +37,26 @@ namespace Sudoku
     {
         bool gameChanged = true;
         SudokuModel model;
+
+        //Music
+        WaveFileReader sound;
+        WaveOut waveOut = new WaveOut();
+        //End Music
+
         public MainWindow()
         {
             InitializeComponent();
             createCommandBindings();
+
+            //Music
+            sound = new WaveFileReader(Properties.Resources.asLongSong);
+            LoopStream loop = new LoopStream(sound); // Loop class
+            waveOut.Init(loop); //intializes the out device 
+            waveOut.Play();
+            //End Music
+
+
+
         }
 
         private void createCommandBindings()
@@ -162,5 +181,45 @@ namespace Sudoku
             gridPrintComponent.Visibility = Visibility.Collapsed;
             spelplanComponent.Visibility = Visibility.Collapsed;
         }
+
+        private void Window_Closed_1(object sender, EventArgs e)
+        {
+
+            if (sound != null)
+            {
+                sound.Dispose();
+                sound = null;
+            }
+            if (waveOut != null)
+            {
+                if (waveOut.PlaybackState == PlaybackState.Playing)
+                    waveOut.Stop();
+                waveOut.Dispose();
+                waveOut = null;
+            }
+
+        }
+
+       
+        //Music
+        private void btnMusic_Click_1(object sender, RoutedEventArgs e)
+        {
+
+            //checking if the sound is playing. Pause it if it is, play it if not
+            // http://mark-dot-net.blogspot.co.uk/2014/02/fire-and-forget-audio-playback-with.html
+            if (waveOut != null)
+            {
+                if (waveOut.PlaybackState == PlaybackState.Playing)
+                {
+                    waveOut.Pause();
+                }
+                else if (waveOut.PlaybackState == PlaybackState.Paused)
+                {
+                    waveOut.Play();
+                }
+            }
+        }
+
+
     }
 }
