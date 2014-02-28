@@ -27,6 +27,7 @@ namespace Sudoku
         public DateTime begins;
         DispatcherTimer timerChanged;
         public bool start = false;
+        bool openingSavedGame = false;
         // End timer Var
 
         MainWindow main;
@@ -36,9 +37,6 @@ namespace Sudoku
 			InitializeComponent();
             model = new SudokuModel();
 		}
-
-
-
 
 		private static string radioButtonChecked;
 
@@ -50,6 +48,16 @@ namespace Sudoku
 
         public SudokuModel GetSudokuModel { get { return model; } }
 
+        public void setCellFocus()
+        {
+            int j = 0;
+            while (!((TextBox)main.gridPrintComponent.nameGridPrint.Children[j]).IsEnabled)
+            {
+                j++;
+            }
+            TextBox temp = ((TextBox)main.gridPrintComponent.nameGridPrint.Children[j]);
+            temp.Focus();
+        }
 		/**********************************************************
 		ANROP:      Anropas då Spela-knappen clickas.
 		UPPGIFT:    Läser av radiobutton och skickar vidare vilken
@@ -58,7 +66,8 @@ namespace Sudoku
 		***********************************************************/
 		private void spela_Click(object sender, RoutedEventArgs e)
 		{
-
+            start = true;
+            begins = DateTime.Now;
             Timer();
 
 			main = Application.Current.MainWindow as MainWindow;
@@ -80,7 +89,16 @@ namespace Sudoku
 
 			main.gridPrintComponent = model.PrintGrid(radioButtonChecked, main.gridPrintComponent);
 			main.gridPrintComponent.Visibility = Visibility.Visible;
-					
+            main.gridPrintComponent.Focus();
+
+            int j = 0;
+            while (!((TextBox)main.gridPrintComponent.nameGridPrint.Children[j]).IsEnabled)
+            {
+                j++;
+            }
+            TextBox temp = ((TextBox)main.gridPrintComponent.nameGridPrint.Children[j]);
+            temp.Focus();
+
 		//	main.spelplanComponent.start = true;   // Timer
 		//	main.spelplanComponent.begins = DateTime.Now;  // Timer
 		}
@@ -163,8 +181,7 @@ namespace Sudoku
         {
 
             //Timer
-            start = true;
-            begins = DateTime.Now;
+
             timerChanged = new DispatcherTimer(new TimeSpan(0, 0, 1), DispatcherPriority.Normal, delegate
             {
                 if (start)

@@ -48,18 +48,13 @@
                 <DropShadowEffect Opacity="0.5" />
             </Button.Effect>
         </Button>
-        <Button Grid.Row="2" Click="clickHjälp">Hjälp
-            <Button.Effect>
-                <DropShadowEffect Opacity="0.7" />
-            </Button.Effect>
-        </Button>
-        <GroupBox Grid.Row="4" Grid.RowSpan="2" Header="Timer" FontWeight="Thin" Background="White" BorderBrush="Gray">
+        <GroupBox Grid.Row="4" Grid.RowSpan="2" Header="Timer" FontWeight="Thin" Background="White" BorderBrush="Gray" TabIndex="4">
             <GroupBox.Effect>
                 <DropShadowEffect Opacity="0.7" />
             </GroupBox.Effect>
             <TextBox x:Name="timer" BorderThickness="0" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Courier New" FontSize="16" Text="00:00:00" IsReadOnly="True" />
         </GroupBox>
-        <GroupBox Grid.Row="6" Header="Antal drag" FontWeight="Thin" Background="White" BorderBrush="Gray">
+        <GroupBox Grid.Row="6" Header="Antal drag" FontWeight="Thin" Background="White" BorderBrush="Gray" TabIndex="5">
             <GroupBox.Effect>
                 <DropShadowEffect Opacity="0.7" />
             </GroupBox.Effect>
@@ -71,8 +66,16 @@
                 <DropShadowEffect Opacity="0.7" />
             </Button.Effect>
         </Button>
-        <Button x:Name="btnPause" Content="Pause"  Grid.Row="3"  Click="btnPause_Click" Visibility="Visible" />
-        <Button x:Name="btnStart" Content="Start"  Grid.Row="3" Click="btnStart_Click" Visibility="Collapsed" />
+        <Button x:Name="btnPause" Content="Pause" Grid.Row="3" Click="btnPause_Click" Visibility="Visible" TabIndex="3">
+            <Button.Effect>
+                <DropShadowEffect Opacity="0.7"/>
+            </Button.Effect>
+        </Button>
+        <Button x:Name="btnStart" Content="Start" Grid.Row="3" Click="btnStart_Click" Visibility="Collapsed">
+            <Button.Effect>
+                <DropShadowEffect Opacity="0.7"/>
+            </Button.Effect>
+        </Button>
         </Grid>
     </Viewbox>
 </UserControl>

@@ -101,7 +101,21 @@ namespace Sudoku
                 menuComponent.Visibility = Visibility.Collapsed;
                 gridPrintComponent = model.PrintGrid(savedFile[2], gridPrintComponent, savedGame);
                 gridPrintComponent.Visibility = Visibility.Visible;
-                model.GetSetNewGame = true;
+
+                //försöker sätta fokus på första tomma cellen men funkar inte. 
+                //Syftet är att slippa använda musen.
+                int j = 0;
+                while(!((TextBox)gridPrintComponent.nameGridPrint.Children[j]).IsEnabled){
+                    j++;
+                }
+                TextBox temp = ((TextBox)gridPrintComponent.nameGridPrint.Children[j]);
+                temp.Focus();
+
+                spelplanComponent.timer.Text = savedFile[3];
+                menuComponent.Timer();
+                spelplanComponent.StartTimer();
+
+                
             }
 
             catch (Exception ex)
@@ -141,6 +155,8 @@ namespace Sudoku
             //Spara vilken spelplan/svårighetsgrad användaren valt
             game2Save[2] = model.GetDifficulty;
 
+            //Spara tiden
+            game2Save[3] = spelplanComponent.timer.Text;
             FileHandeling saveGame = new FileHandeling();
             saveGame.SaveFile(game2Save);
         }
@@ -177,10 +193,7 @@ namespace Sudoku
 
         private void mnuExit_Click(object sender, RoutedEventArgs e)
         {
-            //Application.Current.Shutdown();
-            PrintDialog printDlg = new PrintDialog();
-            printDlg.PrintVisual(this, "User Control Printing");
-            
+            Application.Current.Shutdown();
         } 
     }
 }

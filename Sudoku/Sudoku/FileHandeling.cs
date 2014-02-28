@@ -42,7 +42,7 @@ namespace Sudoku
 
         public string[] OpenFile()
         {
-            string[] _sudokuElements = new string[3];
+            string[] _sudokuElements = new string[4];
             bool _openFileSuccess;
             
             OpenFileDialog _openSudoku = new OpenFileDialog();
@@ -60,7 +60,7 @@ namespace Sudoku
                  _filePath = _openSudoku.FileName;
                  using (StreamReader _readSavedGame = File.OpenText(_filePath))
                  {
-                     for (int i = 0; i < 3; i++)
+                     for (int i = 0; i < 4; i++)
                      {
                          _sudokuElements[i] = _readSavedGame.ReadLine();
                      }
@@ -86,6 +86,7 @@ namespace Sudoku
                     save2File.WriteLine(_arrayElements2Save[0]);
                     save2File.WriteLine(_arrayElements2Save[1]);
                     save2File.WriteLine(_arrayElements2Save[2]);
+                    save2File.WriteLine(_arrayElements2Save[3]);   
                 }
                 System.Windows.MessageBox.Show("Spelet har sparats!", "Spelet har sparats", System.Windows.MessageBoxButton.OK, System.Windows.MessageBoxImage.Information);
             }

@@ -39,6 +39,7 @@ namespace Sudoku
         }
 
 
+
         /*****************************************************
         ANROP:      PrintGrid(string[]);
         UPPGIFT:    Tar emot array med spelplan-siffror, 
@@ -139,6 +140,7 @@ namespace Sudoku
             }
 		}
 
+        
         public StringBuilder SaveGame()
         {
             StringBuilder strbSaveGame = new StringBuilder();
@@ -285,6 +287,7 @@ namespace Sudoku
             var main = Application.Current.MainWindow as MainWindow;
             
             main.spelplanComponent.GameWon(nameInput.Text.ToString(), highscoreTimer.Content.ToString());
+            main.spelplanComponent.btnRätta.Content = "RÄTTA";
             
             youMadeIt.Visibility = Visibility.Hidden;
         }
