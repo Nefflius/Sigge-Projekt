@@ -77,6 +77,7 @@ namespace Sudoku
 
             main.spelplanComponent.Visibility = Visibility.Visible;
             main.spelplanComponent.btnRätta.Content = "RÄTTA";
+            main.spelplanComponent.IsEnabled = true;
             main.gridPrintComponent.youMadeIt.Visibility = Visibility.Collapsed;
 			main.menuComponent.Visibility = Visibility.Collapsed;
                 gbL.Visibility = Visibility.Collapsed;
@@ -88,7 +89,7 @@ namespace Sudoku
                 rbGrid.Margin = new Thickness(70, 0, 70, 160);
                 btnSpela.IsEnabled = false;
            
-
+            
 			main.gridPrintComponent = model.PrintGrid(radioButtonChecked, main.gridPrintComponent);
 			main.gridPrintComponent.Visibility = Visibility.Visible;
             main.gridPrintComponent.Focus();

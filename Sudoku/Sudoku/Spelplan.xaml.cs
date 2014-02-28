@@ -15,6 +15,7 @@ using System.Windows.Shapes;
 
 
 using System.Windows.Threading; // timer
+using System.Windows.Media.Animation; // Animationer
 
 namespace Sudoku
 {
@@ -105,11 +106,29 @@ namespace Sudoku
         private void btnPause_Click(object sender, RoutedEventArgs e)
         {
             var main = Application.Current.MainWindow as MainWindow;
+            
 
             main.menuComponent.start = false;
             btnPause.Visibility = Visibility.Hidden;
             btnStart.Visibility = Visibility.Visible;
-            main.gridPrintComponent.Visibility = Visibility.Collapsed;
+            main.pauseComponent.Visibility = Visibility.Visible;
+
+            System.Windows.Media.Animation.DoubleAnimation da = new System.Windows.Media.Animation.DoubleAnimation();
+            da.From = 0;
+            da.To = 950;
+            da.Duration = new Duration(TimeSpan.FromMilliseconds(1000));
+            TranslateTransform rt = new TranslateTransform();
+            main.gridPrintComponent.RenderTransform = rt;
+            rt.BeginAnimation(TranslateTransform.YProperty, da);
+
+            System.Windows.Media.Animation.DoubleAnimation du = new System.Windows.Media.Animation.DoubleAnimation();
+            du.From = -950;
+            du.To = 0;
+            du.Duration = new Duration(TimeSpan.FromMilliseconds(1000));
+            TranslateTransform tt = new TranslateTransform();
+            main.pauseComponent.RenderTransform = tt;
+            tt.BeginAnimation(TranslateTransform.YProperty, du);
+
         }
 
         public void StartTimer()
@@ -122,7 +141,22 @@ namespace Sudoku
             main.menuComponent.start = true;
             btnPause.Visibility = Visibility.Visible;
             btnStart.Visibility = Visibility.Hidden;
-            main.gridPrintComponent.Visibility = Visibility.Visible;
+
+            System.Windows.Media.Animation.DoubleAnimation da = new System.Windows.Media.Animation.DoubleAnimation();
+            da.From = -950;
+            da.To = 0;
+            da.Duration = new Duration(TimeSpan.FromMilliseconds(1000));
+            TranslateTransform rt = new TranslateTransform();
+            main.gridPrintComponent.RenderTransform = rt;
+            rt.BeginAnimation(TranslateTransform.YProperty, da);
+
+            System.Windows.Media.Animation.DoubleAnimation du = new System.Windows.Media.Animation.DoubleAnimation();
+            du.From = 0;
+            du.To = 950;
+            du.Duration = new Duration(TimeSpan.FromMilliseconds(1000));
+            TranslateTransform tt = new TranslateTransform();
+            main.pauseComponent.RenderTransform = tt;
+            tt.BeginAnimation(TranslateTransform.YProperty, du);
         }
 
 

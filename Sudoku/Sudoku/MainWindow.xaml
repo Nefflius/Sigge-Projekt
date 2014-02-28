@@ -49,5 +49,6 @@
         <local:Highscore KeyboardNavigation.IsTabStop="False" x:Name="highscoreComponent" Grid.ColumnSpan="4" Visibility="Collapsed"></local:Highscore>
         <local:Spelplan KeyboardNavigation.IsTabStop="False" x:Name="spelplanComponent" Grid.Column="3" Visibility="Collapsed"></local:Spelplan>
         <local:GridPrint KeyboardNavigation.IsTabStop="False" x:Name="gridPrintComponent" Grid.ColumnSpan="3" Visibility="Collapsed" TabIndex="1"></local:GridPrint>
+        <local:Pause KeyboardNavigation.IsTabStop="False" x:Name="pauseComponent" Grid.ColumnSpan="3" Visibility="Collapsed"></local:Pause>
     </Grid>
 </Window>

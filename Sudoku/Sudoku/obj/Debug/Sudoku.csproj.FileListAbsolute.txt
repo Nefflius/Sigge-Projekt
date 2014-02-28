@@ -114,3 +114,7 @@ D:\Visual Studio 2012\SiggeProjekt\Sudoku\Sudoku\obj\Debug\Sudoku.pdb
 C:\Users\Ida\Documents\DMP12\GUI Programmering\Sigge Projekt\Sudoku\Sudoku\obj\Debug\Sudoku.csprojResolveAssemblyReference.cache
 C:\Users\Ida\Documents\DMP12\GUI Programmering\Sigge Projekt\Sudoku\Sudoku\obj\Debug\Sudoku_Content.g.cs
 D:\Visual Studio 2012\SiggeProjekt\Sudoku\Sudoku\obj\Debug\Sudoku.csprojResolveAssemblyReference.cache
+D:\Visual Studio 2012\SiggeProjekt\Sudoku\Sudoku\obj\Debug\Pause.baml
+D:\Visual Studio 2012\SiggeProjekt\Sudoku\Sudoku\obj\Debug\Pause.g.cs
+C:\Users\Ida\Documents\DMP12\GUI Programmering\Sigge Projekt\Sudoku\Sudoku\obj\Debug\Pause.baml
+C:\Users\Ida\Documents\DMP12\GUI Programmering\Sigge Projekt\Sudoku\Sudoku\obj\Debug\Pause.g.cs

@@ -220,7 +220,7 @@ namespace Sudoku
 
 		public void addHighscore(string nameinput, string difficulty, string time, string moves)
 		{
-			TableRow row = new TableRow();
+            TableRow row = new TableRow();
 
 			// eftersom man valt svårighet på highscore så skrivs bara 1,2,3 ut alltså vilken bana man valt
 			if (difficulty[0] == 'e')
@@ -234,11 +234,75 @@ namespace Sudoku
 				row.Cells.Add(new TableCell(new Paragraph(new Run(time))));
 				row.Cells[0].ColumnSpan = 2;
 
-				winnersListEasy.Rows.Add(row);
+                double movesInt = Convert.ToDouble(moves);
+                int rows = winnersListEasy.Rows.Count();
 
+                ////////////////////////// Placerar raden på rätt plats //////////////////////////
+                int rowInHere = 0;
+                if (rows > 1)
+                {
+                    while (rowInHere < rows)
+                    {
+                        string thisCellsMoves = ((Run)((Paragraph)winnersListEasy.Rows[rowInHere].Cells[2].Blocks.FirstBlock).Inlines.FirstInline).Text;
+                        double thisCellsMovesDouble = Convert.ToDouble(thisCellsMoves);
+
+                        if (movesInt > thisCellsMovesDouble)
+                        {
+                            rowInHere++;
+                        }
+                        else if (movesInt == thisCellsMovesDouble)      // Om lika drag, bäst tid överst
+                        {
+                            string tabCellsTime = ((Run)((Paragraph)winnersListEasy.Rows[rowInHere].Cells[3].Blocks.FirstBlock).Inlines.FirstInline).Text;
+                            string[] timeTabArr = new string[3];
+                            timeTabArr = tabCellsTime.Split(':').ToArray<string>();
+                            int hourTab = Convert.ToInt16(timeTabArr[0]);
+                            int minuteTab = Convert.ToInt16(timeTabArr[1]);
+                            int secondTab = Convert.ToInt16(timeTabArr[2]);
+
+                            string[] timeInputArr = new string[3];
+                            timeInputArr = time.Split(':').ToArray<string>();
+                            int hourInput = Convert.ToInt16(timeInputArr[0]);
+                            int minuteInput = Convert.ToInt16(timeInputArr[1]);
+                            int secondInput = Convert.ToInt16(timeInputArr[2]);
+
+                            if (hourInput > hourTab)        // Input var högre tid än tabellens, lägg på en rad och hoppa ur
+                            {
+                                rowInHere++;
+                                break;
+                            }
+                            else if (hourInput == hourTab)   // Timmar var samma, kolla minuter!
+                            {
+                                if (minuteInput > minuteTab)    // Input minuter var högre tid än tabellens, lägg på en rad och hoppa ur
+                                {
+                                    rowInHere++;
+                                    break;
+                                }
+                                else if (minuteInput == minuteTab)  // Minuter var samma, kolla sekunder!
+                                {
+                                    if (secondInput > secondTab)    // Input sekunder var högre tid än tabellens, lägg på en rad och hoppa ur
+                                    {
+                                        rowInHere++;
+                                        break;
+                                    }
+                                    else        // Sekunderna är lika eller input hade högre, lägg nedanför tab
+                                        break;
+                                }
+                                else
+                                    break;
+                            }
+                            else      // Input var lägre än tabellens, lägg på raden över
+                                break;
+                        }
+                        else
+                            break;
+                    }
+                    winnersListEasy.Rows.Insert(rowInHere, row);
+                }
+                else
+                    winnersListEasy.Rows.Add(row);
+                
 				highscoreListEasy.Visibility = Visibility.Visible;
 				rbGrid.Margin = new Thickness(0, 0, 0, 0);
-
 				saveHighscore("e");
 			}
 			else if (difficulty[0] == 'm')
@@ -252,7 +316,72 @@ namespace Sudoku
 				row.Cells.Add(new TableCell(new Paragraph(new Run(time))));
 				row.Cells[0].ColumnSpan = 2;
 
-				winnersListMedium.Rows.Add(row);
+                double movesInt = Convert.ToDouble(moves);
+                int rows = winnersListHard.Rows.Count();
+
+                ////////////////////////// Placerar raden på rätt plats //////////////////////////
+                int rowInHere = 0;
+                if (rows > 1)
+                {
+                    while (rowInHere < rows)
+                    {
+                        string thisCellsMoves = ((Run)((Paragraph)winnersListMedium.Rows[rowInHere].Cells[2].Blocks.FirstBlock).Inlines.FirstInline).Text;
+                        double thisCellsMovesDouble = Convert.ToDouble(thisCellsMoves);
+
+                        if (movesInt > thisCellsMovesDouble)
+                        {
+                            rowInHere++;
+                        }
+                        else if (movesInt == thisCellsMovesDouble)      // Om lika drag, bäst tid överst
+                        {
+                            string tabCellsTime = ((Run)((Paragraph)winnersListMedium.Rows[rowInHere].Cells[3].Blocks.FirstBlock).Inlines.FirstInline).Text;
+                            string[] timeTabArr = new string[3];
+                            timeTabArr = tabCellsTime.Split(':').ToArray<string>();
+                            int hourTab = Convert.ToInt16(timeTabArr[0]);
+                            int minuteTab = Convert.ToInt16(timeTabArr[1]);
+                            int secondTab = Convert.ToInt16(timeTabArr[2]);
+
+                            string[] timeInputArr = new string[3];
+                            timeInputArr = time.Split(':').ToArray<string>();
+                            int hourInput = Convert.ToInt16(timeInputArr[0]);
+                            int minuteInput = Convert.ToInt16(timeInputArr[1]);
+                            int secondInput = Convert.ToInt16(timeInputArr[2]);
+
+                            if (hourInput > hourTab)        // Input var högre tid än tabellens, lägg på en rad och hoppa ur
+                            {
+                                rowInHere++;    
+                                break;
+                            }
+                            else if (hourInput == hourTab)   // Timmar var samma, kolla minuter!
+                            {
+                                if (minuteInput > minuteTab)    // Input minuter var högre tid än tabellens, lägg på en rad och hoppa ur
+                                {
+                                    rowInHere++;
+                                    break;
+                                }
+                                else if (minuteInput == minuteTab)  // Minuter var samma, kolla sekunder!
+                                {
+                                    if (secondInput > secondTab)    // Input sekunder var högre tid än tabellens, lägg på en rad och hoppa ur
+                                    {
+                                        rowInHere++;
+                                        break;
+                                    }
+                                    else        // Sekunderna är lika eller input hade högre, lägg nedanför tab
+                                        break;
+                                }
+                                else
+                                    break;
+                            }
+                            else      // Input var lägre än tabellens, lägg på raden över
+                                break;                        
+                        }
+                        else
+                            break;
+                    }
+                    winnersListMedium.Rows.Insert(rowInHere, row);
+                }
+                else
+                    winnersListMedium.Rows.Add(row);
 
 				highscoreListMedium.Visibility = Visibility.Visible;
 				rbGrid.Margin = new Thickness(0, 0, 0, 0);
@@ -270,7 +399,72 @@ namespace Sudoku
 				row.Cells.Add(new TableCell(new Paragraph(new Run(time))));
 				row.Cells[0].ColumnSpan = 2;
 
-				winnersListHard.Rows.Add(row);
+                double movesInt = Convert.ToDouble(moves);
+                int rows = winnersListHard.Rows.Count();
+
+                ////////////////////////// Placerar raden på rätt plats //////////////////////////
+                int rowInHere = 0;
+                if (rows > 1)
+                {
+                    while (rowInHere < rows)
+                    {
+                        string thisCellsMoves = ((Run)((Paragraph)winnersListHard.Rows[rowInHere].Cells[2].Blocks.FirstBlock).Inlines.FirstInline).Text;
+                        double thisCellsMovesDouble = Convert.ToDouble(thisCellsMoves);
+
+                        if (movesInt > thisCellsMovesDouble)
+                        {
+                            rowInHere++;
+                        }
+                        else if (movesInt == thisCellsMovesDouble)      // Om lika drag, bäst tid överst
+                        {
+                            string tabCellsTime = ((Run)((Paragraph)winnersListHard.Rows[rowInHere].Cells[3].Blocks.FirstBlock).Inlines.FirstInline).Text;
+                            string[] timeTabArr = new string[3];
+                            timeTabArr = tabCellsTime.Split(':').ToArray<string>();
+                            int hourTab = Convert.ToInt16(timeTabArr[0]);
+                            int minuteTab = Convert.ToInt16(timeTabArr[1]);
+                            int secondTab = Convert.ToInt16(timeTabArr[2]);
+
+                            string[] timeInputArr = new string[3];
+                            timeInputArr = time.Split(':').ToArray<string>();
+                            int hourInput = Convert.ToInt16(timeInputArr[0]);
+                            int minuteInput = Convert.ToInt16(timeInputArr[1]);
+                            int secondInput = Convert.ToInt16(timeInputArr[2]);
+
+                            if (hourInput > hourTab)        // Input var högre tid än tabellens, lägg på en rad och hoppa ur
+                            {
+                                rowInHere++;
+                                break;
+                            }
+                            else if (hourInput == hourTab)   // Timmar var samma, kolla minuter!
+                            {
+                                if (minuteInput > minuteTab)    // Input minuter var högre tid än tabellens, lägg på en rad och hoppa ur
+                                {
+                                    rowInHere++;
+                                    break;
+                                }
+                                else if (minuteInput == minuteTab)  // Minuter var samma, kolla sekunder!
+                                {
+                                    if (secondInput > secondTab)    // Input sekunder var högre tid än tabellens, lägg på en rad och hoppa ur
+                                    {
+                                        rowInHere++;
+                                        break;
+                                    }
+                                    else        // Sekunderna är lika eller input hade högre, lägg nedanför tab
+                                        break;
+                                }
+                                else
+                                    break;
+                            }
+                            else      // Input var lägre än tabellens, lägg på raden över
+                                break;
+                        }
+                        else
+                            break;
+                    }
+                    winnersListHard.Rows.Insert(rowInHere, row);
+                }
+                else
+                    winnersListHard.Rows.Add(row);
 
 				highscoreListHard.Visibility = Visibility.Visible;
 				rbGrid.Margin = new Thickness(0, 0, 0, 0);
