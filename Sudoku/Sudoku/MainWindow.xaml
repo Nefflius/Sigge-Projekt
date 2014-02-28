@@ -5,9 +5,9 @@
         xmlns:Properties="clr-namespace:Sudoku.Properties" x:Class="Sudoku.MainWindow"
         Title="Sudoku" Height="720" Width="900">
     <Window.Resources>
-        <ImageBrush x:Key="windowBackground" AlignmentY="Top" Stretch="UniformToFill" ImageSource="Images\Sudoku_background.png" />
+        <ImageBrush KeyboardNavigation.IsTabStop="False" x:Key="windowBackground" AlignmentY="Top" Stretch="UniformToFill" ImageSource="Images\Sudoku_background.png" />
     </Window.Resources>
-    <Grid Name="grdMain">
+    <Grid KeyboardNavigation.IsTabStop="False" Name="grdMain">
         <Grid.ColumnDefinitions>
             <ColumnDefinition />
             <ColumnDefinition />
@@ -15,39 +15,40 @@
             <ColumnDefinition />
         </Grid.ColumnDefinitions>
 
-        <Menu x:Name="mnuMain" IsMainMenu="True" Background="{DynamicResource windowBackground}" Grid.ColumnSpan="4">
-            <MenuItem Header="_Arkiv" x:Name="mnuFile" Background="White" BorderBrush="Black">
-                <MenuItem x:Name="mnuOpen" Header="_Öppna" Command="ApplicationCommands.Open" >
+            <Menu KeyboardNavigation.IsTabStop="True" x:Name="mnuMain" IsMainMenu="True" Background="{DynamicResource windowBackground}" Grid.ColumnSpan="4">
+                <MenuItem Header="_Arkiv" KeyboardNavigation.IsTabStop="False" x:Name="mnuFile" Background="White" BorderBrush="Black">
+                    <MenuItem x:Name="mnuOpen" Header="_Öppna" Command="ApplicationCommands.Open" >
 
-                    <MenuItem.Icon>
-                        <Image Source="Properties/Resources/Images/icons/Open.png" />
-                    </MenuItem.Icon>
-                </MenuItem>
+                        <MenuItem.Icon>
+                            <Image Source="Properties/Resources/Images/icons/Open.png" />
+                        </MenuItem.Icon>
+                    </MenuItem>
 
-                <MenuItem x:Name="mnuSave" Header="_Spara" Command="ApplicationCommands.Save" >
-                    <MenuItem.Icon>
-                        <Image Source="Properties/Resources/Images/icons/Save.png" />
-                    </MenuItem.Icon>
-                </MenuItem>
-                <Separator></Separator>
-                <MenuItem x:Name="mnuHighscore" Header="_Highscore" Click="mnuHighscore_Click" />
+                    <MenuItem x:Name="mnuSave" Header="_Spara" Command="ApplicationCommands.Save" >
+                        <MenuItem.Icon>
+                            <Image Source="Properties/Resources/Images/icons/Save.png" />
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <Separator></Separator>
+                    <MenuItem x:Name="mnuHighscore" Header="_Highscore" Click="mnuHighscore_Click" />
                 
-                <Separator></Separator>
-                <MenuItem x:Name="mnuExit" Header="A_vsluta" Click="mnuExit_Click" >
-                    <MenuItem.Icon>
-                        <Image Source="Properties/Resources/Images/icons/Exit.png" />
-                    </MenuItem.Icon>
+                    <Separator></Separator>
+                    <MenuItem x:Name="mnuExit" Header="A_vsluta" Click="mnuExit_Click" >
+                        <MenuItem.Icon>
+                            <Image Source="Properties/Resources/Images/icons/Exit.png" />
+                        </MenuItem.Icon>
+                    </MenuItem>
                 </MenuItem>
-            </MenuItem>
-            <MenuItem Header="_Hjälp" x:Name="mnuHelp" Background="White" BorderBrush="Black">
-                <MenuItem x:Name="mnuRegler" Header="_Regler" Click="mnuRegler_Click"/>
-                <MenuItem x:Name="mnuOmSudoku" Header="Om Sudoku" Click="mnuOmSudoku_Click"/>
-            </MenuItem>
-        </Menu>
-        <local:Meny x:Name="menuComponent" Grid.ColumnSpan="4" Visibility="Visible"></local:Meny>
-        <local:Highscore x:Name="highscoreComponent" Grid.ColumnSpan="4" Visibility="Collapsed"></local:Highscore>
-        <local:Spelplan x:Name="spelplanComponent" Grid.Column="3" Visibility="Collapsed"></local:Spelplan>
-        <local:GridPrint x:Name="gridPrintComponent" Grid.ColumnSpan="3" Visibility="Collapsed"></local:GridPrint>
-        <local:Pause x:Name="pauseComponent" Grid.ColumnSpan="3" Visibility="Collapsed"></local:Pause>
+                <MenuItem KeyboardNavigation.IsTabStop="False" Header="_Hjälp" x:Name="mnuHelp" Background="White" BorderBrush="Black">
+                    <MenuItem x:Name="mnuRegler" Header="_Regler" Click="mnuRegler_Click"/>
+                    <MenuItem x:Name="mnuOmSudoku" Header="Om Sudoku" Click="mnuOmSudoku_Click"/>
+                </MenuItem>
+            </Menu>
+
+        <local:Meny KeyboardNavigation.IsTabStop="False" x:Name="menuComponent" Grid.ColumnSpan="4" Visibility="Visible" TabIndex="2"></local:Meny>
+        <local:Highscore KeyboardNavigation.IsTabStop="False" x:Name="highscoreComponent" Grid.ColumnSpan="4" Visibility="Collapsed"></local:Highscore>
+        <local:Spelplan KeyboardNavigation.IsTabStop="False" x:Name="spelplanComponent" Grid.Column="3" Visibility="Collapsed"></local:Spelplan>
+        <local:GridPrint KeyboardNavigation.IsTabStop="False" x:Name="gridPrintComponent" Grid.ColumnSpan="3" Visibility="Collapsed" TabIndex="1"></local:GridPrint>
+        <local:Pause KeyboardNavigation.IsTabStop="False" x:Name="pauseComponent" Grid.ColumnSpan="3" Visibility="Collapsed"></local:Pause>
     </Grid>
 </Window>

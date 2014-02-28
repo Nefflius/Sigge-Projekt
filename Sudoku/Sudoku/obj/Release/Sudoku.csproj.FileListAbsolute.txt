@@ -42,27 +42,6 @@ C:\Users\Nidaa\Desktop\DMP1\GUI_prog\Sigge Projekt\Sudoku\Sudoku\obj\Release\Sud
 C:\Users\Nidaa\Desktop\DMP1\GUI_prog\Sigge Projekt\Sudoku\Sudoku\obj\Release\Sudoku.csproj.GenerateResource.Cache
 D:\Visual Studio 2012\SiggeProjekt\Sudoku\Sudoku\obj\Release\GridPrint.g.cs
 D:\Visual Studio 2012\SiggeProjekt\Sudoku\Sudoku\obj\Release\GridPrint.baml
-G:\Dokument\Visual Studio 2012\Projects\GUI\Projekt\Sudoku\Sudoku\bin\Release\Sudoku.exe.config
-G:\Dokument\Visual Studio 2012\Projects\GUI\Projekt\Sudoku\Sudoku\obj\Release\Sudoku.exe
-G:\Dokument\Visual Studio 2012\Projects\GUI\Projekt\Sudoku\Sudoku\obj\Release\Sudoku.pdb
-G:\Dokument\Visual Studio 2012\Projects\GUI\Projekt\Sudoku\Sudoku\bin\Release\Sudoku.exe
-G:\Dokument\Visual Studio 2012\Projects\GUI\Projekt\Sudoku\Sudoku\bin\Release\Sudoku.pdb
-G:\Dokument\Visual Studio 2012\Projects\GUI\Projekt\Sudoku\Sudoku\obj\Release\Sudoku.csprojResolveAssemblyReference.cache
-G:\Dokument\Visual Studio 2012\Projects\GUI\Projekt\Sudoku\Sudoku\obj\Release\Meny.baml
-G:\Dokument\Visual Studio 2012\Projects\GUI\Projekt\Sudoku\Sudoku\obj\Release\GridPrint.g.cs
-G:\Dokument\Visual Studio 2012\Projects\GUI\Projekt\Sudoku\Sudoku\obj\Release\MainWindow.g.cs
-G:\Dokument\Visual Studio 2012\Projects\GUI\Projekt\Sudoku\Sudoku\obj\Release\Meny.g.cs
-G:\Dokument\Visual Studio 2012\Projects\GUI\Projekt\Sudoku\Sudoku\obj\Release\Spelplan.g.cs
-G:\Dokument\Visual Studio 2012\Projects\GUI\Projekt\Sudoku\Sudoku\obj\Release\App.g.cs
-G:\Dokument\Visual Studio 2012\Projects\GUI\Projekt\Sudoku\Sudoku\obj\Release\GeneratedInternalTypeHelper.g.cs
-G:\Dokument\Visual Studio 2012\Projects\GUI\Projekt\Sudoku\Sudoku\obj\Release\Sudoku_MarkupCompile.cache
-G:\Dokument\Visual Studio 2012\Projects\GUI\Projekt\Sudoku\Sudoku\obj\Release\Sudoku_MarkupCompile.lref
-G:\Dokument\Visual Studio 2012\Projects\GUI\Projekt\Sudoku\Sudoku\obj\Release\GridPrint.baml
-G:\Dokument\Visual Studio 2012\Projects\GUI\Projekt\Sudoku\Sudoku\obj\Release\MainWindow.baml
-G:\Dokument\Visual Studio 2012\Projects\GUI\Projekt\Sudoku\Sudoku\obj\Release\Spelplan.baml
-G:\Dokument\Visual Studio 2012\Projects\GUI\Projekt\Sudoku\Sudoku\obj\Release\Sudoku.g.resources
-G:\Dokument\Visual Studio 2012\Projects\GUI\Projekt\Sudoku\Sudoku\obj\Release\Sudoku.Properties.Resources.resources
-G:\Dokument\Visual Studio 2012\Projects\GUI\Projekt\Sudoku\Sudoku\obj\Release\Sudoku.csproj.GenerateResource.Cache
 C:\Users\Stefan Hall\Documents\Visual Studio 2012\Projects\GUI\Projekt\Sudoku\Sudoku\bin\Release\Sudoku.exe.config
 C:\Users\Stefan Hall\Documents\Visual Studio 2012\Projects\GUI\Projekt\Sudoku\Sudoku\bin\Release\Sudoku.exe
 C:\Users\Stefan Hall\Documents\Visual Studio 2012\Projects\GUI\Projekt\Sudoku\Sudoku\bin\Release\Sudoku.pdb
@@ -85,3 +64,27 @@ C:\Users\Stefan Hall\Documents\Visual Studio 2012\Projects\GUI\Projekt\Sudoku\Su
 C:\Users\Stefan Hall\Documents\Visual Studio 2012\Projects\GUI\Projekt\Sudoku\Sudoku\obj\Release\Sudoku.csproj.GenerateResource.Cache
 C:\Users\Stefan Hall\Documents\Visual Studio 2012\Projects\GUI\Projekt\Sudoku\Sudoku\obj\Release\Sudoku.exe
 C:\Users\Stefan Hall\Documents\Visual Studio 2012\Projects\GUI\Projekt\Sudoku\Sudoku\obj\Release\Sudoku.pdb
+C:\Users\Stefan Hall\Documents\Visual Studio 2012\Projects\GUI\Projekt\Sudoku\Sudoku\obj\Release\Sudoku.csprojResolveAssemblyReference.cache
+G:\Dokument\Visual Studio 2012\Projects\GUI\Projekt\Sudoku\Sudoku\bin\Release\Sudoku.exe.config
+G:\Dokument\Visual Studio 2012\Projects\GUI\Projekt\Sudoku\Sudoku\bin\Release\Sudoku.exe
+G:\Dokument\Visual Studio 2012\Projects\GUI\Projekt\Sudoku\Sudoku\bin\Release\Sudoku.pdb
+G:\Dokument\Visual Studio 2012\Projects\GUI\Projekt\Sudoku\Sudoku\obj\Release\Highscore.baml
+G:\Dokument\Visual Studio 2012\Projects\GUI\Projekt\Sudoku\Sudoku\obj\Release\Meny.baml
+G:\Dokument\Visual Studio 2012\Projects\GUI\Projekt\Sudoku\Sudoku\obj\Release\GridPrint.g.cs
+G:\Dokument\Visual Studio 2012\Projects\GUI\Projekt\Sudoku\Sudoku\obj\Release\Highscore.g.cs
+G:\Dokument\Visual Studio 2012\Projects\GUI\Projekt\Sudoku\Sudoku\obj\Release\MainWindow.g.cs
+G:\Dokument\Visual Studio 2012\Projects\GUI\Projekt\Sudoku\Sudoku\obj\Release\Meny.g.cs
+G:\Dokument\Visual Studio 2012\Projects\GUI\Projekt\Sudoku\Sudoku\obj\Release\Spelplan.g.cs
+G:\Dokument\Visual Studio 2012\Projects\GUI\Projekt\Sudoku\Sudoku\obj\Release\App.g.cs
+G:\Dokument\Visual Studio 2012\Projects\GUI\Projekt\Sudoku\Sudoku\obj\Release\GeneratedInternalTypeHelper.g.cs
+G:\Dokument\Visual Studio 2012\Projects\GUI\Projekt\Sudoku\Sudoku\obj\Release\Sudoku_MarkupCompile.cache
+G:\Dokument\Visual Studio 2012\Projects\GUI\Projekt\Sudoku\Sudoku\obj\Release\Sudoku_MarkupCompile.lref
+G:\Dokument\Visual Studio 2012\Projects\GUI\Projekt\Sudoku\Sudoku\obj\Release\GridPrint.baml
+G:\Dokument\Visual Studio 2012\Projects\GUI\Projekt\Sudoku\Sudoku\obj\Release\MainWindow.baml
+G:\Dokument\Visual Studio 2012\Projects\GUI\Projekt\Sudoku\Sudoku\obj\Release\Spelplan.baml
+G:\Dokument\Visual Studio 2012\Projects\GUI\Projekt\Sudoku\Sudoku\obj\Release\Sudoku.g.resources
+G:\Dokument\Visual Studio 2012\Projects\GUI\Projekt\Sudoku\Sudoku\obj\Release\Sudoku.Properties.Resources.resources
+G:\Dokument\Visual Studio 2012\Projects\GUI\Projekt\Sudoku\Sudoku\obj\Release\Sudoku.csproj.GenerateResource.Cache
+G:\Dokument\Visual Studio 2012\Projects\GUI\Projekt\Sudoku\Sudoku\obj\Release\Sudoku.exe
+G:\Dokument\Visual Studio 2012\Projects\GUI\Projekt\Sudoku\Sudoku\obj\Release\Sudoku.pdb
+G:\Dokument\Visual Studio 2012\Projects\GUI\Projekt\Sudoku\Sudoku\obj\Release\Sudoku.csprojResolveAssemblyReference.cache

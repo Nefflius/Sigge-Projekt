@@ -131,9 +131,7 @@ namespace Sudoku
 
         }
 
-
-        // *******  start button click (Timer)   *********
-        private void btnStart_Click(object sender, RoutedEventArgs e)
+        public void StartTimer()
         {
             var main = Application.Current.MainWindow as MainWindow;
             TimeSpan timerBox;
@@ -159,6 +157,13 @@ namespace Sudoku
             TranslateTransform tt = new TranslateTransform();
             main.pauseComponent.RenderTransform = tt;
             tt.BeginAnimation(TranslateTransform.YProperty, du);
+        }
+
+
+        // *******  start button click (Timer)   *********
+        private void btnStart_Click(object sender, RoutedEventArgs e)
+        {
+            StartTimer();
         }
 
 
