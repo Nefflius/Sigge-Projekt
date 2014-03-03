@@ -239,7 +239,7 @@ namespace Sudoku
 
                 ////////////////////////// Placerar raden på rätt plats //////////////////////////
                 int rowInHere = 0;
-                if (rows > 1)
+                if (rows > 0)
                 {
                     while (rowInHere < rows)
                     {
@@ -268,21 +268,18 @@ namespace Sudoku
                             if (hourInput > hourTab)        // Input var högre tid än tabellens, lägg på en rad och hoppa ur
                             {
                                 rowInHere++;
-                                break;
                             }
                             else if (hourInput == hourTab)   // Timmar var samma, kolla minuter!
                             {
                                 if (minuteInput > minuteTab)    // Input minuter var högre tid än tabellens, lägg på en rad och hoppa ur
                                 {
                                     rowInHere++;
-                                    break;
                                 }
                                 else if (minuteInput == minuteTab)  // Minuter var samma, kolla sekunder!
                                 {
                                     if (secondInput > secondTab)    // Input sekunder var högre tid än tabellens, lägg på en rad och hoppa ur
                                     {
                                         rowInHere++;
-                                        break;
                                     }
                                     else        // Sekunderna är lika eller input hade högre, lägg nedanför tab
                                         break;
@@ -321,7 +318,7 @@ namespace Sudoku
 
                 ////////////////////////// Placerar raden på rätt plats //////////////////////////
                 int rowInHere = 0;
-                if (rows > 1)
+                if (rows > 0)
                 {
                     while (rowInHere < rows)
                     {
@@ -350,21 +347,18 @@ namespace Sudoku
                             if (hourInput > hourTab)        // Input var högre tid än tabellens, lägg på en rad och hoppa ur
                             {
                                 rowInHere++;    
-                                break;
                             }
                             else if (hourInput == hourTab)   // Timmar var samma, kolla minuter!
                             {
                                 if (minuteInput > minuteTab)    // Input minuter var högre tid än tabellens, lägg på en rad och hoppa ur
                                 {
                                     rowInHere++;
-                                    break;
                                 }
                                 else if (minuteInput == minuteTab)  // Minuter var samma, kolla sekunder!
                                 {
                                     if (secondInput > secondTab)    // Input sekunder var högre tid än tabellens, lägg på en rad och hoppa ur
                                     {
                                         rowInHere++;
-                                        break;
                                     }
                                     else        // Sekunderna är lika eller input hade högre, lägg nedanför tab
                                         break;
@@ -404,7 +398,7 @@ namespace Sudoku
 
                 ////////////////////////// Placerar raden på rätt plats //////////////////////////
                 int rowInHere = 0;
-                if (rows > 1)
+                if (rows > 0)
                 {
                     while (rowInHere < rows)
                     {
@@ -433,21 +427,18 @@ namespace Sudoku
                             if (hourInput > hourTab)        // Input var högre tid än tabellens, lägg på en rad och hoppa ur
                             {
                                 rowInHere++;
-                                break;
                             }
                             else if (hourInput == hourTab)   // Timmar var samma, kolla minuter!
                             {
                                 if (minuteInput > minuteTab)    // Input minuter var högre tid än tabellens, lägg på en rad och hoppa ur
                                 {
                                     rowInHere++;
-                                    break;
                                 }
                                 else if (minuteInput == minuteTab)  // Minuter var samma, kolla sekunder!
                                 {
                                     if (secondInput > secondTab)    // Input sekunder var högre tid än tabellens, lägg på en rad och hoppa ur
                                     {
                                         rowInHere++;
-                                        break;
                                     }
                                     else        // Sekunderna är lika eller input hade högre, lägg nedanför tab
                                         break;
