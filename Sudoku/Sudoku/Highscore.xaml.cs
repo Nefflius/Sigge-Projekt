@@ -36,6 +36,11 @@ namespace Sudoku
 
             //////////////// E A S Y ////////////////
             string path = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\Heasy.txt";
+            if (!File.Exists(path))
+            {
+                FileStream easystream = File.Create(path);
+                easystream.Dispose();
+            }
             rowsLength = File.ReadLines(path).Count();
             if (rowsLength > 0)
             {
@@ -69,6 +74,11 @@ namespace Sudoku
 
             /////////////// M E D I U M ///////////////
             path = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\Hmedium.txt";
+            if (!File.Exists(path))
+            {
+                FileStream mediumstream = File.Create(path);
+                mediumstream.Dispose();
+            }
             rowsLength = File.ReadAllLines(path).Count();
             if (rowsLength > 0)
             {
@@ -102,6 +112,11 @@ namespace Sudoku
 
             ///////////////// H A R D //////////////////
             path = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\Hhard.txt";
+            if (!File.Exists(path))
+            {
+                FileStream hardstream = File.Create(path);
+                hardstream.Dispose();
+            }
             rowsLength = File.ReadAllLines(path).Count();
             if (rowsLength > 0)
             {

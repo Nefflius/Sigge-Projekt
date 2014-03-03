@@ -73,7 +73,8 @@ namespace Sudoku
 
             btnStart.Visibility = Visibility.Hidden;    //
             btnPause.Visibility = Visibility.Visible;    //
-
+            main.pauseComponent.Visibility = Visibility.Hidden;
+            
             main.menuComponent.IsNowVisible();
 
             btnRätta.Content = "RÄTTA";
@@ -107,11 +108,11 @@ namespace Sudoku
         {
             var main = Application.Current.MainWindow as MainWindow;
             
-
             main.menuComponent.start = false;
             btnPause.Visibility = Visibility.Hidden;
             btnStart.Visibility = Visibility.Visible;
             main.pauseComponent.Visibility = Visibility.Visible;
+            btnRätta.IsEnabled = false;
 
             System.Windows.Media.Animation.DoubleAnimation da = new System.Windows.Media.Animation.DoubleAnimation();
             da.From = 0;
@@ -140,6 +141,7 @@ namespace Sudoku
             main.menuComponent.start = true;
             btnPause.Visibility = Visibility.Visible;
             btnStart.Visibility = Visibility.Hidden;
+            btnRätta.IsEnabled = true;
 
             System.Windows.Media.Animation.DoubleAnimation da = new System.Windows.Media.Animation.DoubleAnimation();
             da.From = -950;
