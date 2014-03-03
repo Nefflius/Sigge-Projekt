@@ -121,6 +121,9 @@
   <data name="Check" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\Images\icons\Check.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="asLongSong" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bgmusic22 (As long as a word remains unspoken) (2).wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="Exit" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\Images\icons\Exit.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -137,6 +140,9 @@
     <value>Resources\Images\icons\Save.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="UnCheck" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Resources\Images\icons\UnCheck.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <value>Resources\Images\icons\UnCheck.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Sound_on_icon43" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Sound-on-icon43.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

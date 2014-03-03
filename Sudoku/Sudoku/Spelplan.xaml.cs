@@ -24,20 +24,11 @@ namespace Sudoku
     /// </summary>
     public partial class Spelplan : UserControl
     {   
-        //public DateTime begins;
-        //DispatcherTimer timerChanged;
-        //public bool start = false;
-        
+                
         public Spelplan()
         {
             InitializeComponent();
-            //timerChanged = new DispatcherTimer(new TimeSpan(0, 0, 1), DispatcherPriority.Normal, delegate
-            //{
-            //    if (start)
-            //    {
-            //        timer.Text = new DateTime((DateTime.Now - begins).Ticks).ToString("HH:mm:ss");
-            //    }
-            //}, this.Dispatcher);
+            
         }
 
         private void clickAvsluta(object sender, RoutedEventArgs e)
@@ -73,10 +64,19 @@ namespace Sudoku
 
             btnStart.Visibility = Visibility.Hidden;    //
             btnPause.Visibility = Visibility.Visible;    //
-
+            main.pauseComponent.Visibility = Visibility.Hidden;
+            
             main.menuComponent.IsNowVisible();
 
             btnRätta.Content = "RÄTTA";
+
+            System.Windows.Media.Animation.DoubleAnimation da = new System.Windows.Media.Animation.DoubleAnimation();
+            da.From = -950;
+            da.To = 0;
+            da.Duration = new Duration(TimeSpan.FromMilliseconds(1));
+            TranslateTransform rt = new TranslateTransform();
+            main.gridPrintComponent.RenderTransform = rt;
+            rt.BeginAnimation(TranslateTransform.YProperty, da);
         }
 
         public void GameWon(string nameinput, string time)
@@ -91,7 +91,7 @@ namespace Sudoku
             // if tiden är bättre än nr 10 i winnersList
             string solution = model.getThisSolution();
 
-            main.highscoreComponent.addHighscore(nameinput, solution, time, moves);
+          main.highscoreComponent.addHighscore(nameinput, solution, time, moves);
         }
 
         //När "Fusk" klickas hämtas lösning i SudokuModel
@@ -107,11 +107,11 @@ namespace Sudoku
         {
             var main = Application.Current.MainWindow as MainWindow;
             
-
             main.menuComponent.start = false;
             btnPause.Visibility = Visibility.Hidden;
             btnStart.Visibility = Visibility.Visible;
             main.pauseComponent.Visibility = Visibility.Visible;
+            btnRätta.IsEnabled = false;
 
             System.Windows.Media.Animation.DoubleAnimation da = new System.Windows.Media.Animation.DoubleAnimation();
             da.From = 0;
@@ -140,6 +140,7 @@ namespace Sudoku
             main.menuComponent.start = true;
             btnPause.Visibility = Visibility.Visible;
             btnStart.Visibility = Visibility.Hidden;
+            btnRätta.IsEnabled = true;
 
             System.Windows.Media.Animation.DoubleAnimation da = new System.Windows.Media.Animation.DoubleAnimation();
             da.From = -950;

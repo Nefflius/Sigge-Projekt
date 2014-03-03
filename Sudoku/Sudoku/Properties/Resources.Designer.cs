@@ -61,6 +61,15 @@ namespace Sudoku.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream asLongSong {
+            get {
+                return ResourceManager.GetStream("asLongSong", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap Check {
@@ -113,6 +122,16 @@ namespace Sudoku.Properties {
         internal static System.Drawing.Bitmap Save {
             get {
                 object obj = ResourceManager.GetObject("Save", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Sound_on_icon43 {
+            get {
+                object obj = ResourceManager.GetObject("Sound_on_icon43", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

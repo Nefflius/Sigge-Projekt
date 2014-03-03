@@ -26,16 +26,22 @@ namespace Sudoku
 		public Highscore()
 		{
 			InitializeComponent();
-			readinHighscore();
+			readinHighscore();                
 		}
 
         void readinHighscore()      // Ska göra så att highscore läses in varje gång Sudoku startar
         {
+
             int rowsLength;
             int rowColumnsLength;
 
             //////////////// E A S Y ////////////////
             string path = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\Heasy.txt";
+            if (!File.Exists(path))
+            {
+                FileStream easystream = File.Create(path);
+                easystream.Dispose();
+            }
             rowsLength = File.ReadLines(path).Count();
             if (rowsLength > 0)
             {
@@ -69,6 +75,11 @@ namespace Sudoku
 
             /////////////// M E D I U M ///////////////
             path = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\Hmedium.txt";
+            if (!File.Exists(path))
+            {
+                FileStream mediumstream = File.Create(path);
+                mediumstream.Dispose();
+            }
             rowsLength = File.ReadAllLines(path).Count();
             if (rowsLength > 0)
             {
@@ -102,6 +113,11 @@ namespace Sudoku
 
             ///////////////// H A R D //////////////////
             path = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\Hhard.txt";
+            if (!File.Exists(path))
+            {
+                FileStream hardstream = File.Create(path);
+                hardstream.Dispose();
+            }
             rowsLength = File.ReadAllLines(path).Count();
             if (rowsLength > 0)
             {
@@ -217,7 +233,6 @@ namespace Sudoku
 			}
 		}
 		
-
 		public void addHighscore(string nameinput, string difficulty, string time, string moves)
 		{
             TableRow row = new TableRow();
@@ -469,39 +484,40 @@ namespace Sudoku
 			main.highscoreComponent.Visibility = Visibility.Visible;
 		}
 
-		private void rb_Click(object sender, RoutedEventArgs e)
-		{
-			rbGrid.Margin = new Thickness(0, 0, 0, 0);
-			if (Convert.ToBoolean(rbL.IsChecked))
-			{
-				highscoreListEasy.Visibility = Visibility.Visible;
-				highscoreListMedium.Visibility = Visibility.Collapsed;
-				highscoreListHard.Visibility = Visibility.Collapsed;
-			}
-			else if (Convert.ToBoolean(rbM.IsChecked))
-			{
-				highscoreListEasy.Visibility = Visibility.Collapsed;
-				highscoreListMedium.Visibility = Visibility.Visible;
-				highscoreListHard.Visibility = Visibility.Collapsed;
-			}
-			else if (Convert.ToBoolean(rbS.IsChecked))
-			{
-				highscoreListEasy.Visibility = Visibility.Collapsed;
-				highscoreListMedium.Visibility = Visibility.Collapsed;
-				highscoreListHard.Visibility = Visibility.Visible;
-			}
-		}
 
-		private void clickOK(object sender, RoutedEventArgs e)
-		{
-			var main = Application.Current.MainWindow as MainWindow;
-			main.highscoreComponent.Visibility = Visibility.Collapsed;
-			main.highscoreComponent.highscoreListEasy.Visibility = Visibility.Collapsed;
-			main.highscoreComponent.highscoreListMedium.Visibility = Visibility.Collapsed;
-			main.highscoreComponent.highscoreListHard.Visibility = Visibility.Collapsed;
-			main.highscoreComponent.rbGrid.Margin = new Thickness(0, 0, 0, 360);
+        private void rb_Click(object sender, RoutedEventArgs e)
+        {
+            rbGrid.Margin = new Thickness(0, 0, 0, 0);
+            if (Convert.ToBoolean(rbL.IsChecked))
+            {
+                highscoreListEasy.Visibility = Visibility.Visible;
+                highscoreListMedium.Visibility = Visibility.Collapsed;
+                highscoreListHard.Visibility = Visibility.Collapsed;
+            }
+            else if (Convert.ToBoolean(rbM.IsChecked))
+            {
+                highscoreListEasy.Visibility = Visibility.Collapsed;
+                highscoreListMedium.Visibility = Visibility.Visible;
+                highscoreListHard.Visibility = Visibility.Collapsed;
+            }
+            else if (Convert.ToBoolean(rbS.IsChecked))
+            {
+                highscoreListEasy.Visibility = Visibility.Collapsed;
+                highscoreListMedium.Visibility = Visibility.Collapsed;
+                highscoreListHard.Visibility = Visibility.Visible;
+            }
+        }
 
-			main.menuComponent.Visibility = Visibility.Visible;
-		}
+        private void clickOK(object sender, RoutedEventArgs e)
+        {
+            var main = Application.Current.MainWindow as MainWindow;
+            main.highscoreComponent.Visibility = Visibility.Collapsed;
+            main.highscoreComponent.highscoreListEasy.Visibility = Visibility.Collapsed;
+            main.highscoreComponent.highscoreListMedium.Visibility = Visibility.Collapsed;
+            main.highscoreComponent.highscoreListHard.Visibility = Visibility.Collapsed;
+            main.highscoreComponent.rbGrid.Margin = new Thickness(0, 0, 0, 360);
+
+            main.menuComponent.Visibility = Visibility.Visible;
+        }
 	}
 }
