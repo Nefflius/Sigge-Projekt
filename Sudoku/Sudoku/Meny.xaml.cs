@@ -27,7 +27,7 @@ namespace Sudoku
         public DateTime begins;
         DispatcherTimer timerChanged;
         public bool start = false;
-        bool openingSavedGame = false;
+  
         // End timer Var
 
         MainWindow main;

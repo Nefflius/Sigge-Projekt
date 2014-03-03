@@ -49,19 +49,19 @@
                 <DropShadowEffect Opacity="0.5" />
             </Button.Effect>
         </Button>
-        <GroupBox Grid.Row="4" Grid.RowSpan="2" Header="Timer" FontWeight="Thin" Background="White" BorderBrush="Gray" TabIndex="4">
+        <GroupBox x:Name="timerBox" Grid.Row="4" Grid.RowSpan="2" Header="Timer" FontWeight="Thin" Background="White" BorderBrush="Gray" TabIndex="4">
             <GroupBox.Effect>
                 <DropShadowEffect Opacity="0.7" />
             </GroupBox.Effect>
             <TextBox x:Name="timer" BorderThickness="0" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Courier New" FontSize="16" Text="00:00:00" IsReadOnly="True" />
         </GroupBox>
-        <GroupBox Grid.Row="6" Header="Antal drag" FontWeight="Thin" Background="White" BorderBrush="Gray" TabIndex="5">
+        <GroupBox x:Name="antaldragbox" Grid.Row="6" Header="Antal drag" FontWeight="Thin" Background="White" BorderBrush="Gray" TabIndex="5">
             <GroupBox.Effect>
                 <DropShadowEffect Opacity="0.7" />
             </GroupBox.Effect>
             <Label Name ="lblAntalDrag" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="17" FontWeight="Thin">0</Label>
         </GroupBox>
-        <Button Grid.Row="7" Click="clickFusk" Visibility="Visible">Fusk</Button>
+        <!--<Button Grid.Row="7" Click="clickFusk" Visibility="Visible">Fusk</Button>-->
         <Button Grid.Row="8" Click="clickAvsluta">Avsluta
             <Button.Effect>
                 <DropShadowEffect Opacity="0.7" />

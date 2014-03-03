@@ -35,7 +35,6 @@ namespace Sudoku
             int rowColumnsLength;
 
             //////////////// E A S Y ////////////////
-            //string path = @"C:\\Users\Ida\Documents\Heasy.txt";
             string path = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\Heasy.txt";
             rowsLength = File.ReadLines(path).Count();
             if (rowsLength > 0)
@@ -69,7 +68,7 @@ namespace Sudoku
             }
 
             /////////////// M E D I U M ///////////////
-            path = @"C:\\Users\Ida\Documents\Hmedium.txt";
+            path = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\Hmedium.txt";
             rowsLength = File.ReadAllLines(path).Count();
             if (rowsLength > 0)
             {
@@ -102,7 +101,7 @@ namespace Sudoku
             }
 
             ///////////////// H A R D //////////////////
-            path = @"C:\\Users\Ida\Documents\Hhard.txt";
+            path = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\Hhard.txt";
             rowsLength = File.ReadAllLines(path).Count();
             if (rowsLength > 0)
             {
@@ -143,7 +142,7 @@ namespace Sudoku
 
 			if (difficulty == "e")
 			{
-                path = @"C:\\Users\Ida\Documents\Heasy.txt";
+                path = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\Heasy.txt";
                 rows = winnersListEasy.Rows.Count();
 
                 using (StreamWriter sw = File.CreateText(path)) // Tömmer dokumentet
@@ -169,7 +168,7 @@ namespace Sudoku
 
 			if (difficulty == "m")
 			{
-                path = @"C:\\Users\Ida\Documents\Hmedium.txt";
+                path = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\Hmedium.txt";
                 rows = winnersListMedium.Rows.Count();
 
                 using (StreamWriter sw = File.CreateText(path))
@@ -195,7 +194,7 @@ namespace Sudoku
 
 			if (difficulty == "h")
 			{
-                path = @"C:\\Users\Ida\Documents\Hhard.txt";
+                path = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\Hhard.txt";
                 rows = winnersListHard.Rows.Count();
 				
                 using (StreamWriter sw = File.CreateText(path))

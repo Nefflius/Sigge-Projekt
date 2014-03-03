@@ -120,6 +120,7 @@ namespace Sudoku
                 spelplanComponent.timer.Text = savedFile[3];
                 menuComponent.Timer();
                 spelplanComponent.StartTimer();
+                spelplanComponent.StartTimer2();
             }
 
             catch (Exception ex)
@@ -172,18 +173,25 @@ namespace Sudoku
 
         public void Print_Executed(object sender, ExecutedRoutedEventArgs e)
         {
-            GridPrint printSudoko = gridPrintComponent;
-            printSudoko.Width = 100;
-            printSudoko.Height = 100;
+            GridPrint printSudoko = new GridPrint();
+            printSudoko.Width = 700;
+            printSudoko.Height = 520;
+            var margin = printSudoko.gridBorder.Margin;
+            margin.Left = 0;
+            printSudoko.gridBorder.Margin = margin;
+            model = this.menuComponent.GetSudokuModel;
+            string strGame2Print = model.GetSetGame2Save;
+            for (int i = 0; i < 81; i++)
+            {
+                TextBox tb = (TextBox)printSudoko.nameGridPrint.Children[i];
+                tb.Text = strGame2Print.Substring(i);
+            }
             PrintDialog dialogPrint = new PrintDialog();
             if (dialogPrint.ShowDialog() != true)
                 return;
             printSudoko.Measure(new Size(dialogPrint.PrintableAreaWidth, dialogPrint.PrintableAreaHeight));
             printSudoko.Arrange(new Rect(new Point(50, 50), gridPrintComponent.DesiredSize));
             dialogPrint.PrintVisual(printSudoko, "Sudokoutskrift");
-            //gridPrintComponent.Measure(new Size(dialogPrint.PrintableAreaWidth, dialogPrint.PrintableAreaHeight));
-            //gridPrintComponent.Arrange(new Rect(new Point(50, 50), gridPrintComponent.DesiredSize));
-            //dialogPrint.PrintVisual(gridPrintComponent, "Sudokoutskrift");
         }
 
         public void ExitGame_CanExecute(object sender, CanExecuteRoutedEventArgs e)
@@ -219,6 +227,22 @@ namespace Sudoku
         private void mnuExit_Click(object sender, RoutedEventArgs e)
         {
             Application.Current.Shutdown();
+        }
+
+        private void mnuTimer_Click(object sender, RoutedEventArgs e)
+        {
+            if(spelplanComponent.timerBox.Visibility == Visibility.Visible)
+            spelplanComponent.timerBox.Visibility = Visibility.Collapsed;
+            else if(spelplanComponent.timerBox.Visibility == Visibility.Collapsed)
+                spelplanComponent.timerBox.Visibility = Visibility.Visible;
+        }
+
+        private void mnuAntaldrag_Click(object sender, RoutedEventArgs e)
+        {
+            if(spelplanComponent.antaldragbox.Visibility == Visibility.Visible)
+                spelplanComponent.antaldragbox.Visibility = Visibility.Collapsed;
+            else if(spelplanComponent.antaldragbox.Visibility == Visibility.Collapsed)
+                spelplanComponent.antaldragbox.Visibility = Visibility.Visible;
         } 
     }
 }
