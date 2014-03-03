@@ -67,6 +67,9 @@
     <Compile Include="Highscore.xaml.cs">
       <DependentUpon>Highscore.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pause.xaml.cs">
+      <DependentUpon>Pause.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -97,6 +100,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="Meny.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pause.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -160,6 +167,15 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Properties\Resources\SudokuIcon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Properties\Resources\Heasy.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Properties\Resources\Hhard.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Properties\Resources\Hmedium.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
