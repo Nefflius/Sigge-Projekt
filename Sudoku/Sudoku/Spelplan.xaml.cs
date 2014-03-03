@@ -33,7 +33,12 @@ namespace Sudoku
 
         private void clickAvsluta(object sender, RoutedEventArgs e)
         {
-            Application.Current.Shutdown();                 //Stänger av programet
+            System.Windows.Forms.DialogResult dialogResult = System.Windows.Forms.MessageBox.Show("Din spelomgång kommer att avbrytas, Är du säker på att du vill avsluta Sudoku?", "Spelomgång avbruten", System.Windows.Forms.MessageBoxButtons.YesNo);
+            if (dialogResult == System.Windows.Forms.DialogResult.Yes)
+            {
+                Application.Current.Shutdown();                 //Stänger av programet
+            }
+            else { }
         }
 
         private void clickRätta(object sender, RoutedEventArgs e)
@@ -57,26 +62,29 @@ namespace Sudoku
         private void clickNyttSpel(object sender, RoutedEventArgs e)        //Nytt spel
         {
             var main = Application.Current.MainWindow as MainWindow;
-           
-            main.menuComponent.Visibility = Visibility.Visible;
-            main.spelplanComponent.Visibility = Visibility.Collapsed;
-            main.gridPrintComponent.Visibility = Visibility.Collapsed;
 
-            btnStart.Visibility = Visibility.Hidden;    //
-            btnPause.Visibility = Visibility.Visible;    //
-            main.pauseComponent.Visibility = Visibility.Hidden;
-            
-            main.menuComponent.IsNowVisible();
+            System.Windows.Forms.DialogResult dialogResult = System.Windows.Forms.MessageBox.Show("Din spelomgång kommer att avbrytas, Är du säker på att du vill starta ett nytt spel?", "Spelomgång avbruten", System.Windows.Forms.MessageBoxButtons.YesNo);
+            if (dialogResult == System.Windows.Forms.DialogResult.Yes)
+            {
+                main.menuComponent.Visibility = Visibility.Visible;
+                main.spelplanComponent.Visibility = Visibility.Collapsed;
+                main.gridPrintComponent.Visibility = Visibility.Collapsed;
 
-            btnRätta.Content = "RÄTTA";
+                btnStart.Visibility = Visibility.Hidden;
+                btnPause.Visibility = Visibility.Visible;
+                main.pauseComponent.Visibility = Visibility.Hidden;
 
-            System.Windows.Media.Animation.DoubleAnimation da = new System.Windows.Media.Animation.DoubleAnimation();
-            da.From = -950;
-            da.To = 0;
-            da.Duration = new Duration(TimeSpan.FromMilliseconds(1));
-            TranslateTransform rt = new TranslateTransform();
-            main.gridPrintComponent.RenderTransform = rt;
-            rt.BeginAnimation(TranslateTransform.YProperty, da);
+                main.menuComponent.IsNowVisible();
+
+                System.Windows.Media.Animation.DoubleAnimation da = new System.Windows.Media.Animation.DoubleAnimation();
+                da.From = -950;
+                da.To = 0;
+                da.Duration = new Duration(TimeSpan.FromMilliseconds(1));
+                TranslateTransform rt = new TranslateTransform();
+                main.gridPrintComponent.RenderTransform = rt;
+                rt.BeginAnimation(TranslateTransform.YProperty, da);
+            }
+            else { }
         }
 
         public void GameWon(string nameinput, string time)

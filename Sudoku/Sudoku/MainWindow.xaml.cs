@@ -190,10 +190,26 @@ namespace Sudoku
 
         private void mnuHighscore_Click(object sender, RoutedEventArgs e)
         {
-            highscoreComponent.Visibility = Visibility.Visible;
-            menuComponent.Visibility = Visibility.Collapsed;
-            gridPrintComponent.Visibility = Visibility.Collapsed;
-            spelplanComponent.Visibility = Visibility.Collapsed;
+            if (gridPrintComponent.Visibility != Visibility.Collapsed)
+            {
+                System.Windows.Forms.DialogResult dialogResult = System.Windows.Forms.MessageBox.Show("Spelet kommer att avbrytas, Är du säker på att du vill till Highscore?", "Avbrutet spel", System.Windows.Forms.MessageBoxButtons.YesNo);
+                if (dialogResult == System.Windows.Forms.DialogResult.Yes)
+                {
+                    highscoreComponent.Visibility = Visibility.Visible;
+                    menuComponent.Visibility = Visibility.Collapsed;
+                    gridPrintComponent.Visibility = Visibility.Collapsed;
+                    spelplanComponent.Visibility = Visibility.Collapsed;
+                }
+                if (dialogResult == System.Windows.Forms.DialogResult.No) { }
+            }
+            else
+            {
+                highscoreComponent.Visibility = Visibility.Visible;
+                menuComponent.Visibility = Visibility.Collapsed;
+                gridPrintComponent.Visibility = Visibility.Collapsed;
+                spelplanComponent.Visibility = Visibility.Collapsed;
+            }
+
         }
         private void Window_Closed_1(object sender, EventArgs e)
         {
