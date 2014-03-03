@@ -40,13 +40,21 @@
                     </MenuItem>
                 </MenuItem>
             <MenuItem KeyboardNavigation.IsTabStop="False" Header="_Inställningar" x:Name="mnuInställningar" Background="White" BorderBrush="Black">
-                <MenuItem x:Name="mnuTimer" Header="_Timer" Click="mnuTimer_Click"/>
-                <MenuItem x:Name="mnuAntaldrag" Header="_AntalDrag" Click="mnuAntaldrag_Click"/>
+                <MenuItem x:Name="mnuTimer" Header="_Timer" Click="mnuTimer_Click">
+                    <MenuItem.Icon>
+                        <Image Source="Properties/Resources/Images/icons/Check.png" />
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem x:Name="mnuAntaldrag" Header="_AntalDrag" Click="mnuAntaldrag_Click">
+                    <MenuItem.Icon>
+                        <Image Source="Properties/Resources/Images/icons/Check.png" />
+                    </MenuItem.Icon>
+                </MenuItem>
             </MenuItem>
                 <MenuItem KeyboardNavigation.IsTabStop="False" Header="_Hjälp" x:Name="mnuHelp" Background="White" BorderBrush="Black">
-                    <MenuItem x:Name="mnuRegler" Header="_Regler" Click="mnuRegler_Click"/>
-                    <MenuItem x:Name="mnuOmSudoku" Header="Om Sudoku" Click="mnuOmSudoku_Click"/>
-                </MenuItem>
+                <MenuItem x:Name="mnuRegler" Header="_Regler" Click="mnuRegler_Click" />
+                <MenuItem x:Name="mnuOmSudoku" Header="Om Sudoku" Click="mnuOmSudoku_Click"/>
+            </MenuItem>
             </Menu>
 
         <local:Meny KeyboardNavigation.IsTabStop="False" x:Name="menuComponent" Grid.ColumnSpan="4" Visibility="Visible" TabIndex="2"></local:Meny>

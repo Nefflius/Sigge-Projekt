@@ -170,12 +170,17 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Properties\Resources\Heasy.txt" />
+    <Resource Include="Properties\Resources\Images\icons\UnCheck.png" />
+    <Resource Include="Properties\Resources\Images\icons\Check.png" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Properties\Resources\Hhard.txt" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Properties\Resources\Hmedium.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -40,7 +40,7 @@
         </Style>
     </UserControl.Resources>
     <Viewbox KeyboardNavigation.IsTabStop="False" Stretch="Uniform" PreviewKeyDown="Viewbox_PreviewKeyDown_1">
-        <Border KeyboardNavigation.IsTabStop="False" BorderBrush="Gray" BorderThickness="1" Background="White" Margin="20">
+        <Border KeyboardNavigation.IsTabStop="False" BorderBrush="Black" BorderThickness="2" Background="White" Margin="20">
             <Border.Effect>
                 <DropShadowEffect Opacity="0.5" ShadowDepth="10.0" Direction="230" />
             </Border.Effect>
@@ -169,7 +169,7 @@
                     <Rectangle Grid.Row="6" Grid.Column="3" Grid.RowSpan="3" Grid.ColumnSpan="3" Stroke="Gray" StrokeThickness="2"></Rectangle>
                     <Rectangle Grid.Row="6" Grid.Column="6" Grid.RowSpan="3" Grid.ColumnSpan="3" Stroke="Gray" StrokeThickness="2"></Rectangle>
 
-                    <Border KeyboardNavigation.IsTabStop="False" Name="youMadeIt" Visibility="Hidden" Grid.Row="2" Grid.Column="2" Grid.ColumnSpan="5" Grid.RowSpan="5" Background="White" BorderBrush="Black" BorderThickness="2">
+                    <Border KeyboardNavigation.IsTabStop="False" Name="youMadeIt" Visibility="Hidden" Grid.Row="2" Grid.Column="2" Grid.ColumnSpan="5" Grid.RowSpan="5" Background="White" BorderBrush="Black" BorderThickness="1">
                         <Border.Effect>
                             <DropShadowEffect Opacity="0.5" ShadowDepth="10.0" Direction="230" />
                         </Border.Effect>
