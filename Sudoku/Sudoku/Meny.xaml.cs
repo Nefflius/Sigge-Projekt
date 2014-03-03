@@ -15,6 +15,7 @@ using System.Windows.Shapes;
 
 using System.Windows.Threading; // timer
 
+
 namespace Sudoku
 {
 	/// <summary>
@@ -28,6 +29,7 @@ namespace Sudoku
         DispatcherTimer timerChanged;
         public bool start = false;
         // End timer Var
+     //   bool openingSavedGame = false;
 
         MainWindow main;
         SudokuModel model;
@@ -36,9 +38,6 @@ namespace Sudoku
 			InitializeComponent();
             model = new SudokuModel();
 		}
-
-
-
 
 		private static string radioButtonChecked;
 
@@ -50,6 +49,16 @@ namespace Sudoku
 
         public SudokuModel GetSudokuModel { get { return model; } }
 
+        public void setCellFocus()
+        {
+            int j = 0;
+            while (!((TextBox)main.gridPrintComponent.nameGridPrint.Children[j]).IsEnabled)
+            {
+                j++;
+            }
+            TextBox temp = ((TextBox)main.gridPrintComponent.nameGridPrint.Children[j]);
+            temp.Focus();
+        }
 		/**********************************************************
 		ANROP:      Anropas då Spela-knappen clickas.
 		UPPGIFT:    Läser av radiobutton och skickar vidare vilken
@@ -58,7 +67,8 @@ namespace Sudoku
 		***********************************************************/
 		private void spela_Click(object sender, RoutedEventArgs e)
 		{
-
+            start = true;
+            begins = DateTime.Now;
             Timer();
 
 			main = Application.Current.MainWindow as MainWindow;
@@ -67,6 +77,9 @@ namespace Sudoku
 			main.spelplanComponent.lblAntalDrag.Content = "0";
 
             main.spelplanComponent.Visibility = Visibility.Visible;
+            main.spelplanComponent.btnRätta.Content = "RÄTTA";
+            main.spelplanComponent.IsEnabled = true;
+            main.gridPrintComponent.youMadeIt.Visibility = Visibility.Collapsed;
 			main.menuComponent.Visibility = Visibility.Collapsed;
                 gbL.Visibility = Visibility.Collapsed;
                 gbM.Visibility = Visibility.Collapsed;
@@ -77,11 +90,21 @@ namespace Sudoku
                 rbGrid.Margin = new Thickness(70, 0, 70, 160);
                 btnSpela.IsEnabled = false;
            
-
+            
 			main.gridPrintComponent = model.PrintGrid(radioButtonChecked, main.gridPrintComponent);
 			main.gridPrintComponent.Visibility = Visibility.Visible;
-					
-		
+            main.gridPrintComponent.Focus();
+
+            int j = 0;
+            while (!((TextBox)main.gridPrintComponent.nameGridPrint.Children[j]).IsEnabled)
+            {
+                j++;
+            }
+            TextBox temp = ((TextBox)main.gridPrintComponent.nameGridPrint.Children[j]);
+            temp.Focus();
+
+		//	main.spelplanComponent.start = true;   // Timer
+		//	main.spelplanComponent.begins = DateTime.Now;  // Timer
 		}
 
 		private void rb_Click(object sender, RoutedEventArgs e)
@@ -162,8 +185,7 @@ namespace Sudoku
         {
 
             //Timer
-            start = true;
-            begins = DateTime.Now;
+
             timerChanged = new DispatcherTimer(new TimeSpan(0, 0, 1), DispatcherPriority.Normal, delegate
             {
                 if (start)

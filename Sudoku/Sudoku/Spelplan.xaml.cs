@@ -15,6 +15,7 @@ using System.Windows.Shapes;
 
 
 using System.Windows.Threading; // timer
+using System.Windows.Media.Animation; // Animationer
 
 namespace Sudoku
 {
@@ -50,28 +51,7 @@ namespace Sudoku
                 btn.Content = "RÄTTA";
                 main.gridPrintComponent.continueGame();
             }
-
-            bool vari = SudokuModel.send;
-            if (vari == true)
-            {
-                MessageBoxResult result = MessageBox.Show("Du vann!" + Environment.NewLine + "Vill du spela igen?", "Grattis!", MessageBoxButton.OKCancel);
-
-                if (result == MessageBoxResult.OK)
-                {
-                    main.menuComponent.Visibility = Visibility.Visible;
-                    main.spelplanComponent.Visibility = Visibility.Collapsed;
-                    main.gridPrintComponent.Visibility = Visibility.Collapsed;
-                    main.menuComponent.IsNowVisible();
-                }
-                else if (result == MessageBoxResult.Cancel)
-                {
-                    //Application.Current.Shutdown();
-                    
-                }
-                vari = false;
-                SudokuModel.send = false;
-                btnRätta.Content = "RÄTTA";
-            }    
+    
         }
 
         private void clickNyttSpel(object sender, RoutedEventArgs e)        //Nytt spel
@@ -90,17 +70,11 @@ namespace Sudoku
             btnRätta.Content = "RÄTTA";
         }
 
-        private void clickHjälp(object sender, RoutedEventArgs e)
-        {
-            MessageBox.Show("Ett sudoku består av nio gånger nio rutor som i sin tur är indelade i nio större rutor. För att lösa ett sudoku skall man placera ut siffrorna 1-9 på spelfältet på ett sådant vis att varje siffra bara finns en gång per rad, en gång per kolumn och dessutom bara en gång per större ruta.",
-                             "Hjälp");
-        }
-
         public void GameWon(string nameinput, string time)
         {
             var main = Application.Current.MainWindow as MainWindow;
             SudokuModel model = new SudokuModel();
-
+            
             string moves = lblAntalDrag.Content.ToString();
 
             // if winnersList.rows =< 10
@@ -108,7 +82,7 @@ namespace Sudoku
             // if tiden är bättre än nr 10 i winnersList
             string solution = model.getThisSolution();
 
-            main.highscoreComponent.addHighscore(nameinput, solution, time, moves);
+          main.highscoreComponent.addHighscore(nameinput, solution, time, moves);
         }
 
         //När "Fusk" klickas hämtas lösning i SudokuModel
@@ -118,20 +92,37 @@ namespace Sudoku
             SudokuModel model = new SudokuModel();
             model.fuska(main.gridPrintComponent);
         }
-
+        
         // *****  Pause button click (Timer) ********
         private void btnPause_Click(object sender, RoutedEventArgs e)
         {
             var main = Application.Current.MainWindow as MainWindow;
+            
 
             main.menuComponent.start = false;
             btnPause.Visibility = Visibility.Hidden;
             btnStart.Visibility = Visibility.Visible;
+            main.pauseComponent.Visibility = Visibility.Visible;
+
+            System.Windows.Media.Animation.DoubleAnimation da = new System.Windows.Media.Animation.DoubleAnimation();
+            da.From = 0;
+            da.To = 950;
+            da.Duration = new Duration(TimeSpan.FromMilliseconds(1000));
+            TranslateTransform rt = new TranslateTransform();
+            main.gridPrintComponent.RenderTransform = rt;
+            rt.BeginAnimation(TranslateTransform.YProperty, da);
+
+            System.Windows.Media.Animation.DoubleAnimation du = new System.Windows.Media.Animation.DoubleAnimation();
+            du.From = -950;
+            du.To = 0;
+            du.Duration = new Duration(TimeSpan.FromMilliseconds(1000));
+            TranslateTransform tt = new TranslateTransform();
+            main.pauseComponent.RenderTransform = tt;
+            tt.BeginAnimation(TranslateTransform.YProperty, du);
+
         }
 
-
-        // *******  start button click (Timer)   *********
-        private void btnStart_Click(object sender, RoutedEventArgs e)
+        public void StartTimer()
         {
             var main = Application.Current.MainWindow as MainWindow;
             TimeSpan timerBox;
@@ -142,6 +133,28 @@ namespace Sudoku
             btnPause.Visibility = Visibility.Visible;
             btnStart.Visibility = Visibility.Hidden;
 
+            System.Windows.Media.Animation.DoubleAnimation da = new System.Windows.Media.Animation.DoubleAnimation();
+            da.From = -950;
+            da.To = 0;
+            da.Duration = new Duration(TimeSpan.FromMilliseconds(1000));
+            TranslateTransform rt = new TranslateTransform();
+            main.gridPrintComponent.RenderTransform = rt;
+            rt.BeginAnimation(TranslateTransform.YProperty, da);
+
+            System.Windows.Media.Animation.DoubleAnimation du = new System.Windows.Media.Animation.DoubleAnimation();
+            du.From = 0;
+            du.To = 950;
+            du.Duration = new Duration(TimeSpan.FromMilliseconds(1000));
+            TranslateTransform tt = new TranslateTransform();
+            main.pauseComponent.RenderTransform = tt;
+            tt.BeginAnimation(TranslateTransform.YProperty, du);
+        }
+
+
+        // *******  start button click (Timer)   *********
+        private void btnStart_Click(object sender, RoutedEventArgs e)
+        {
+            StartTimer();
         }
 
 

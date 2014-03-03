@@ -3,18 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
 using NAudio.Wave;
 
 namespace Sudoku
 {
-   public class LoopStream :WaveStream
+    public class LoopStream : WaveStream
     {
-
         //Source: http://mark-dot-net.blogspot.se/2009/10/looped-playback-in-net-with-naudio.html
 
         //Music: http://www.youtube.com/watch?v=Eh3AuwiG9L0
-
         WaveStream sourceStream;
 
         ///// Creates a new Loop stream
@@ -78,6 +75,9 @@ namespace Sudoku
             }
             return totalBytesRead;
         }
+
+
+
 
 
 

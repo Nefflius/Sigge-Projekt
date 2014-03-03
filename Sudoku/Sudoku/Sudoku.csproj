@@ -71,6 +71,9 @@
       <DependentUpon>Highscore.xaml</DependentUpon>
     </Compile>
     <Compile Include="LoopStream.cs" />
+    <Compile Include="Pause.xaml.cs">
+      <DependentUpon>Pause.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -101,6 +104,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="Meny.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pause.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -166,10 +173,14 @@
     <Resource Include="Properties\Resources\SudokuIcon.ico" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\bgmusic22 %28As long as a word remains unspoken%29 %282%29.wav" />
+    <Resource Include="Images\Sound-on-icon43.png" />
+    <Content Include="Properties\Resources\Heasy.txt" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\Sound-on-icon43.png" />
+    <Content Include="Properties\Resources\Hhard.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Properties\Resources\Hmedium.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

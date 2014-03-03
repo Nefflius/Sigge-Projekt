@@ -39,6 +39,7 @@ namespace Sudoku
         }
 
 
+
         /*****************************************************
         ANROP:      PrintGrid(string[]);
         UPPGIFT:    Tar emot array med spelplan-siffror, 
@@ -133,12 +134,12 @@ namespace Sudoku
             {
                 main.gridPrintComponent.youMadeIt.Visibility = Visibility.Visible;
                 highscoreTimer.Content = main.spelplanComponent.timer.Text;
-
-                // Något roligt händer eftersom användare vunnit!!
-                    // Flyttas från en koordinat till en annan, windows fixar animation...?
+                main.menuComponent.start = false;
+                main.spelplanComponent.IsEnabled = false;
             }
 		}
 
+        
         public StringBuilder SaveGame()
         {
             StringBuilder strbSaveGame = new StringBuilder();

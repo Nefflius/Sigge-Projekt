@@ -120,7 +120,21 @@ namespace Sudoku
                 menuComponent.Visibility = Visibility.Collapsed;
                 gridPrintComponent = model.PrintGrid(savedFile[2], gridPrintComponent, savedGame);
                 gridPrintComponent.Visibility = Visibility.Visible;
-                model.GetSetNewGame = true;
+
+                //försöker sätta fokus på första tomma cellen men funkar inte. 
+                //Syftet är att slippa använda musen.
+                int j = 0;
+                while(!((TextBox)gridPrintComponent.nameGridPrint.Children[j]).IsEnabled){
+                    j++;
+                }
+                TextBox temp = ((TextBox)gridPrintComponent.nameGridPrint.Children[j]);
+                temp.Focus();
+
+                spelplanComponent.timer.Text = savedFile[3];
+                menuComponent.Timer();
+                spelplanComponent.StartTimer();
+
+                
             }
 
             catch (Exception ex)
@@ -160,6 +174,8 @@ namespace Sudoku
             //Spara vilken spelplan/svårighetsgrad användaren valt
             game2Save[2] = model.GetDifficulty;
 
+            //Spara tiden
+            game2Save[3] = spelplanComponent.timer.Text;
             FileHandeling saveGame = new FileHandeling();
             saveGame.SaveFile(game2Save);
         }
@@ -181,7 +197,6 @@ namespace Sudoku
             gridPrintComponent.Visibility = Visibility.Collapsed;
             spelplanComponent.Visibility = Visibility.Collapsed;
         }
-
         private void Window_Closed_1(object sender, EventArgs e)
         {
 
@@ -201,10 +216,28 @@ namespace Sudoku
         }
 
        
-        //Music
-        private void btnMusic_Click_1(object sender, RoutedEventArgs e)
+        
+        private void mnuRegler_Click(object sender, RoutedEventArgs e)
         {
+            MessageBox.Show("Ett sudoku består av nio gånger nio rutor som i sin tur är indelade i nio större rutor. För att lösa ett sudoku skall man placera ut siffrorna 1-9 på spelfältet på ett sådant vis att varje siffra bara finns en gång per rad, en gång per kolumn och dessutom bara en gång per större ruta.",
+                            "Hjälp");
+        }
 
+        private void mnuOmSudoku_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Detta Sudoku är utvecklat av:" + Environment.NewLine + "Ida Sabel" + Environment.NewLine + "Stefan Hall" + Environment.NewLine + "Hampus Wallin" + Environment.NewLine + "Nidaa Al-Botani",
+                            "Om Sudoku");
+        }
+
+        private void mnuExit_Click(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Shutdown();
+        }
+
+
+
+        private void mnuMusik1_Click(object sender, RoutedEventArgs e)
+        {
             //checking if the sound is playing. Pause it if it is, play it if not
             // http://mark-dot-net.blogspot.co.uk/2014/02/fire-and-forget-audio-playback-with.html
             if (waveOut != null)
@@ -218,7 +251,7 @@ namespace Sudoku
                     waveOut.Play();
                 }
             }
-        }
+        } 
 
 
     }

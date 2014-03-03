@@ -5,12 +5,32 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              mc:Ignorable="d" 
              d:DesignHeight="500" d:DesignWidth="650" Name="MenyControl" >
-    <Viewbox Stretch="Uniform">
-        <Border BorderBrush="Black" BorderThickness="2" Margin="30" Background="White">
+    <UserControl.Resources>
+        <Style TargetType="{x:Type Button}">
+            <Setter Property="Background">
+                <Setter.Value>
+                    <LinearGradientBrush>
+                        <GradientStop Color="Silver" Offset="0" />
+                        <!-- <GradientStop Color="DarkGray" Offset="0.9" /> -->
+                        <GradientStop Color="Gray" Offset="1" />
+                    </LinearGradientBrush>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="Foreground" Value="White" />
+            <Setter Property="Margin" Value="5" />
+            <Setter Property="BorderBrush" Value="Black" />
+            <Setter Property="BorderThickness" Value="0" />
+            <Setter Property="FontSize" Value="17" />
+            <Setter Property="FontWeight" Value="Thin" />
+        </Style>
+    </UserControl.Resources>
+    
+    <Viewbox KeyboardNavigation.IsTabStop="False" Stretch="Uniform">
+        <Border KeyboardNavigation.IsTabStop="False" BorderBrush="Black" BorderThickness="2" Margin="30" Background="White">
             <Border.Effect>
                 <DropShadowEffect Opacity="0.5" ShadowDepth="10.0" />
             </Border.Effect>
-            <StackPanel HorizontalAlignment="Center">
+            <StackPanel KeyboardNavigation.IsTabStop="False" HorizontalAlignment="Center">
                 <Label FontFamily="Impact" FontSize="75" Margin="15,10,15,0" HorizontalAlignment="Center">SUDOKU</Label>
                 <Label FontSize="20" FontWeight="Thin" HorizontalAlignment="Center">Välj svårighetsnivå:</Label>
                 <UniformGrid Name="rbGrid" Columns="3" HorizontalAlignment="Center" Margin="70,0,70,160">

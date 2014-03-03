@@ -216,14 +216,6 @@ namespace Sudoku
         static string difficulty;
         static int[] solution = new int[81];
 
-        static int checkanswers;
-        private static bool sendanswers;
-        
-        public static bool send
-        {
-            get { return sendanswers; }
-            set { sendanswers = value; }
-        }
 
         // Skickar rätt array med lösning till Gridprint 
         public void fuska(GridPrint gridprint)
@@ -322,23 +314,10 @@ namespace Sudoku
                 if (inmatad[i] == solution[i])
                 {
                     rättad[i] = true;
-                    checkanswers++;
                 }
                 else
                     rättad[i] = false;              
             }
-
-            if (checkanswers == 81)
-            {
-                sendanswers = true;
-                checkanswers = 0;
-            }
-            else
-            {
-                sendanswers = false;
-                checkanswers = 0;
-            }
-
 
             // Skickar denna array till MarkeraSiffror i GridPrint
             gridprint.MarkeraSiffror(rättad);
