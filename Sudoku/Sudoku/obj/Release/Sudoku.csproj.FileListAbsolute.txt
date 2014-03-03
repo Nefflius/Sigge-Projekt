@@ -79,3 +79,47 @@ C:\Users\Stefan Hall\Documents\Visual Studio 2012\Projects\GUI\Projekt\Sudoku\Su
 C:\Users\Stefan Hall\Documents\Visual Studio 2012\Projects\GUI\Projekt\Sudoku\Sudoku\obj\Release\GeneratedInternalTypeHelper.g.cs
 C:\Users\Stefan Hall\Documents\Visual Studio 2012\Projects\GUI\Projekt\Sudoku\Sudoku\obj\Release\Sudoku_MarkupCompile.cache
 C:\Users\Stefan Hall\Documents\Visual Studio 2012\Projects\GUI\Projekt\Sudoku\Sudoku\obj\Release\Sudoku_MarkupCompile.lref
+G:\Data\Programmering\C#\GUI-projekt\Sudoku\Sudoku\bin\Release\Sudoku.exe.config
+G:\Data\Programmering\C#\GUI-projekt\Sudoku\Sudoku\bin\Release\Sudoku.exe
+G:\Data\Programmering\C#\GUI-projekt\Sudoku\Sudoku\bin\Release\Sudoku.pdb
+G:\Data\Programmering\C#\GUI-projekt\Sudoku\Sudoku\bin\Release\NAudio.Fakes.fakesconfig
+G:\Data\Programmering\C#\GUI-projekt\Sudoku\Sudoku\bin\Release\NAudio.dll
+G:\Data\Programmering\C#\GUI-projekt\Sudoku\Sudoku\obj\Release\Sudoku.csprojFakesResolveAssemblyReference.cache
+G:\Data\Programmering\C#\GUI-projekt\Sudoku\Sudoku\obj\Release\Fakes\fakes.args
+G:\Data\Programmering\C#\GUI-projekt\Sudoku\Sudoku\obj\Release\Fakes\na\b\Microsoft.QualityTools.Testing.Fakes.dll
+G:\Data\Programmering\C#\GUI-projekt\Sudoku\Sudoku\obj\Release\Fakes\na\b\NAudio.dll
+G:\Data\Programmering\C#\GUI-projekt\Sudoku\Sudoku\obj\Release\Fakes\na\b\NAudio.Fakes.dll
+G:\Data\Programmering\C#\GUI-projekt\Sudoku\Sudoku\obj\Release\Fakes\na\b\NAudio.Fakes.pdb
+G:\Data\Programmering\C#\GUI-projekt\Sudoku\Sudoku\obj\Release\Fakes\na\b\NAudio.Fakes.xml
+G:\Data\Programmering\C#\GUI-projekt\Sudoku\Sudoku\obj\Release\Fakes\na\f.ah
+G:\Data\Programmering\C#\GUI-projekt\Sudoku\Sudoku\obj\Release\Fakes\na\f.ch
+G:\Data\Programmering\C#\GUI-projekt\Sudoku\Sudoku\obj\Release\Fakes\na\f.cs
+G:\Data\Programmering\C#\GUI-projekt\Sudoku\Sudoku\obj\Release\Fakes\na\f.csproj
+G:\Data\Programmering\C#\GUI-projekt\Sudoku\Sudoku\obj\Release\Fakes\na\f.fakes
+G:\Data\Programmering\C#\GUI-projekt\Sudoku\Sudoku\obj\Release\Fakes\na\f.fakesconfig
+G:\Data\Programmering\C#\GUI-projekt\Sudoku\Sudoku\obj\Release\Fakes\na\o\f.csproj.FileListAbsolute.txt
+G:\Data\Programmering\C#\GUI-projekt\Sudoku\Sudoku\obj\Release\Fakes\na\o\f.csprojResolveAssemblyReference.cache
+G:\Data\Programmering\C#\GUI-projekt\Sudoku\Sudoku\obj\Release\Fakes\na\o\NAudio.Fakes.dll
+G:\Data\Programmering\C#\GUI-projekt\Sudoku\Sudoku\obj\Release\Fakes\na\o\NAudio.Fakes.pdb
+G:\Data\Programmering\C#\GUI-projekt\Sudoku\Sudoku\obj\Release\Highscore.baml
+G:\Data\Programmering\C#\GUI-projekt\Sudoku\Sudoku\obj\Release\Meny.baml
+G:\Data\Programmering\C#\GUI-projekt\Sudoku\Sudoku\obj\Release\Pause.baml
+G:\Data\Programmering\C#\GUI-projekt\Sudoku\Sudoku\obj\Release\GridPrint.g.cs
+G:\Data\Programmering\C#\GUI-projekt\Sudoku\Sudoku\obj\Release\Highscore.g.cs
+G:\Data\Programmering\C#\GUI-projekt\Sudoku\Sudoku\obj\Release\MainWindow.g.cs
+G:\Data\Programmering\C#\GUI-projekt\Sudoku\Sudoku\obj\Release\Meny.g.cs
+G:\Data\Programmering\C#\GUI-projekt\Sudoku\Sudoku\obj\Release\Pause.g.cs
+G:\Data\Programmering\C#\GUI-projekt\Sudoku\Sudoku\obj\Release\Spelplan.g.cs
+G:\Data\Programmering\C#\GUI-projekt\Sudoku\Sudoku\obj\Release\App.g.cs
+G:\Data\Programmering\C#\GUI-projekt\Sudoku\Sudoku\obj\Release\Sudoku_Content.g.cs
+G:\Data\Programmering\C#\GUI-projekt\Sudoku\Sudoku\obj\Release\GeneratedInternalTypeHelper.g.cs
+G:\Data\Programmering\C#\GUI-projekt\Sudoku\Sudoku\obj\Release\Sudoku_MarkupCompile.cache
+G:\Data\Programmering\C#\GUI-projekt\Sudoku\Sudoku\obj\Release\Sudoku_MarkupCompile.lref
+G:\Data\Programmering\C#\GUI-projekt\Sudoku\Sudoku\obj\Release\GridPrint.baml
+G:\Data\Programmering\C#\GUI-projekt\Sudoku\Sudoku\obj\Release\MainWindow.baml
+G:\Data\Programmering\C#\GUI-projekt\Sudoku\Sudoku\obj\Release\Spelplan.baml
+G:\Data\Programmering\C#\GUI-projekt\Sudoku\Sudoku\obj\Release\Sudoku.g.resources
+G:\Data\Programmering\C#\GUI-projekt\Sudoku\Sudoku\obj\Release\Sudoku.Properties.Resources.resources
+G:\Data\Programmering\C#\GUI-projekt\Sudoku\Sudoku\obj\Release\Sudoku.csproj.GenerateResource.Cache
+G:\Data\Programmering\C#\GUI-projekt\Sudoku\Sudoku\obj\Release\Sudoku.exe
+G:\Data\Programmering\C#\GUI-projekt\Sudoku\Sudoku\obj\Release\Sudoku.pdb

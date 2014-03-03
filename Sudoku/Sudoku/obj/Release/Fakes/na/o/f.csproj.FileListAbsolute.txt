@@ -1,0 +1,8 @@
+G:\Data\Programmering\C#\GUI-projekt\Sudoku\Sudoku\obj\Release\Fakes\na\b\NAudio.Fakes.xml
+G:\Data\Programmering\C#\GUI-projekt\Sudoku\Sudoku\obj\Release\Fakes\na\b\NAudio.Fakes.dll
+G:\Data\Programmering\C#\GUI-projekt\Sudoku\Sudoku\obj\Release\Fakes\na\b\NAudio.Fakes.pdb
+G:\Data\Programmering\C#\GUI-projekt\Sudoku\Sudoku\obj\Release\Fakes\na\b\Microsoft.QualityTools.Testing.Fakes.dll
+G:\Data\Programmering\C#\GUI-projekt\Sudoku\Sudoku\obj\Release\Fakes\na\b\NAudio.dll
+G:\Data\Programmering\C#\GUI-projekt\Sudoku\Sudoku\obj\Release\Fakes\na\o\f.csprojResolveAssemblyReference.cache
+G:\Data\Programmering\C#\GUI-projekt\Sudoku\Sudoku\obj\Release\Fakes\na\o\NAudio.Fakes.dll
+G:\Data\Programmering\C#\GUI-projekt\Sudoku\Sudoku\obj\Release\Fakes\na\o\NAudio.Fakes.pdb
