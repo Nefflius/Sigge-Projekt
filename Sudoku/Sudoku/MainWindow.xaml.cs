@@ -132,9 +132,7 @@ namespace Sudoku
 
                 spelplanComponent.timer.Text = savedFile[3];
                 menuComponent.Timer();
-                spelplanComponent.StartTimer();
-
-                
+                spelplanComponent.StartTimer2();
             }
 
             catch (Exception ex)
@@ -234,8 +232,6 @@ namespace Sudoku
             Application.Current.Shutdown();
         }
 
-
-
         private void mnuMusik1_Click(object sender, RoutedEventArgs e)
         {
             //checking if the sound is playing. Pause it if it is, play it if not
@@ -251,6 +247,21 @@ namespace Sudoku
                     waveOut.Play();
                 }
             }
+        }
+        private void mnuTimer_Click(object sender, RoutedEventArgs e)
+        {
+            if(spelplanComponent.timerBox.Visibility == Visibility.Visible)
+            spelplanComponent.timerBox.Visibility = Visibility.Collapsed;
+            else if(spelplanComponent.timerBox.Visibility == Visibility.Collapsed)
+                spelplanComponent.timerBox.Visibility = Visibility.Visible;
+        }
+
+        private void mnuAntaldrag_Click(object sender, RoutedEventArgs e)
+        {
+            if(spelplanComponent.antaldragbox.Visibility == Visibility.Visible)
+                spelplanComponent.antaldragbox.Visibility = Visibility.Collapsed;
+            else if(spelplanComponent.antaldragbox.Visibility == Visibility.Collapsed)
+                spelplanComponent.antaldragbox.Visibility = Visibility.Visible;
         } 
 
 

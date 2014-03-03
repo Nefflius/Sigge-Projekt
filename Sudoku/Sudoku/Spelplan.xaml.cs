@@ -86,12 +86,12 @@ namespace Sudoku
         }
 
         //När "Fusk" klickas hämtas lösning i SudokuModel
-        private void clickFusk(object sender, RoutedEventArgs e)
-        {
-            var main = Application.Current.MainWindow as MainWindow;
-            SudokuModel model = new SudokuModel();
-            model.fuska(main.gridPrintComponent);
-        }
+        //private void clickFusk(object sender, RoutedEventArgs e)
+        //{
+        //    var main = Application.Current.MainWindow as MainWindow;
+        //    SudokuModel model = new SudokuModel();
+        //    model.fuska(main.gridPrintComponent);
+        //}
         
         // *****  Pause button click (Timer) ********
         private void btnPause_Click(object sender, RoutedEventArgs e)
@@ -119,7 +119,6 @@ namespace Sudoku
             TranslateTransform tt = new TranslateTransform();
             main.pauseComponent.RenderTransform = tt;
             tt.BeginAnimation(TranslateTransform.YProperty, du);
-
         }
 
         public void StartTimer()
@@ -127,8 +126,8 @@ namespace Sudoku
             var main = Application.Current.MainWindow as MainWindow;
             TimeSpan timerBox;
             if (TimeSpan.TryParse(timer.Text.Replace("m", "").Replace("h", ""), out timerBox))
-
-                main.menuComponent.begins = (DateTime.Now - timerBox);
+                
+            main.menuComponent.begins = (DateTime.Now - timerBox);
             main.menuComponent.start = true;
             btnPause.Visibility = Visibility.Visible;
             btnStart.Visibility = Visibility.Hidden;
@@ -150,6 +149,17 @@ namespace Sudoku
             tt.BeginAnimation(TranslateTransform.YProperty, du);
         }
 
+        public void StartTimer2()
+        {
+            var main = Application.Current.MainWindow as MainWindow;
+            TimeSpan timerBox;
+            if (TimeSpan.TryParse(timer.Text.Replace("m", "").Replace("h", ""), out timerBox))
+            {
+                main.menuComponent.begins = (DateTime.Now - timerBox);
+                main.menuComponent.start = true;
+            }
+
+        }
 
         // *******  start button click (Timer)   *********
         private void btnStart_Click(object sender, RoutedEventArgs e)

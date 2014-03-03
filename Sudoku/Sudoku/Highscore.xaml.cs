@@ -31,198 +31,192 @@ namespace Sudoku
 
         void readinHighscore()      // Ska göra så att highscore läses in varje gång Sudoku startar
         {
-           // int rowsLength;
-           // int rowColumnsLength;
 
-           // //////////////// E A S Y ////////////////
-           // //  string path = @"C:\\Users\Ida\Documents\Heasy.txt";
-           //string path = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\Heasy.txt"; 
-          
-           // rowsLength = File.ReadLines(path).Count();
-           // if (rowsLength > 0)
-           // {
-           //     string[] easy = new string[rowsLength];
+            int rowsLength;
+            int rowColumnsLength;
 
-           //     var textLines = File.ReadAllLines(path);
-           //     int ix = 0;
-           //     foreach (var line in textLines)
-           //     {
-           //         easy[ix] = line;
-           //         ix++;
-           //     }
+            //////////////// E A S Y ////////////////
+            string path = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\Heasy.txt";
+            rowsLength = File.ReadLines(path).Count();
+            if (rowsLength > 0)
+            {
+                string[] easy = new string[rowsLength];
 
-           //     rowColumnsLength = easy[0].Split(';').ToArray<string>().Length;
+                var textLines = File.ReadAllLines(path);
+                int ix = 0;
+                foreach(var line in textLines)
+                {
+                    easy[ix] = line;
+                    ix++;
+                }
+                
+                rowColumnsLength = easy[0].Split(';').ToArray<string>().Length;
 
-           //     for (int i = 0; i < rowsLength; i++)
-           //     {
-           //         TableRow row = new TableRow();
+                for (int i = 0; i < rowsLength; i++)
+                {
+                    TableRow row = new TableRow();
 
-           //         string[] rowColumns = new string[rowColumnsLength];
-           //         rowColumns = easy[i].Split(';').ToArray<string>();
+                    string[] rowColumns = new string[rowColumnsLength];
+                    rowColumns = easy[i].Split(';').ToArray<string>();
 
-           //         for (int j = 0; j < rowColumns.Length; j++)
-           //         {
-           //             row.Cells.Add(new TableCell(new Paragraph(new Run(rowColumns[j]))));
-           //         }
-           //         row.Cells[0].ColumnSpan = 2;
-           //         winnersListEasy.Rows.Add(row);
-           //     }
-           // }
+                    for (int j = 0; j < rowColumns.Length; j++)
+                    {
+                        row.Cells.Add(new TableCell(new Paragraph(new Run(rowColumns[j]))));
+                    }
+                    row.Cells[0].ColumnSpan = 2;
+                    winnersListEasy.Rows.Add(row);
+                }
+            }
 
-           // /////////////// M E D I U M ///////////////
-           // //path = @"C:\\Users\Ida\Documents\Hmedium.txt";
-           // path = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\Hmedium.txt";
-           // rowsLength = File.ReadAllLines(path).Count();
-           // if (rowsLength > 0)
-           // {
-           //     string[] medium = new string[rowsLength];
+            /////////////// M E D I U M ///////////////
+            path = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\Hmedium.txt";
+            rowsLength = File.ReadAllLines(path).Count();
+            if (rowsLength > 0)
+            {
+                string[] medium = new string[rowsLength];
 
-           //     var textLines = File.ReadAllLines(path);
-           //     int ix = 0;
-           //     foreach (var line in textLines)
-           //     {
-           //         medium[ix] = line;
-           //         ix++;
-           //     }
+                var textLines = File.ReadAllLines(path);
+                int ix = 0;
+                foreach (var line in textLines)
+                {
+                    medium[ix] = line;
+                    ix++;
+                }
 
-           //     rowColumnsLength = medium[0].Split(';').ToArray<string>().Length;
+                rowColumnsLength = medium[0].Split(';').ToArray<string>().Length;
 
-           //     for (int i = 0; i < rowsLength; i++)
-           //     {
-           //         TableRow row = new TableRow();
+                for (int i = 0; i < rowsLength; i++)
+                {
+                    TableRow row = new TableRow();
 
-           //         string[] rowColumns = new string[rowColumnsLength];
-           //         rowColumns = medium[i].Split(';').ToArray<string>();
+                    string[] rowColumns = new string[rowColumnsLength];
+                    rowColumns = medium[i].Split(';').ToArray<string>();
 
-           //         for (int j = 0; j < rowColumnsLength; j++)
-           //         {
-           //             row.Cells.Add(new TableCell(new Paragraph(new Run(rowColumns[j]))));
-           //         }
-           //         row.Cells[0].ColumnSpan = 2;
-           //         winnersListMedium.Rows.Add(row);
-           //     }
-           // }
+                    for (int j = 0; j < rowColumnsLength; j++)
+                    {
+                        row.Cells.Add(new TableCell(new Paragraph(new Run(rowColumns[j]))));
+                    }
+                    row.Cells[0].ColumnSpan = 2;
+                    winnersListMedium.Rows.Add(row);
+                }
+            }
 
-           // ///////////////// H A R D //////////////////
-           // //  path = @"C:\\Users\Ida\Documents\Hhard.txt";
-           // path = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\Hhard.txt";
-           // rowsLength = File.ReadAllLines(path).Count();
-           // if (rowsLength > 0)
-           // {
-           //     string[] hard = new string[rowsLength];
-           //     var textLines = File.ReadAllLines(path);
-           //     int ix = 0;
-           //     foreach (var line in textLines)
-           //     {
-           //         hard[ix] = line;
-           //         ix++;
-           //     }
+            ///////////////// H A R D //////////////////
+            path = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\Hhard.txt";
+            rowsLength = File.ReadAllLines(path).Count();
+            if (rowsLength > 0)
+            {
+                string[] hard = new string[rowsLength];
+                var textLines = File.ReadAllLines(path);
+                int ix = 0;
+                foreach (var line in textLines)
+                {
+                    hard[ix] = line;
+                    ix++;
+                }
 
-           //     rowColumnsLength = hard[0].Split(';').ToArray<string>().Length;
+                rowColumnsLength = hard[0].Split(';').ToArray<string>().Length;
 
-           //     for (int i = 0; i < rowsLength; i++)
-           //     {
-           //         TableRow row = new TableRow();
+                for (int i = 0; i < rowsLength; i++)
+                {
+                    TableRow row = new TableRow();
 
-           //         string[] rowColumns = new string[rowColumnsLength];
-           //         rowColumns = hard[i].Split(';').ToArray<string>();
+                    string[] rowColumns = new string[rowColumnsLength];
+                    rowColumns = hard[i].Split(';').ToArray<string>();
 
-           //         for (int j = 0; j < rowColumnsLength; j++)
-           //         {
-           //             row.Cells.Add(new TableCell(new Paragraph(new Run(rowColumns[j]))));
-           //         }
+                    for (int j = 0; j < rowColumnsLength; j++)
+                    {
+                        row.Cells.Add(new TableCell(new Paragraph(new Run(rowColumns[j]))));
+                    }
 
-           //         row.Cells[0].ColumnSpan = 2;
-           //         winnersListHard.Rows.Add(row);
-           //     }
-           // }
+                    row.Cells[0].ColumnSpan = 2;
+                    winnersListHard.Rows.Add(row);
+                }
+            }
         }
 
         void saveHighscore(string difficulty)        // Highscore sparas i en textfil varje gång en ny highscore läggs till
-        {
-            //int rows;
-            //int cells = highscoreHeader.Rows[0].Cells.Count();
-            //string path;
+		{
+            int rows;
+            int cells = highscoreHeader.Rows[0].Cells.Count();
+            string path;
 
-            //if (difficulty == "e")
-            //{
-            //    //  path = @"C:\\Users\Ida\Documents\Heasy.txt";
-            //    path = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\Heasy.txt";
-            //    rows = winnersListEasy.Rows.Count();
+			if (difficulty == "e")
+			{
+                path = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\Heasy.txt";
+                rows = winnersListEasy.Rows.Count();
 
-            //    using (StreamWriter sw = File.CreateText(path)) // Tömmer dokumentet
-            //        sw.Write("");
+                using (StreamWriter sw = File.CreateText(path)) // Tömmer dokumentet
+                    sw.Write("");
 
-            //    string[] highscoreEasy = new string[rows];
+                string[] highscoreEasy = new string[rows];
 
-            //    for (int i = 0; i < rows; i++)
-            //    {
-            //        for (int j = 0; j < cells; j++)         // Läser in cell efter cell på varje rad och skriver in på en rad med ";" emellan orden
-            //        {
-            //            highscoreEasy[i] += ((Run)((Paragraph)winnersListEasy.Rows[i].Cells[j].Blocks.FirstBlock).Inlines.FirstInline).Text;
+				for (int i = 0; i < rows; i++)
+				{
+					for (int j = 0; j < cells; j++)         // Läser in cell efter cell på varje rad och skriver in på en rad med ";" emellan orden
+					{
+						highscoreEasy[i] += ((Run)((Paragraph)winnersListEasy.Rows[i].Cells[j].Blocks.FirstBlock).Inlines.FirstInline).Text;
 
-            //            if (j != cells - 1)
-            //                highscoreEasy[i] += ";";
-            //        }
-            //        using (StreamWriter sw = File.AppendText(path))
-            //            sw.WriteLine(highscoreEasy[i]);
-            //    }
-            //}
-
-
-
-            //if (difficulty == "m")
-            //{
-            //    //   path = @"C:\\Users\Ida\Documents\Hmedium.txt";
-            //    path = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\Hmedium.txt";
-            //    rows = winnersListMedium.Rows.Count();
-
-            //    using (StreamWriter sw = File.CreateText(path))
-            //        sw.Write("");
-
-            //    string[] highscoreMedium = new string[rows];
-
-            //    for (int i = 0; i < rows; i++)
-            //    {
-            //        for (int j = 0; j < cells; j++)
-            //        {
-            //            highscoreMedium[i] += ((Run)((Paragraph)winnersListMedium.Rows[i].Cells[j].Blocks.FirstBlock).Inlines.FirstInline).Text;
-
-            //            if (j != cells - 1)
-            //                highscoreMedium[i] += ";";
-            //        }
-            //        using (StreamWriter sw = File.AppendText(path))
-            //            sw.WriteLine(highscoreMedium[i]);
-            //    }
-            //}
+						if (j != cells - 1)                  
+							highscoreEasy[i] += ";";
+					}
+                    using (StreamWriter sw = File.AppendText(path))
+						sw.WriteLine(highscoreEasy[i]);
+				}
+			}
 
 
 
-            //if (difficulty == "h")
-            //{
-            //    //  path = @"C:\\Users\Ida\Documents\Hhard.txt";
-            //    path = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\Hhard.txt";
-            //    rows = winnersListHard.Rows.Count();
+			if (difficulty == "m")
+			{
+                path = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\Hmedium.txt";
+                rows = winnersListMedium.Rows.Count();
 
-            //    using (StreamWriter sw = File.CreateText(path))
-            //        sw.Write("");
+                using (StreamWriter sw = File.CreateText(path))
+                    sw.Write("");
 
-            //    string[] highscoreHard = new string[rows];
+				string[] highscoreMedium = new string[rows];
 
-            //    for (int i = 0; i < rows; i++)
-            //    {
-            //        for (int j = 0; j < cells; j++)
-            //        {
-            //            highscoreHard[i] += ((Run)((Paragraph)winnersListHard.Rows[i].Cells[j].Blocks.FirstBlock).Inlines.FirstInline).Text;
+                for (int i = 0; i < rows; i++)
+                {
+                    for (int j = 0; j < cells; j++)
+                    {
+                        highscoreMedium[i] += ((Run)((Paragraph)winnersListMedium.Rows[i].Cells[j].Blocks.FirstBlock).Inlines.FirstInline).Text;
 
-            //            if (j != cells - 1)
-            //                highscoreHard[i] += ";";
-            //        }
-            //        using (StreamWriter sw = File.AppendText(path))
-            //            sw.WriteLine(highscoreHard[i]);
-            //    }
-            //}
-        }
+                        if (j != cells - 1)
+                            highscoreMedium[i] += ";";
+                    }
+                    using (StreamWriter sw = File.AppendText(path))
+                        sw.WriteLine(highscoreMedium[i]);
+                }
+			}
+
+
+
+			if (difficulty == "h")
+			{
+                path = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\Hhard.txt";
+                rows = winnersListHard.Rows.Count();
+				
+                using (StreamWriter sw = File.CreateText(path))
+                    sw.Write("");
+
+                string[] highscoreHard = new string[rows];
+
+                for (int i = 0; i < rows; i++)
+                {
+                    for (int j = 0; j < cells; j++)
+                    {
+                        highscoreHard[i] += ((Run)((Paragraph)winnersListHard.Rows[i].Cells[j].Blocks.FirstBlock).Inlines.FirstInline).Text;
+
+                        if (j != cells - 1)
+                            highscoreHard[i] += ";";
+                    }
+                    using (StreamWriter sw = File.AppendText(path))
+                    sw.WriteLine(highscoreHard[i]);
+                }
+			}
+		}
 		
 
         public void addHighscore(string nameinput, string difficulty, string time, string moves)
