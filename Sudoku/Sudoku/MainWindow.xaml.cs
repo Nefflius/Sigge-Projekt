@@ -13,6 +13,9 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+using NAudio.Wave;
+
+
 namespace Sudoku
 {
     /// <summary>
@@ -34,10 +37,26 @@ namespace Sudoku
     {
         bool gameChanged = true;
         SudokuModel model;
+
+        //Music
+        WaveFileReader sound;
+        WaveOut waveOut = new WaveOut();
+        //End Music
+
         public MainWindow()
         {
             InitializeComponent();
             createCommandBindings();
+
+            //Music
+            sound = new WaveFileReader(Properties.Resources.asLongSong);
+            LoopStream loop = new LoopStream(sound); // Loop class
+            waveOut.Init(loop); //intializes the out device 
+            waveOut.Play();
+            //End Music
+
+
+
         }
 
         private void createCommandBindings()
@@ -211,7 +230,26 @@ namespace Sudoku
             gridPrintComponent.Visibility = Visibility.Collapsed;
             spelplanComponent.Visibility = Visibility.Collapsed;
         }
+        private void Window_Closed_1(object sender, EventArgs e)
+        {
 
+            if (sound != null)
+            {
+                sound.Dispose();
+                sound = null;
+            }
+            if (waveOut != null)
+            {
+                if (waveOut.PlaybackState == PlaybackState.Playing)
+                    waveOut.Stop();
+                waveOut.Dispose();
+                waveOut = null;
+            }
+
+        }
+
+       
+        
         private void mnuRegler_Click(object sender, RoutedEventArgs e)
         {
             MessageBox.Show("Ett sudoku består av nio gånger nio rutor som i sin tur är indelade i nio större rutor. För att lösa ett sudoku skall man placera ut siffrorna 1-9 på spelfältet på ett sådant vis att varje siffra bara finns en gång per rad, en gång per kolumn och dessutom bara en gång per större ruta.",
@@ -229,20 +267,64 @@ namespace Sudoku
             Application.Current.Shutdown();
         }
 
+        private void mnuMusik1_Click(object sender, RoutedEventArgs e)
+        {
+            //checking if the sound is playing. Pause it if it is, play it if not
+            // http://mark-dot-net.blogspot.co.uk/2014/02/fire-and-forget-audio-playback-with.html
+            if (waveOut != null)
+            {
+                if (waveOut.PlaybackState == PlaybackState.Playing)
+                {
+                    waveOut.Pause();
+                }
+                else if (waveOut.PlaybackState == PlaybackState.Paused)
+                {
+                    waveOut.Play();
+                }
+            }
+        }
         private void mnuTimer_Click(object sender, RoutedEventArgs e)
         {
-            if(spelplanComponent.timerBox.Visibility == Visibility.Visible)
-            spelplanComponent.timerBox.Visibility = Visibility.Collapsed;
-            else if(spelplanComponent.timerBox.Visibility == Visibility.Collapsed)
+            if (spelplanComponent.timerBox.Visibility == Visibility.Visible)
+            {
+                //mnuTimer.Icon = new System.Windows.Controls.Image
+                //{
+                //    Source = new BitmapImage(new Uri("Properties/Resources/Images/icons/UnCheck.png"))
+                //};
+                spelplanComponent.timerBox.Visibility = Visibility.Collapsed;
+            }
+
+            else if (spelplanComponent.timerBox.Visibility == Visibility.Collapsed)
+            {
+                //mnuTimer.Icon = new System.Windows.Controls.Image
+                //{  
+                //    Source = new BitmapImage(new Uri("Properties/Resources/Images/icons/Check.png"))
+                //};
                 spelplanComponent.timerBox.Visibility = Visibility.Visible;
+            }
         }
 
         private void mnuAntaldrag_Click(object sender, RoutedEventArgs e)
         {
-            if(spelplanComponent.antaldragbox.Visibility == Visibility.Visible)
+            if (spelplanComponent.antaldragbox.Visibility == Visibility.Visible)
+            {
+                //mnuTimer.Icon = new System.Windows.Controls.Image
+                //{
+                //    Source = new BitmapImage(new Uri("/MenuIconImage;Sudoku/Resources/UnCheck.png"))
+                //};
                 spelplanComponent.antaldragbox.Visibility = Visibility.Collapsed;
-            else if(spelplanComponent.antaldragbox.Visibility == Visibility.Collapsed)
+            }
+
+            else if (spelplanComponent.antaldragbox.Visibility == Visibility.Collapsed)
+            {
+                //mnuTimer.Icon = new System.Windows.Controls.Image
+                //{
+                //    Source = new BitmapImage(new Uri(@"Properties/Resources/Images/icons/Check.png"))
+                //};
                 spelplanComponent.antaldragbox.Visibility = Visibility.Visible;
+            }
         } 
+
+
     }
 }

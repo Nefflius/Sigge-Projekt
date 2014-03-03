@@ -39,6 +39,9 @@
   <PropertyGroup />
   <PropertyGroup />
   <ItemGroup>
+    <Reference Include="NAudio">
+      <HintPath>..\..\MusikTest\NAudio-Release\NAudio.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -67,6 +70,7 @@
     <Compile Include="Highscore.xaml.cs">
       <DependentUpon>Highscore.xaml</DependentUpon>
     </Compile>
+    <Compile Include="LoopStream.cs" />
     <Compile Include="Pause.xaml.cs">
       <DependentUpon>Pause.xaml</DependentUpon>
     </Compile>
@@ -169,13 +173,19 @@
     <Resource Include="Properties\Resources\SudokuIcon.ico" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="Images\Sound-on-icon43.png" />
     <Content Include="Properties\Resources\Heasy.txt" />
+    <Resource Include="Properties\Resources\Images\icons\UnCheck.png" />
+    <Resource Include="Properties\Resources\Images\icons\Check.png" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Properties\Resources\Hhard.txt" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Properties\Resources\Hmedium.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

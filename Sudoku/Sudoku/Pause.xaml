@@ -6,13 +6,13 @@
              mc:Ignorable="d" 
              d:DesignHeight="500" d:DesignWidth="650">
     <Viewbox Stretch="Uniform">
-        <Border BorderBrush="Black" BorderThickness="2" Margin="30" Background="White">
+        <Border BorderBrush="Black" BorderThickness="1.5" Margin="30" Background="White">
             <Border.Effect>
                 <DropShadowEffect Opacity="0.5" ShadowDepth="10.0"/>
             </Border.Effect>
             <StackPanel HorizontalAlignment="Center">
-                <Label FontFamily="Impact" FontSize="75" Margin="15,10,15,0" HorizontalAlignment="Center">
-                    <TextBlock>Spelet är <LineBreak/>Pausat</TextBlock></Label>
+                <Label FontFamily="Impact" FontSize="75" Margin="10,10,10,-15" HorizontalAlignment="Center">Spelet är</Label>
+                <Label FontFamily="Impact" FontSize="75" Margin="10,-15,10,10" HorizontalAlignment="Center">Pausat</Label>
             </StackPanel>
         </Border>
     </Viewbox>
