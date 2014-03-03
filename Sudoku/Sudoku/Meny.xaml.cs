@@ -76,6 +76,9 @@ namespace Sudoku
 			main.spelplanComponent.lblAntalDrag.Content = "0";
 
             main.spelplanComponent.Visibility = Visibility.Visible;
+            main.spelplanComponent.btnRätta.Content = "RÄTTA";
+            main.spelplanComponent.IsEnabled = true;
+            main.gridPrintComponent.youMadeIt.Visibility = Visibility.Collapsed;
 			main.menuComponent.Visibility = Visibility.Collapsed;
                 gbL.Visibility = Visibility.Collapsed;
                 gbM.Visibility = Visibility.Collapsed;

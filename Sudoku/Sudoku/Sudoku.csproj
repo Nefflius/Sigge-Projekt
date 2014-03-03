@@ -168,6 +168,15 @@
   <ItemGroup>
     <Resource Include="Properties\Resources\SudokuIcon.ico" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="Properties\Resources\Heasy.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Properties\Resources\Hhard.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Properties\Resources\Hmedium.txt" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

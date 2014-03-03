@@ -6,6 +6,25 @@
              xmlns:local="clr-namespace:Sudoku"
              mc:Ignorable="d"
              d:DesignHeight="400" d:DesignWidth="200">
+    <UserControl.Resources>
+        <Style TargetType="{x:Type Button}">
+            <Setter Property="Background">
+                <Setter.Value>
+                    <LinearGradientBrush>
+                        <GradientStop Color="Silver" Offset="0" />
+                       <!-- <GradientStop Color="DarkGray" Offset="0.9" /> -->
+                        <GradientStop Color="Gray" Offset="1" />
+                    </LinearGradientBrush>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="Foreground" Value="White" />
+            <Setter Property="Margin" Value="5" />
+            <Setter Property="BorderBrush" Value="Black" />
+            <Setter Property="BorderThickness" Value="0" />
+            <Setter Property="FontSize" Value="17" />
+            <Setter Property="FontWeight" Value="Thin" />
+        </Style>
+    </UserControl.Resources>
     <Viewbox Stretch="Uniform">
     <Grid Margin="0,20,40,20">
         <Grid.RowDefinitions>
@@ -20,12 +39,12 @@
             <RowDefinition />
                 <RowDefinition />
             </Grid.RowDefinitions>
-        <Button Grid.Row="0" Margin="5" Background="Gray" BorderBrush="Black" FontSize="17" FontWeight="Thin" Foreground="White" Click="clickNyttSpel" TabIndex="1">Nytt Spel
+        <Button Grid.Row="0" Click="clickNyttSpel">Nytt Spel
             <Button.Effect>
                 <DropShadowEffect Opacity="0.7" />
             </Button.Effect>
         </Button>
-        <Button x:Name="btnRätta" Grid.Row="1" Margin="5" BorderBrush="Black" Background="Gray" FontSize="17" FontWeight="Thin" Foreground="White" Click="clickRätta" IsEnabled="False" TabIndex="2">RÄTTA
+        <Button x:Name="btnRätta" Grid.Row="1" Click="clickRätta" IsEnabled="False">RÄTTA
             <Button.Effect>
                 <DropShadowEffect Opacity="0.5" />
             </Button.Effect>
@@ -42,22 +61,22 @@
             </GroupBox.Effect>
             <Label Name ="lblAntalDrag" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="17" FontWeight="Thin">0</Label>
         </GroupBox>
-        <Button KeyboardNavigation.IsTabStop="False" Grid.Row="7" Click="clickFusk">Fusk</Button>
-        <Button Grid.Row="8" Margin="5" Background="Gray" BorderBrush="Black" FontSize="17" FontWeight="Thin" Foreground="White" Click="clickAvsluta" TabIndex="6">Avsluta
+        <!--<Button Grid.Row="7" Click="clickFusk" Visibility="Visible">Fusk</Button>-->
+        <Button Grid.Row="8" Click="clickAvsluta">Avsluta
             <Button.Effect>
                 <DropShadowEffect Opacity="0.7" />
             </Button.Effect>
         </Button>
-            <Button x:Name="btnPause" Content="Pause"  Grid.Row="3" Click="btnPause_Click" Visibility="Visible" Background="Gray" Margin="5" FontSize="17" FontWeight="Thin" Foreground="White" BorderBrush="Black" TabIndex="3">
-                <Button.Effect>
-                    <DropShadowEffect Opacity="0.7"/>
-                </Button.Effect>
-            </Button>
-            <Button x:Name="btnStart" Content="Start"  Grid.Row="3" Click="btnStart_Click" Visibility="Collapsed" Background="Gray" Margin="5" FontSize="17" FontWeight="Thin" Foreground="White" BorderBrush="Black">
-                <Button.Effect>
-                    <DropShadowEffect Opacity="0.7"/>
-                </Button.Effect>
-            </Button>
+        <Button x:Name="btnPause" Content="Pause" Grid.Row="3" Click="btnPause_Click" Visibility="Visible" TabIndex="3">
+            <Button.Effect>
+                <DropShadowEffect Opacity="0.7"/>
+            </Button.Effect>
+        </Button>
+        <Button x:Name="btnStart" Content="Start" Grid.Row="3" Click="btnStart_Click" Visibility="Collapsed">
+            <Button.Effect>
+                <DropShadowEffect Opacity="0.7"/>
+            </Button.Effect>
+        </Button>
         </Grid>
     </Viewbox>
 </UserControl>

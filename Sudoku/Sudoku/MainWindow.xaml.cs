@@ -113,7 +113,7 @@ namespace Sudoku
 
                 spelplanComponent.timer.Text = savedFile[3];
                 menuComponent.Timer();
-                spelplanComponent.StartTimer();
+                spelplanComponent.StartTimer2();
             }
 
             catch (Exception ex)
