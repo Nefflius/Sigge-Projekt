@@ -26,11 +26,12 @@ namespace Sudoku
 		public Highscore()
 		{
 			InitializeComponent();
-			readinHighscore();
+			readinHighscore();                
 		}
 
         void readinHighscore()      // Ska göra så att highscore läses in varje gång Sudoku startar
         {
+
             int rowsLength;
             int rowColumnsLength;
 
@@ -233,299 +234,299 @@ namespace Sudoku
 		}
 		
 
-		public void addHighscore(string nameinput, string difficulty, string time, string moves)
-		{
-            TableRow row = new TableRow();
+        public void addHighscore(string nameinput, string difficulty, string time, string moves)
+        {
+            //TableRow row = new TableRow();
 
-			// eftersom man valt svårighet på highscore så skrivs bara 1,2,3 ut alltså vilken bana man valt
-			if (difficulty[0] == 'e')
-			{
-				difficulty = difficulty.Remove(0, 4);
-				rbL.IsChecked = true;
+            //// eftersom man valt svårighet på highscore så skrivs bara 1,2,3 ut alltså vilken bana man valt
+            //if (difficulty[0] == 'e')
+            //{
+            //    difficulty = difficulty.Remove(0, 4);
+            //    rbL.IsChecked = true;
 
-				row.Cells.Add(new TableCell(new Paragraph(new Run(nameinput))));
-				row.Cells.Add(new TableCell(new Paragraph(new Run(difficulty))));
-				row.Cells.Add(new TableCell(new Paragraph(new Run(moves))));
-				row.Cells.Add(new TableCell(new Paragraph(new Run(time))));
-				row.Cells[0].ColumnSpan = 2;
+            //    row.Cells.Add(new TableCell(new Paragraph(new Run(nameinput))));
+            //    row.Cells.Add(new TableCell(new Paragraph(new Run(difficulty))));
+            //    row.Cells.Add(new TableCell(new Paragraph(new Run(moves))));
+            //    row.Cells.Add(new TableCell(new Paragraph(new Run(time))));
+            //    row.Cells[0].ColumnSpan = 2;
 
-                double movesInt = Convert.ToDouble(moves);
-                int rows = winnersListEasy.Rows.Count();
+            //    double movesInt = Convert.ToDouble(moves);
+            //    int rows = winnersListEasy.Rows.Count();
 
-                ////////////////////////// Placerar raden på rätt plats //////////////////////////
-                int rowInHere = 0;
-                if (rows > 1)
-                {
-                    while (rowInHere < rows)
-                    {
-                        string thisCellsMoves = ((Run)((Paragraph)winnersListEasy.Rows[rowInHere].Cells[2].Blocks.FirstBlock).Inlines.FirstInline).Text;
-                        double thisCellsMovesDouble = Convert.ToDouble(thisCellsMoves);
+            //    ////////////////////////// Placerar raden på rätt plats //////////////////////////
+            //    int rowInHere = 0;
+            //    if (rows > 1)
+            //    {
+            //        while (rowInHere < rows)
+            //        {
+            //            string thisCellsMoves = ((Run)((Paragraph)winnersListEasy.Rows[rowInHere].Cells[2].Blocks.FirstBlock).Inlines.FirstInline).Text;
+            //            double thisCellsMovesDouble = Convert.ToDouble(thisCellsMoves);
 
-                        if (movesInt > thisCellsMovesDouble)
-                        {
-                            rowInHere++;
-                        }
-                        else if (movesInt == thisCellsMovesDouble)      // Om lika drag, bäst tid överst
-                        {
-                            string tabCellsTime = ((Run)((Paragraph)winnersListEasy.Rows[rowInHere].Cells[3].Blocks.FirstBlock).Inlines.FirstInline).Text;
-                            string[] timeTabArr = new string[3];
-                            timeTabArr = tabCellsTime.Split(':').ToArray<string>();
-                            int hourTab = Convert.ToInt16(timeTabArr[0]);
-                            int minuteTab = Convert.ToInt16(timeTabArr[1]);
-                            int secondTab = Convert.ToInt16(timeTabArr[2]);
+            //            if (movesInt > thisCellsMovesDouble)
+            //            {
+            //                rowInHere++;
+            //            }
+            //            else if (movesInt == thisCellsMovesDouble)      // Om lika drag, bäst tid överst
+            //            {
+            //                string tabCellsTime = ((Run)((Paragraph)winnersListEasy.Rows[rowInHere].Cells[3].Blocks.FirstBlock).Inlines.FirstInline).Text;
+            //                string[] timeTabArr = new string[3];
+            //                timeTabArr = tabCellsTime.Split(':').ToArray<string>();
+            //                int hourTab = Convert.ToInt16(timeTabArr[0]);
+            //                int minuteTab = Convert.ToInt16(timeTabArr[1]);
+            //                int secondTab = Convert.ToInt16(timeTabArr[2]);
 
-                            string[] timeInputArr = new string[3];
-                            timeInputArr = time.Split(':').ToArray<string>();
-                            int hourInput = Convert.ToInt16(timeInputArr[0]);
-                            int minuteInput = Convert.ToInt16(timeInputArr[1]);
-                            int secondInput = Convert.ToInt16(timeInputArr[2]);
+            //                string[] timeInputArr = new string[3];
+            //                timeInputArr = time.Split(':').ToArray<string>();
+            //                int hourInput = Convert.ToInt16(timeInputArr[0]);
+            //                int minuteInput = Convert.ToInt16(timeInputArr[1]);
+            //                int secondInput = Convert.ToInt16(timeInputArr[2]);
 
-                            if (hourInput > hourTab)        // Input var högre tid än tabellens, lägg på en rad och hoppa ur
-                            {
-                                rowInHere++;
-                                break;
-                            }
-                            else if (hourInput == hourTab)   // Timmar var samma, kolla minuter!
-                            {
-                                if (minuteInput > minuteTab)    // Input minuter var högre tid än tabellens, lägg på en rad och hoppa ur
-                                {
-                                    rowInHere++;
-                                    break;
-                                }
-                                else if (minuteInput == minuteTab)  // Minuter var samma, kolla sekunder!
-                                {
-                                    if (secondInput > secondTab)    // Input sekunder var högre tid än tabellens, lägg på en rad och hoppa ur
-                                    {
-                                        rowInHere++;
-                                        break;
-                                    }
-                                    else        // Sekunderna är lika eller input hade högre, lägg nedanför tab
-                                        break;
-                                }
-                                else
-                                    break;
-                            }
-                            else      // Input var lägre än tabellens, lägg på raden över
-                                break;
-                        }
-                        else
-                            break;
-                    }
-                    winnersListEasy.Rows.Insert(rowInHere, row);
-                }
-                else
-                    winnersListEasy.Rows.Add(row);
-                
-				highscoreListEasy.Visibility = Visibility.Visible;
-				rbGrid.Margin = new Thickness(0, 0, 0, 0);
-				saveHighscore("e");
-			}
-			else if (difficulty[0] == 'm')
-			{
-				difficulty = difficulty.Remove(0, 6);
-				rbM.IsChecked = true;
+            //                if (hourInput > hourTab)        // Input var högre tid än tabellens, lägg på en rad och hoppa ur
+            //                {
+            //                    rowInHere++;
+            //                    break;
+            //                }
+            //                else if (hourInput == hourTab)   // Timmar var samma, kolla minuter!
+            //                {
+            //                    if (minuteInput > minuteTab)    // Input minuter var högre tid än tabellens, lägg på en rad och hoppa ur
+            //                    {
+            //                        rowInHere++;
+            //                        break;
+            //                    }
+            //                    else if (minuteInput == minuteTab)  // Minuter var samma, kolla sekunder!
+            //                    {
+            //                        if (secondInput > secondTab)    // Input sekunder var högre tid än tabellens, lägg på en rad och hoppa ur
+            //                        {
+            //                            rowInHere++;
+            //                            break;
+            //                        }
+            //                        else        // Sekunderna är lika eller input hade högre, lägg nedanför tab
+            //                            break;
+            //                    }
+            //                    else
+            //                        break;
+            //                }
+            //                else      // Input var lägre än tabellens, lägg på raden över
+            //                    break;
+            //            }
+            //            else
+            //                break;
+            //        }
+            //        winnersListEasy.Rows.Insert(rowInHere, row);
+            //    }
+            //    else
+            //        winnersListEasy.Rows.Add(row);
 
-				row.Cells.Add(new TableCell(new Paragraph(new Run(nameinput))));
-				row.Cells.Add(new TableCell(new Paragraph(new Run(difficulty))));
-				row.Cells.Add(new TableCell(new Paragraph(new Run(moves))));
-				row.Cells.Add(new TableCell(new Paragraph(new Run(time))));
-				row.Cells[0].ColumnSpan = 2;
+            //    highscoreListEasy.Visibility = Visibility.Visible;
+            //    rbGrid.Margin = new Thickness(0, 0, 0, 0);
+            //    saveHighscore("e");
+            //}
+            //else if (difficulty[0] == 'm')
+            //{
+            //    difficulty = difficulty.Remove(0, 6);
+            //    rbM.IsChecked = true;
 
-                double movesInt = Convert.ToDouble(moves);
-                int rows = winnersListHard.Rows.Count();
+            //    row.Cells.Add(new TableCell(new Paragraph(new Run(nameinput))));
+            //    row.Cells.Add(new TableCell(new Paragraph(new Run(difficulty))));
+            //    row.Cells.Add(new TableCell(new Paragraph(new Run(moves))));
+            //    row.Cells.Add(new TableCell(new Paragraph(new Run(time))));
+            //    row.Cells[0].ColumnSpan = 2;
 
-                ////////////////////////// Placerar raden på rätt plats //////////////////////////
-                int rowInHere = 0;
-                if (rows > 1)
-                {
-                    while (rowInHere < rows)
-                    {
-                        string thisCellsMoves = ((Run)((Paragraph)winnersListMedium.Rows[rowInHere].Cells[2].Blocks.FirstBlock).Inlines.FirstInline).Text;
-                        double thisCellsMovesDouble = Convert.ToDouble(thisCellsMoves);
+            //    double movesInt = Convert.ToDouble(moves);
+            //    int rows = winnersListHard.Rows.Count();
 
-                        if (movesInt > thisCellsMovesDouble)
-                        {
-                            rowInHere++;
-                        }
-                        else if (movesInt == thisCellsMovesDouble)      // Om lika drag, bäst tid överst
-                        {
-                            string tabCellsTime = ((Run)((Paragraph)winnersListMedium.Rows[rowInHere].Cells[3].Blocks.FirstBlock).Inlines.FirstInline).Text;
-                            string[] timeTabArr = new string[3];
-                            timeTabArr = tabCellsTime.Split(':').ToArray<string>();
-                            int hourTab = Convert.ToInt16(timeTabArr[0]);
-                            int minuteTab = Convert.ToInt16(timeTabArr[1]);
-                            int secondTab = Convert.ToInt16(timeTabArr[2]);
+            //    ////////////////////////// Placerar raden på rätt plats //////////////////////////
+            //    int rowInHere = 0;
+            //    if (rows > 1)
+            //    {
+            //        while (rowInHere < rows)
+            //        {
+            //            string thisCellsMoves = ((Run)((Paragraph)winnersListMedium.Rows[rowInHere].Cells[2].Blocks.FirstBlock).Inlines.FirstInline).Text;
+            //            double thisCellsMovesDouble = Convert.ToDouble(thisCellsMoves);
 
-                            string[] timeInputArr = new string[3];
-                            timeInputArr = time.Split(':').ToArray<string>();
-                            int hourInput = Convert.ToInt16(timeInputArr[0]);
-                            int minuteInput = Convert.ToInt16(timeInputArr[1]);
-                            int secondInput = Convert.ToInt16(timeInputArr[2]);
+            //            if (movesInt > thisCellsMovesDouble)
+            //            {
+            //                rowInHere++;
+            //            }
+            //            else if (movesInt == thisCellsMovesDouble)      // Om lika drag, bäst tid överst
+            //            {
+            //                string tabCellsTime = ((Run)((Paragraph)winnersListMedium.Rows[rowInHere].Cells[3].Blocks.FirstBlock).Inlines.FirstInline).Text;
+            //                string[] timeTabArr = new string[3];
+            //                timeTabArr = tabCellsTime.Split(':').ToArray<string>();
+            //                int hourTab = Convert.ToInt16(timeTabArr[0]);
+            //                int minuteTab = Convert.ToInt16(timeTabArr[1]);
+            //                int secondTab = Convert.ToInt16(timeTabArr[2]);
 
-                            if (hourInput > hourTab)        // Input var högre tid än tabellens, lägg på en rad och hoppa ur
-                            {
-                                rowInHere++;    
-                                break;
-                            }
-                            else if (hourInput == hourTab)   // Timmar var samma, kolla minuter!
-                            {
-                                if (minuteInput > minuteTab)    // Input minuter var högre tid än tabellens, lägg på en rad och hoppa ur
-                                {
-                                    rowInHere++;
-                                    break;
-                                }
-                                else if (minuteInput == minuteTab)  // Minuter var samma, kolla sekunder!
-                                {
-                                    if (secondInput > secondTab)    // Input sekunder var högre tid än tabellens, lägg på en rad och hoppa ur
-                                    {
-                                        rowInHere++;
-                                        break;
-                                    }
-                                    else        // Sekunderna är lika eller input hade högre, lägg nedanför tab
-                                        break;
-                                }
-                                else
-                                    break;
-                            }
-                            else      // Input var lägre än tabellens, lägg på raden över
-                                break;                        
-                        }
-                        else
-                            break;
-                    }
-                    winnersListMedium.Rows.Insert(rowInHere, row);
-                }
-                else
-                    winnersListMedium.Rows.Add(row);
+            //                string[] timeInputArr = new string[3];
+            //                timeInputArr = time.Split(':').ToArray<string>();
+            //                int hourInput = Convert.ToInt16(timeInputArr[0]);
+            //                int minuteInput = Convert.ToInt16(timeInputArr[1]);
+            //                int secondInput = Convert.ToInt16(timeInputArr[2]);
 
-				highscoreListMedium.Visibility = Visibility.Visible;
-				rbGrid.Margin = new Thickness(0, 0, 0, 0);
+            //                if (hourInput > hourTab)        // Input var högre tid än tabellens, lägg på en rad och hoppa ur
+            //                {
+            //                    rowInHere++;
+            //                    break;
+            //                }
+            //                else if (hourInput == hourTab)   // Timmar var samma, kolla minuter!
+            //                {
+            //                    if (minuteInput > minuteTab)    // Input minuter var högre tid än tabellens, lägg på en rad och hoppa ur
+            //                    {
+            //                        rowInHere++;
+            //                        break;
+            //                    }
+            //                    else if (minuteInput == minuteTab)  // Minuter var samma, kolla sekunder!
+            //                    {
+            //                        if (secondInput > secondTab)    // Input sekunder var högre tid än tabellens, lägg på en rad och hoppa ur
+            //                        {
+            //                            rowInHere++;
+            //                            break;
+            //                        }
+            //                        else        // Sekunderna är lika eller input hade högre, lägg nedanför tab
+            //                            break;
+            //                    }
+            //                    else
+            //                        break;
+            //                }
+            //                else      // Input var lägre än tabellens, lägg på raden över
+            //                    break;
+            //            }
+            //            else
+            //                break;
+            //        }
+            //        winnersListMedium.Rows.Insert(rowInHere, row);
+            //    }
+            //    else
+            //        winnersListMedium.Rows.Add(row);
 
-				saveHighscore("m");
-			}
-			else
-			{
-				difficulty = difficulty.Remove(0, 4);
-				rbS.IsChecked = true;
+            //    highscoreListMedium.Visibility = Visibility.Visible;
+            //    rbGrid.Margin = new Thickness(0, 0, 0, 0);
 
-				row.Cells.Add(new TableCell(new Paragraph(new Run(nameinput))));
-				row.Cells.Add(new TableCell(new Paragraph(new Run(difficulty))));
-				row.Cells.Add(new TableCell(new Paragraph(new Run(moves))));
-				row.Cells.Add(new TableCell(new Paragraph(new Run(time))));
-				row.Cells[0].ColumnSpan = 2;
+            //    saveHighscore("m");
+            //}
+            //else
+            //{
+            //    difficulty = difficulty.Remove(0, 4);
+            //    rbS.IsChecked = true;
 
-                double movesInt = Convert.ToDouble(moves);
-                int rows = winnersListHard.Rows.Count();
+            //    row.Cells.Add(new TableCell(new Paragraph(new Run(nameinput))));
+            //    row.Cells.Add(new TableCell(new Paragraph(new Run(difficulty))));
+            //    row.Cells.Add(new TableCell(new Paragraph(new Run(moves))));
+            //    row.Cells.Add(new TableCell(new Paragraph(new Run(time))));
+            //    row.Cells[0].ColumnSpan = 2;
 
-                ////////////////////////// Placerar raden på rätt plats //////////////////////////
-                int rowInHere = 0;
-                if (rows > 1)
-                {
-                    while (rowInHere < rows)
-                    {
-                        string thisCellsMoves = ((Run)((Paragraph)winnersListHard.Rows[rowInHere].Cells[2].Blocks.FirstBlock).Inlines.FirstInline).Text;
-                        double thisCellsMovesDouble = Convert.ToDouble(thisCellsMoves);
+            //    double movesInt = Convert.ToDouble(moves);
+            //    int rows = winnersListHard.Rows.Count();
 
-                        if (movesInt > thisCellsMovesDouble)
-                        {
-                            rowInHere++;
-                        }
-                        else if (movesInt == thisCellsMovesDouble)      // Om lika drag, bäst tid överst
-                        {
-                            string tabCellsTime = ((Run)((Paragraph)winnersListHard.Rows[rowInHere].Cells[3].Blocks.FirstBlock).Inlines.FirstInline).Text;
-                            string[] timeTabArr = new string[3];
-                            timeTabArr = tabCellsTime.Split(':').ToArray<string>();
-                            int hourTab = Convert.ToInt16(timeTabArr[0]);
-                            int minuteTab = Convert.ToInt16(timeTabArr[1]);
-                            int secondTab = Convert.ToInt16(timeTabArr[2]);
+            //    ////////////////////////// Placerar raden på rätt plats //////////////////////////
+            //    int rowInHere = 0;
+            //    if (rows > 1)
+            //    {
+            //        while (rowInHere < rows)
+            //        {
+            //            string thisCellsMoves = ((Run)((Paragraph)winnersListHard.Rows[rowInHere].Cells[2].Blocks.FirstBlock).Inlines.FirstInline).Text;
+            //            double thisCellsMovesDouble = Convert.ToDouble(thisCellsMoves);
 
-                            string[] timeInputArr = new string[3];
-                            timeInputArr = time.Split(':').ToArray<string>();
-                            int hourInput = Convert.ToInt16(timeInputArr[0]);
-                            int minuteInput = Convert.ToInt16(timeInputArr[1]);
-                            int secondInput = Convert.ToInt16(timeInputArr[2]);
+            //            if (movesInt > thisCellsMovesDouble)
+            //            {
+            //                rowInHere++;
+            //            }
+            //            else if (movesInt == thisCellsMovesDouble)      // Om lika drag, bäst tid överst
+            //            {
+            //                string tabCellsTime = ((Run)((Paragraph)winnersListHard.Rows[rowInHere].Cells[3].Blocks.FirstBlock).Inlines.FirstInline).Text;
+            //                string[] timeTabArr = new string[3];
+            //                timeTabArr = tabCellsTime.Split(':').ToArray<string>();
+            //                int hourTab = Convert.ToInt16(timeTabArr[0]);
+            //                int minuteTab = Convert.ToInt16(timeTabArr[1]);
+            //                int secondTab = Convert.ToInt16(timeTabArr[2]);
 
-                            if (hourInput > hourTab)        // Input var högre tid än tabellens, lägg på en rad och hoppa ur
-                            {
-                                rowInHere++;
-                                break;
-                            }
-                            else if (hourInput == hourTab)   // Timmar var samma, kolla minuter!
-                            {
-                                if (minuteInput > minuteTab)    // Input minuter var högre tid än tabellens, lägg på en rad och hoppa ur
-                                {
-                                    rowInHere++;
-                                    break;
-                                }
-                                else if (minuteInput == minuteTab)  // Minuter var samma, kolla sekunder!
-                                {
-                                    if (secondInput > secondTab)    // Input sekunder var högre tid än tabellens, lägg på en rad och hoppa ur
-                                    {
-                                        rowInHere++;
-                                        break;
-                                    }
-                                    else        // Sekunderna är lika eller input hade högre, lägg nedanför tab
-                                        break;
-                                }
-                                else
-                                    break;
-                            }
-                            else      // Input var lägre än tabellens, lägg på raden över
-                                break;
-                        }
-                        else
-                            break;
-                    }
-                    winnersListHard.Rows.Insert(rowInHere, row);
-                }
-                else
-                    winnersListHard.Rows.Add(row);
+            //                string[] timeInputArr = new string[3];
+            //                timeInputArr = time.Split(':').ToArray<string>();
+            //                int hourInput = Convert.ToInt16(timeInputArr[0]);
+            //                int minuteInput = Convert.ToInt16(timeInputArr[1]);
+            //                int secondInput = Convert.ToInt16(timeInputArr[2]);
 
-				highscoreListHard.Visibility = Visibility.Visible;
-				rbGrid.Margin = new Thickness(0, 0, 0, 0);
+            //                if (hourInput > hourTab)        // Input var högre tid än tabellens, lägg på en rad och hoppa ur
+            //                {
+            //                    rowInHere++;
+            //                    break;
+            //                }
+            //                else if (hourInput == hourTab)   // Timmar var samma, kolla minuter!
+            //                {
+            //                    if (minuteInput > minuteTab)    // Input minuter var högre tid än tabellens, lägg på en rad och hoppa ur
+            //                    {
+            //                        rowInHere++;
+            //                        break;
+            //                    }
+            //                    else if (minuteInput == minuteTab)  // Minuter var samma, kolla sekunder!
+            //                    {
+            //                        if (secondInput > secondTab)    // Input sekunder var högre tid än tabellens, lägg på en rad och hoppa ur
+            //                        {
+            //                            rowInHere++;
+            //                            break;
+            //                        }
+            //                        else        // Sekunderna är lika eller input hade högre, lägg nedanför tab
+            //                            break;
+            //                    }
+            //                    else
+            //                        break;
+            //                }
+            //                else      // Input var lägre än tabellens, lägg på raden över
+            //                    break;
+            //            }
+            //            else
+            //                break;
+            //        }
+            //        winnersListHard.Rows.Insert(rowInHere, row);
+            //    }
+            //    else
+            //        winnersListHard.Rows.Add(row);
 
-				saveHighscore("h");
-			}
+            //    highscoreListHard.Visibility = Visibility.Visible;
+            //    rbGrid.Margin = new Thickness(0, 0, 0, 0);
 
-			var main = Application.Current.MainWindow as MainWindow;
-			main.spelplanComponent.Visibility = Visibility.Collapsed;
-			main.gridPrintComponent.Visibility = Visibility.Collapsed;
-			main.highscoreComponent.Visibility = Visibility.Visible;
-		}
+            //    saveHighscore("h");
+            //}
 
-		private void rb_Click(object sender, RoutedEventArgs e)
-		{
-			rbGrid.Margin = new Thickness(0, 0, 0, 0);
-			if (Convert.ToBoolean(rbL.IsChecked))
-			{
-				highscoreListEasy.Visibility = Visibility.Visible;
-				highscoreListMedium.Visibility = Visibility.Collapsed;
-				highscoreListHard.Visibility = Visibility.Collapsed;
-			}
-			else if (Convert.ToBoolean(rbM.IsChecked))
-			{
-				highscoreListEasy.Visibility = Visibility.Collapsed;
-				highscoreListMedium.Visibility = Visibility.Visible;
-				highscoreListHard.Visibility = Visibility.Collapsed;
-			}
-			else if (Convert.ToBoolean(rbS.IsChecked))
-			{
-				highscoreListEasy.Visibility = Visibility.Collapsed;
-				highscoreListMedium.Visibility = Visibility.Collapsed;
-				highscoreListHard.Visibility = Visibility.Visible;
-			}
-		}
+            //var main = Application.Current.MainWindow as MainWindow;
+            //main.spelplanComponent.Visibility = Visibility.Collapsed;
+            //main.gridPrintComponent.Visibility = Visibility.Collapsed;
+            //main.highscoreComponent.Visibility = Visibility.Visible;
+        }
 
-		private void clickOK(object sender, RoutedEventArgs e)
-		{
-			var main = Application.Current.MainWindow as MainWindow;
-			main.highscoreComponent.Visibility = Visibility.Collapsed;
-			main.highscoreComponent.highscoreListEasy.Visibility = Visibility.Collapsed;
-			main.highscoreComponent.highscoreListMedium.Visibility = Visibility.Collapsed;
-			main.highscoreComponent.highscoreListHard.Visibility = Visibility.Collapsed;
-			main.highscoreComponent.rbGrid.Margin = new Thickness(0, 0, 0, 360);
+        private void rb_Click(object sender, RoutedEventArgs e)
+        {
+            //rbGrid.Margin = new Thickness(0, 0, 0, 0);
+            //if (Convert.ToBoolean(rbL.IsChecked))
+            //{
+            //    highscoreListEasy.Visibility = Visibility.Visible;
+            //    highscoreListMedium.Visibility = Visibility.Collapsed;
+            //    highscoreListHard.Visibility = Visibility.Collapsed;
+            //}
+            //else if (Convert.ToBoolean(rbM.IsChecked))
+            //{
+            //    highscoreListEasy.Visibility = Visibility.Collapsed;
+            //    highscoreListMedium.Visibility = Visibility.Visible;
+            //    highscoreListHard.Visibility = Visibility.Collapsed;
+            //}
+            //else if (Convert.ToBoolean(rbS.IsChecked))
+            //{
+            //    highscoreListEasy.Visibility = Visibility.Collapsed;
+            //    highscoreListMedium.Visibility = Visibility.Collapsed;
+            //    highscoreListHard.Visibility = Visibility.Visible;
+            //}
+        }
 
-			main.menuComponent.Visibility = Visibility.Visible;
-		}
+        private void clickOK(object sender, RoutedEventArgs e)
+        {
+            //var main = Application.Current.MainWindow as MainWindow;
+            //main.highscoreComponent.Visibility = Visibility.Collapsed;
+            //main.highscoreComponent.highscoreListEasy.Visibility = Visibility.Collapsed;
+            //main.highscoreComponent.highscoreListMedium.Visibility = Visibility.Collapsed;
+            //main.highscoreComponent.highscoreListHard.Visibility = Visibility.Collapsed;
+            //main.highscoreComponent.rbGrid.Margin = new Thickness(0, 0, 0, 360);
+
+            //main.menuComponent.Visibility = Visibility.Visible;
+        }
 	}
 }

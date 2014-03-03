@@ -15,6 +15,7 @@ using System.Windows.Shapes;
 
 using System.Windows.Threading; // timer
 
+
 namespace Sudoku
 {
 	/// <summary>
@@ -28,6 +29,7 @@ namespace Sudoku
         DispatcherTimer timerChanged;
         public bool start = false;
         // End timer Var
+     //   bool openingSavedGame = false;
 
         MainWindow main;
         SudokuModel model;
