@@ -128,6 +128,10 @@ namespace Sudoku
                         radioButtonChecked = "easy3";
                         btnSpela.IsEnabled = true;
                     }
+                    else
+                    {
+                        btnSpela.IsEnabled = false;
+                    }
             }
             else if (Convert.ToBoolean(rbM.IsChecked))
             {
@@ -151,6 +155,10 @@ namespace Sudoku
                     radioButtonChecked = "medium3";
                     btnSpela.IsEnabled = true;
                 }
+                else
+                {
+                    btnSpela.IsEnabled = false;
+                }
             }
             else if (Convert.ToBoolean(rbS.IsChecked))
             {
@@ -173,6 +181,10 @@ namespace Sudoku
                 {
                     radioButtonChecked = "hard3";
                     btnSpela.IsEnabled = true;
+                }
+                else
+                {
+                    btnSpela.IsEnabled = false;
                 }
             }
 		}
