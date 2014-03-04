@@ -62,7 +62,7 @@ namespace Sudoku
         private void clickNyttSpel(object sender, RoutedEventArgs e)        //Nytt spel
         {
             var main = Application.Current.MainWindow as MainWindow;
-
+            main.Enable_DisablePrint(false);
             System.Windows.Forms.DialogResult dialogResult = System.Windows.Forms.MessageBox.Show("Din spelomgång kommer att avbrytas, Är du säker på att du vill starta ett nytt spel?", "Spelomgång avbruten", System.Windows.Forms.MessageBoxButtons.YesNo);
             if (dialogResult == System.Windows.Forms.DialogResult.Yes)
             {
