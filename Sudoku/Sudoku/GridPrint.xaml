@@ -40,7 +40,7 @@
         </Style>
     </UserControl.Resources>
     <Viewbox KeyboardNavigation.IsTabStop="False" Stretch="Uniform" PreviewKeyDown="Viewbox_PreviewKeyDown_1">
-        <Border Name="gridBorder" KeyboardNavigation.IsTabStop="False" BorderBrush="Gray" BorderThickness="1" Background="White" Margin="20">
+        <Border Name="gridBorder" KeyboardNavigation.IsTabStop="False" BorderBrush="Gray" BorderThickness="10" Background="White" Margin="20">
             <Border.Effect>
                 <DropShadowEffect Opacity="0.5" ShadowDepth="10.0" Direction="230" />
             </Border.Effect>

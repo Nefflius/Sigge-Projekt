@@ -105,3 +105,4 @@ G:\Data\Programmering\C#\GUI-projekt\Sudoku\Sudoku\obj\Release\Sudoku.Properties
 G:\Data\Programmering\C#\GUI-projekt\Sudoku\Sudoku\obj\Release\Sudoku.csproj.GenerateResource.Cache
 G:\Data\Programmering\C#\GUI-projekt\Sudoku\Sudoku\obj\Release\Sudoku.exe
 G:\Data\Programmering\C#\GUI-projekt\Sudoku\Sudoku\obj\Release\Sudoku.pdb
+G:\Data\Programmering\C#\GUI-projekt\Sudoku\Sudoku\obj\Release\Sudoku.csprojFakesResolveAssemblyReference.cache
