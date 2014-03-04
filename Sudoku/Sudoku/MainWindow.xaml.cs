@@ -232,7 +232,7 @@ namespace Sudoku
         {
             if (gridPrintComponent.Visibility != Visibility.Collapsed)
             {
-                System.Windows.Forms.DialogResult dialogResult = System.Windows.Forms.MessageBox.Show("Spelet kommer att avbrytas, Är du säker på att du vill till Highscore?", "Avbrutet spel", System.Windows.Forms.MessageBoxButtons.YesNo);
+                System.Windows.Forms.DialogResult dialogResult = System.Windows.Forms.MessageBox.Show("Spelet kommer att avbrytas, Är du säker på att du vill till Highscore?", "Avbrutet spel", System.Windows.Forms.MessageBoxButtons.YesNo, System.Windows.Forms.MessageBoxIcon.Exclamation);
                 if (dialogResult == System.Windows.Forms.DialogResult.Yes)
                 {
                     highscoreComponent.Visibility = Visibility.Visible;
@@ -273,14 +273,12 @@ namespace Sudoku
         
         private void mnuRegler_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Ett sudoku består av nio gånger nio rutor som i sin tur är indelade i nio större rutor. För att lösa ett sudoku skall man placera ut siffrorna 1-9 på spelfältet på ett sådant vis att varje siffra bara finns en gång per rad, en gång per kolumn och dessutom bara en gång per större ruta.",
-                            "Hjälp");
+            MessageBox.Show("Ett sudoku består av nio gånger nio rutor som i sin tur är indelade i nio större rutor. För att lösa ett sudoku skall man placera ut siffrorna 1-9 på spelfältet på ett sådant vis att varje siffra bara finns en gång per rad, en gång per kolumn och dessutom bara en gång per större ruta.","Hjälp");
         }
 
         private void mnuOmSudoku_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Detta Sudoku är utvecklat av:" + Environment.NewLine + "Ida Sabel" + Environment.NewLine + "Stefan Hall" + Environment.NewLine + "Hampus Wallin" + Environment.NewLine + "Nidaa Al-Botani",
-                            "Om Sudoku");
+            MessageBox.Show("Detta Sudoku är utvecklat av:" + Environment.NewLine + "Ida Sabel" + Environment.NewLine + "Stefan Hall" + Environment.NewLine + "Hampus Wallin" + Environment.NewLine + "Nidaa Al-Botani", "Om Sudoku",MessageBoxButton.OK, MessageBoxImage.Information);
         }
 
         private void mnuExit_Click(object sender, RoutedEventArgs e)
