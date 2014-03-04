@@ -315,6 +315,7 @@ namespace Sudoku
                 
 				highscoreListEasy.Visibility = Visibility.Visible;
 				rbGrid.Margin = new Thickness(0, 0, 0, 0);
+                ClearEnabled();
 				saveHighscore("e");
 			}
 			else if (difficulty[0] == 'm')
@@ -393,6 +394,7 @@ namespace Sudoku
                     winnersListMedium.Rows.Add(row);
 
 				highscoreListMedium.Visibility = Visibility.Visible;
+                ClearEnabled();
 				rbGrid.Margin = new Thickness(0, 0, 0, 0);
 
 				saveHighscore("m");
@@ -473,6 +475,8 @@ namespace Sudoku
                     winnersListHard.Rows.Add(row);
 
 				highscoreListHard.Visibility = Visibility.Visible;
+                ClearEnabled();
+
 				rbGrid.Margin = new Thickness(0, 0, 0, 0);
 
 				saveHighscore("h");
@@ -488,6 +492,8 @@ namespace Sudoku
         private void rb_Click(object sender, RoutedEventArgs e)
         {
             rbGrid.Margin = new Thickness(0, 0, 0, 0);
+            ClearEnabled();
+
             if (Convert.ToBoolean(rbL.IsChecked))
             {
                 highscoreListEasy.Visibility = Visibility.Visible;
@@ -518,6 +524,59 @@ namespace Sudoku
             main.highscoreComponent.rbGrid.Margin = new Thickness(0, 0, 0, 360);
 
             main.menuComponent.Visibility = Visibility.Visible;
+        }
+
+        private void ClearEnabled()
+        {
+            if (Convert.ToBoolean(rbL.IsChecked) && winnersListEasy.Rows.Count() > 0)
+                btnClear.IsEnabled = true;
+            else if (Convert.ToBoolean(rbM.IsChecked) && winnersListMedium.Rows.Count() > 0)
+                btnClear.IsEnabled = true;
+            else if (Convert.ToBoolean(rbS.IsChecked) && winnersListHard.Rows.Count() > 0)
+                btnClear.IsEnabled = true;
+            else
+                btnClear.IsEnabled = false;
+        }
+
+        private void clickClear(object sender, RoutedEventArgs e)
+        {
+            int rows;
+
+            System.Windows.Forms.DialogResult dialogResult = System.Windows.Forms.MessageBox.Show("Alla highscores inom markerad svårighetsnivå kommer att rensas, är du säker på att du vill detta?", "Highscore rensning", System.Windows.Forms.MessageBoxButtons.YesNo);
+            if (dialogResult == System.Windows.Forms.DialogResult.Yes)
+            {
+                if (Convert.ToBoolean(rbL.IsChecked))
+                {
+                    rows = winnersListEasy.Rows.Count();
+                    while (rows > 0)
+                    {
+                        winnersListEasy.Rows.RemoveAt(rows - 1);
+                        rows--;
+                    }
+                    saveHighscore("e");
+                }
+                else if (Convert.ToBoolean(rbM.IsChecked))
+                {
+                    rows = winnersListMedium.Rows.Count();
+                    while (rows > 0)
+                    {
+                        winnersListMedium.Rows.RemoveAt(rows - 1);
+                        rows--;
+                    }
+                    saveHighscore("m");
+                }
+                else if (Convert.ToBoolean(rbS.IsChecked))
+                {
+                    rows = winnersListHard.Rows.Count();
+                    while (rows > 0)
+                    {
+                        winnersListHard.Rows.RemoveAt(rows - 1);
+                        rows--;
+                    }
+                    saveHighscore("h");
+                }
+            }
+            else { }
         }
 	}
 }

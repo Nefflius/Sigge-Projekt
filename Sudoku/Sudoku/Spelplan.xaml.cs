@@ -91,15 +91,9 @@ namespace Sudoku
         {
             var main = Application.Current.MainWindow as MainWindow;
             SudokuModel model = new SudokuModel();
-            
             string moves = lblAntalDrag.Content.ToString();
-
-            // if winnersList.rows =< 10
-            // else 
-            // if tiden är bättre än nr 10 i winnersList
             string solution = model.getThisSolution();
-
-          main.highscoreComponent.addHighscore(nameinput, solution, time, moves);
+            main.highscoreComponent.addHighscore(nameinput, solution, time, moves);
         }
 
         //När "Fusk" klickas hämtas lösning i SudokuModel

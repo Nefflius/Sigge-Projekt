@@ -174,10 +174,12 @@
     <Resource Include="Properties\Resources\SudokuIcon.ico" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="Properties\Resources\Images\icons\Info.png" />
+    <Resource Include="Properties\Resources\Images\icons\HowToDo.png" />
+    <Resource Include="Properties\Resources\Images\icons\Highscore.png" />
+    <Resource Include="Properties\Resources\Images\icons\Print.png" />
     <Resource Include="Images\Sound-on-icon43.png" />
     <Content Include="Properties\Resources\Heasy.txt" />
-    <Resource Include="Properties\Resources\Images\icons\UnCheck.png" />
-    <Resource Include="Properties\Resources\Images\icons\Check.png" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Properties\Resources\Hhard.txt" />

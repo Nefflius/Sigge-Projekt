@@ -72,16 +72,6 @@ namespace Sudoku.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Check {
-            get {
-                object obj = ResourceManager.GetObject("Check", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap Exit {
             get {
                 object obj = ResourceManager.GetObject("Exit", resourceCulture);
@@ -108,11 +98,51 @@ namespace Sudoku.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Highscore {
+            get {
+                object obj = ResourceManager.GetObject("Highscore", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to test.
         /// </summary>
         internal static string Hmedium {
             get {
                 return ResourceManager.GetString("Hmedium", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap HowToDo {
+            get {
+                object obj = ResourceManager.GetObject("HowToDo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Info {
+            get {
+                object obj = ResourceManager.GetObject("Info", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Print {
+            get {
+                object obj = ResourceManager.GetObject("Print", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
@@ -132,16 +162,6 @@ namespace Sudoku.Properties {
         internal static System.Drawing.Bitmap Sound_on_icon43 {
             get {
                 object obj = ResourceManager.GetObject("Sound_on_icon43", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap UnCheck {
-            get {
-                object obj = ResourceManager.GetObject("UnCheck", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

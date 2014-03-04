@@ -305,43 +305,19 @@ namespace Sudoku
         private void mnuTimer_Click(object sender, RoutedEventArgs e)
         {
             if (spelplanComponent.timerBox.Visibility == Visibility.Visible)
-            {
-                //mnuTimer.Icon = new System.Windows.Controls.Image
-                //{
-                //    Source = new BitmapImage(new Uri("Properties/Resources/Images/icons/UnCheck.png"))
-                //};
                 spelplanComponent.timerBox.Visibility = Visibility.Collapsed;
-            }
 
             else if (spelplanComponent.timerBox.Visibility == Visibility.Collapsed)
-            {
-                //mnuTimer.Icon = new System.Windows.Controls.Image
-                //{  
-                //    Source = new BitmapImage(new Uri("Properties/Resources/Images/icons/Check.png"))
-                //};
                 spelplanComponent.timerBox.Visibility = Visibility.Visible;
-            }
         }
 
         private void mnuAntaldrag_Click(object sender, RoutedEventArgs e)
         {
             if (spelplanComponent.antaldragbox.Visibility == Visibility.Visible)
-            {
-                //mnuTimer.Icon = new System.Windows.Controls.Image
-                //{
-                //    Source = new BitmapImage(new Uri("/MenuIconImage;Sudoku/Resources/UnCheck.png"))
-                //};
                 spelplanComponent.antaldragbox.Visibility = Visibility.Collapsed;
-            }
 
             else if (spelplanComponent.antaldragbox.Visibility == Visibility.Collapsed)
-            {
-                //mnuTimer.Icon = new System.Windows.Controls.Image
-                //{
-                //    Source = new BitmapImage(new Uri(@"Properties/Resources/Images/icons/Check.png"))
-                //};
                 spelplanComponent.antaldragbox.Visibility = Visibility.Visible;
-            }
         } 
 
 
