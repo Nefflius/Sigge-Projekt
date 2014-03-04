@@ -34,9 +34,9 @@
                 <Label FontFamily="Impact" FontSize="75" Margin="15,10,15,0" HorizontalAlignment="Center">SUDOKU</Label>
                 <Label FontSize="20" FontWeight="Thin" HorizontalAlignment="Center">Välj svårighetsnivå:</Label>
                 <UniformGrid Name="rbGrid" Columns="3" HorizontalAlignment="Center" Margin="70,0,70,160">
-                    <RadioButton Name="rbL" HorizontalAlignment="Left" FontSize="14" FontWeight="Thin" Margin="5" Click="rb_Click">Lätt</RadioButton>
-                    <RadioButton Name="rbM" FontSize="14" FontWeight="Thin" Margin="5" Click="rb_Click">Medium</RadioButton>
-                    <RadioButton Name="rbS" HorizontalAlignment="Right" FontSize="14" FontWeight="Thin" Margin="5" Click="rb_Click">Svår</RadioButton>
+                    <RadioButton Name="rbL" HorizontalAlignment="Left" FontSize="14" FontWeight="Thin" Margin="5" Click="rb_Click" Checked="rbL_Checked">Lätt</RadioButton>
+                    <RadioButton Name="rbM" FontSize="14" FontWeight="Thin" Margin="5" Click="rb_Click" Checked="rbM_Checked">Medium</RadioButton>
+                    <RadioButton Name="rbS" HorizontalAlignment="Right" FontSize="14" FontWeight="Thin" Margin="5" Click="rb_Click" Checked="rbS_Checked">Svår</RadioButton>
                 </UniformGrid>
                 <GroupBox Name="gbL" Margin="10,0" Header="Alternativ på spelplan : Lätt" FontWeight="Thin" Visibility="Collapsed">
                     <Grid>
