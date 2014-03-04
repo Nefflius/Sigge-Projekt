@@ -108,26 +108,26 @@ namespace Sudoku
 		{
             if (Convert.ToBoolean(rbL.IsChecked))
             {
-                gbL.Visibility = Visibility.Visible;
-                gbM.Visibility = Visibility.Collapsed;
-                gbS.Visibility = Visibility.Collapsed;
-                rbGrid.Margin = new Thickness(70, 0, 70, 0);
-
-                if (Convert.ToBoolean(rbL_1.IsChecked))
-                {
-                    radioButtonChecked = "easy1";
-                    btnSpela.IsEnabled = true;
-                }
-                else if (Convert.ToBoolean(rbL_2.IsChecked))
-                {
-                    radioButtonChecked = "easy2";
-                    btnSpela.IsEnabled = true;
-                }
-                else if (Convert.ToBoolean(rbL_3.IsChecked))
-                {
-                    radioButtonChecked = "easy3";
-                    btnSpela.IsEnabled = true;
-                }
+                    gbL.Visibility = Visibility.Visible;
+                    gbM.Visibility = Visibility.Collapsed;
+                    gbS.Visibility = Visibility.Collapsed;
+                    rbGrid.Margin = new Thickness(70, 0, 70, 0);
+                
+                    if (Convert.ToBoolean(rbL_1.IsChecked))
+                    {
+                        radioButtonChecked = "easy1";
+                        btnSpela.IsEnabled = true;
+                    }
+                    else if (Convert.ToBoolean(rbL_2.IsChecked))
+                    {
+                        radioButtonChecked = "easy2";
+                        btnSpela.IsEnabled = true;
+                    }
+                    else if (Convert.ToBoolean(rbL_3.IsChecked))
+                    {
+                        radioButtonChecked = "easy3";
+                        btnSpela.IsEnabled = true;
+                    }
             }
             else if (Convert.ToBoolean(rbM.IsChecked))
             {
@@ -191,7 +191,34 @@ namespace Sudoku
                     main.spelplanComponent.timer.Text = new DateTime((DateTime.Now - begins).Ticks).ToString("HH:mm:ss");
                 }
             }, this.Dispatcher);
-        }  //TimerEnd
+        }
+
+        private void rbL_Checked(object sender, RoutedEventArgs e)
+        {
+            System.Windows.Media.Animation.DoubleAnimation da = new System.Windows.Media.Animation.DoubleAnimation();
+            da.From = 0;
+            da.To = 1;
+            da.Duration = new Duration(TimeSpan.FromMilliseconds(1000));
+            gbL.BeginAnimation(OpacityProperty, da);
+        }
+
+        private void rbM_Checked(object sender, RoutedEventArgs e)
+        {
+            System.Windows.Media.Animation.DoubleAnimation da = new System.Windows.Media.Animation.DoubleAnimation();
+            da.From = 0;
+            da.To = 1;
+            da.Duration = new Duration(TimeSpan.FromMilliseconds(1000));
+            gbM.BeginAnimation(OpacityProperty, da);
+        }
+
+        private void rbS_Checked(object sender, RoutedEventArgs e)
+        {
+            System.Windows.Media.Animation.DoubleAnimation da = new System.Windows.Media.Animation.DoubleAnimation();
+            da.From = 0;
+            da.To = 1;
+            da.Duration = new Duration(TimeSpan.FromMilliseconds(1000));
+            gbS.BeginAnimation(OpacityProperty, da);
+        }  
 
 
 	}
