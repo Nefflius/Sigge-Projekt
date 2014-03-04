@@ -91,6 +91,7 @@ namespace Sudoku
 			main.gridPrintComponent = model.PrintGrid(radioButtonChecked, main.gridPrintComponent);
 			main.gridPrintComponent.Visibility = Visibility.Visible;
             main.gridPrintComponent.Focus();
+            main.Enable_DisablePrint(true);
 
             int j = 0;
             while (!((TextBox)main.gridPrintComponent.nameGridPrint.Children[j]).IsEnabled)

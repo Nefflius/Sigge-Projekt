@@ -36,6 +36,7 @@ namespace Sudoku
     public partial class MainWindow : Window
     {
         bool gameChanged = true;
+        bool printEnabled = false;
         SudokuModel model;
 
         //Music
@@ -54,9 +55,6 @@ namespace Sudoku
             waveOut.Init(loop); //intializes the out device 
             waveOut.Play();
             //End Music
-
-
-
         }
 
         private void createCommandBindings()
@@ -93,6 +91,11 @@ namespace Sudoku
             CommandBindings.Add(bindExit);
         }
 
+        public void Enable_DisablePrint(bool enableOrDisablePrint)
+        {
+            printEnabled = enableOrDisablePrint;
+        }
+
         public void NewGame_CanExecute(object sender, CanExecuteRoutedEventArgs e)
         {
             e.CanExecute = true;
@@ -113,7 +116,6 @@ namespace Sudoku
             FileHandeling openSavedGame = new FileHandeling();
             model = this.menuComponent.GetSudokuModel;
             string[] savedFile = openSavedGame.OpenFile();
-            //menuComponent.Visibility = Visibility.Collapsed;
             spelplanComponent.Visibility = Visibility.Visible;
 
             try
@@ -140,6 +142,7 @@ namespace Sudoku
                 menuComponent.Timer();
                 spelplanComponent.StartTimer();
                 spelplanComponent.StartTimer2();
+                printEnabled = true;
             }
 
             catch (Exception ex)
@@ -187,7 +190,8 @@ namespace Sudoku
 
         public void Print_CanExecute(object sender, CanExecuteRoutedEventArgs e)
         {
-            e.CanExecute = true;
+            if (printEnabled)
+                e.CanExecute = true;
         }
 
         public void Print_Executed(object sender, ExecutedRoutedEventArgs e)
@@ -200,11 +204,13 @@ namespace Sudoku
             printSudoko.gridBorder.Margin = margin;
             model = this.menuComponent.GetSudokuModel;
             string strGame2Print = model.GetSetGame2Save;
+            string nrOfMoves = spelplanComponent.lblAntalDrag.Content.ToString();
             for (int i = 0; i < 81; i++)
             {
                 TextBox tb = (TextBox)printSudoko.nameGridPrint.Children[i];
-                tb.Text = strGame2Print.Substring(i);
+                tb.Text = strGame2Print.Substring(i, 1);
             }
+            spelplanComponent.lblAntalDrag.Content = nrOfMoves;
             PrintDialog dialogPrint = new PrintDialog();
             if (dialogPrint.ShowDialog() != true)
                 return;
