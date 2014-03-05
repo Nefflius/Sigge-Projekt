@@ -142,7 +142,18 @@ namespace Sudoku
             main.menuComponent.start = true;
             btnPause.Visibility = Visibility.Visible;
             btnStart.Visibility = Visibility.Hidden;
-            btnRätta.IsEnabled = true;
+
+            bool ok = true;
+            for (int i = 0; i < 81; i++)
+            {
+                TextBox tb = (TextBox) main.gridPrintComponent.nameGridPrint.Children[i];
+                if (tb.Text != null)
+                    ok = ok && true;
+                else
+                    ok = ok && false;
+            }
+            if (ok)
+                btnRätta.IsEnabled = true;
 
             System.Windows.Media.Animation.DoubleAnimation da = new System.Windows.Media.Animation.DoubleAnimation();
             da.From = -950;
@@ -178,7 +189,5 @@ namespace Sudoku
         {
             StartTimer();
         }
-
-
     }
 }

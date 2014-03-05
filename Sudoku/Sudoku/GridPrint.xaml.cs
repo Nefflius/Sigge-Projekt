@@ -136,6 +136,7 @@ namespace Sudoku
                 highscoreTimer.Content = main.spelplanComponent.timer.Text;
                 main.menuComponent.start = false;
                 main.spelplanComponent.IsEnabled = false;
+                main.mnuInställningar.Visibility = Visibility.Collapsed;
             }
 		}
 
