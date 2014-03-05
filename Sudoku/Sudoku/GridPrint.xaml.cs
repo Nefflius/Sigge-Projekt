@@ -220,7 +220,7 @@ namespace Sudoku
                 {
                     main.spelplanComponent.btnRätta.IsEnabled = false;
                     main.spelplanComponent.btnRätta.Effect = new System.Windows.Media.Effects.DropShadowEffect() { Opacity = 0.5 };
-                    return;
+                    break;
                 }
                 else // om alla är ifyllda, rätta-knapp isEnabled och skugga tydligare..
                 {

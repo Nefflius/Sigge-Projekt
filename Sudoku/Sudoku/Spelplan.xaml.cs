@@ -182,6 +182,17 @@ namespace Sudoku
                 main.menuComponent.start = true;
             }
 
+            bool ok = true;
+            for (int i = 0; i < 81; i++)
+            {
+                TextBox tb = (TextBox)main.gridPrintComponent.nameGridPrint.Children[i];
+                if (tb.Text != "")
+                    ok = ok && true;
+                else
+                    ok = ok && false;
+            }
+            if (ok)
+                btnRätta.IsEnabled = true;
         }
 
         // *******  start button click (Timer)   *********

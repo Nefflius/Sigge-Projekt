@@ -129,6 +129,23 @@ namespace Sudoku
                 gridPrintComponent = model.PrintGrid(savedFile[2], gridPrintComponent, savedGame);
                 gridPrintComponent.Visibility = Visibility.Visible;
 
+                bool ok = true;
+                for (int i = 0; i < 81; i++)
+                {
+                    TextBox tb = (TextBox)gridPrintComponent.nameGridPrint.Children[i];
+                    if (tb.Text != "")
+                        ok = ok && true;
+                    else
+                    {
+                        ok = ok && false;
+                        break;
+                    }
+                }
+                if (ok)
+                    spelplanComponent.btnRätta.IsEnabled = true;
+                else
+                    spelplanComponent.btnRätta.IsEnabled = false;
+
                 //försöker sätta fokus på första tomma cellen men funkar inte. 
                 //Syftet är att slippa använda musen.
                 int j = 0;
@@ -141,6 +158,7 @@ namespace Sudoku
                 spelplanComponent.timer.Text = savedFile[3];
                 menuComponent.Timer();
                 spelplanComponent.StartTimer2();
+
                 printEnabled = true;
             }
 
