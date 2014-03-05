@@ -160,6 +160,13 @@ namespace Sudoku
                 spelplanComponent.StartTimer2();
 
                 printEnabled = true;
+
+                menuComponent.rbL.IsChecked = false;
+                menuComponent.rbM.IsChecked = false;
+                menuComponent.rbS.IsChecked = false;
+                menuComponent.gbL.Visibility = Visibility.Collapsed;
+                menuComponent.gbM.Visibility = Visibility.Collapsed;
+                menuComponent.gbS.Visibility = Visibility.Collapsed;
             }
 
             catch (Exception ex)
