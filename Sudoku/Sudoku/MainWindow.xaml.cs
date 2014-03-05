@@ -209,6 +209,16 @@ namespace Sudoku
                 TextBox tb = (TextBox)printSudoku.nameGridPrint.Children[i];
                 tb.Text = strGame2Print.Substring(i, 1);
             }
+            string[] usingGrid = model.GetUseThisGrid;
+            for (int i = 0; i < 81; i++)
+            {
+                TextBox tb = (TextBox)printSudoku.nameGridPrint.Children[i];
+                if (tb.Text == usingGrid[i])
+                {
+                    tb.FontWeight = FontWeights.Bold;
+                    tb.Foreground = Brushes.Gray;
+                }
+            }
             spelplanComponent.lblAntalDrag.Content = nrOfMoves;
             PrintDialog dialogPrint = new PrintDialog();
             if (dialogPrint.ShowDialog() != true)
