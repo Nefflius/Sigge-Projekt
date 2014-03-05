@@ -23,60 +23,61 @@
             <Setter Property="BorderThickness" Value="0" />
             <Setter Property="FontSize" Value="17" />
             <Setter Property="FontWeight" Value="Thin" />
+            <Setter Property="KeyboardNavigation.IsTabStop" Value="False" />
         </Style>
     </UserControl.Resources>
     <Viewbox Stretch="Uniform">
-    <Grid Margin="0,20,40,20">
-        <Grid.RowDefinitions>
-            <RowDefinition />
-            <RowDefinition />
-            <RowDefinition />
-            <RowDefinition />
-            <RowDefinition />
-            <RowDefinition />
-            <RowDefinition />
-            <RowDefinition />
-            <RowDefinition />
+        <Grid Margin="0,20,40,20">
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
                 <RowDefinition />
             </Grid.RowDefinitions>
-        <Button Grid.Row="0" Click="clickNyttSpel">Nytt Spel
-            <Button.Effect>
-                <DropShadowEffect Opacity="0.7" />
-            </Button.Effect>
-        </Button>
-        <Button x:Name="btnRätta" Grid.Row="1" Click="clickRätta" IsEnabled="False">RÄTTA
-            <Button.Effect>
-                <DropShadowEffect Opacity="0.5" />
-            </Button.Effect>
-        </Button>
-        <GroupBox x:Name="timerBox" Grid.Row="4" Grid.RowSpan="2" Header="Timer" FontWeight="Thin" Background="White" BorderBrush="Gray" TabIndex="4">
-            <GroupBox.Effect>
-                <DropShadowEffect Opacity="0.7" />
-            </GroupBox.Effect>
-            <TextBox x:Name="timer" BorderThickness="0" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Courier New" FontSize="16" Text="00:00:00" IsReadOnly="True" />
-        </GroupBox>
-        <GroupBox x:Name="antaldragbox" Grid.Row="6" Header="Antal drag" FontWeight="Thin" Background="White" BorderBrush="Gray" TabIndex="5">
-            <GroupBox.Effect>
-                <DropShadowEffect Opacity="0.7" />
-            </GroupBox.Effect>
-            <Label Name ="lblAntalDrag" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="17" FontWeight="Thin">0</Label>
-        </GroupBox>
-        <Button Grid.Row="7" Click="clickFusk" Visibility="Collapsed">Fusk</Button>
-        <Button Grid.Row="8" Click="clickAvsluta">Avsluta
-            <Button.Effect>
-                <DropShadowEffect Opacity="0.7" />
-            </Button.Effect>
-        </Button>
-        <Button x:Name="btnPause" Content="Pause" Grid.Row="3" Click="btnPause_Click" Visibility="Visible" TabIndex="3">
-            <Button.Effect>
-                <DropShadowEffect Opacity="0.7"/>
-            </Button.Effect>
-        </Button>
-        <Button x:Name="btnStart" Content="Start" Grid.Row="3" Click="btnStart_Click" Visibility="Collapsed">
-            <Button.Effect>
-                <DropShadowEffect Opacity="0.7"/>
-            </Button.Effect>
-        </Button>
+            <Button Grid.Row="0" Click="clickNyttSpel">Nytt Spel
+                <Button.Effect>
+                    <DropShadowEffect Opacity="0.7" />
+                </Button.Effect>
+            </Button>
+            <Button x:Name="btnRätta" Grid.Row="1" Click="clickRätta" IsEnabled="False">RÄTTA
+                <Button.Effect>
+                    <DropShadowEffect Opacity="0.5" />
+                </Button.Effect>
+            </Button>
+            <GroupBox x:Name="timerBox" Grid.Row="4" Grid.RowSpan="2" Header="Timer" FontWeight="Thin" Background="White" BorderBrush="Gray" TabIndex="4">
+                <GroupBox.Effect>
+                    <DropShadowEffect Opacity="0.7" />
+                </GroupBox.Effect>
+                <TextBox x:Name="timer" BorderThickness="0" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Courier New" FontSize="16" Text="00:00:00" IsReadOnly="True" />
+            </GroupBox>
+            <GroupBox x:Name="antaldragbox" Grid.Row="6" Header="Antal drag" FontWeight="Thin" Background="White" BorderBrush="Gray" TabIndex="5">
+                <GroupBox.Effect>
+                    <DropShadowEffect Opacity="0.7" />
+                </GroupBox.Effect>
+                <Label Name ="lblAntalDrag" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="17" FontWeight="Thin">0</Label>
+            </GroupBox>
+            <Button Grid.Row="7" Click="clickFusk" Visibility="Collapsed">Fusk</Button>
+            <Button Grid.Row="8" Click="clickAvsluta">Avsluta
+                <Button.Effect>
+                    <DropShadowEffect Opacity="0.7" />
+                </Button.Effect>
+            </Button>
+            <Button x:Name="btnPause" Content="Pause" Grid.Row="3" Click="btnPause_Click" Visibility="Visible" TabIndex="3">
+                <Button.Effect>
+                    <DropShadowEffect Opacity="0.7"/>
+                </Button.Effect>
+            </Button>
+            <Button x:Name="btnStart" Content="Start" Grid.Row="3" Click="btnStart_Click" Visibility="Collapsed">
+                <Button.Effect>
+                    <DropShadowEffect Opacity="0.7"/>
+                </Button.Effect>
+            </Button>
         </Grid>
     </Viewbox>
 </UserControl>

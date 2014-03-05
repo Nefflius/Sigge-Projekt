@@ -71,8 +71,8 @@ namespace Sudoku
 			main = Application.Current.MainWindow as MainWindow;
             model = new SudokuModel();
             model.GetSetNewGame = true;
+            main.mnuInställningar.Visibility = Visibility.Visible;
 			main.spelplanComponent.lblAntalDrag.Content = "0";
-
             main.spelplanComponent.Visibility = Visibility.Visible;
             main.spelplanComponent.btnRätta.Content = "RÄTTA";
             main.spelplanComponent.IsEnabled = true;

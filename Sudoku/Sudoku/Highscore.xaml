@@ -136,7 +136,7 @@
                 </FlowDocumentReader>
                 <DockPanel>
                     <Button HorizontalAlignment="Left" Click="clickOK" Width="130" Margin="50,5,5,5">Till Meny</Button>
-                    <Button Name="btnClear" HorizontalAlignment="Right" IsEnabled="False" Click="clickClear" Width="130" Margin="5,5,50,5">Clear Highscore</Button>
+                    <Button Name="btnClear" HorizontalAlignment="Right" IsEnabled="False" Click="clickClear" Width="130" Margin="5,5,50,5">Töm Highscore</Button>
                 </DockPanel>
             </StackPanel>
         </Border>

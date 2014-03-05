@@ -30,18 +30,18 @@
                             <Image Source="Properties/Resources/Images/icons/Save.png" />
                         </MenuItem.Icon>
                     </MenuItem>
-                <MenuItem x:Name="mnuPrint" Header="S_kriv ut" Command="ApplicationCommands.Print" >
-                    <MenuItem.Icon>
-                        <Image Source="Properties/Resources/Images/icons/Print.png" />
-                    </MenuItem.Icon>
-                </MenuItem>
+                    <MenuItem x:Name="mnuPrint" Header="S_kriv ut" Command="ApplicationCommands.Print" >
+                        <MenuItem.Icon>
+                            <Image Source="Properties/Resources/Images/icons/Print.png" />
+                        </MenuItem.Icon>
+                    </MenuItem>
                     <Separator></Separator>
                     
-                <MenuItem x:Name="mnuHighscore" Header="_Highscore" Click="mnuHighscore_Click">
-                    <MenuItem.Icon>
-                        <Image Source="Properties/Resources/Images/icons/Highscore.png" />
-                    </MenuItem.Icon>
-                </MenuItem>
+                    <MenuItem x:Name="mnuHighscore" Header="_Highscore" Click="mnuHighscore_Click">
+                        <MenuItem.Icon>
+                            <Image Source="Properties/Resources/Images/icons/Highscore.png" />
+                        </MenuItem.Icon>
+                    </MenuItem>
                     <Separator></Separator>
                     
                     <MenuItem x:Name="mnuExit" Header="A_vsluta" Click="mnuExit_Click" >
@@ -50,7 +50,7 @@
                         </MenuItem.Icon>
                     </MenuItem>
                 </MenuItem>
-            <MenuItem KeyboardNavigation.IsTabStop="False" Header="_Inställningar" x:Name="mnuInställningar" Background="White" BorderBrush="Black">
+            <MenuItem KeyboardNavigation.IsTabStop="False" x:Name="mnuInställningar" Header="_Inställningar" Visibility="Collapsed" Background="White" BorderBrush="Black">
                 <MenuItem x:Name="mnuTimer" IsCheckable="True" IsChecked="True" Header="_Timer" Click="mnuTimer_Click" />
                 <MenuItem x:Name="mnuAntaldrag" IsCheckable="True" IsChecked="True" Header="_AntalDrag" Click="mnuAntaldrag_Click" />
                 <MenuItem x:Name="mnuMusik1" IsCheckable="True" IsChecked="True" Header="_Musik" Click="mnuMusik1_Click" />
