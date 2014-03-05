@@ -150,7 +150,7 @@ namespace Sudoku
                 if (tb.Text == "")
                     strbSaveGame.Append(" ");
                 else
-                     strbSaveGame.Append(tb.Text);
+                    strbSaveGame.Append(tb.Text);
             }
             return strbSaveGame;
         }

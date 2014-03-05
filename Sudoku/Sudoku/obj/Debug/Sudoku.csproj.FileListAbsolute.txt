@@ -92,7 +92,6 @@ C:\Users\Nidaa\Desktop\Sudoku11test\Sudoku\obj\Debug\Sudoku.csproj.GenerateResou
 C:\Users\Nidaa\Desktop\Sudoku11test\Sudoku\obj\Debug\Sudoku.exe
 C:\Users\Nidaa\Desktop\Sudoku11test\Sudoku\obj\Debug\Sudoku.pdb
 Visual Studio 2012\SiggeProjekt\Sudoku\Sudoku\obj\Debug\Highscore.baml
-C:\Users\Ida\Documents\DMP12\GUI Programmering\Sigge Projekt\Sudoku\Sudoku\obj\Debug\Sudoku.csprojResolveAssemblyReference.cache
 C:\Users\Ida\Documents\DMP12\GUI Programmering\Sigge Projekt\Sudoku\Sudoku\obj\Debug\Sudoku_Content.g.cs
 C:\Users\Ida\Documents\DMP12\GUI Programmering\Sigge Projekt\Sudoku\Sudoku\obj\Debug\Pause.baml
 C:\Users\Ida\Documents\DMP12\GUI Programmering\Sigge Projekt\Sudoku\Sudoku\obj\Debug\Pause.g.cs
