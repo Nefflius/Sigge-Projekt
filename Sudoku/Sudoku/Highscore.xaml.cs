@@ -153,7 +153,7 @@ namespace Sudoku
         void saveHighscore(string difficulty)        // Highscore sparas i en textfil varje gång en ny highscore läggs till
 		{
             int rows;
-            int cells = highscoreHeader.Rows[0].Cells.Count();
+            int cells = winnersListEasy.Rows[0].Cells.Count();
             string path;
 
 			if (difficulty == "e")
@@ -314,7 +314,7 @@ namespace Sudoku
                     winnersListEasy.Rows.Add(row);
                 
 				highscoreListEasy.Visibility = Visibility.Visible;
-				rbGrid.Margin = new Thickness(0, 0, 0, 0);
+				Rubrik.Margin = new Thickness(0, 0, 0, 0);
                 ClearEnabled();
 				saveHighscore("e");
 			}
@@ -395,7 +395,7 @@ namespace Sudoku
 
 				highscoreListMedium.Visibility = Visibility.Visible;
                 ClearEnabled();
-				rbGrid.Margin = new Thickness(0, 0, 0, 0);
+				Rubrik.Margin = new Thickness(0, 0, 0, 0);
 
 				saveHighscore("m");
 			}
@@ -477,7 +477,7 @@ namespace Sudoku
 				highscoreListHard.Visibility = Visibility.Visible;
                 ClearEnabled();
 
-				rbGrid.Margin = new Thickness(0, 0, 0, 0);
+				Rubrik.Margin = new Thickness(0, 0, 0, 0);
 
 				saveHighscore("h");
 			}
@@ -491,8 +491,9 @@ namespace Sudoku
 
         private void rb_Click(object sender, RoutedEventArgs e)
         {
-            rbGrid.Margin = new Thickness(0, 0, 0, 0);
+            Rubrik.Margin = new Thickness(0, 0, 0, 0);
             ClearEnabled();
+            Rubrik.Visibility = Visibility.Visible;
 
             if (Convert.ToBoolean(rbL.IsChecked))
             {
@@ -517,11 +518,14 @@ namespace Sudoku
         private void clickOK(object sender, RoutedEventArgs e)
         {
             var main = Application.Current.MainWindow as MainWindow;
-            main.highscoreComponent.Visibility = Visibility.Collapsed;
-            main.highscoreComponent.highscoreListEasy.Visibility = Visibility.Collapsed;
-            main.highscoreComponent.highscoreListMedium.Visibility = Visibility.Collapsed;
-            main.highscoreComponent.highscoreListHard.Visibility = Visibility.Collapsed;
-            main.highscoreComponent.rbGrid.Margin = new Thickness(0, 0, 0, 360);
+            this.Visibility = Visibility.Collapsed;
+            highscoreListEasy.Visibility = Visibility.Collapsed;
+            highscoreListMedium.Visibility = Visibility.Collapsed;
+            highscoreListHard.Visibility = Visibility.Collapsed;
+            Rubrik.Margin = new Thickness(0, 0, 0, 360);
+            rbL.IsChecked = false;
+            rbM.IsChecked = false;
+            rbS.IsChecked = false;
 
             main.menuComponent.Visibility = Visibility.Visible;
         }

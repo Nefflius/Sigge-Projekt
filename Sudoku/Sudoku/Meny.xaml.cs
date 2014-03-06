@@ -71,35 +71,27 @@ namespace Sudoku
 			main = Application.Current.MainWindow as MainWindow;
             model = new SudokuModel();
             model.GetSetNewGame = true;
-            main.mnuInställningar.Visibility = Visibility.Visible;
-			main.spelplanComponent.lblAntalDrag.Content = "0";
-            main.spelplanComponent.Visibility = Visibility.Visible;
-            main.spelplanComponent.btnRätta.Content = "RÄTTA";
-            main.spelplanComponent.IsEnabled = true;
-            main.gridPrintComponent.youMadeIt.Visibility = Visibility.Collapsed;
-			main.menuComponent.Visibility = Visibility.Collapsed;
-                gbL.Visibility = Visibility.Collapsed;
-                gbM.Visibility = Visibility.Collapsed;
-                gbS.Visibility = Visibility.Collapsed;
-                rbL.IsChecked = false;
-                rbM.IsChecked = false;
-                rbS.IsChecked = false;
-                rbGrid.Margin = new Thickness(70, 0, 70, 160);
-                btnSpela.IsEnabled = false;
+            
+            main.spelplanComponent.lblAntalDrag.Content = "0";
+            //gbL.Visibility = Visibility.Collapsed;
+            //gbM.Visibility = Visibility.Collapsed;
+            //gbS.Visibility = Visibility.Collapsed;
+            //rbL.IsChecked = false;
+            //rbM.IsChecked = false;
+            //rbS.IsChecked = false;
+            //rbGrid.Margin = new Thickness(70, 0, 70, 160);
+            btnSpela.IsEnabled = false;
            
             
 			main.gridPrintComponent = model.PrintGrid(radioButtonChecked, main.gridPrintComponent);
-			main.gridPrintComponent.Visibility = Visibility.Visible;
-            main.gridPrintComponent.Focus();
-            main.Enable_DisablePrint(true);
 
-            int j = 0;
-            while (!((TextBox)main.gridPrintComponent.nameGridPrint.Children[j]).IsEnabled)
-            {
-                j++;
-            }
-            TextBox temp = ((TextBox)main.gridPrintComponent.nameGridPrint.Children[j]);
-            temp.Focus();
+			main.gridPrintComponent.Visibility = Visibility.Visible;
+			main.menuComponent.Visibility = Visibility.Collapsed;
+            main.spelplanComponent.Visibility = Visibility.Visible;   
+            main.gridPrintComponent.ShowAndResetSpelplan();
+
+            main.gridPrintComponent.Focus();
+            //main.Enable_DisablePrint(true);
 
 		//	main.spelplanComponent.start = true;   // Timer
 		//	main.spelplanComponent.begins = DateTime.Now;  // Timer

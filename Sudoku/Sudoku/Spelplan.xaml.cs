@@ -55,6 +55,14 @@ namespace Sudoku
             {
                 btn.Content = "RÄTTA";
                 main.gridPrintComponent.continueGame();
+                //fokus i spelplan
+                int j = 0;
+                while (!((TextBox)main.gridPrintComponent.nameGridPrint.Children[j]).IsEnabled)
+                {
+                    j++;
+                }
+                TextBox temp = ((TextBox)main.gridPrintComponent.nameGridPrint.Children[j]);
+                temp.Focus();
             }
     
         }
@@ -97,6 +105,7 @@ namespace Sudoku
             string moves = lblAntalDrag.Content.ToString();
             string solution = model.getThisSolution();
             main.highscoreComponent.addHighscore(nameinput, solution, time, moves);
+            main.highscoreComponent.Rubrik.Visibility = Visibility.Visible;
         }
 
         //När "Fusk" klickas hämtas lösning i SudokuModel
@@ -157,6 +166,16 @@ namespace Sudoku
             }
             if (ok)
                 btnRätta.IsEnabled = true;
+            else
+                btnRätta.IsEnabled = false;
+
+            int j = 0;
+            while (!((TextBox)main.gridPrintComponent.nameGridPrint.Children[j]).IsEnabled)
+            {
+                j++;
+            }
+            TextBox temp = ((TextBox)main.gridPrintComponent.nameGridPrint.Children[j]);
+            temp.Focus();
 
             System.Windows.Media.Animation.DoubleAnimation da = new System.Windows.Media.Animation.DoubleAnimation();
             da.From = -950;
@@ -196,6 +215,8 @@ namespace Sudoku
             }
             if (ok)
                 btnRätta.IsEnabled = true;
+            else
+                btnRätta.IsEnabled = false;
         }
 
         // *******  start button click (Timer)   *********

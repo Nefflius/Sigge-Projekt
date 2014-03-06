@@ -33,11 +33,17 @@
             <StackPanel>
                 <Label FontFamily="Impact" FontSize="75" Margin="15,0,15,0" HorizontalAlignment="Center">HIGHSCORE</Label>
                 <Label FontWeight="Thin" FontSize="20" HorizontalAlignment="Center">Välj svårighetsnivå:</Label>
-                <UniformGrid Name="rbGrid" Columns="3" HorizontalAlignment="Center" Margin="0,0,0,360">
+                <UniformGrid Name="rbGrid" Columns="3" HorizontalAlignment="Center">
                     <RadioButton Name="rbL" HorizontalAlignment="Left" FontSize="17" FontWeight="Thin" Margin="5" Click="rb_Click">Lätt</RadioButton>
                     <RadioButton Name="rbM" FontSize="17" FontWeight="Thin" Margin="5" Click="rb_Click">Medium</RadioButton>
                     <RadioButton Name="rbS" HorizontalAlignment="Right" FontSize="17" FontWeight="Thin" Margin="5" Click="rb_Click">Svår</RadioButton>
                 </UniformGrid>
+                <DockPanel Name="Rubrik" Background="WhiteSmoke" Margin="0,0,0,360" Visibility="Hidden">
+                    <Label FontSize="15" Width="135" Margin="15,0,0,0">Namn :</Label>
+                    <Label FontSize="15" Width="70">Bana :</Label>
+                    <Label FontSize="15" Width="50">Drag :</Label>
+                    <Label FontSize="15" Width="70">Tid :</Label>
+                </DockPanel>
                 <FlowDocumentReader Name="highscoreListEasy" Width="380" Height="360" Visibility="Collapsed">
                     <FlowDocument>
                         <Table CellSpacing="10">
@@ -48,7 +54,7 @@
                                 <TableColumn />
                                 <TableColumn />
                             </Table.Columns>
-                            <TableRowGroup Name="highscoreHeader" FontFamily="Segoe" FontWeight="Thin">
+                            <!--<TableRowGroup Name="highscoreHeader" FontFamily="Segoe" FontWeight="Thin">
                                 <TableRow Background="WhiteSmoke" FontWeight="Normal">
                                     <TableCell ColumnSpan="2">
                                         <Paragraph FontSize="15">Namn :</Paragraph>
@@ -63,7 +69,7 @@
                                         <Paragraph FontSize="15">Tid :</Paragraph>
                                     </TableCell>
                                 </TableRow>
-                            </TableRowGroup>
+                            </TableRowGroup>-->
                             <TableRowGroup Name="winnersListEasy" FontFamily="Segoe" FontWeight="Thin">
                                 <!--Här lägger vi in highscores från code-behind-->
                             </TableRowGroup>
@@ -80,7 +86,7 @@
                                 <TableColumn />
                                 <TableColumn />
                             </Table.Columns>
-                            <TableRowGroup FontFamily="Segoe" FontWeight="Thin">
+                            <!--<TableRowGroup FontFamily="Segoe" FontWeight="Thin">
                                 <TableRow Background="WhiteSmoke" FontWeight="Normal">
                                     <TableCell ColumnSpan="2">
                                         <Paragraph FontSize="15">Namn :</Paragraph>
@@ -95,7 +101,7 @@
                                         <Paragraph FontSize="15">Tid :</Paragraph>
                                     </TableCell>
                                 </TableRow>
-                            </TableRowGroup>
+                            </TableRowGroup>-->
                             <TableRowGroup Name="winnersListMedium" FontFamily="Segoe" FontWeight="Thin">
                                 <!--Här lägger vi in highscores från code-behind-->
                             </TableRowGroup>
@@ -112,7 +118,7 @@
                                 <TableColumn />
                                 <TableColumn />
                             </Table.Columns>
-                            <TableRowGroup FontFamily="Segoe" FontWeight="Thin">
+                            <!--<TableRowGroup FontFamily="Segoe" FontWeight="Thin">
                                 <TableRow Background="WhiteSmoke" FontWeight="Normal">
                                     <TableCell ColumnSpan="2">
                                         <Paragraph FontSize="15">Namn :</Paragraph>
@@ -127,7 +133,7 @@
                                         <Paragraph FontSize="15">Tid :</Paragraph>
                                     </TableCell>
                                 </TableRow>
-                            </TableRowGroup>
+                            </TableRowGroup>-->
                             <TableRowGroup Name="winnersListHard" FontFamily="Segoe" FontWeight="Thin">
                                 <!--Här lägger vi in highscores från code-behind-->
                             </TableRowGroup>

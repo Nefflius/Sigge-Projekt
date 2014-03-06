@@ -38,7 +38,67 @@ namespace Sudoku
             }
         }
 
+        public void HideAndResetSpelplan()
+        {
+            var main = Application.Current.MainWindow as MainWindow;
 
+            main.spelplanComponent.btnRätta.Content = "RÄTTA";
+            main.spelplanComponent.lblAntalDrag.Content = "0";
+            main.mnuInställningar.Visibility = Visibility.Collapsed;
+            main.gridPrintComponent.youMadeIt.Visibility = Visibility.Collapsed;
+
+            main.spelplanComponent.IsEnabled = true;
+            main.Enable_DisablePrint(false);
+        }
+
+        public void ShowAndResetSpelplan()
+        {
+            var main = Application.Current.MainWindow as MainWindow;
+
+            //MENY
+            main.menuComponent.gbL.Visibility = Visibility.Collapsed;
+            main.menuComponent.gbM.Visibility = Visibility.Collapsed;
+            main.menuComponent.gbS.Visibility = Visibility.Collapsed;
+            main.menuComponent.rbL.IsChecked = false;
+            main.menuComponent.rbM.IsChecked = false;
+            main.menuComponent.rbS.IsChecked = false;
+            main.menuComponent.rbGrid.Margin = new Thickness(70, 0, 70, 160);
+
+            //SPELPLAN
+            main.spelplanComponent.btnRätta.Content = "RÄTTA";
+            main.mnuInställningar.Visibility = Visibility.Visible;
+            main.gridPrintComponent.Visibility = Visibility.Visible;
+
+                //fokus i spelplan
+            int j = 0;
+            while (!((TextBox)main.gridPrintComponent.nameGridPrint.Children[j]).IsEnabled)
+            {
+                j++;
+            }
+            TextBox temp = ((TextBox)main.gridPrintComponent.nameGridPrint.Children[j]);
+            temp.Focus();
+
+                //rättaknapp enabled eller ej
+            bool ok = true;
+            for (int i = 0; i < 81; i++)
+            {
+                TextBox tb = (TextBox)nameGridPrint.Children[i];
+                if (tb.Text != "")
+                    ok = ok && true;
+                else
+                {
+                    ok = ok && false;
+                    break;
+                }
+            }
+            if (ok)
+                main.spelplanComponent.btnRätta.IsEnabled = true;
+            else
+                main.spelplanComponent.btnRätta.IsEnabled = false;
+
+                //skriv ut är möjligt
+            main.Enable_DisablePrint(true);
+        }
 
         /*****************************************************
         ANROP:      PrintGrid(string[]);
@@ -289,6 +349,9 @@ namespace Sudoku
             main.spelplanComponent.GameWon(nameInput.Text.ToString(), highscoreTimer.Content.ToString());
             
             youMadeIt.Visibility = Visibility.Hidden;
+            
+            HideAndResetSpelplan();
+            
         }
 	}
 }
