@@ -167,6 +167,7 @@ namespace Sudoku
                 menuComponent.gbL.Visibility = Visibility.Collapsed;
                 menuComponent.gbM.Visibility = Visibility.Collapsed;
                 menuComponent.gbS.Visibility = Visibility.Collapsed;
+                mnuInställningar.Visibility = Visibility.Visible;
             }
 
             catch (Exception ex)
@@ -174,11 +175,10 @@ namespace Sudoku
                 string error = ex.Data.ToString();
                 if (model.GetSetNewGame)
                     spelplanComponent.Visibility = Visibility.Visible;
-                else
-                {
-                    menuComponent.Visibility = Visibility.Visible;
+                else if (menuComponent.Visibility == Visibility.Visible)
                     spelplanComponent.Visibility = Visibility.Collapsed;
-                }
+                else if (highscoreComponent.Visibility == Visibility.Visible)
+                    spelplanComponent.Visibility = Visibility.Collapsed;
             }
         }
 
@@ -265,6 +265,7 @@ namespace Sudoku
 
         private void mnuHighscore_Click(object sender, RoutedEventArgs e)
         {
+            model = this.menuComponent.GetSudokuModel;
             if (gridPrintComponent.Visibility != Visibility.Collapsed)
             {
                 System.Windows.Forms.DialogResult dialogResult = System.Windows.Forms.MessageBox.Show("Spelet kommer att avbrytas, Är du säker på att du vill till Highscore?", "Avbrutet spel", System.Windows.Forms.MessageBoxButtons.YesNo, System.Windows.Forms.MessageBoxIcon.Exclamation);
@@ -274,6 +275,8 @@ namespace Sudoku
                     menuComponent.Visibility = Visibility.Collapsed;
                     gridPrintComponent.Visibility = Visibility.Collapsed;
                     spelplanComponent.Visibility = Visibility.Collapsed;
+                    mnuInställningar.Visibility = Visibility.Collapsed;
+                    model.GetSetNewGame = false;
                 }
                 if (dialogResult == System.Windows.Forms.DialogResult.No) { }
             }
@@ -283,6 +286,7 @@ namespace Sudoku
                 menuComponent.Visibility = Visibility.Collapsed;
                 gridPrintComponent.Visibility = Visibility.Collapsed;
                 spelplanComponent.Visibility = Visibility.Collapsed;
+                model.GetSetNewGame = false;
             }
 
         }
