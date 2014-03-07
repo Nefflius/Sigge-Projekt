@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -29,8 +30,8 @@ namespace Sudoku
             var main = Application.Current.MainWindow as MainWindow;
             
             main.spelplanComponent.StartTimer();
-            main.pauseComponent.Visibility = Visibility.Visible;
             main.MusicCheck = true;
+            main.IsEnabled = true;
 
             this.Close();
         }
@@ -40,7 +41,6 @@ namespace Sudoku
             var main = Application.Current.MainWindow as MainWindow;
             
             main.spelplanComponent.StartTimer();
-            main.pauseComponent.Visibility = Visibility.Hidden;
             main.MusicCheck = false;
             main.IsEnabled = true;
 
@@ -51,7 +51,7 @@ namespace Sudoku
         {
             var main = Application.Current.MainWindow as MainWindow;
 
-            try
+            if (File.Exists(Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\\Musik.mp3"))
             {
                 main.wplayer.URL = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\\Musik.mp3";
                 main.wplayer.controls.play();
@@ -60,9 +60,8 @@ namespace Sudoku
                 main.spelplanComponent.btnMusicOn.Visibility = Visibility.Visible;
                 main.spelplanComponent.btnMusicOff.Visibility = Visibility.Hidden;
                 main.mnuMusik.IsChecked = true;
-                main.IsEnabled = true;
             }
-            catch
+            else
             {
                 btnStart.Content = "Försök igen";
             }

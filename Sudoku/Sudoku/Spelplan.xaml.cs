@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks; //
@@ -253,35 +254,22 @@ namespace Sudoku
         {
             var main = Application.Current.MainWindow as MainWindow;
 
-            if (!main.MusicCheck)
+            if (File.Exists(Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\\Musik.mp3"))
+            {
+                main.wplayer.URL = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\\Musik.mp3";
+                main.wplayer.controls.play();
+
+                main.mnuMusik.IsChecked = true;
+                btnMusicOn.Visibility = Visibility.Visible;
+                btnMusicOff.Visibility = Visibility.Hidden;
+            }
+            else
             {
                 btnPause_Click(sender, e);
-                main.pauseComponent.Visibility = Visibility.Hidden;
 
                 MusicWindow mwin = new MusicWindow();
                 mwin.Show();
                 main.IsEnabled = false;
-            }
-            else
-            {
-                try
-                {
-                    main.wplayer.URL = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\\Musik.mp3";
-                    main.wplayer.controls.play();
-
-                    main.mnuMusik.IsChecked = true;
-                    btnMusicOn.Visibility = Visibility.Visible;
-                    btnMusicOff.Visibility = Visibility.Hidden;
-                }
-                catch
-                {
-                    btnPause_Click(sender, e);
-                    main.pauseComponent.Visibility = Visibility.Hidden;
-
-                    MusicWindow mwin = new MusicWindow();
-                    mwin.Show();
-                    main.IsEnabled = false;
-                }
             }
         }
     }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -50,7 +51,7 @@ namespace Sudoku
         public WMPLib.WindowsMediaPlayer wplayer = new WMPLib.WindowsMediaPlayer();
         public void startmusik()
         {
-            try
+            if (File.Exists(Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\\Musik.mp3"))
             {
                 wplayer.URL = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\\Musik.mp3";
                 wplayer.controls.play();
@@ -60,7 +61,7 @@ namespace Sudoku
                 MusicCheck = true;
                 mnuMusik.IsChecked = true;
             }
-            catch
+            else
             {
                 MusicCheck = false;
                 mnuMusik.IsChecked = false;
@@ -322,7 +323,7 @@ namespace Sudoku
             }
             else
             {
-                try
+                if (File.Exists(Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\\Musik.mp3"))
                 {
                     wplayer.URL = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\\Musik.mp3";
                     wplayer.controls.play();
@@ -330,24 +331,12 @@ namespace Sudoku
                     main.spelplanComponent.btnMusicOff.Visibility = Visibility.Hidden;
                     main.spelplanComponent.btnMusicOn.Visibility = Visibility.Visible;
                 }
-                catch
+                else
                 {
                     main.spelplanComponent.btnPause_Click(sender, e);
-                    main.pauseComponent.Visibility = Visibility.Hidden;
 
                     MusicWindow mwin = new MusicWindow();
                     mwin.Show();
-
-                    if (!main.MusicCheck)
-                    {
-                        main.spelplanComponent.btnMusicOn.Visibility = Visibility.Hidden;
-                        main.spelplanComponent.btnMusicOff.Visibility = Visibility.Visible;
-                    }
-                    else
-                    {
-                        main.spelplanComponent.btnMusicOn.Visibility = Visibility.Visible;
-                        main.spelplanComponent.btnMusicOff.Visibility = Visibility.Hidden;
-                    }
                 }                
             }
         }
