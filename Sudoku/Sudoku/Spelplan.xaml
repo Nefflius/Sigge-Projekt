@@ -50,18 +50,24 @@
                     <DropShadowEffect Opacity="0.5" />
                 </Button.Effect>
             </Button>
-            <GroupBox x:Name="timerBox" Grid.Row="4" Grid.RowSpan="2" Header="Timer" FontWeight="Thin" Background="White" BorderBrush="Gray" TabIndex="4">
-                <GroupBox.Effect>
+            <Border x:Name="timerBox" Grid.Row="4" Background="White" BorderBrush="Gray" BorderThickness="1" Margin="5">
+                <Border.Effect>
                     <DropShadowEffect Opacity="0.7" />
-                </GroupBox.Effect>
-                <TextBox x:Name="timer" BorderThickness="0" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Courier New" FontSize="16" Text="00:00:00" IsReadOnly="True" />
-            </GroupBox>
-            <GroupBox x:Name="antaldragbox" Grid.Row="6" Header="Antal drag" FontWeight="Thin" Background="White" BorderBrush="Gray" TabIndex="5">
-                <GroupBox.Effect>
+                </Border.Effect>
+                <StackPanel>
+                    <Label FontWeight="Thin" Margin="0,-3,0,-7">Tid:</Label>
+                    <TextBox x:Name="timer" BorderThickness="0" HorizontalAlignment="Center" Margin="3" FontFamily="Courier New" FontSize="16" Text="00:00:00" IsReadOnly="True" />
+                </StackPanel>
+            </Border>
+            <Border x:Name="antaldragbox" Grid.Row="6" Background="White" BorderBrush="Gray" BorderThickness="1" Margin="5">
+                <Border.Effect>
                     <DropShadowEffect Opacity="0.7" />
-                </GroupBox.Effect>
-                <Label Name ="lblAntalDrag" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="17" FontWeight="Thin">0</Label>
-            </GroupBox>
+                </Border.Effect>
+                <StackPanel>
+                    <Label FontWeight="Thin" Margin="0,-3,0,-12">Drag:</Label>
+                    <Label Name ="lblAntalDrag" Margin="0,0,0,-2" HorizontalAlignment="Center" FontSize="17" FontWeight="Thin">0</Label>
+                </StackPanel>
+            </Border>
             <Button Grid.Row="7" Click="clickFusk" Visibility="Collapsed">Fusk</Button>
             <Button Grid.Row="8" Click="clickAvsluta">Avsluta
                 <Button.Effect>

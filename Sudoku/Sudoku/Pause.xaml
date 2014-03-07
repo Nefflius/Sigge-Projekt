@@ -10,10 +10,24 @@
             <Border.Effect>
                 <DropShadowEffect Opacity="0.5" ShadowDepth="10.0"/>
             </Border.Effect>
-            <StackPanel HorizontalAlignment="Center">
-                <Label FontFamily="Impact" FontSize="75" Margin="10,10,10,-15" HorizontalAlignment="Center">Spelet är</Label>
-                <Label FontFamily="Impact" FontSize="75" Margin="10,-15,10,10" HorizontalAlignment="Center">Pausat</Label>
-            </StackPanel>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <StackPanel Grid.Row="0" HorizontalAlignment="Center">
+                    <Label FontFamily="Impact" Foreground="HotPink" FontSize="75" Margin="17.5,17.5,10,-15" HorizontalAlignment="Center">Spelet är</Label>
+                    <Label FontFamily="Impact" Foreground="HotPink" FontSize="75" Margin="15,-15,10,10" HorizontalAlignment="Center">Pausat</Label>
+                </StackPanel>
+                <StackPanel Grid.Row="0" HorizontalAlignment="Center">
+                    <Label FontFamily="Impact" Foreground="Yellow" FontSize="75" Margin="15,15,10,-15" HorizontalAlignment="Center">Spelet är</Label>
+                    <Label FontFamily="Impact" Foreground="Yellow" FontSize="75" Margin="12.5,-15,10,10" HorizontalAlignment="Center">Pausat</Label>
+                </StackPanel>
+                <StackPanel Grid.Row="0" HorizontalAlignment="Center">
+                    <Label FontFamily="Impact" FontSize="75" Margin="12.5,12.5,10,-15" HorizontalAlignment="Center">Spelet är</Label>
+                    <Label FontFamily="Impact" FontSize="75" Margin="10,-15,10,10" HorizontalAlignment="Center">Pausat</Label>
+                </StackPanel>
+
+            </Grid>
         </Border>
     </Viewbox>
 </UserControl>
