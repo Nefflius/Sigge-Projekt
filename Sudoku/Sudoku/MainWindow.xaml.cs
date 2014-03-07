@@ -44,9 +44,13 @@ namespace Sudoku
         {
             InitializeComponent();
             createCommandBindings();
+            startmusik();
+        }
+        WMPLib.WindowsMediaPlayer wplayer = new WMPLib.WindowsMediaPlayer();
+        public void startmusik()
+        {
             try
             {
-                WMPLib.WindowsMediaPlayer wplayer = new WMPLib.WindowsMediaPlayer();
                 wplayer.URL = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\\Musik.mp3";
                 wplayer.controls.play();
             }
@@ -54,7 +58,6 @@ namespace Sudoku
             {
             }
         }
-
         private void createCommandBindings()
         {
             CommandBinding bindNew = new CommandBinding();
@@ -295,22 +298,22 @@ namespace Sudoku
             Application.Current.Shutdown();
         }
        
-        string path = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\music.mp3";
-        int mucheck = 0;
+        bool mucheck;
         private void mnuMusik1_Click(object sender, RoutedEventArgs e)
         {
             try
             {
-                System.Media.SoundPlayer player = new System.Media.SoundPlayer(path);
-                if (mucheck == 0)
+                wplayer.URL = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\\Musik.mp3";
+
+                if (!mucheck)
                 {
-                    player.Stop();
-                    mucheck++;
+                    wplayer.controls.stop();
+                    mucheck = true;
                 }
-                else if (mucheck >= 1)
+                else if (mucheck)
                 {
-                    player.PlayLooping();
-                    mucheck--;
+                    wplayer.controls.play();
+                    mucheck = false;
                 }
             }
             catch
