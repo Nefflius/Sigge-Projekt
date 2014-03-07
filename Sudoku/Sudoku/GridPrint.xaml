@@ -38,6 +38,8 @@
             <Setter Property="SelectionBrush" Value="Transparent" />
         </Style>
     </UserControl.Resources>
+    
+    
     <Viewbox Stretch="Uniform" PreviewKeyDown="Viewbox_PreviewKeyDown_1">
         <Border Name="gridBorder" BorderBrush="Black" BorderThickness="1" Background="White" Margin="20">
             <Border.Effect>
@@ -68,7 +70,7 @@
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
             
-                    <TextBox Name="tb0" Grid.Row="0" Grid.Column="0" GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus" TextChanged="TextBox_TextChanged" PreviewTextInput="TextBox_PreviewTextInput"></TextBox>
+                    <TextBox Grid.Row="0" Grid.Column="0" GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus" TextChanged="TextBox_TextChanged" PreviewTextInput="TextBox_PreviewTextInput"></TextBox>
                     <TextBox Grid.Row="0" Grid.Column="1" GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus" TextChanged="TextBox_TextChanged" PreviewTextInput="TextBox_PreviewTextInput"></TextBox>
                     <TextBox Grid.Row="0" Grid.Column="2" GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus" TextChanged="TextBox_TextChanged" PreviewTextInput="TextBox_PreviewTextInput"></TextBox>
                     <TextBox Grid.Row="0" Grid.Column="3" GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus" TextChanged="TextBox_TextChanged" PreviewTextInput="TextBox_PreviewTextInput"></TextBox>

@@ -60,6 +60,8 @@ namespace Sudoku
                 main.spelplanComponent.btnMusicOn.Visibility = Visibility.Visible;
                 main.spelplanComponent.btnMusicOff.Visibility = Visibility.Hidden;
                 main.mnuMusik.IsChecked = true;
+
+                btnStart.Content = "Success!";
             }
             else
             {
