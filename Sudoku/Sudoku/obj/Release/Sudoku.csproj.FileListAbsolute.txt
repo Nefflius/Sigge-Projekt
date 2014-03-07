@@ -140,10 +140,10 @@ D:\Visual Studio 2012\SiggeProjekt\Sudoku\Sudoku\obj\Release\Sudoku.csproj.Gener
 D:\Visual Studio 2012\SiggeProjekt\Sudoku\Sudoku\obj\Release\Sudoku.exe
 D:\Visual Studio 2012\SiggeProjekt\Sudoku\Sudoku\obj\Release\Sudoku.pdb
 D:\Visual Studio 2012\SiggeProjekt\Sudoku\Sudoku\obj\Release\Sudoku.csprojResolveAssemblyReference.cache
-<<<<<<< HEAD
 C:\Users\Ida\Documents\DMP12\GUI Programmering\Sigge Projekt\Sudoku\Sudoku\obj\Release\Sudoku.csprojResolveAssemblyReference.cache
-=======
 D:\Visual Studio 2012\SiggeProjekt\Sudoku\Sudoku\obj\Release\Interop.MediaPlayer.dll
 D:\Visual Studio 2012\SiggeProjekt\Sudoku\Sudoku\obj\Release\Interop.WMPLib.dll
 D:\Visual Studio 2012\SiggeProjekt\Sudoku\Sudoku\obj\Release\Sudoku.csproj.ResolveComReference.cache
->>>>>>> 47ccba2d3ea6eb655759c5541745a3603ccb28af
+C:\Users\Ida\Documents\DMP12\GUI Programmering\Sigge Projekt\Sudoku\Sudoku\obj\Release\Interop.MediaPlayer.dll
+C:\Users\Ida\Documents\DMP12\GUI Programmering\Sigge Projekt\Sudoku\Sudoku\obj\Release\Interop.WMPLib.dll
+C:\Users\Ida\Documents\DMP12\GUI Programmering\Sigge Projekt\Sudoku\Sudoku\obj\Release\Sudoku.csproj.ResolveComReference.cache
