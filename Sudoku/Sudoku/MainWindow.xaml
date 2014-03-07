@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:local="clr-namespace:Sudoku"
         xmlns:Properties="clr-namespace:Sudoku.Properties" x:Class="Sudoku.MainWindow"
-        Title="Sudoku" Height="720" Width="900" Closed="Window_Closed_1">
+        Title="Sudoku" Height="720" Width="900">
     <Window.Resources>
         <ImageBrush KeyboardNavigation.IsTabStop="False" x:Key="windowBackground" AlignmentY="Top" Stretch="UniformToFill" ImageSource="Images\Sudoku_background.png" />
     </Window.Resources>

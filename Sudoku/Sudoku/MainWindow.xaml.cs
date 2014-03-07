@@ -39,22 +39,19 @@ namespace Sudoku
         bool printEnabled = false;
         SudokuModel model;
 
-        //Music
-        WaveFileReader sound;
-        WaveOut waveOut = new WaveOut();
-        //End Music
-
         public MainWindow()
         {
             InitializeComponent();
             createCommandBindings();
-
-            //Music
-            sound = new WaveFileReader(Properties.Resources.asLongSong);
-            LoopStream loop = new LoopStream(sound); // Loop class
-            waveOut.Init(loop); //intializes the out device 
-            waveOut.Play();
-            //End Music
+            try
+            {
+                string path = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\\music.wav";
+                System.Media.SoundPlayer player = new System.Media.SoundPlayer(path);
+                player.PlayLooping();
+            }
+            catch
+            {
+            }
         }
 
         private void createCommandBindings()
@@ -274,26 +271,7 @@ namespace Sudoku
             }
 
         }
-        private void Window_Closed_1(object sender, EventArgs e)
-        {
 
-            if (sound != null)
-            {
-                sound.Dispose();
-                sound = null;
-            }
-            if (waveOut != null)
-            {
-                if (waveOut.PlaybackState == PlaybackState.Playing)
-                    waveOut.Stop();
-                waveOut.Dispose();
-                waveOut = null;
-            }
-
-        }
-
-       
-        
         private void mnuRegler_Click(object sender, RoutedEventArgs e)
         {
             MessageBox.Show("Ett sudoku består av nio gånger nio rutor som i sin tur är indelade i nio större rutor. För att lösa ett sudoku skall man placera ut siffrorna 1-9 på spelfältet på ett sådant vis att varje siffra bara finns en gång per rad, en gång per kolumn och dessutom bara en gång per större ruta.","Hjälp");
@@ -308,21 +286,27 @@ namespace Sudoku
         {
             Application.Current.Shutdown();
         }
-
+       
+        string path = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\music.wav";
+        int mucheck = 0;
         private void mnuMusik1_Click(object sender, RoutedEventArgs e)
         {
-            //checking if the sound is playing. Pause it if it is, play it if not
-            // http://mark-dot-net.blogspot.co.uk/2014/02/fire-and-forget-audio-playback-with.html
-            if (waveOut != null)
+            try
             {
-                if (waveOut.PlaybackState == PlaybackState.Playing)
+                System.Media.SoundPlayer player = new System.Media.SoundPlayer(path);
+                if (mucheck == 0)
                 {
-                    waveOut.Pause();
+                    player.Stop();
+                    mucheck++;
                 }
-                else if (waveOut.PlaybackState == PlaybackState.Paused)
+                else if (mucheck >= 1)
                 {
-                    waveOut.Play();
+                    player.PlayLooping();
+                    mucheck--;
                 }
+            }
+            catch
+            {
             }
         }
         private void mnuTimer_Click(object sender, RoutedEventArgs e)
@@ -342,7 +326,5 @@ namespace Sudoku
             else if (spelplanComponent.antaldragbox.Visibility == Visibility.Collapsed)
                 spelplanComponent.antaldragbox.Visibility = Visibility.Visible;
         } 
-
-
     }
 }

@@ -1,22 +1,3 @@
-D:\Visual Studio 2012\SiggeProjekt\Sudoku\Sudoku\bin\Release\Sudoku.exe.config
-D:\Visual Studio 2012\SiggeProjekt\Sudoku\Sudoku\obj\Release\Sudoku.exe
-D:\Visual Studio 2012\SiggeProjekt\Sudoku\Sudoku\obj\Release\Sudoku.pdb
-D:\Visual Studio 2012\SiggeProjekt\Sudoku\Sudoku\bin\Release\Sudoku.exe
-D:\Visual Studio 2012\SiggeProjekt\Sudoku\Sudoku\bin\Release\Sudoku.pdb
-D:\Visual Studio 2012\SiggeProjekt\Sudoku\Sudoku\obj\Release\Sudoku.csprojResolveAssemblyReference.cache
-D:\Visual Studio 2012\SiggeProjekt\Sudoku\Sudoku\obj\Release\Meny.baml
-D:\Visual Studio 2012\SiggeProjekt\Sudoku\Sudoku\obj\Release\MainWindow.g.cs
-D:\Visual Studio 2012\SiggeProjekt\Sudoku\Sudoku\obj\Release\Meny.g.cs
-D:\Visual Studio 2012\SiggeProjekt\Sudoku\Sudoku\obj\Release\Spelplan.g.cs
-D:\Visual Studio 2012\SiggeProjekt\Sudoku\Sudoku\obj\Release\App.g.cs
-D:\Visual Studio 2012\SiggeProjekt\Sudoku\Sudoku\obj\Release\GeneratedInternalTypeHelper.g.cs
-D:\Visual Studio 2012\SiggeProjekt\Sudoku\Sudoku\obj\Release\Sudoku_MarkupCompile.cache
-D:\Visual Studio 2012\SiggeProjekt\Sudoku\Sudoku\obj\Release\Sudoku_MarkupCompile.lref
-D:\Visual Studio 2012\SiggeProjekt\Sudoku\Sudoku\obj\Release\MainWindow.baml
-D:\Visual Studio 2012\SiggeProjekt\Sudoku\Sudoku\obj\Release\Spelplan.baml
-D:\Visual Studio 2012\SiggeProjekt\Sudoku\Sudoku\obj\Release\Sudoku.g.resources
-D:\Visual Studio 2012\SiggeProjekt\Sudoku\Sudoku\obj\Release\Sudoku.Properties.Resources.resources
-D:\Visual Studio 2012\SiggeProjekt\Sudoku\Sudoku\obj\Release\Sudoku.csproj.GenerateResource.Cache
 C:\Users\Nidaa\Desktop\DMP1\GUI_prog\Sigge Projekt\Sudoku\Sudoku\bin\Release\Sudoku.exe.config
 C:\Users\Nidaa\Desktop\DMP1\GUI_prog\Sigge Projekt\Sudoku\Sudoku\obj\Release\Sudoku.exe
 C:\Users\Nidaa\Desktop\DMP1\GUI_prog\Sigge Projekt\Sudoku\Sudoku\obj\Release\Sudoku.pdb
@@ -40,8 +21,6 @@ C:\Users\Nidaa\Desktop\DMP1\GUI_prog\Sigge Projekt\Sudoku\Sudoku\obj\Release\Spe
 C:\Users\Nidaa\Desktop\DMP1\GUI_prog\Sigge Projekt\Sudoku\Sudoku\obj\Release\Sudoku.g.resources
 C:\Users\Nidaa\Desktop\DMP1\GUI_prog\Sigge Projekt\Sudoku\Sudoku\obj\Release\Sudoku.Properties.Resources.resources
 C:\Users\Nidaa\Desktop\DMP1\GUI_prog\Sigge Projekt\Sudoku\Sudoku\obj\Release\Sudoku.csproj.GenerateResource.Cache
-D:\Visual Studio 2012\SiggeProjekt\Sudoku\Sudoku\obj\Release\GridPrint.g.cs
-D:\Visual Studio 2012\SiggeProjekt\Sudoku\Sudoku\obj\Release\GridPrint.baml
 G:\Dokument\Visual Studio 2012\Projects\GUI\Projekt\Sudoku\Sudoku\bin\Release\Sudoku.exe.config
 G:\Dokument\Visual Studio 2012\Projects\GUI\Projekt\Sudoku\Sudoku\bin\Release\Sudoku.exe
 G:\Dokument\Visual Studio 2012\Projects\GUI\Projekt\Sudoku\Sudoku\bin\Release\Sudoku.pdb
@@ -133,3 +112,30 @@ C:\Users\Ida\Documents\DMP12\GUI Programmering\Sigge Projekt\Sudoku\Sudoku\obj\R
 C:\Users\Ida\Documents\DMP12\GUI Programmering\Sigge Projekt\Sudoku\Sudoku\obj\Release\Sudoku.g.resources
 C:\Users\Ida\Documents\DMP12\GUI Programmering\Sigge Projekt\Sudoku\Sudoku\obj\Release\Sudoku.Properties.Resources.resources
 C:\Users\Ida\Documents\DMP12\GUI Programmering\Sigge Projekt\Sudoku\Sudoku\obj\Release\Sudoku.csproj.GenerateResource.Cache
+D:\Visual Studio 2012\SiggeProjekt\Sudoku\Sudoku\bin\Release\Sudoku.exe.config
+D:\Visual Studio 2012\SiggeProjekt\Sudoku\Sudoku\bin\Release\Sudoku.exe
+D:\Visual Studio 2012\SiggeProjekt\Sudoku\Sudoku\bin\Release\Sudoku.pdb
+D:\Visual Studio 2012\SiggeProjekt\Sudoku\Sudoku\bin\Release\NAudio.dll
+D:\Visual Studio 2012\SiggeProjekt\Sudoku\Sudoku\obj\Release\Highscore.baml
+D:\Visual Studio 2012\SiggeProjekt\Sudoku\Sudoku\obj\Release\Meny.baml
+D:\Visual Studio 2012\SiggeProjekt\Sudoku\Sudoku\obj\Release\Pause.baml
+D:\Visual Studio 2012\SiggeProjekt\Sudoku\Sudoku\obj\Release\GridPrint.g.cs
+D:\Visual Studio 2012\SiggeProjekt\Sudoku\Sudoku\obj\Release\Highscore.g.cs
+D:\Visual Studio 2012\SiggeProjekt\Sudoku\Sudoku\obj\Release\MainWindow.g.cs
+D:\Visual Studio 2012\SiggeProjekt\Sudoku\Sudoku\obj\Release\Meny.g.cs
+D:\Visual Studio 2012\SiggeProjekt\Sudoku\Sudoku\obj\Release\Pause.g.cs
+D:\Visual Studio 2012\SiggeProjekt\Sudoku\Sudoku\obj\Release\Spelplan.g.cs
+D:\Visual Studio 2012\SiggeProjekt\Sudoku\Sudoku\obj\Release\App.g.cs
+D:\Visual Studio 2012\SiggeProjekt\Sudoku\Sudoku\obj\Release\Sudoku_Content.g.cs
+D:\Visual Studio 2012\SiggeProjekt\Sudoku\Sudoku\obj\Release\GeneratedInternalTypeHelper.g.cs
+D:\Visual Studio 2012\SiggeProjekt\Sudoku\Sudoku\obj\Release\Sudoku_MarkupCompile.cache
+D:\Visual Studio 2012\SiggeProjekt\Sudoku\Sudoku\obj\Release\Sudoku_MarkupCompile.lref
+D:\Visual Studio 2012\SiggeProjekt\Sudoku\Sudoku\obj\Release\GridPrint.baml
+D:\Visual Studio 2012\SiggeProjekt\Sudoku\Sudoku\obj\Release\MainWindow.baml
+D:\Visual Studio 2012\SiggeProjekt\Sudoku\Sudoku\obj\Release\Spelplan.baml
+D:\Visual Studio 2012\SiggeProjekt\Sudoku\Sudoku\obj\Release\Sudoku.g.resources
+D:\Visual Studio 2012\SiggeProjekt\Sudoku\Sudoku\obj\Release\Sudoku.Properties.Resources.resources
+D:\Visual Studio 2012\SiggeProjekt\Sudoku\Sudoku\obj\Release\Sudoku.csproj.GenerateResource.Cache
+D:\Visual Studio 2012\SiggeProjekt\Sudoku\Sudoku\obj\Release\Sudoku.exe
+D:\Visual Studio 2012\SiggeProjekt\Sudoku\Sudoku\obj\Release\Sudoku.pdb
+D:\Visual Studio 2012\SiggeProjekt\Sudoku\Sudoku\obj\Release\Sudoku.csprojResolveAssemblyReference.cache
