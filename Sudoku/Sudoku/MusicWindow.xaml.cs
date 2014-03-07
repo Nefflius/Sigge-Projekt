@@ -50,12 +50,12 @@ namespace Sudoku
         private void Start_Click(object sender, RoutedEventArgs e)
         {
             var main = Application.Current.MainWindow as MainWindow;
+
             try
             {
-                string path = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\\Musik.wav";
-                System.Media.SoundPlayer player = new System.Media.SoundPlayer(path);
+                main.wplayer.URL = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\\Musik.mp3";
+                main.wplayer.controls.play();
 
-                player.PlayLooping();
                 btnTack.IsEnabled = true;
                 main.spelplanComponent.btnMusicOn.Visibility = Visibility.Visible;
                 main.spelplanComponent.btnMusicOff.Visibility = Visibility.Hidden;

@@ -240,15 +240,13 @@ namespace Sudoku
         private void btnMusicOn_Click(object sender, RoutedEventArgs e)
         {
             var main = Application.Current.MainWindow as MainWindow;
+
             main.mnuMusik.IsChecked = false;
             btnMusicOn.Visibility = Visibility.Hidden;
             btnMusicOff.Visibility = Visibility.Visible;
 
-
-            string path = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\\Musik.wav";
-            System.Media.SoundPlayer player = new System.Media.SoundPlayer(path);
-
-            player.Stop();
+            main.wplayer.URL = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\\Musik.mp3";
+            main.wplayer.controls.stop();
         }
 
         private void btnMusicOff_Click(object sender, RoutedEventArgs e)
@@ -268,10 +266,9 @@ namespace Sudoku
             {
                 try
                 {
-                    string path = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\\Musik.wav";
-                    System.Media.SoundPlayer player = new System.Media.SoundPlayer(path);
+                    main.wplayer.URL = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\\Musik.mp3";
+                    main.wplayer.controls.play();
 
-                    player.PlayLooping();
                     main.mnuMusik.IsChecked = true;
                     btnMusicOn.Visibility = Visibility.Visible;
                     btnMusicOff.Visibility = Visibility.Hidden;

@@ -149,3 +149,6 @@ D:\Visual Studio 2012\SiggeProjekt\Sudoku\Sudoku\obj\Debug\Sudoku.csprojResolveA
 C:\Users\Ida\Documents\DMP12\GUI Programmering\Sigge Projekt\Sudoku\Sudoku\obj\Debug\Sudoku.csprojResolveAssemblyReference.cache
 C:\Users\Ida\Documents\DMP12\GUI Programmering\Sigge Projekt\Sudoku\Sudoku\obj\Debug\MusicWindow.baml
 C:\Users\Ida\Documents\DMP12\GUI Programmering\Sigge Projekt\Sudoku\Sudoku\obj\Debug\MusicWindow.g.cs
+C:\Users\Ida\Documents\DMP12\GUI Programmering\Sigge Projekt\Sudoku\Sudoku\obj\Debug\Interop.MediaPlayer.dll
+C:\Users\Ida\Documents\DMP12\GUI Programmering\Sigge Projekt\Sudoku\Sudoku\obj\Debug\Interop.WMPLib.dll
+C:\Users\Ida\Documents\DMP12\GUI Programmering\Sigge Projekt\Sudoku\Sudoku\obj\Debug\Sudoku.csproj.ResolveComReference.cache

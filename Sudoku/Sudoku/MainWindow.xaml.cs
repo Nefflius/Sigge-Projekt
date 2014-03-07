@@ -12,8 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WMPLib;
 
-using NAudio.Wave;
 
 
 namespace Sudoku
@@ -45,11 +45,16 @@ namespace Sudoku
         {
             InitializeComponent();
             createCommandBindings();
+            startmusik();
+        }
+        public WMPLib.WindowsMediaPlayer wplayer = new WMPLib.WindowsMediaPlayer();
+        public void startmusik()
+        {
             try
             {
-                string path = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\\Musik.wav";
-                System.Media.SoundPlayer player = new System.Media.SoundPlayer(path);
-                player.PlayLooping();
+                wplayer.URL = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\\Musik.mp3";
+                wplayer.controls.play();
+
                 spelplanComponent.btnMusicOn.Visibility = Visibility.Visible;
                 spelplanComponent.btnMusicOff.Visibility = Visibility.Hidden;
                 MusicCheck = true;
@@ -61,7 +66,6 @@ namespace Sudoku
                 mnuMusik.IsChecked = false;
             }
         }
-
         private void createCommandBindings()
         {
             CommandBinding bindNew = new CommandBinding();
@@ -303,15 +307,14 @@ namespace Sudoku
         }
        
 
-        string path = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\\Musik.wav";
         private void mnuMusik_Click(object sender, RoutedEventArgs e)
         {
             var main = Application.Current.MainWindow as MainWindow;
 
             if (MusicCheck)
             {
-                System.Media.SoundPlayer player = new System.Media.SoundPlayer(path);
-                player.Stop();
+                wplayer.URL = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\\Musik.mp3";
+                wplayer.controls.stop();
                 MusicCheck = false;
 
                 main.spelplanComponent.btnMusicOff.Visibility = Visibility.Visible;
@@ -321,8 +324,8 @@ namespace Sudoku
             {
                 try
                 {
-                    System.Media.SoundPlayer player = new System.Media.SoundPlayer(path);
-                    player.PlayLooping();
+                    wplayer.URL = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\\Musik.mp3";
+                    wplayer.controls.play();
                     MusicCheck = true;
                     main.spelplanComponent.btnMusicOff.Visibility = Visibility.Hidden;
                     main.spelplanComponent.btnMusicOn.Visibility = Visibility.Visible;
