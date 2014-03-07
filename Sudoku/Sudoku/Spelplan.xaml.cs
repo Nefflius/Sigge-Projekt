@@ -72,6 +72,7 @@ namespace Sudoku
             var main = Application.Current.MainWindow as MainWindow;
             SudokuModel model = main.menuComponent.GetSudokuModel;
             main.Enable_DisablePrint(false);
+            main.Enable_DisableSave(false);
             System.Windows.Forms.DialogResult dialogResult = System.Windows.Forms.MessageBox.Show("Din spelomgång kommer att avbrytas, Är du säker på att du vill starta ett nytt spel?", "Spelomgång avbruten", System.Windows.Forms.MessageBoxButtons.YesNo);
             if (dialogResult == System.Windows.Forms.DialogResult.Yes)
             {
@@ -124,6 +125,8 @@ namespace Sudoku
             main.menuComponent.start = false;
             btnPause.Visibility = Visibility.Hidden;
             btnStart.Visibility = Visibility.Visible;
+            main.Enable_DisablePrint(false);
+            main.Enable_DisableSave(false);
             main.pauseComponent.Visibility = Visibility.Visible;
             btnRätta.IsEnabled = false;
 
@@ -154,6 +157,8 @@ namespace Sudoku
             main.menuComponent.start = true;
             btnPause.Visibility = Visibility.Visible;
             btnStart.Visibility = Visibility.Hidden;
+            main.Enable_DisablePrint(true);
+            main.Enable_DisableSave(true);
 
             bool ok = true;
             for (int i = 0; i < 81; i++)

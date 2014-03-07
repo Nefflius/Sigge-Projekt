@@ -38,13 +38,13 @@
             <Setter Property="SelectionBrush" Value="Transparent" />
         </Style>
     </UserControl.Resources>
-    <Viewbox KeyboardNavigation.IsTabStop="False" Stretch="Uniform" PreviewKeyDown="Viewbox_PreviewKeyDown_1">
-        <Border Name="gridBorder" KeyboardNavigation.IsTabStop="False" BorderBrush="Black" BorderThickness="1" Background="White" Margin="20">
+    <Viewbox Stretch="Uniform" PreviewKeyDown="Viewbox_PreviewKeyDown_1">
+        <Border Name="gridBorder" BorderBrush="Black" BorderThickness="1" Background="White" Margin="20">
             <Border.Effect>
                 <DropShadowEffect Opacity="0.5" ShadowDepth="10.0" Direction="230" />
             </Border.Effect>
-            <StackPanel KeyboardNavigation.IsTabStop="False">
-                <Grid KeyboardNavigation.IsTabStop="False" Name="nameGridPrint" Width="260" Height="260" Visibility="Visible">
+            <StackPanel>
+                <Grid KeyboardNavigation.TabNavigation="Cycle" Name="nameGridPrint" Width="260" Height="260" Visibility="Visible">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="*"/>
                         <RowDefinition Height="*"/>
