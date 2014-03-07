@@ -38,7 +38,7 @@
                     <RadioButton Name="rbM" FontSize="14" FontWeight="Thin" Margin="5" Click="rb_Click" Checked="rbM_Checked">Medium</RadioButton>
                     <RadioButton Name="rbS" HorizontalAlignment="Right" FontSize="14" FontWeight="Thin" Margin="5" Click="rb_Click" Checked="rbS_Checked">Svår</RadioButton>
                 </UniformGrid>
-                <GroupBox Name="gbL" Margin="10,0" Header="Alternativ på spelplan : Lätt" FontWeight="Thin" Visibility="Collapsed">
+                <GroupBox Name="gbL" Margin="10,0" Header="Alternativ på spelplan : Lätt" FontWeight="Thin" BorderBrush="DarkCyan" Visibility="Collapsed">
                     <Grid>
                         <Grid.RowDefinitions>
                             <RowDefinition />
@@ -58,7 +58,7 @@
                         <RadioButton Name="rbL_3" Click="rb_Click" HorizontalAlignment="Center" Grid.Row="1" Grid.Column="2" Margin="0,10,0,0" />
                     </Grid>
                 </GroupBox>
-                <GroupBox Name="gbM" Margin="10,0" Header="Alternativ på spelplan : Medium" FontWeight="Thin" Visibility="Collapsed">
+                <GroupBox Name="gbM" Margin="10,0" Header="Alternativ på spelplan : Medium" FontWeight="Thin" BorderBrush="DarkCyan" Visibility="Collapsed">
                     <Grid>
                         <Grid.RowDefinitions>
                             <RowDefinition />
@@ -78,7 +78,7 @@
                         <RadioButton Name="rbM_3" Click="rb_Click" HorizontalAlignment="Center" Grid.Row="1" Grid.Column="2" Margin="0,10,0,0" />
                     </Grid>
                 </GroupBox>
-                <GroupBox Name="gbS" Margin="10,0" Header="Alternativ på spelplan : Svår" FontWeight="Thin" Visibility="Collapsed">
+                <GroupBox Name="gbS" Margin="10,0" Header="Alternativ på spelplan : Svår" FontWeight="Thin" BorderBrush="DarkCyan" Visibility="Collapsed">
                     <Grid>
                         <Grid.RowDefinitions>
                             <RowDefinition />

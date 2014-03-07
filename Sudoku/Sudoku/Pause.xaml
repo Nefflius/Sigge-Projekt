@@ -17,12 +17,12 @@
                 <StackPanel Grid.Row="0" HorizontalAlignment="Center">
                     <Label FontFamily="Impact" Foreground="HotPink" FontSize="75" Margin="17.5,17.5,10,-15" HorizontalAlignment="Center">Spelet är
                         <Label.Effect>
-                            <DropShadowEffect Opacity="0.5" />
+                            <DropShadowEffect Opacity="0.3" />
                         </Label.Effect>
                     </Label>
                     <Label FontFamily="Impact" Foreground="HotPink" FontSize="75" Margin="15,-15,10,10" HorizontalAlignment="Center">Pausat
                         <Label.Effect>
-                            <DropShadowEffect Opacity="0.5" />
+                            <DropShadowEffect Opacity="0.3" />
                         </Label.Effect>
                     </Label>
                 </StackPanel>

@@ -4,22 +4,17 @@
 winexe
 C#
 .cs
-D:\Visual Studio 2012\SiggeProjekt\Sudoku\Sudoku\obj\Release\
+C:\Users\Ida\Documents\DMP12\GUI Programmering\Sigge Projekt\Sudoku\Sudoku\obj\Release\
 Sudoku
 none
 false
 TRACE
-D:\Visual Studio 2012\SiggeProjekt\Sudoku\Sudoku\App.xaml
+C:\Users\Ida\Documents\DMP12\GUI Programmering\Sigge Projekt\Sudoku\Sudoku\App.xaml
 7-1284219546
 31454465784
-<<<<<<< HEAD
-182012395323
-181367458511
-=======
 181380421427
 181843753798
->>>>>>> ac67e6cd9a181e4145af808947cc1e9cb0d42312
 GridPrint.xaml;Highscore.xaml;MainWindow.xaml;Meny.xaml;MusicWindow.xaml;Pause.xaml;Spelplan.xaml;
 
-False
+True
 
