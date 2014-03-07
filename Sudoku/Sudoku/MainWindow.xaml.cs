@@ -12,8 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WMPLib;
 
-using NAudio.Wave;
 
 
 namespace Sudoku
@@ -46,9 +46,9 @@ namespace Sudoku
             createCommandBindings();
             try
             {
-                string path = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\\music.wav";
-                System.Media.SoundPlayer player = new System.Media.SoundPlayer(path);
-                player.PlayLooping();
+                WMPLib.WindowsMediaPlayer wplayer = new WMPLib.WindowsMediaPlayer();
+                wplayer.URL = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\\Musik.mp3";
+                wplayer.controls.play();
             }
             catch
             {
@@ -295,7 +295,7 @@ namespace Sudoku
             Application.Current.Shutdown();
         }
        
-        string path = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\music.wav";
+        string path = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\music.mp3";
         int mucheck = 0;
         private void mnuMusik1_Click(object sender, RoutedEventArgs e)
         {
