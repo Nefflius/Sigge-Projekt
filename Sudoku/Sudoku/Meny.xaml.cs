@@ -73,25 +73,17 @@ namespace Sudoku
             model.GetSetNewGame = true;
             
             main.spelplanComponent.lblAntalDrag.Content = "0";
-            //gbL.Visibility = Visibility.Collapsed;
-            //gbM.Visibility = Visibility.Collapsed;
-            //gbS.Visibility = Visibility.Collapsed;
-            //rbL.IsChecked = false;
-            //rbM.IsChecked = false;
-            //rbS.IsChecked = false;
-            //rbGrid.Margin = new Thickness(70, 0, 70, 160);
             btnSpela.IsEnabled = false;
-           
             
 			main.gridPrintComponent = model.PrintGrid(radioButtonChecked, main.gridPrintComponent);
 
 			main.gridPrintComponent.Visibility = Visibility.Visible;
 			main.menuComponent.Visibility = Visibility.Collapsed;
             main.spelplanComponent.Visibility = Visibility.Visible;   
+            
             main.gridPrintComponent.ShowAndResetSpelplan();
 
-            main.gridPrintComponent.Focus();
-            //main.Enable_DisablePrint(true);
+            //main.gridPrintComponent.Focus();
 
 		//	main.spelplanComponent.start = true;   // Timer
 		//	main.spelplanComponent.begins = DateTime.Now;  // Timer

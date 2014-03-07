@@ -37,6 +37,7 @@ namespace Sudoku
     {
         bool gameChanged = true;
         bool printEnabled = false;
+        bool saveEnabled = false;
         SudokuModel model;
 
         //Music
@@ -96,6 +97,11 @@ namespace Sudoku
             printEnabled = enableOrDisablePrint;
         }
 
+        public void Enable_DisableSave(bool enableOrDisableSave)
+        {
+            saveEnabled = enableOrDisableSave;
+        }
+
         public void NewGame_CanExecute(object sender, CanExecuteRoutedEventArgs e)
         {
             e.CanExecute = true;
@@ -144,6 +150,7 @@ namespace Sudoku
                 spelplanComponent.StartTimer2();
 
                 printEnabled = true;
+                saveEnabled = true;
 
                 menuComponent.rbL.IsChecked = false;
                 menuComponent.rbM.IsChecked = false;
@@ -168,7 +175,7 @@ namespace Sudoku
 
         public void SaveFile_CanExecute(object sender, CanExecuteRoutedEventArgs e)
         {
-            if (gameChanged)
+            if (gameChanged && saveEnabled)
                 e.CanExecute = true;
         }
 
@@ -260,6 +267,7 @@ namespace Sudoku
                     gridPrintComponent.Visibility = Visibility.Collapsed;
                     spelplanComponent.Visibility = Visibility.Collapsed;
                     mnuInställningar.Visibility = Visibility.Collapsed;
+                    gridPrintComponent.HideAndResetSpelplan();
                     model.GetSetNewGame = false;
                 }
                 if (dialogResult == System.Windows.Forms.DialogResult.No) { }

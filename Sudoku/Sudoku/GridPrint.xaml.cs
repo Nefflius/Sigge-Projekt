@@ -44,11 +44,24 @@ namespace Sudoku
 
             main.spelplanComponent.btnRätta.Content = "RÄTTA";
             main.spelplanComponent.lblAntalDrag.Content = "0";
-            main.mnuInställningar.Visibility = Visibility.Collapsed;
-            main.gridPrintComponent.youMadeIt.Visibility = Visibility.Collapsed;
-
             main.spelplanComponent.IsEnabled = true;
+            main.spelplanComponent.btnPause.Visibility = Visibility.Visible;
+            main.spelplanComponent.btnStart.Visibility = Visibility.Hidden;
+
+            main.mnuInställningar.Visibility = Visibility.Collapsed;
             main.Enable_DisablePrint(false);
+            main.Enable_DisableSave(false);
+
+            main.gridPrintComponent.youMadeIt.Visibility = Visibility.Collapsed;
+            main.pauseComponent.Visibility = Visibility.Collapsed;
+
+            System.Windows.Media.Animation.DoubleAnimation da = new System.Windows.Media.Animation.DoubleAnimation();
+            da.From = -950;
+            da.To = 0;
+            da.Duration = new Duration(TimeSpan.FromMilliseconds(0));
+            TranslateTransform rt = new TranslateTransform();
+            main.gridPrintComponent.RenderTransform = rt;
+            rt.BeginAnimation(TranslateTransform.YProperty, da);
         }
 
         public void ShowAndResetSpelplan()
@@ -68,15 +81,8 @@ namespace Sudoku
             main.spelplanComponent.btnRätta.Content = "RÄTTA";
             main.mnuInställningar.Visibility = Visibility.Visible;
             main.gridPrintComponent.Visibility = Visibility.Visible;
-
-                //fokus i spelplan
-            int j = 0;
-            while (!((TextBox)main.gridPrintComponent.nameGridPrint.Children[j]).IsEnabled)
-            {
-                j++;
-            }
-            TextBox temp = ((TextBox)main.gridPrintComponent.nameGridPrint.Children[j]);
-            temp.Focus();
+            main.spelplanComponent.btnPause.Visibility = Visibility.Visible;
+            main.spelplanComponent.btnStart.Visibility = Visibility.Hidden;
 
                 //rättaknapp enabled eller ej
             bool ok = true;
@@ -96,8 +102,18 @@ namespace Sudoku
             else
                 main.spelplanComponent.btnRätta.IsEnabled = false;
 
-                //skriv ut är möjligt
+                //fokus i spelplan
+            int j = 0;
+            while (!((TextBox)main.gridPrintComponent.nameGridPrint.Children[j]).IsEnabled)
+            {
+                j++;
+            }
+            TextBox temp = ((TextBox)main.gridPrintComponent.nameGridPrint.Children[j]);
+            temp.Focus();
+
+                //skriv ut och spara är möjligt
             main.Enable_DisablePrint(true);
+            main.Enable_DisableSave(true);
         }
 
         /*****************************************************

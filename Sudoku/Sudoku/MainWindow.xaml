@@ -16,7 +16,7 @@
             
         </Grid.ColumnDefinitions>
 
-            <Menu KeyboardNavigation.IsTabStop="True" x:Name="mnuMain" IsMainMenu="True" Background="{DynamicResource windowBackground}" Grid.ColumnSpan="4">
+            <Menu KeyboardNavigation.IsTabStop="False" x:Name="mnuMain" IsMainMenu="True" Background="{DynamicResource windowBackground}" Grid.ColumnSpan="4">
                 <MenuItem Header="_Arkiv" KeyboardNavigation.IsTabStop="False" x:Name="mnuFile" Background="White" BorderBrush="Black">
                     <MenuItem x:Name="mnuOpen" Header="_Öppna" Command="ApplicationCommands.Open" >
 
