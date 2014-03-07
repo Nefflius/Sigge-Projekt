@@ -151,4 +151,10 @@
   <data name="Print" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\Images\icons\Print.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="MusicOff" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\Images\icons\MusicOff.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MusicOn" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\Images\icons\MusicOn.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

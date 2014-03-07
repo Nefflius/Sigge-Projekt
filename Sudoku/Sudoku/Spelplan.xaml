@@ -12,7 +12,6 @@
                 <Setter.Value>
                     <LinearGradientBrush>
                         <GradientStop Color="Silver" Offset="0" />
-                       <!-- <GradientStop Color="DarkGray" Offset="0.9" /> -->
                         <GradientStop Color="Gray" Offset="1" />
                     </LinearGradientBrush>
                 </Setter.Value>
@@ -50,7 +49,17 @@
                     <DropShadowEffect Opacity="0.5" />
                 </Button.Effect>
             </Button>
-            <Border x:Name="timerBox" Grid.Row="4" Background="White" BorderBrush="Gray" BorderThickness="1" Margin="5">
+            <Button x:Name="btnPause" Content="Pause" Grid.Row="3" Click="btnPause_Click" Visibility="Visible" TabIndex="3">
+                <Button.Effect>
+                    <DropShadowEffect Opacity="0.7"/>
+                </Button.Effect>
+            </Button>
+            <Button x:Name="btnStart" Content="Start" Grid.Row="3" Click="btnStart_Click" Visibility="Collapsed">
+                <Button.Effect>
+                    <DropShadowEffect Opacity="0.7"/>
+                </Button.Effect>
+            </Button>
+            <Border x:Name="timerBox" Grid.Row="5" Background="White" BorderBrush="Gray" BorderThickness="1" Margin="5">
                 <Border.Effect>
                     <DropShadowEffect Opacity="0.7" />
                 </Border.Effect>
@@ -68,20 +77,29 @@
                     <Label Name ="lblAntalDrag" Margin="0,0,0,-2" HorizontalAlignment="Center" FontSize="17" FontWeight="Thin">0</Label>
                 </StackPanel>
             </Border>
-            <Button Grid.Row="7" Click="clickFusk" Visibility="Collapsed">Fusk</Button>
-            <Button Grid.Row="8" Click="clickAvsluta">Avsluta
+            <Button Name="btnMusicOn" Grid.Row="4" Click="btnMusicOn_Click" Visibility="Hidden">
+                <Button.Effect>
+                    <DropShadowEffect Opacity="0.5" />
+                </Button.Effect>
+                <Button.Template>
+                    <ControlTemplate>
+                        <Image Source="Properties/Resources/Images/icons/MusicOn.png" />
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+            <Button Name="btnMusicOff" Grid.Row="4" Click="btnMusicOff_Click" Visibility="Visible">
+                <Button.Effect>
+                    <DropShadowEffect Opacity="0.5" />
+                </Button.Effect>
+                <Button.Template>
+                    <ControlTemplate>
+                        <Image Source="Properties/Resources/Images/icons/MusicOff.png" />
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+            <Button Grid.Row="8" Click="clickAvsluta" Margin="5,20,5,5">Avsluta
                 <Button.Effect>
                     <DropShadowEffect Opacity="0.7" />
-                </Button.Effect>
-            </Button>
-            <Button x:Name="btnPause" Content="Pause" Grid.Row="3" Click="btnPause_Click" Visibility="Visible" TabIndex="3">
-                <Button.Effect>
-                    <DropShadowEffect Opacity="0.7"/>
-                </Button.Effect>
-            </Button>
-            <Button x:Name="btnStart" Content="Start" Grid.Row="3" Click="btnStart_Click" Visibility="Collapsed">
-                <Button.Effect>
-                    <DropShadowEffect Opacity="0.7"/>
                 </Button.Effect>
             </Button>
         </Grid>

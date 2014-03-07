@@ -229,5 +229,30 @@ namespace Sudoku
         {
             StartTimer();
         }
+
+        private void btnMusicOn_Click(object sender, RoutedEventArgs e)
+        {
+            var main = Application.Current.MainWindow as MainWindow;
+
+            btnMusicOn.Visibility = Visibility.Hidden;
+            btnMusicOff.Visibility = Visibility.Visible;
+
+            btnPause_Click(sender, e);
+            main.pauseComponent.Visibility = Visibility.Hidden;
+
+            // Instruktion om hur du lägger till egen musik:
+
+
+
+            // När instruktion är OK-klickad
+            StartTimer();
+            main.pauseComponent.Visibility = Visibility.Visible;
+        }
+
+        private void btnMusicOff_Click(object sender, RoutedEventArgs e)
+        {
+            btnMusicOn.Visibility = Visibility.Visible;
+            btnMusicOff.Visibility = Visibility.Hidden;
+        }
     }
 }

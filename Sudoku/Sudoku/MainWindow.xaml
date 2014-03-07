@@ -50,31 +50,24 @@
                         </MenuItem.Icon>
                     </MenuItem>
                 </MenuItem>
-            <MenuItem KeyboardNavigation.IsTabStop="False" x:Name="mnuInställningar" Header="_Inställningar" Visibility="Collapsed" Background="White" BorderBrush="Black">
-                <MenuItem x:Name="mnuTimer" IsCheckable="True" IsChecked="True" Header="_Timer" Click="mnuTimer_Click" />
-                <MenuItem x:Name="mnuAntaldrag" IsCheckable="True" IsChecked="True" Header="_AntalDrag" Click="mnuAntaldrag_Click" />
-                <MenuItem x:Name="mnuMusik1" IsCheckable="True" IsChecked="True" Header="_Musik" Click="mnuMusik1_Click" />
-                    <!--<MenuItem.Icon>
-                        <Image Source="Images/Sound-on-icon43.png" />
-                    </MenuItem.Icon>
-                </MenuItem>-->
-            </MenuItem>
-
-            <MenuItem KeyboardNavigation.IsTabStop="False" Header="_Hjälp" x:Name="mnuHelp" Background="White" BorderBrush="Black">
-                <MenuItem x:Name="mnuRegler" Header="_Regler" Click="mnuRegler_Click">
-                    <MenuItem.Icon>
-                        <Image Source="Properties/Resources/Images/icons/HowToDo.png" />
-                    </MenuItem.Icon>
+                <MenuItem KeyboardNavigation.IsTabStop="False" x:Name="mnuInställningar" Header="_Inställningar" Visibility="Collapsed" Background="White" BorderBrush="Black">
+                    <MenuItem x:Name="mnuTimer" IsCheckable="True" IsChecked="True" Header="_Timer" Click="mnuTimer_Click" />
+                    <MenuItem x:Name="mnuAntaldrag" IsCheckable="True" IsChecked="True" Header="_AntalDrag" Click="mnuAntaldrag_Click" />
+                    <MenuItem x:Name="mnuMusik1" IsCheckable="True" IsChecked="True" Header="_Musik" Click="mnuMusik1_Click" />
                 </MenuItem>
-                <MenuItem x:Name="mnuOmSudoku" Header="Om Sudoku" Click="mnuOmSudoku_Click">
-                    <MenuItem.Icon>
-                        <Image Source="Properties/Resources/Images/icons/Info.png" />
-                    </MenuItem.Icon>
-                </MenuItem>
-            </MenuItem>
 
-            <!--MenuItem Header="_Inställningar" KeyboardNavigation.IsTabStop="False" x:Name="mnuMusik" Background="White" BorderBrush="Black"-->
-                
+                <MenuItem KeyboardNavigation.IsTabStop="False" Header="_Hjälp" x:Name="mnuHelp" Background="White" BorderBrush="Black">
+                    <MenuItem x:Name="mnuRegler" Header="_Regler" Click="mnuRegler_Click">
+                        <MenuItem.Icon>
+                            <Image Source="Properties/Resources/Images/icons/HowToDo.png" />
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <MenuItem x:Name="mnuOmSudoku" Header="Om Sudoku" Click="mnuOmSudoku_Click">
+                        <MenuItem.Icon>
+                            <Image Source="Properties/Resources/Images/icons/Info.png" />
+                        </MenuItem.Icon>
+                    </MenuItem>
+                </MenuItem>
             </Menu>
        
 

@@ -133,3 +133,5 @@ C:\Users\Ida\Documents\DMP12\GUI Programmering\Sigge Projekt\Sudoku\Sudoku\obj\R
 C:\Users\Ida\Documents\DMP12\GUI Programmering\Sigge Projekt\Sudoku\Sudoku\obj\Release\Sudoku.g.resources
 C:\Users\Ida\Documents\DMP12\GUI Programmering\Sigge Projekt\Sudoku\Sudoku\obj\Release\Sudoku.Properties.Resources.resources
 C:\Users\Ida\Documents\DMP12\GUI Programmering\Sigge Projekt\Sudoku\Sudoku\obj\Release\Sudoku.csproj.GenerateResource.Cache
+C:\Users\Ida\Documents\DMP12\GUI Programmering\Sigge Projekt\Sudoku\Sudoku\obj\Release\MusicWindow.baml
+C:\Users\Ida\Documents\DMP12\GUI Programmering\Sigge Projekt\Sudoku\Sudoku\obj\Release\MusicWindow.g.cs
