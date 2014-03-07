@@ -23,5 +23,49 @@ namespace Sudoku
         {
             InitializeComponent();
         }
+
+        private void Tack_Click(object sender, RoutedEventArgs e)
+        {
+            var main = Application.Current.MainWindow as MainWindow;
+            
+            main.spelplanComponent.StartTimer();
+            main.pauseComponent.Visibility = Visibility.Visible;
+            main.MusicCheck = true;
+
+            this.Close();
+        }
+
+        private void Avbryt_Click(object sender, RoutedEventArgs e)
+        {
+            var main = Application.Current.MainWindow as MainWindow;
+            
+            main.spelplanComponent.StartTimer();
+            main.pauseComponent.Visibility = Visibility.Hidden;
+            main.MusicCheck = false;
+            main.IsEnabled = true;
+
+            this.Close();
+        }
+
+        private void Start_Click(object sender, RoutedEventArgs e)
+        {
+            var main = Application.Current.MainWindow as MainWindow;
+            try
+            {
+                string path = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\\Musik.wav";
+                System.Media.SoundPlayer player = new System.Media.SoundPlayer(path);
+
+                player.PlayLooping();
+                btnTack.IsEnabled = true;
+                main.spelplanComponent.btnMusicOn.Visibility = Visibility.Visible;
+                main.spelplanComponent.btnMusicOff.Visibility = Visibility.Hidden;
+                main.mnuMusik.IsChecked = true;
+                main.IsEnabled = true;
+            }
+            catch
+            {
+                btnStart.Content = "Försök igen";
+            }
+        }
     }
 }

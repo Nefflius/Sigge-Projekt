@@ -38,24 +38,28 @@ namespace Sudoku
         bool gameChanged = true;
         bool printEnabled = false;
         bool saveEnabled = false;
+        public bool MusicCheck = false;
         SudokuModel model;
-
-        //Music
-        WaveFileReader sound;
-        WaveOut waveOut = new WaveOut();
-        //End Music
 
         public MainWindow()
         {
             InitializeComponent();
             createCommandBindings();
-
-            //Music
-            sound = new WaveFileReader(Properties.Resources.asLongSong);
-            LoopStream loop = new LoopStream(sound); // Loop class
-            waveOut.Init(loop); //intializes the out device 
-            waveOut.Play();
-            //End Music
+            try
+            {
+                string path = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\\Musik.wav";
+                System.Media.SoundPlayer player = new System.Media.SoundPlayer(path);
+                player.PlayLooping();
+                spelplanComponent.btnMusicOn.Visibility = Visibility.Visible;
+                spelplanComponent.btnMusicOff.Visibility = Visibility.Hidden;
+                MusicCheck = true;
+                mnuMusik.IsChecked = true;
+            }
+            catch
+            {
+                MusicCheck = false;
+                mnuMusik.IsChecked = false;
+            }
         }
 
         private void createCommandBindings()
@@ -282,26 +286,7 @@ namespace Sudoku
             }
 
         }
-        private void Window_Closed_1(object sender, EventArgs e)
-        {
 
-            if (sound != null)
-            {
-                sound.Dispose();
-                sound = null;
-            }
-            if (waveOut != null)
-            {
-                if (waveOut.PlaybackState == PlaybackState.Playing)
-                    waveOut.Stop();
-                waveOut.Dispose();
-                waveOut = null;
-            }
-
-        }
-
-       
-        
         private void mnuRegler_Click(object sender, RoutedEventArgs e)
         {
             MessageBox.Show("Ett sudoku består av nio gånger nio rutor som i sin tur är indelade i nio större rutor. För att lösa ett sudoku skall man placera ut siffrorna 1-9 på spelfältet på ett sådant vis att varje siffra bara finns en gång per rad, en gång per kolumn och dessutom bara en gång per större ruta.","Hjälp");
@@ -316,23 +301,54 @@ namespace Sudoku
         {
             Application.Current.Shutdown();
         }
+       
 
-        private void mnuMusik1_Click(object sender, RoutedEventArgs e)
+        string path = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\\Musik.wav";
+        private void mnuMusik_Click(object sender, RoutedEventArgs e)
         {
-            //checking if the sound is playing. Pause it if it is, play it if not
-            // http://mark-dot-net.blogspot.co.uk/2014/02/fire-and-forget-audio-playback-with.html
-            if (waveOut != null)
+            var main = Application.Current.MainWindow as MainWindow;
+
+            if (MusicCheck)
             {
-                if (waveOut.PlaybackState == PlaybackState.Playing)
+                System.Media.SoundPlayer player = new System.Media.SoundPlayer(path);
+                player.Stop();
+                MusicCheck = false;
+
+                main.spelplanComponent.btnMusicOff.Visibility = Visibility.Visible;
+                main.spelplanComponent.btnMusicOn.Visibility = Visibility.Hidden;
+            }
+            else
+            {
+                try
                 {
-                    waveOut.Pause();
+                    System.Media.SoundPlayer player = new System.Media.SoundPlayer(path);
+                    player.PlayLooping();
+                    MusicCheck = true;
+                    main.spelplanComponent.btnMusicOff.Visibility = Visibility.Hidden;
+                    main.spelplanComponent.btnMusicOn.Visibility = Visibility.Visible;
                 }
-                else if (waveOut.PlaybackState == PlaybackState.Paused)
+                catch
                 {
-                    waveOut.Play();
-                }
+                    main.spelplanComponent.btnPause_Click(sender, e);
+                    main.pauseComponent.Visibility = Visibility.Hidden;
+
+                    MusicWindow mwin = new MusicWindow();
+                    mwin.Show();
+
+                    if (!main.MusicCheck)
+                    {
+                        main.spelplanComponent.btnMusicOn.Visibility = Visibility.Hidden;
+                        main.spelplanComponent.btnMusicOff.Visibility = Visibility.Visible;
+                    }
+                    else
+                    {
+                        main.spelplanComponent.btnMusicOn.Visibility = Visibility.Visible;
+                        main.spelplanComponent.btnMusicOff.Visibility = Visibility.Hidden;
+                    }
+                }                
             }
         }
+
         private void mnuTimer_Click(object sender, RoutedEventArgs e)
         {
             if (spelplanComponent.timerBox.Visibility == Visibility.Visible)
@@ -350,7 +366,5 @@ namespace Sudoku
             else if (spelplanComponent.antaldragbox.Visibility == Visibility.Collapsed)
                 spelplanComponent.antaldragbox.Visibility = Visibility.Visible;
         } 
-
-
     }
 }

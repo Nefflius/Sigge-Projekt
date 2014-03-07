@@ -1,9 +1,23 @@
 ﻿<Window x:Class="Sudoku.MusicWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="Lägg till din egen bakgrundsmusik:" Height="300" Width="300">
-    <StackPanel>
-        <Label>Kolla</Label>
+        Title="Lägg till bakgrundsmusik:" Height="430" Width="300">
+    
+    <StackPanel Margin="0,10">
+        <Border BorderBrush="Black" BorderThickness="1" Margin="5">
+            <TextBlock Margin="15" FontWeight="Thin" FontSize="22.7" TextWrapping="Wrap">För att lägga till din egen bakgrundsmusik till spelet, Gör såhär:</TextBlock>
+        </Border>
+        <TextBlock TextWrapping="Wrap" Margin="10">1. Leta upp ljudfilen du vill använda som bakgrundsmusik.</TextBlock>
+        <TextBlock TextWrapping="Wrap" Margin="10">2. Kopiera den till skrivbordet.</TextBlock>
+        <TextBlock TextWrapping="Wrap" Margin="10">3. Döp den till Musik.mp3 , starta den genom att klicka på knappen nedan: </TextBlock>
         
+        <Button Name="btnStart" BorderBrush="Black" Background="HotPink" FontWeight="Bold" Margin="10,0" Click="Start_Click">Start</Button>
+        
+        <TextBlock TextWrapping="Wrap" Margin="10">4. Lycka till med ditt Sudoku-spelande!</TextBlock>
+        
+        <DockPanel Margin="0,20">
+            <Button Name="btnTack" Width="100" DockPanel.Dock="Left" Margin="35,0,0,0" IsEnabled="False" Click="Tack_Click">Tack!</Button>
+            <Button Width="100" DockPanel.Dock="Right" Margin="0,0,30,0" Click="Avbryt_Click">Avbryt</Button>
+        </DockPanel>
     </StackPanel>
 </Window>

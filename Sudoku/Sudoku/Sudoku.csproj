@@ -188,7 +188,6 @@
     <Resource Include="Properties\Resources\Images\icons\Highscore.png" />
     <Resource Include="Properties\Resources\Images\icons\Print.png" />
     <Resource Include="Images\Sound-on-icon43.png" />
-    <EmbeddedResource Include="bin\Release\NAudio.dll" />
     <Content Include="Properties\Resources\Heasy.txt" />
   </ItemGroup>
   <ItemGroup>
@@ -198,6 +197,7 @@
     <Content Include="Properties\Resources\Hmedium.txt" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="bin\Release\" />
     <Folder Include="Resources\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

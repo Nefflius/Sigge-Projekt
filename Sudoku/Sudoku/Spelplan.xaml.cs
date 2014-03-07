@@ -118,7 +118,7 @@ namespace Sudoku
         }
         
         // *****  Pause button click (Timer) ********
-        private void btnPause_Click(object sender, RoutedEventArgs e)
+        public void btnPause_Click(object sender, RoutedEventArgs e)
         {
             var main = Application.Current.MainWindow as MainWindow;
             
@@ -175,12 +175,19 @@ namespace Sudoku
                 btnRätta.IsEnabled = false;
 
             int j = 0;
-            while (!((TextBox)main.gridPrintComponent.nameGridPrint.Children[j]).IsEnabled)
+            while (!((TextBox)main.gridPrintComponent.nameGridPrint.Children[j]).IsEnabled && j < 81)
             {
                 j++;
+                if (j == 80)
+                    break;
             }
-            TextBox temp = ((TextBox)main.gridPrintComponent.nameGridPrint.Children[j]);
-            temp.Focus();
+            if (j < 81)
+            {
+                TextBox temp = ((TextBox)main.gridPrintComponent.nameGridPrint.Children[j]);
+                temp.Focus();
+            }
+            else
+            { }
 
             System.Windows.Media.Animation.DoubleAnimation da = new System.Windows.Media.Animation.DoubleAnimation();
             da.From = -950;
@@ -233,26 +240,52 @@ namespace Sudoku
         private void btnMusicOn_Click(object sender, RoutedEventArgs e)
         {
             var main = Application.Current.MainWindow as MainWindow;
-
+            main.mnuMusik.IsChecked = false;
             btnMusicOn.Visibility = Visibility.Hidden;
             btnMusicOff.Visibility = Visibility.Visible;
 
-            btnPause_Click(sender, e);
-            main.pauseComponent.Visibility = Visibility.Hidden;
 
-            // Instruktion om hur du lägger till egen musik:
+            string path = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\\Musik.wav";
+            System.Media.SoundPlayer player = new System.Media.SoundPlayer(path);
 
-
-
-            // När instruktion är OK-klickad
-            StartTimer();
-            main.pauseComponent.Visibility = Visibility.Visible;
+            player.Stop();
         }
 
         private void btnMusicOff_Click(object sender, RoutedEventArgs e)
         {
-            btnMusicOn.Visibility = Visibility.Visible;
-            btnMusicOff.Visibility = Visibility.Hidden;
+            var main = Application.Current.MainWindow as MainWindow;
+
+            if (!main.MusicCheck)
+            {
+                btnPause_Click(sender, e);
+                main.pauseComponent.Visibility = Visibility.Hidden;
+
+                MusicWindow mwin = new MusicWindow();
+                mwin.Show();
+                main.IsEnabled = false;
+            }
+            else
+            {
+                try
+                {
+                    string path = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\\Musik.wav";
+                    System.Media.SoundPlayer player = new System.Media.SoundPlayer(path);
+
+                    player.PlayLooping();
+                    main.mnuMusik.IsChecked = true;
+                    btnMusicOn.Visibility = Visibility.Visible;
+                    btnMusicOff.Visibility = Visibility.Hidden;
+                }
+                catch
+                {
+                    btnPause_Click(sender, e);
+                    main.pauseComponent.Visibility = Visibility.Hidden;
+
+                    MusicWindow mwin = new MusicWindow();
+                    mwin.Show();
+                    main.IsEnabled = false;
+                }
+            }
         }
     }
 }

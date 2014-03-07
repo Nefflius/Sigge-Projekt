@@ -11,7 +11,7 @@ namespace Sudoku
     {
         //Source: http://mark-dot-net.blogspot.se/2009/10/looped-playback-in-net-with-naudio.html
 
-        //Music: http://www.youtube.com/watch?v=Eh3AuwiG9L0
+        //Music: http://www.youtube.com/watch?v=Eh3AuwiG9L0D:\Visual Studio 2012\SiggeProjekt\Sudoku\Sudoku\LoopStream.cs
         WaveStream sourceStream;
 
         ///// Creates a new Loop stream
