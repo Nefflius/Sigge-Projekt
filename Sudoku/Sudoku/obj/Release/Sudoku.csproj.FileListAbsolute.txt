@@ -1,26 +1,3 @@
-C:\Users\Nidaa\Desktop\DMP1\GUI_prog\Sigge Projekt\Sudoku\Sudoku\bin\Release\Sudoku.exe.config
-C:\Users\Nidaa\Desktop\DMP1\GUI_prog\Sigge Projekt\Sudoku\Sudoku\obj\Release\Sudoku.exe
-C:\Users\Nidaa\Desktop\DMP1\GUI_prog\Sigge Projekt\Sudoku\Sudoku\obj\Release\Sudoku.pdb
-C:\Users\Nidaa\Desktop\DMP1\GUI_prog\Sigge Projekt\Sudoku\Sudoku\bin\Release\Sudoku.exe
-C:\Users\Nidaa\Desktop\DMP1\GUI_prog\Sigge Projekt\Sudoku\Sudoku\bin\Release\Sudoku.pdb
-C:\Users\Nidaa\Desktop\DMP1\GUI_prog\Sigge Projekt\Sudoku\Sudoku\obj\Release\Sudoku.csprojResolveAssemblyReference.cache
-C:\Users\Nidaa\Desktop\DMP1\GUI_prog\Sigge Projekt\Sudoku\Sudoku\obj\Release\Easy1.baml
-C:\Users\Nidaa\Desktop\DMP1\GUI_prog\Sigge Projekt\Sudoku\Sudoku\obj\Release\Meny.baml
-C:\Users\Nidaa\Desktop\DMP1\GUI_prog\Sigge Projekt\Sudoku\Sudoku\obj\Release\Easy1.g.cs
-C:\Users\Nidaa\Desktop\DMP1\GUI_prog\Sigge Projekt\Sudoku\Sudoku\obj\Release\GridPrint.g.cs
-C:\Users\Nidaa\Desktop\DMP1\GUI_prog\Sigge Projekt\Sudoku\Sudoku\obj\Release\MainWindow.g.cs
-C:\Users\Nidaa\Desktop\DMP1\GUI_prog\Sigge Projekt\Sudoku\Sudoku\obj\Release\Meny.g.cs
-C:\Users\Nidaa\Desktop\DMP1\GUI_prog\Sigge Projekt\Sudoku\Sudoku\obj\Release\Spelplan.g.cs
-C:\Users\Nidaa\Desktop\DMP1\GUI_prog\Sigge Projekt\Sudoku\Sudoku\obj\Release\App.g.cs
-C:\Users\Nidaa\Desktop\DMP1\GUI_prog\Sigge Projekt\Sudoku\Sudoku\obj\Release\GeneratedInternalTypeHelper.g.cs
-C:\Users\Nidaa\Desktop\DMP1\GUI_prog\Sigge Projekt\Sudoku\Sudoku\obj\Release\Sudoku_MarkupCompile.cache
-C:\Users\Nidaa\Desktop\DMP1\GUI_prog\Sigge Projekt\Sudoku\Sudoku\obj\Release\Sudoku_MarkupCompile.lref
-C:\Users\Nidaa\Desktop\DMP1\GUI_prog\Sigge Projekt\Sudoku\Sudoku\obj\Release\GridPrint.baml
-C:\Users\Nidaa\Desktop\DMP1\GUI_prog\Sigge Projekt\Sudoku\Sudoku\obj\Release\MainWindow.baml
-C:\Users\Nidaa\Desktop\DMP1\GUI_prog\Sigge Projekt\Sudoku\Sudoku\obj\Release\Spelplan.baml
-C:\Users\Nidaa\Desktop\DMP1\GUI_prog\Sigge Projekt\Sudoku\Sudoku\obj\Release\Sudoku.g.resources
-C:\Users\Nidaa\Desktop\DMP1\GUI_prog\Sigge Projekt\Sudoku\Sudoku\obj\Release\Sudoku.Properties.Resources.resources
-C:\Users\Nidaa\Desktop\DMP1\GUI_prog\Sigge Projekt\Sudoku\Sudoku\obj\Release\Sudoku.csproj.GenerateResource.Cache
 G:\Dokument\Visual Studio 2012\Projects\GUI\Projekt\Sudoku\Sudoku\bin\Release\Sudoku.exe.config
 G:\Dokument\Visual Studio 2012\Projects\GUI\Projekt\Sudoku\Sudoku\bin\Release\Sudoku.exe
 G:\Dokument\Visual Studio 2012\Projects\GUI\Projekt\Sudoku\Sudoku\bin\Release\Sudoku.pdb
@@ -149,3 +126,36 @@ D:\Visual Studio 2012\SiggeProjekt\Sudoku\Sudoku\obj\Release\MusicWindow.g.cs
 C:\Users\Ida\Documents\DMP12\GUI Programmering\Sigge Projekt\Sudoku\Sudoku\obj\Release\Interop.MediaPlayer.dll
 C:\Users\Ida\Documents\DMP12\GUI Programmering\Sigge Projekt\Sudoku\Sudoku\obj\Release\Interop.WMPLib.dll
 C:\Users\Ida\Documents\DMP12\GUI Programmering\Sigge Projekt\Sudoku\Sudoku\obj\Release\Sudoku.csproj.ResolveComReference.cache
+C:\Users\Nidaa\Desktop\DMP1\GUI_prog\Sigge Projekt\Sudoku\Sudoku\obj\Release\Sudoku.csprojResolveAssemblyReference.cache
+C:\Users\Nidaa\Desktop\DMP1\GUI_prog\Sigge Projekt\Sudoku\Sudoku\obj\Release\Interop.MediaPlayer.dll
+C:\Users\Nidaa\Desktop\DMP1\GUI_prog\Sigge Projekt\Sudoku\Sudoku\obj\Release\Interop.WMPLib.dll
+C:\Users\Nidaa\Desktop\DMP1\GUI_prog\Sigge Projekt\Sudoku\Sudoku\obj\Release\Sudoku.csproj.ResolveComReference.cache
+C:\Users\Nidaa\Desktop\DMP1\GUI_prog\Sigge Projekt\Sudoku\Sudoku\obj\Release\Highscore.baml
+C:\Users\Nidaa\Desktop\DMP1\GUI_prog\Sigge Projekt\Sudoku\Sudoku\obj\Release\Meny.baml
+C:\Users\Nidaa\Desktop\DMP1\GUI_prog\Sigge Projekt\Sudoku\Sudoku\obj\Release\MusicWindow.baml
+C:\Users\Nidaa\Desktop\DMP1\GUI_prog\Sigge Projekt\Sudoku\Sudoku\obj\Release\Pause.baml
+C:\Users\Nidaa\Desktop\DMP1\GUI_prog\Sigge Projekt\Sudoku\Sudoku\obj\Release\GridPrint.g.cs
+C:\Users\Nidaa\Desktop\DMP1\GUI_prog\Sigge Projekt\Sudoku\Sudoku\obj\Release\Highscore.g.cs
+C:\Users\Nidaa\Desktop\DMP1\GUI_prog\Sigge Projekt\Sudoku\Sudoku\obj\Release\MainWindow.g.cs
+C:\Users\Nidaa\Desktop\DMP1\GUI_prog\Sigge Projekt\Sudoku\Sudoku\obj\Release\Meny.g.cs
+C:\Users\Nidaa\Desktop\DMP1\GUI_prog\Sigge Projekt\Sudoku\Sudoku\obj\Release\MusicWindow.g.cs
+C:\Users\Nidaa\Desktop\DMP1\GUI_prog\Sigge Projekt\Sudoku\Sudoku\obj\Release\Pause.g.cs
+C:\Users\Nidaa\Desktop\DMP1\GUI_prog\Sigge Projekt\Sudoku\Sudoku\obj\Release\Spelplan.g.cs
+C:\Users\Nidaa\Desktop\DMP1\GUI_prog\Sigge Projekt\Sudoku\Sudoku\obj\Release\App.g.cs
+C:\Users\Nidaa\Desktop\DMP1\GUI_prog\Sigge Projekt\Sudoku\Sudoku\obj\Release\Sudoku_Content.g.cs
+C:\Users\Nidaa\Desktop\DMP1\GUI_prog\Sigge Projekt\Sudoku\Sudoku\obj\Release\GeneratedInternalTypeHelper.g.cs
+C:\Users\Nidaa\Desktop\DMP1\GUI_prog\Sigge Projekt\Sudoku\Sudoku\obj\Release\Sudoku_MarkupCompile.cache
+C:\Users\Nidaa\Desktop\DMP1\GUI_prog\Sigge Projekt\Sudoku\Sudoku\obj\Release\Sudoku_MarkupCompile.lref
+C:\Users\Nidaa\Desktop\DMP1\GUI_prog\Sigge Projekt\Sudoku\Sudoku\bin\Release\Sudoku.exe.config
+C:\Users\Nidaa\Desktop\DMP1\GUI_prog\Sigge Projekt\Sudoku\Sudoku\bin\Release\Sudoku.exe
+C:\Users\Nidaa\Desktop\DMP1\GUI_prog\Sigge Projekt\Sudoku\Sudoku\bin\Release\Sudoku.pdb
+C:\Users\Nidaa\Desktop\DMP1\GUI_prog\Sigge Projekt\Sudoku\Sudoku\bin\Release\NAudio.dll
+C:\Users\Nidaa\Desktop\DMP1\GUI_prog\Sigge Projekt\Sudoku\Sudoku\bin\Release\NAudio.xml
+C:\Users\Nidaa\Desktop\DMP1\GUI_prog\Sigge Projekt\Sudoku\Sudoku\obj\Release\GridPrint.baml
+C:\Users\Nidaa\Desktop\DMP1\GUI_prog\Sigge Projekt\Sudoku\Sudoku\obj\Release\MainWindow.baml
+C:\Users\Nidaa\Desktop\DMP1\GUI_prog\Sigge Projekt\Sudoku\Sudoku\obj\Release\Spelplan.baml
+C:\Users\Nidaa\Desktop\DMP1\GUI_prog\Sigge Projekt\Sudoku\Sudoku\obj\Release\Sudoku.g.resources
+C:\Users\Nidaa\Desktop\DMP1\GUI_prog\Sigge Projekt\Sudoku\Sudoku\obj\Release\Sudoku.Properties.Resources.resources
+C:\Users\Nidaa\Desktop\DMP1\GUI_prog\Sigge Projekt\Sudoku\Sudoku\obj\Release\Sudoku.csproj.GenerateResource.Cache
+C:\Users\Nidaa\Desktop\DMP1\GUI_prog\Sigge Projekt\Sudoku\Sudoku\obj\Release\Sudoku.exe
+C:\Users\Nidaa\Desktop\DMP1\GUI_prog\Sigge Projekt\Sudoku\Sudoku\obj\Release\Sudoku.pdb

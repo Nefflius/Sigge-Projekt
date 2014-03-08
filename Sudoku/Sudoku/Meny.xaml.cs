@@ -34,6 +34,8 @@ namespace Sudoku
 		{
 			InitializeComponent();
             model = new SudokuModel();
+
+
 		}
 
 		private static string radioButtonChecked;
@@ -64,18 +66,24 @@ namespace Sudoku
 		***********************************************************/
 		private void spela_Click(object sender, RoutedEventArgs e)
 		{
+            
             start = true;
             begins = DateTime.Now;
             Timer();
+           
+			main = Application.Current.MainWindow as MainWindow;                        
+            
 
-			main = Application.Current.MainWindow as MainWindow;
+
             model = new SudokuModel();
             model.GetSetNewGame = true;
-            
+
             main.spelplanComponent.lblAntalDrag.Content = "0";
             btnSpela.IsEnabled = false;
             
 			main.gridPrintComponent = model.PrintGrid(radioButtonChecked, main.gridPrintComponent);
+
+           
 
 			main.gridPrintComponent.Visibility = Visibility.Visible;
 			main.menuComponent.Visibility = Visibility.Collapsed;
@@ -83,7 +91,11 @@ namespace Sudoku
             
             main.gridPrintComponent.ShowAndResetSpelplan();
 
+           
+
             //main.gridPrintComponent.Focus();
+
+          
 
 		//	main.spelplanComponent.start = true;   // Timer
 		//	main.spelplanComponent.begins = DateTime.Now;  // Timer

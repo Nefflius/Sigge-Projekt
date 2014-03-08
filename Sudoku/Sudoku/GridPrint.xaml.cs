@@ -369,5 +369,16 @@ namespace Sudoku
             HideAndResetSpelplan();
             
         }
+
+        private void nameGridPrint_Loaded(object sender, RoutedEventArgs e)
+        {
+            var main = Application.Current.MainWindow as MainWindow;
+            TextBox temp = ((TextBox)main.gridPrintComponent.nameGridPrint.Children[0]);
+
+            temp.Background = Brushes.Black;
+            temp.Foreground = Brushes.White;
+            temp.FontWeight = FontWeights.Heavy;
+            temp.Focus();
+        }
 	}
 }
