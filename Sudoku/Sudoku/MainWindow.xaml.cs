@@ -327,6 +327,7 @@ namespace Sudoku
                 if (File.Exists(Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\\Musik.mp3"))
                 {
                     wplayer.URL = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\\Musik.mp3";
+                    wplayer.settings.setMode("loop", true);
                     wplayer.controls.play();
                     MusicCheck = true;
                     main.spelplanComponent.btnMusicOff.Visibility = Visibility.Hidden;

@@ -257,6 +257,7 @@ namespace Sudoku
             if (File.Exists(Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\\Musik.mp3"))
             {
                 main.wplayer.URL = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\\Musik.mp3";
+                main.wplayer.settings.setMode("loop", true);
                 main.wplayer.controls.play();
 
                 main.mnuMusik.IsChecked = true;
