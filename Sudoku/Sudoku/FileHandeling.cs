@@ -92,9 +92,6 @@ namespace Sudoku
             }
         }
 
-        public void SaveHighscore(string[] _highscore2Save)
-        {
-            
-        }
+       
     }
 }

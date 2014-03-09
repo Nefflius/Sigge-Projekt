@@ -46,7 +46,7 @@
                 <DropShadowEffect Opacity="0.5" ShadowDepth="10.0" Direction="230" />
             </Border.Effect>
             <StackPanel>
-                <Grid KeyboardNavigation.TabNavigation="Cycle" Name="nameGridPrint" Width="260" Height="260" Visibility="Visible">
+                <Grid KeyboardNavigation.TabNavigation="Cycle" Name="nameGridPrint" Width="260" Height="260" Visibility="Visible" Loaded="nameGridPrint_Loaded">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="*"/>
                         <RowDefinition Height="*"/>
